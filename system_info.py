@@ -1,4 +1,4 @@
-# system_info.py Verision 1.0.5
+# system_info.py Verision 1.0.6
 
 from datetime import datetime
 import platform
@@ -438,24 +438,65 @@ def get_regional_settings():
 
         key_path = r"Control Panel\International"
         with winreg.OpenKey(winreg.HKEY_CURRENT_USER, key_path) as key:
-            # Leer valores clave
             def get_value(name):
                 try:
                     return winreg.QueryValueEx(key, name)[0]
                 except FileNotFoundError:
                     return "No definido"
 
+            # Valores actuales
             s_decimal     = get_value("sDecimal")         # Separador decimal
             s_thousand    = get_value("sThousand")        # Separador de miles
             s_mon_decimal = get_value("sMonDecimalSep")   # Separador decimal en moneda
             s_mon_thousand= get_value("sMonThousandSep") # Separador de miles en moneda
             s_short_date  = get_value("sShortDate")      # Formato de fecha corta
+            s_time_format = get_value("sTimeFormat")     # Formato de hora
+            s_currency    = get_value("sCurrency")       # Símbolo de moneda
 
+            # Mostrar información
             print(f"S. Decimal (sDecimal): {s_decimal}")
             print(f"S. Miles (sThousand): {s_thousand}")
             print(f"S. Moneda Decimal (sMonDecimalSep): {s_mon_decimal}")
             print(f"S. Moneda Miles (sMonThousandSep): {s_mon_thousand}")
             print(f"Formato Fecha Corta (sShortDate): {s_short_date}")
+            print(f"Formato de Hora (sTimeFormat): {s_time_format}")
+            print(f"Símbolo de Moneda (sCurrency): {s_currency}")
 
     except Exception as e:
-        print(f"Error al obtener configuración regional: {e}")
+        print(f"Error al obtener información de configuración regional: {e}")
+        
+def set_regional_settings():
+    """
+    Establece la configuración regional del sistema en el Registro de Windows
+    """
+    import winreg
+
+    key_path = r"Control Panel\International"
+    try:
+        # Abrir la clave del Registro con permisos de escritura
+        key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, key_path, 0, winreg.KEY_SET_VALUE)
+
+        # Cambiar valores
+        winreg.SetValueEx(key, "sDecimal", 0, winreg.REG_SZ, ".")
+        winreg.SetValueEx(key, "sThousand", 0, winreg.REG_SZ, ",")
+        winreg.SetValueEx(key, "sMonDecimalSep", 0, winreg.REG_SZ, ".")
+        winreg.SetValueEx(key, "sMonThousandSep", 0, winreg.REG_SZ, ",")
+        winreg.SetValueEx(key, "sShortDate", 0, winreg.REG_SZ, "dd/MM/yyyy")
+        winreg.SetValueEx(key, "sTimeFormat", 0, winreg.REG_SZ, "hh:mm")       # Formato de hora 24 horas
+        winreg.SetValueEx(key, "sCurrency", 0, winreg.REG_SZ, "Bs.")           # Símbolo de moneda
+
+        print("✅ Configuración regional actualizada correctamente.")
+        winreg.CloseKey(key)
+
+    except Exception as e:
+        print(f"❌ Error al modificar configuración regional: {e}")
+                
+def show_current_datetime():
+    """
+    Muestra la fecha y hora actual del sistema
+    """
+    now = datetime.now()
+    print(f"\n=== FECHA Y HORA ACTUAL ===\n")
+    print(f"Fecha y hora actual: {now.strftime('%d/%m/%Y %H:%M')}")
+    print("-" * 40)
+    print("Este ejemplo muestra cómo se ven los cambios de configuración regional aplicados.")

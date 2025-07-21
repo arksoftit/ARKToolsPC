@@ -1,13 +1,13 @@
 # ARKToolsPC - Diagnóstico de Hardware (PyQt6)
 # Desarrollado por Juan Ernesto Páez Mujica 
 # Fecha: 2025-07-17 
-# Versión: 1.0.5
+# Versión: 1.0.6
 # Este script es una aplicación de escritorio que permite obtener información detallada del hardware del sistema.
 
 import sys
 from PyQt6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QTextEdit,
-    QMenuBar, QMenu, QPushButton, QMessageBox, QLabel, QHBoxLayout
+    QMenuBar, QMenu, QPushButton, QMessageBox, QLabel, QHBoxLayout, QMessageBox
 )
 from PyQt6.QtGui import QAction, QTextCursor, QPalette, QColor
 from PyQt6.QtCore import Qt
@@ -28,7 +28,8 @@ from system_info import (
     get_bluetooth_devices, 
     get_os_info,
     get_regional_settings,
-    set_regional_settings
+    set_regional_settings,
+    show_current_datetime
 )
 
 class ARKToolsPCApp(QMainWindow):
@@ -147,6 +148,14 @@ class ARKToolsPCApp(QMainWindow):
         exit_action = QAction("Salir", self)
         exit_action.triggered.connect(self.close)
         file_menu.addAction(exit_action)
+        
+        # Menú: Acciones
+        accion_menu = menubar.addMenu("Acciones")
+        accion_menu.addAction("Cambiar Configuración Regional HB", lambda: self.confirm_action(
+            "Configuración Regional",
+            "¿Estás seguro de aplicar estos cambios de configuración regional?",
+            set_regional_settings
+        ))
 
         # Menú: Herramientas
         tools_menu = menubar.addMenu("Herramientas")
@@ -176,6 +185,7 @@ class ARKToolsPCApp(QMainWindow):
         tools_menu.addAction("Información de Red", lambda: self.show_content(get_network_info))
         tools_menu.addAction("Información del SO", lambda: self.show_content(get_os_info))
         tools_menu.addAction("Configuración Regional", lambda: self.show_content(get_regional_settings))
+        
 
         # Menú: Informes
         reports_menu = menubar.addMenu("Informes")
@@ -184,6 +194,46 @@ class ARKToolsPCApp(QMainWindow):
         # Menú: Ayuda
         help_menu = menubar.addMenu("Ayuda")
         help_menu.addAction("Acerca de...", self.show_about)
+        
+    def show_notification(self, title, message, is_error=False):
+        """
+        Muestra un mensaje informativo o de error al usuario
+        """
+        msg = QMessageBox(self)
+        msg.setWindowTitle(title)
+        msg.setText(message)
+
+        if is_error:
+            msg.setIcon(QMessageBox.Icon.Critical)
+            msg.setStandardButtons(QMessageBox.StandardButton.Ok)
+        else:
+            msg.setIcon(QMessageBox.Icon.Information)
+            msg.setStandardButtons(QMessageBox.StandardButton.Ok)
+
+        msg.exec()
+        
+    def confirm_action(self, title, message, action):
+        """
+        Muestra un mensaje de confirmación antes de ejecutar una acción
+        """
+        msg = QMessageBox(self)
+        msg.setIcon(QMessageBox.Icon.Question)
+        msg.setWindowTitle(title)
+        msg.setText(message)
+        msg.setStandardButtons(
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
+        )
+        msg.setDefaultButton(QMessageBox.StandardButton.No)
+
+        response = msg.exec()
+        if response == QMessageBox.StandardButton.Yes:
+            try:
+                action()  # Ejecutar la función pasada como parámetro
+                self.show_content(get_regional_settings)  # Mostrar la nueva configuración inmediatamente
+                self.show_content(show_current_datetime)  # Ejemplos 
+                self.show_notification("Acción Confirmada", "La configuración se ha actualizado correctamente.")
+            except Exception as e:
+                self.show_notification("Error", f"No se pudo aplicar la configuración: {e}", is_error=True)
 
     def show_content(self, func):
         """Muestra el resultado de una función en el área de texto"""
@@ -213,7 +263,7 @@ class ARKToolsPCApp(QMainWindow):
         """Muestra el diálogo 'Acerca de'"""
         about_text = (
             "ARKToolsPC - Diagnóstico de Hardware\n"
-            "Versión: 1.0 (PyQt6)\n"
+            "Versión: 1.0.6 (PyQt6)\n"
             "Desarrollado por: Arksoft Integradores de Sistemas, C.A.\n"
             "© 2025 Todos los derechos reservados\n\n"
             "Esta herramienta permite obtener información detallada del hardware del sistema."

@@ -17,7 +17,9 @@ from system_info import (
     get_audio_devices,  
     get_com_ports,      
     get_usb_devices,
-    get_bluetooth_devices
+    get_bluetooth_devices,
+    get_os_info,
+    get_regional_settings
     )
 
 class ARKToolsPCApp:
@@ -32,6 +34,17 @@ class ARKToolsPCApp:
         self.style = ttk.Style()
         self.style.configure("TButton", padding=10, font=("Segoe UI", 10))
         self.style.configure("Header.TButton", font=("Segoe UI", 10, "bold"), padding=10)
+        
+        # Estilo para botón de salida
+        self.style.configure("Exit.TButton",
+                            font=("Segoe UI", 10, "bold"),
+                            padding=10,
+                            background="#ADD8E6",   # Azul claro
+                            foreground="black")
+
+        # Opcional: Cambiar color al presionar
+        self.style.map("Exit.TButton",
+                    background=[('active', '#87CEEB')])
 
         # Crear menú principal (MainMenu)
         self.create_main_menu()
@@ -41,8 +54,20 @@ class ARKToolsPCApp:
         self.main_frame.pack(fill="both", expand=True)
 
         # Área de contenido
-        self.content_text = tk.Text(self.main_frame, wrap="word", bg="black", fg="white", font=("Consolas", 10))
+        self.content_text = tk.Text(self.main_frame, wrap="word", bg="black", fg="white", font=("Consolas", 10))        
         self.content_text.pack(fill="both", expand=True, padx=10, pady=10)
+        
+        # Botón Salir (en el área principal)
+        exit_button_frame = ttk.Frame(self.main_frame)
+        exit_button_frame.pack(side="bottom", fill="x", padx=10, pady=10)
+
+        exit_button = ttk.Button(
+            exit_button_frame,
+            text="Salir de la Aplicación",
+            style="Exit.TButton",     # Aplica el estilo personalizado
+            command=self.exit_app
+        )
+        exit_button.pack(side="right", anchor="e")
 
         # Crear footer
         self.create_footer()
@@ -80,6 +105,8 @@ class ARKToolsPCApp:
         herramientas_menu.add_cascade(label="Información del Hardware", menu=hardware_menu)
         #herramientas_menu.add_command(label="Otra herramienta (pendiente)", command=lambda: self.show_placeholder("Herramienta Pendiente"))
         herramientas_menu.add_command(label="Información de Red", command=lambda: self.show_content(get_network_info))
+        herramientas_menu.add_command(label="Información del Sistema Operativo", command=lambda: self.show_content(get_os_info))
+        herramientas_menu.add_command(label="Configuración Regional", command=lambda: self.show_content(get_regional_settings))
         menubar.add_cascade(label="Herramientas", menu=herramientas_menu)
         
         # Menú "Informes"

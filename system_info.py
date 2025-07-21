@@ -1,13 +1,18 @@
-# system_info.py
+# system_info.py Verision 1.0.5
 
-import psutil
+from datetime import datetime
 import platform
-import socket
 import psutil
 import subprocess
+import locale
+import os
+import winreg
 import GPUtil
-import wmi
-from datetime import datetime
+
+try:
+    import wmi
+except ImportError:
+    wmi = None
 
 
 def get_system_info():
@@ -82,7 +87,7 @@ def get_disk_info():
     try:
         import wmi
         c = wmi.WMI()
-        print("\n=== INFORMACIÓN BÝSICA DE DISCOS FÝSICOS ===")
+        print("\n=== INFORMACION BASICA DE DISCOS FISICOS ===")
 
         disks = c.Win32_DiskDrive()
         total_storage_bytes = 0  # Acumulador para el tamaño total
@@ -163,7 +168,12 @@ def get_network_info():
     print("\n=== INFORMACIÓN COMPLETA DE RED ===\n")
     try:
         # Ejecutar el comando ipconfig /all
-        result = subprocess.run(["ipconfig", "/all"], capture_output=True, text=True, encoding="latin-1")
+        result = subprocess.run(
+            ["ipconfig", "/all"], 
+            capture_output=True, 
+            text=True, 
+            encoding="cp850"
+            )
 
         # Mostrar la salida completa
         print(result.stdout)
@@ -321,3 +331,131 @@ def get_bluetooth_devices():
         print(f"Error al obtener información de dispositivos Bluetooth: {e}")
 
     print("=" * 40)
+    
+def get_os_info():
+    """
+    Muestra información detallada del sistema operativo
+    """
+    print("\n=== INFORMACIÓN DEL SISTEMA OPERATIVO ===\n")
+
+    # Información básica del sistema
+    print(f"Sistema Operativo: {platform.system()}")
+    print(f"Nombre del Equipo: {platform.node()}")
+    print(f"Versión del SO: {platform.version()}")
+    print(f"Edición: {platform.win32_edition() if platform.system() == 'Windows' else 'N/A'}")
+    print(f"Arquitectura: {platform.machine()}")
+    print(f"Procesador: {platform.processor()}")
+    print(f"Plataforma: {platform.platform()}")
+    print(f"Número de procesadores lógicos: {os.cpu_count()}")
+    print(f"Versión de Python: {platform.python_version()}")
+    print("-" * 50)
+
+    # Información adicional en Windows
+    if platform.system() == "Windows":
+        c = wmi.WMI() if wmi else None
+
+        print("=== Información específica de Windows ===")
+        try:
+            os_info = c.Win32_OperatingSystem()[0]
+            print(f"Versión completa: {os_info.Caption} {os_info.Version}")
+            print(f"ID del producto: {os_info.SerialNumber}")
+            print(f"Tipo de instalación: {os_info.OSArchitecture} - {os_info.CodeSet}")
+            print(f"Idioma del sistema: {os_info.OSLanguage}")
+            print(f"País/Región: {os_info.CountryCode}-{os_info.Locale}")
+            print(f"Organización registrada: {os_info.Organization or 'Desconocido'}")
+            print(f"Registrado a nombre de: {os_info.RegisteredUser}")
+
+            # Corrección: Parsear InstallDate correctamente
+            # Corrección: Parsear InstallDate correctamente
+            try:
+                install_date = os_info.InstallDate
+                if isinstance(install_date, str):
+                    # Asumimos que es CIM_DATETIME si comienza con YYYYMMDDHHMMSS
+                    if install_date.startswith(('20', '10')):  # Ejemplo: empieza con año
+                        date_str = install_date.split('.')[0]
+                        install_datetime = datetime.strptime(date_str, "%Y%m%d%H%M%S")
+                        print(f"Instalado: {install_datetime.strftime('%Y-%m-%d %H:%M:%S')}")
+                    else:
+                        print(f"Instalado: {install_date} (formato desconocido)")
+                else:
+                    print(f"Instalado: {install_date}")
+            except Exception as e:
+                print(f"  No se pudo parsear la fecha de instalación: {e}")
+
+            print("-" * 50)
+        except Exception as e:
+            print(f"Error al obtener info avanzada de Windows: {e}")
+
+        # Dominio o grupo de trabajo
+        try:
+            comp_info = c.Win32_ComputerSystem()[0]
+            domain = comp_info.Domain if comp_info.Domain else "No pertenece a un dominio"
+            workgroup = comp_info.Workgroup if not comp_info.PartOfDomain else "Dominio activo"
+            print(f"Pertenece a dominio: {'Sí' if comp_info.PartOfDomain else 'No'}")
+            print(f"  Dominio: {domain}")
+            print(f"  Grupo de trabajo: {workgroup}")
+            print("-" * 50)
+        except Exception as e:
+            print(f"Error al obtener información de dominio/grupo de trabajo: {e}")
+
+        # Acceso remoto (RDP)
+        try:
+            # Usamos PowerShell como alternativa segura
+            result = subprocess.run(
+                ["powershell", "(Get-WmiObject -Class Win32_TerminalServiceSetting -Namespace root\\CIMv2\\TerminalServices).AllowTSConnections"],
+                capture_output=True,
+                text=True,
+                encoding="latin-1",
+                errors="replace"
+            )
+            output = result.stdout.strip()
+            rdp_status = "Habilitado" if output == "1" else "Deshabilitado"
+            print(f"Acceso remoto (RDP): {rdp_status}")
+            print("-" * 50)
+        except Exception as e:
+            print(f"Error al obtener estado de RDP: {e}")
+
+    # Para Linux/macOS
+    else:
+        print("Para sistemas no Windows, puedes usar comandos como:")
+        print("  uname -a")
+        print("  lsb_release -a")
+        print("  sw_vers (en macOS)")
+        print("-" * 50)
+
+    # Configuración regional
+    lang, encoding = locale.getdefaultlocale()
+    print(f"Configuración regional predeterminada: {lang}")
+    print(f"Codificación del sistema: {encoding}")
+
+def get_regional_settings():
+    """
+    Muestra configuración regional desde el Registro de Windows
+    """
+    print("\n=== CONFIGURACIÓN REGIONAL (INTERNACIONAL) ===\n")
+    try:
+        import winreg
+
+        key_path = r"Control Panel\International"
+        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, key_path) as key:
+            # Leer valores clave
+            def get_value(name):
+                try:
+                    return winreg.QueryValueEx(key, name)[0]
+                except FileNotFoundError:
+                    return "No definido"
+
+            s_decimal     = get_value("sDecimal")         # Separador decimal
+            s_thousand    = get_value("sThousand")        # Separador de miles
+            s_mon_decimal = get_value("sMonDecimalSep")   # Separador decimal en moneda
+            s_mon_thousand= get_value("sMonThousandSep") # Separador de miles en moneda
+            s_short_date  = get_value("sShortDate")      # Formato de fecha corta
+
+            print(f"S. Decimal (sDecimal): {s_decimal}")
+            print(f"S. Miles (sThousand): {s_thousand}")
+            print(f"S. Moneda Decimal (sMonDecimalSep): {s_mon_decimal}")
+            print(f"S. Moneda Miles (sMonThousandSep): {s_mon_thousand}")
+            print(f"Formato Fecha Corta (sShortDate): {s_short_date}")
+
+    except Exception as e:
+        print(f"Error al obtener configuración regional: {e}")

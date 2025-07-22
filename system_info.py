@@ -490,13 +490,40 @@ def set_regional_settings():
 
     except Exception as e:
         print(f"❌ Error al modificar configuración regional: {e}")
-                
+
+def show_regional_and_datetime():
+    """
+    Muestra primero la configuración regional actual y luego un ejemplo de fecha/hora formateada.
+    Ideal para verificar los efectos de un cambio regional.
+    """
+    get_regional_settings()
+    show_current_datetime()
+
 def show_current_datetime():
     """
-    Muestra la fecha y hora actual del sistema
+    Muestra la fecha y hora actual usando formatos del sistema (locale)
+    para verificar si los cambios regionales surtieron efecto.
     """
-    now = datetime.now()
-    print(f"\n=== FECHA Y HORA ACTUAL ===\n")
-    print(f"Fecha y hora actual: {now.strftime('%d/%m/%Y %H:%M')}")
-    print("-" * 40)
-    print("Este ejemplo muestra cómo se ven los cambios de configuración regional aplicados.")
+    import time
+    import locale
+
+    print(f"\n=== FECHA Y HORA ACTUAL SEGÚN EL LOCALE DEL SISTEMA ===\n")
+
+    try:
+        # Forzar recarga del locale actual del sistema
+        locale.setlocale(locale.LC_ALL, '')  # Usa el locale predeterminado del sistema
+
+        # Formatos que DEBERÍAN verse afectados por el cambio en el registro
+        fecha_local = time.strftime("%x")   # Fecha local (lo que más importa)
+        hora_local = time.strftime("%X")    # Hora local
+        fecha_hora_local = time.strftime("%c")  # Fecha y hora completa local
+
+        print(f"Fecha local (%x): {fecha_local}")
+        print(f"Hora local (%X): {hora_local}")
+        print(f"Fecha/hora completa (%c): {fecha_hora_local}")
+
+    except Exception as e:
+        print(f"Error al obtener formato local: {e}")
+
+    print("-" * 50)
+    print("Este ejemplo muestra CÓMO EL SISTEMA interpreta los formatos tras el cambio regional.")

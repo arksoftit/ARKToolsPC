@@ -29,7 +29,8 @@ from system_info import (
     get_os_info,
     get_regional_settings,
     set_regional_settings,
-    show_current_datetime
+    show_current_datetime,
+    show_regional_and_datetime    
 )
 
 class ARKToolsPCApp(QMainWindow):
@@ -230,7 +231,8 @@ class ARKToolsPCApp(QMainWindow):
             try:
                 action()  # Ejecutar la función pasada como parámetro
                 self.show_content(get_regional_settings)  # Mostrar la nueva configuración inmediatamente
-                self.show_content(show_current_datetime)  # Ejemplos 
+                self.show_content(show_current_datetime)  # Ejemplos
+                self.show_content(show_regional_and_datetime) 
                 self.show_notification("Acción Confirmada", "La configuración se ha actualizado correctamente.")
             except Exception as e:
                 self.show_notification("Error", f"No se pudo aplicar la configuración: {e}", is_error=True)

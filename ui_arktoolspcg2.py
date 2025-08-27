@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'arktoolspcg2icaDEG.ui'
+## Form generated from reading UI file 'arktoolspcg2HMiwKd.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.1
 ##
@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
-    QStackedWidget, QVBoxLayout, QWidget)
+    QStackedWidget, QTextEdit, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -1032,10 +1032,14 @@ class Ui_MainWindow(object):
         self.label_logo_tools.setPixmap(QPixmap(u"imagen/ArkToolsPC_02.png"))
         self.label_logo_tools.setScaledContents(True)
         self.label_logo_tools.setAlignment(Qt.AlignmentFlag.AlignCenter)
+                
         self.Layout_logo_inicio.addWidget(self.label_logo_tools)
         self.verticalLayout_6.addLayout(self.Layout_logo_inicio)
+        
         self.stackedWidget.addWidget(self.page_inicio)
+        
         self.verticalLayout_6.addWidget(self.label_logo_tools, 0, Qt.AlignmentFlag.AlignCenter)
+
         
         self.page_inf_hardware = QWidget()
         self.page_inf_hardware.setObjectName(u"page_inf_hardware")
@@ -1061,7 +1065,7 @@ class Ui_MainWindow(object):
 "")
         self.label_inf_hw2 = QLabel(self.page_inf_hardware_2)
         self.label_inf_hw2.setObjectName(u"label_inf_hw2")
-        self.label_inf_hw2.setGeometry(QRect(670, 460, 71, 61))
+        self.label_inf_hw2.setGeometry(QRect(700, 470, 71, 61))
         self.label_inf_hw2.setMinimumSize(QSize(40, 40))
         self.label_inf_hw2.setMaximumSize(QSize(80, 80))
         self.label_inf_hw2.setPixmap(QPixmap(u"imagen/PC01.svg"))
@@ -1076,11 +1080,14 @@ class Ui_MainWindow(object):
 "")
         self.label_inf_red = QLabel(self.page_inf_red)
         self.label_inf_red.setObjectName(u"label_inf_red")
-        self.label_inf_red.setGeometry(QRect(660, 460, 71, 61))
+        self.label_inf_red.setGeometry(QRect(190, 470, 71, 61))
         self.label_inf_red.setMinimumSize(QSize(40, 40))
         self.label_inf_red.setMaximumSize(QSize(80, 80))
         self.label_inf_red.setPixmap(QPixmap(u"imagen/pcnetwork_102250.svg"))
         self.label_inf_red.setScaledContents(True)
+        self.textEdit_info_red = QTextEdit(self.page_inf_red)
+        self.textEdit_info_red.setObjectName(u"textEdit_info_red")
+        self.textEdit_info_red.setGeometry(QRect(190, 20, 581, 441))
         self.stackedWidget.addWidget(self.page_inf_red)
         self.page_inf_so = QWidget()
         self.page_inf_so.setObjectName(u"page_inf_so")
@@ -1091,7 +1098,7 @@ class Ui_MainWindow(object):
 "")
         self.label_inf_so = QLabel(self.page_inf_so)
         self.label_inf_so.setObjectName(u"label_inf_so")
-        self.label_inf_so.setGeometry(QRect(670, 430, 71, 61))
+        self.label_inf_so.setGeometry(QRect(700, 470, 71, 61))
         self.label_inf_so.setMinimumSize(QSize(40, 40))
         self.label_inf_so.setMaximumSize(QSize(80, 80))
         self.label_inf_so.setPixmap(QPixmap(u"imagen/OS02.svg"))
@@ -1106,7 +1113,7 @@ class Ui_MainWindow(object):
 "")
         self.label_inf_regional = QLabel(self.page_inf_regional)
         self.label_inf_regional.setObjectName(u"label_inf_regional")
-        self.label_inf_regional.setGeometry(QRect(650, 450, 71, 61))
+        self.label_inf_regional.setGeometry(QRect(700, 470, 71, 61))
         self.label_inf_regional.setMinimumSize(QSize(40, 40))
         self.label_inf_regional.setMaximumSize(QSize(80, 80))
         self.label_inf_regional.setPixmap(QPixmap(u"imagen/Regional01.svg"))
@@ -1128,7 +1135,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

@@ -163,9 +163,9 @@ def get_motherboard_info():
 
 def get_network_info():
     """
-      Muestra la salida completa de 'ipconfig /all' del sistema
+    Obtiene y retorna la salida completa de 'ipconfig /all' como una cadena de texto.
     """
-    print("\n=== INFORMACIÓN COMPLETA DE RED ===\n")
+    output_text = "\n=== INFORMACIÓN COMPLETA DE RED ===\n\n"
     try:
         # Ejecutar el comando ipconfig /all
         result = subprocess.run(
@@ -173,13 +173,12 @@ def get_network_info():
             capture_output=True, 
             text=True, 
             encoding="cp850"
-            )
-
-        # Mostrar la salida completa
-        print(result.stdout)
-
+        )
+        output_text += result.stdout
     except Exception as e:
-        print(f"Error al obtener información de red: {e}")
+        output_text += f"Error al obtener información de red: {e}"
+        
+    return output_text
 
 # Hardware de red
 def get_nic_info():

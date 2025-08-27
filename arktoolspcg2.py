@@ -3,6 +3,27 @@ from PySide6.QtWidgets import QMainWindow, QApplication, QSizeGrip
 from PySide6.QtCore import Qt, QPropertyAnimation, QEasingCurve, QPoint
 from ui_arktoolspcg2 import Ui_MainWindow
 
+# Importa las funciones de system_info.py (igual que en tu versión original)
+from system_info import (
+    get_system_info, 
+    get_cpu_info, 
+    get_ram_info, 
+    get_disk_info,
+    get_gpu_info, 
+    get_motherboard_info, 
+    get_network_info,
+    get_nic_info, 
+    get_audio_devices, 
+    get_com_ports,
+    get_usb_devices, 
+    get_bluetooth_devices, 
+    get_os_info,
+    get_regional_settings,
+    set_regional_settings,
+    show_current_datetime,
+    show_regional_and_datetime    
+)
+
 class MiApp(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -36,10 +57,13 @@ class MiApp(QMainWindow):
 
         # Conectar los botones del menú a las páginas del stackedWidget
         self.ui.btn_info_hardware.clicked.connect(self.toggle_sub_hardware_menu)
-        self.ui.btn_info_red.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_red))
+        # Conectar el botón de red
+        self.ui.btn_info_red.clicked.connect(self.mostrar_info_red)
         self.ui.btn_inf_so.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_so))
         self.ui.btn_inf_regional.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_regional))
         self.ui.btn_regresar_menu.clicked.connect(self.volver_menu_principal)
+        
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inicio)
         # Puedes añadir conexiones para otros botones aquí, como el de limpiar o el de configuración.
         # Por ejemplo:
         # self.ui.btn_limpiar.clicked.connect(...)
@@ -133,6 +157,17 @@ class MiApp(QMainWindow):
             self.showMaximized()
         else:
             self.showNormal()
+    
+    def mostrar_info_red(self):
+        # Llama a la función del módulo system_info para obtener los datos
+        info_red = get_network_info()
+
+        # Actualiza el QTextEdit con la información
+        # Asegúrate de que tu QTextEdit se llame 'textEdit_info_red' en tu UI
+        self.ui.textEdit_info_red.setText(info_red)
+        
+        # Finalmente, cambia al QWidget correspondiente a la página de red
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_red)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'arktoolspcg2HMiwKd.ui'
+## Form generated from reading UI file 'arktoolspcg2gQeJkB.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.1
 ##
@@ -250,11 +250,11 @@ class Ui_MainWindow(object):
         self.frame_sub_hardware.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_5 = QVBoxLayout(self.frame_sub_hardware)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.btn_inf_sistema = QPushButton(self.frame_sub_hardware)
-        self.btn_inf_sistema.setObjectName(u"btn_inf_sistema")
-        self.btn_inf_sistema.setMinimumSize(QSize(170, 35))
-        self.btn_inf_sistema.setMaximumSize(QSize(170, 35))
-        self.btn_inf_sistema.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+        self.btn_info_sistema = QPushButton(self.frame_sub_hardware)
+        self.btn_info_sistema.setObjectName(u"btn_info_sistema")
+        self.btn_info_sistema.setMinimumSize(QSize(170, 35))
+        self.btn_info_sistema.setMaximumSize(QSize(170, 35))
+        self.btn_info_sistema.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
 "QPushButton {\n"
 "    background-color:qlineargradient(\n"
 "    spread:pad, \n"
@@ -284,16 +284,16 @@ class Ui_MainWindow(object):
 "}")
         icon5 = QIcon()
         icon5.addFile(u"imagen/fi-sr-settings.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_inf_sistema.setIcon(icon5)
-        self.btn_inf_sistema.setIconSize(QSize(35, 35))
+        self.btn_info_sistema.setIcon(icon5)
+        self.btn_info_sistema.setIconSize(QSize(35, 35))
 
-        self.verticalLayout_5.addWidget(self.btn_inf_sistema)
+        self.verticalLayout_5.addWidget(self.btn_info_sistema)
 
-        self.btn_inf_mbd = QPushButton(self.frame_sub_hardware)
-        self.btn_inf_mbd.setObjectName(u"btn_inf_mbd")
-        self.btn_inf_mbd.setMinimumSize(QSize(170, 35))
-        self.btn_inf_mbd.setMaximumSize(QSize(170, 35))
-        self.btn_inf_mbd.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+        self.btn_info_mbd = QPushButton(self.frame_sub_hardware)
+        self.btn_info_mbd.setObjectName(u"btn_info_mbd")
+        self.btn_info_mbd.setMinimumSize(QSize(170, 35))
+        self.btn_info_mbd.setMaximumSize(QSize(170, 35))
+        self.btn_info_mbd.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
 "QPushButton {\n"
 "    background-color: qlineargradient(\n"
 "    spread:pad, \n"
@@ -322,17 +322,17 @@ class Ui_MainWindow(object):
 "    background-color: #004085;\n"
 "}")
         icon6 = QIcon()
-        icon6.addFile(u"imagen/Motherboard01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_inf_mbd.setIcon(icon6)
-        self.btn_inf_mbd.setIconSize(QSize(28, 29))
+        icon6.addFile(u"imagen/mbd_01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_info_mbd.setIcon(icon6)
+        self.btn_info_mbd.setIconSize(QSize(28, 29))
 
-        self.verticalLayout_5.addWidget(self.btn_inf_mbd)
+        self.verticalLayout_5.addWidget(self.btn_info_mbd)
 
-        self.btn_inf_cpu = QPushButton(self.frame_sub_hardware)
-        self.btn_inf_cpu.setObjectName(u"btn_inf_cpu")
-        self.btn_inf_cpu.setMinimumSize(QSize(170, 35))
-        self.btn_inf_cpu.setMaximumSize(QSize(170, 40))
-        self.btn_inf_cpu.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+        self.btn_info_cpu = QPushButton(self.frame_sub_hardware)
+        self.btn_info_cpu.setObjectName(u"btn_info_cpu")
+        self.btn_info_cpu.setMinimumSize(QSize(170, 35))
+        self.btn_info_cpu.setMaximumSize(QSize(170, 40))
+        self.btn_info_cpu.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
 "QPushButton {\n"
 "    background-color: qlineargradient(\n"
 "    spread:pad, \n"
@@ -361,17 +361,17 @@ class Ui_MainWindow(object):
 "    background-color: #004085;\n"
 "}")
         icon7 = QIcon()
-        icon7.addFile(u"imagen/fi-sr-cpu.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_inf_cpu.setIcon(icon7)
-        self.btn_inf_cpu.setIconSize(QSize(28, 28))
+        icon7.addFile(u"imagen/cpu01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_info_cpu.setIcon(icon7)
+        self.btn_info_cpu.setIconSize(QSize(28, 28))
 
-        self.verticalLayout_5.addWidget(self.btn_inf_cpu)
+        self.verticalLayout_5.addWidget(self.btn_info_cpu)
 
-        self.btn_inf_gpu = QPushButton(self.frame_sub_hardware)
-        self.btn_inf_gpu.setObjectName(u"btn_inf_gpu")
-        self.btn_inf_gpu.setMinimumSize(QSize(170, 35))
-        self.btn_inf_gpu.setMaximumSize(QSize(170, 35))
-        self.btn_inf_gpu.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+        self.btn_info_gpu = QPushButton(self.frame_sub_hardware)
+        self.btn_info_gpu.setObjectName(u"btn_info_gpu")
+        self.btn_info_gpu.setMinimumSize(QSize(170, 35))
+        self.btn_info_gpu.setMaximumSize(QSize(170, 35))
+        self.btn_info_gpu.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
 "QPushButton {\n"
 "    background-color:qlineargradient(\n"
 "    spread:pad, \n"
@@ -401,16 +401,16 @@ class Ui_MainWindow(object):
 "}")
         icon8 = QIcon()
         icon8.addFile(u"imagen/Grafica01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_inf_gpu.setIcon(icon8)
-        self.btn_inf_gpu.setIconSize(QSize(28, 28))
+        self.btn_info_gpu.setIcon(icon8)
+        self.btn_info_gpu.setIconSize(QSize(28, 28))
 
-        self.verticalLayout_5.addWidget(self.btn_inf_gpu)
+        self.verticalLayout_5.addWidget(self.btn_info_gpu)
 
-        self.btn_inf_ram = QPushButton(self.frame_sub_hardware)
-        self.btn_inf_ram.setObjectName(u"btn_inf_ram")
-        self.btn_inf_ram.setMinimumSize(QSize(170, 35))
-        self.btn_inf_ram.setMaximumSize(QSize(170, 35))
-        self.btn_inf_ram.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+        self.btn_info_ram = QPushButton(self.frame_sub_hardware)
+        self.btn_info_ram.setObjectName(u"btn_info_ram")
+        self.btn_info_ram.setMinimumSize(QSize(170, 35))
+        self.btn_info_ram.setMaximumSize(QSize(170, 35))
+        self.btn_info_ram.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
 "QPushButton {\n"
 "    background-color: qlineargradient(\n"
 "    spread:pad, \n"
@@ -440,16 +440,16 @@ class Ui_MainWindow(object):
 "}")
         icon9 = QIcon()
         icon9.addFile(u"imagen/RAM.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_inf_ram.setIcon(icon9)
-        self.btn_inf_ram.setIconSize(QSize(28, 28))
+        self.btn_info_ram.setIcon(icon9)
+        self.btn_info_ram.setIconSize(QSize(28, 28))
 
-        self.verticalLayout_5.addWidget(self.btn_inf_ram)
+        self.verticalLayout_5.addWidget(self.btn_info_ram)
 
-        self.btn_inf_hdd = QPushButton(self.frame_sub_hardware)
-        self.btn_inf_hdd.setObjectName(u"btn_inf_hdd")
-        self.btn_inf_hdd.setMinimumSize(QSize(170, 35))
-        self.btn_inf_hdd.setMaximumSize(QSize(170, 35))
-        self.btn_inf_hdd.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+        self.btn_info_hdd = QPushButton(self.frame_sub_hardware)
+        self.btn_info_hdd.setObjectName(u"btn_info_hdd")
+        self.btn_info_hdd.setMinimumSize(QSize(170, 35))
+        self.btn_info_hdd.setMaximumSize(QSize(170, 35))
+        self.btn_info_hdd.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
 "QPushButton {\n"
 "    background-color:qlineargradient(\n"
 "    spread:pad, \n"
@@ -479,16 +479,16 @@ class Ui_MainWindow(object):
 "}")
         icon10 = QIcon()
         icon10.addFile(u"imagen/hdd2.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_inf_hdd.setIcon(icon10)
-        self.btn_inf_hdd.setIconSize(QSize(28, 28))
+        self.btn_info_hdd.setIcon(icon10)
+        self.btn_info_hdd.setIconSize(QSize(28, 28))
 
-        self.verticalLayout_5.addWidget(self.btn_inf_hdd)
+        self.verticalLayout_5.addWidget(self.btn_info_hdd)
 
-        self.btn_inf_nic = QPushButton(self.frame_sub_hardware)
-        self.btn_inf_nic.setObjectName(u"btn_inf_nic")
-        self.btn_inf_nic.setMinimumSize(QSize(170, 35))
-        self.btn_inf_nic.setMaximumSize(QSize(170, 35))
-        self.btn_inf_nic.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+        self.btn_info_nic = QPushButton(self.frame_sub_hardware)
+        self.btn_info_nic.setObjectName(u"btn_info_nic")
+        self.btn_info_nic.setMinimumSize(QSize(170, 35))
+        self.btn_info_nic.setMaximumSize(QSize(170, 35))
+        self.btn_info_nic.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
 "QPushButton {\n"
 "    background-color: qlineargradient(\n"
 "    spread:pad, \n"
@@ -518,16 +518,16 @@ class Ui_MainWindow(object):
 "}")
         icon11 = QIcon()
         icon11.addFile(u"imagen/Red01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_inf_nic.setIcon(icon11)
-        self.btn_inf_nic.setIconSize(QSize(28, 28))
+        self.btn_info_nic.setIcon(icon11)
+        self.btn_info_nic.setIconSize(QSize(28, 28))
 
-        self.verticalLayout_5.addWidget(self.btn_inf_nic)
+        self.verticalLayout_5.addWidget(self.btn_info_nic)
 
-        self.btn_inf_audio = QPushButton(self.frame_sub_hardware)
-        self.btn_inf_audio.setObjectName(u"btn_inf_audio")
-        self.btn_inf_audio.setMinimumSize(QSize(170, 35))
-        self.btn_inf_audio.setMaximumSize(QSize(170, 35))
-        self.btn_inf_audio.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+        self.btn_info_audio = QPushButton(self.frame_sub_hardware)
+        self.btn_info_audio.setObjectName(u"btn_info_audio")
+        self.btn_info_audio.setMinimumSize(QSize(170, 35))
+        self.btn_info_audio.setMaximumSize(QSize(170, 35))
+        self.btn_info_audio.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
 "QPushButton {\n"
 "    background-color: qlineargradient(\n"
 "    spread:pad, \n"
@@ -557,16 +557,16 @@ class Ui_MainWindow(object):
 "}")
         icon12 = QIcon()
         icon12.addFile(u"imagen/fi-sr-foreign-language-audio.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_inf_audio.setIcon(icon12)
-        self.btn_inf_audio.setIconSize(QSize(28, 28))
+        self.btn_info_audio.setIcon(icon12)
+        self.btn_info_audio.setIconSize(QSize(28, 28))
 
-        self.verticalLayout_5.addWidget(self.btn_inf_audio)
+        self.verticalLayout_5.addWidget(self.btn_info_audio)
 
-        self.btn_inf_com = QPushButton(self.frame_sub_hardware)
-        self.btn_inf_com.setObjectName(u"btn_inf_com")
-        self.btn_inf_com.setMinimumSize(QSize(170, 35))
-        self.btn_inf_com.setMaximumSize(QSize(170, 35))
-        self.btn_inf_com.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+        self.btn_info_com = QPushButton(self.frame_sub_hardware)
+        self.btn_info_com.setObjectName(u"btn_info_com")
+        self.btn_info_com.setMinimumSize(QSize(170, 35))
+        self.btn_info_com.setMaximumSize(QSize(170, 35))
+        self.btn_info_com.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
 "QPushButton {\n"
 "    background-color: qlineargradient(\n"
 "    spread:pad, \n"
@@ -596,16 +596,16 @@ class Ui_MainWindow(object):
 "}")
         icon13 = QIcon()
         icon13.addFile(u"imagen/hdd.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_inf_com.setIcon(icon13)
-        self.btn_inf_com.setIconSize(QSize(35, 35))
+        self.btn_info_com.setIcon(icon13)
+        self.btn_info_com.setIconSize(QSize(35, 35))
 
-        self.verticalLayout_5.addWidget(self.btn_inf_com)
+        self.verticalLayout_5.addWidget(self.btn_info_com)
 
-        self.btn_inf_usb = QPushButton(self.frame_sub_hardware)
-        self.btn_inf_usb.setObjectName(u"btn_inf_usb")
-        self.btn_inf_usb.setMinimumSize(QSize(170, 35))
-        self.btn_inf_usb.setMaximumSize(QSize(170, 35))
-        self.btn_inf_usb.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+        self.btn_info_usb = QPushButton(self.frame_sub_hardware)
+        self.btn_info_usb.setObjectName(u"btn_info_usb")
+        self.btn_info_usb.setMinimumSize(QSize(170, 35))
+        self.btn_info_usb.setMaximumSize(QSize(170, 35))
+        self.btn_info_usb.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
 "QPushButton {\n"
 "    background-color: qlineargradient(\n"
 "    spread:pad, \n"
@@ -635,16 +635,16 @@ class Ui_MainWindow(object):
 "}")
         icon14 = QIcon()
         icon14.addFile(u"imagen/usb1.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_inf_usb.setIcon(icon14)
-        self.btn_inf_usb.setIconSize(QSize(28, 28))
+        self.btn_info_usb.setIcon(icon14)
+        self.btn_info_usb.setIconSize(QSize(28, 28))
 
-        self.verticalLayout_5.addWidget(self.btn_inf_usb)
+        self.verticalLayout_5.addWidget(self.btn_info_usb)
 
-        self.btn_inf_bth = QPushButton(self.frame_sub_hardware)
-        self.btn_inf_bth.setObjectName(u"btn_inf_bth")
-        self.btn_inf_bth.setMinimumSize(QSize(170, 35))
-        self.btn_inf_bth.setMaximumSize(QSize(170, 35))
-        self.btn_inf_bth.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+        self.btn_info_bth = QPushButton(self.frame_sub_hardware)
+        self.btn_info_bth.setObjectName(u"btn_info_bth")
+        self.btn_info_bth.setMinimumSize(QSize(170, 35))
+        self.btn_info_bth.setMaximumSize(QSize(170, 35))
+        self.btn_info_bth.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
 "QPushButton {\n"
 "    background-color: qlineargradient(\n"
 "    spread:pad, \n"
@@ -674,10 +674,10 @@ class Ui_MainWindow(object):
 "}")
         icon15 = QIcon()
         icon15.addFile(u"imagen/fi-sr-bluetooth-alt.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_inf_bth.setIcon(icon15)
-        self.btn_inf_bth.setIconSize(QSize(28, 28))
+        self.btn_info_bth.setIcon(icon15)
+        self.btn_info_bth.setIconSize(QSize(28, 28))
 
-        self.verticalLayout_5.addWidget(self.btn_inf_bth)
+        self.verticalLayout_5.addWidget(self.btn_info_bth)
 
         self.btn_regresar_menu = QPushButton(self.frame_sub_hardware)
         self.btn_regresar_menu.setObjectName(u"btn_regresar_menu")
@@ -808,44 +808,9 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_3.addWidget(self.btn_info_red)
 
-        self.btn_info_hardware_2 = QPushButton(self.frame_menu)
-        self.btn_info_hardware_2.setObjectName(u"btn_info_hardware_2")
-        self.btn_info_hardware_2.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
-"QPushButton {\n"
-"    background-color:qlineargradient(\n"
-"    spread:pad, \n"
-"    x1:0, \n"
-"    y1:0, \n"
-"    x2:1, \n"
-"    y2:0, \n"
-"    stop:0 rgba(102, 178, 255, 255), \n"
-"    stop:0.55 rgba(61, 148, 235, 255), \n"
-"    stop:0.98 rgba(0, 0, 0, 255), \n"
-"    stop:1 rgba(0, 0, 0, 0)\n"
-");\n"
-"    color: white;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"    padding: 10px 20px;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"/* Estilo cuando el mouse pasa por encima */\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"/* Estilo cuando el bot\u00f3n es presionado */\n"
-"QPushButton:pressed {\n"
-"    background-color: #004085;\n"
-"}")
-        self.btn_info_hardware_2.setIcon(icon17)
-        self.btn_info_hardware_2.setIconSize(QSize(35, 35))
-
-        self.verticalLayout_3.addWidget(self.btn_info_hardware_2)
-
-        self.btn_inf_so = QPushButton(self.frame_menu)
-        self.btn_inf_so.setObjectName(u"btn_inf_so")
-        self.btn_inf_so.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+        self.btn_info_so = QPushButton(self.frame_menu)
+        self.btn_info_so.setObjectName(u"btn_info_so")
+        self.btn_info_so.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
 "QPushButton {\n"
 "    background-color: qlineargradient(\n"
 "    spread:pad, \n"
@@ -875,14 +840,14 @@ class Ui_MainWindow(object):
 "}")
         icon19 = QIcon()
         icon19.addFile(u"imagen/fi-sr-computer-classic.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_inf_so.setIcon(icon19)
-        self.btn_inf_so.setIconSize(QSize(35, 36))
+        self.btn_info_so.setIcon(icon19)
+        self.btn_info_so.setIconSize(QSize(35, 36))
 
-        self.verticalLayout_3.addWidget(self.btn_inf_so)
+        self.verticalLayout_3.addWidget(self.btn_info_so)
 
-        self.btn_inf_regional = QPushButton(self.frame_menu)
-        self.btn_inf_regional.setObjectName(u"btn_inf_regional")
-        self.btn_inf_regional.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+        self.btn_info_regional = QPushButton(self.frame_menu)
+        self.btn_info_regional.setObjectName(u"btn_info_regional")
+        self.btn_info_regional.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
 "QPushButton {\n"
 "    background-color: qlineargradient(\n"
 "    spread:pad, \n"
@@ -912,10 +877,10 @@ class Ui_MainWindow(object):
 "}")
         icon20 = QIcon()
         icon20.addFile(u"imagen/Regional01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_inf_regional.setIcon(icon20)
-        self.btn_inf_regional.setIconSize(QSize(35, 35))
+        self.btn_info_regional.setIcon(icon20)
+        self.btn_info_regional.setIconSize(QSize(35, 35))
 
-        self.verticalLayout_3.addWidget(self.btn_inf_regional)
+        self.verticalLayout_3.addWidget(self.btn_info_regional)
 
         self.btn_limpiar = QPushButton(self.frame_menu)
         self.btn_limpiar.setObjectName(u"btn_limpiar")
@@ -1022,25 +987,45 @@ class Ui_MainWindow(object):
 "")
         self.verticalLayout_6 = QVBoxLayout(self.page_inicio)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.Layout_logo_inicio = QVBoxLayout()
-        self.Layout_logo_inicio.setObjectName(u"Layout_logo_inicio")
         self.label_logo_tools = QLabel(self.page_inicio)
         self.label_logo_tools.setObjectName(u"label_logo_tools")
         self.label_logo_tools.setMinimumSize(QSize(120, 120))
         self.label_logo_tools.setMaximumSize(QSize(260, 260))
         self.label_logo_tools.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.label_logo_tools.setFrameShadow(QFrame.Shadow.Sunken)
         self.label_logo_tools.setPixmap(QPixmap(u"imagen/ArkToolsPC_02.png"))
         self.label_logo_tools.setScaledContents(True)
         self.label_logo_tools.setAlignment(Qt.AlignmentFlag.AlignCenter)
-                
-        self.Layout_logo_inicio.addWidget(self.label_logo_tools)
-        self.verticalLayout_6.addLayout(self.Layout_logo_inicio)
-        
-        self.stackedWidget.addWidget(self.page_inicio)
-        
-        self.verticalLayout_6.addWidget(self.label_logo_tools, 0, Qt.AlignmentFlag.AlignCenter)
 
+        self.verticalLayout_6.addWidget(self.label_logo_tools)
+
+        self.verticalSpacer = QSpacerItem(20, 216, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_6.addItem(self.verticalSpacer)
+
+        self.pie_arkinfo = QLabel(self.page_inicio)
+        self.verticalLayout_6.addWidget(self.label_logo_tools, 0, Qt.AlignmentFlag.AlignCenter)
+        self.verticalLayout_6.addWidget(self.pie_arkinfo, 0, Qt.AlignmentFlag.AlignCenter)
         
+        self.pie_arkinfo.setObjectName(u"pie_arkinfo")
+        self.pie_arkinfo.setMinimumSize(QSize(40, 40))
+        self.pie_arkinfo.setMaximumSize(QSize(16777215, 40))
+        font1 = QFont()
+        font1.setFamilies([u"Consolas"])
+        font1.setPointSize(9)
+        font1.setBold(False)
+        font1.setItalic(False)
+        self.pie_arkinfo.setFont(font1)
+        self.pie_arkinfo.setStyleSheet(u"font: 9pt \"Consolas\";\n"
+"color: #000000; \n"
+"background-color: #f0f0f0;")
+        self.pie_arkinfo.setFrameShadow(QFrame.Shadow.Sunken)
+        self.pie_arkinfo.setTextFormat(Qt.TextFormat.PlainText)
+        self.pie_arkinfo.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_6.addWidget(self.pie_arkinfo)
+
+        self.stackedWidget.addWidget(self.page_inicio)
         self.page_inf_hardware = QWidget()
         self.page_inf_hardware.setObjectName(u"page_inf_hardware")
         self.page_inf_hardware.setStyleSheet(u"/* Estilo del marco */\n"
@@ -1048,13 +1033,24 @@ class Ui_MainWindow(object):
 "    background-color: #F8F9FA;\n"
 "    }\n"
 "")
-        self.label_inf_hw1 = QLabel(self.page_inf_hardware)
-        self.label_inf_hw1.setObjectName(u"label_inf_hw1")
-        self.label_inf_hw1.setGeometry(QRect(700, 470, 71, 61))
-        self.label_inf_hw1.setMinimumSize(QSize(40, 40))
-        self.label_inf_hw1.setMaximumSize(QSize(80, 80))
-        self.label_inf_hw1.setPixmap(QPixmap(u"imagen/PC02.svg"))
-        self.label_inf_hw1.setScaledContents(True)
+        self.verticalLayout_8 = QVBoxLayout(self.page_inf_hardware)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.textEdit_info_hw = QTextEdit(self.page_inf_hardware)
+        self.textEdit_info_hw.setObjectName(u"textEdit_info_hw")
+        self.textEdit_info_hw.setStyleSheet(u"font: 9pt \"Consolas\";\n"
+"color: #000000; \n"
+"background-color: #f0f0f0;")
+
+        self.verticalLayout_8.addWidget(self.textEdit_info_hw)
+
+        self.label_info_hw = QLabel(self.page_inf_hardware)
+        self.label_info_hw.setObjectName(u"label_info_hw")
+        self.label_info_hw.setMinimumSize(QSize(80, 80))
+        self.label_info_hw.setMaximumSize(QSize(80, 80))
+        self.label_info_hw.setScaledContents(True)
+
+        self.verticalLayout_8.addWidget(self.label_info_hw)
+
         self.stackedWidget.addWidget(self.page_inf_hardware)
         self.page_inf_hardware_2 = QWidget()
         self.page_inf_hardware_2.setObjectName(u"page_inf_hardware_2")
@@ -1063,13 +1059,25 @@ class Ui_MainWindow(object):
 "    background-color: #F8F9FA;\n"
 "    }\n"
 "")
-        self.label_inf_hw2 = QLabel(self.page_inf_hardware_2)
-        self.label_inf_hw2.setObjectName(u"label_inf_hw2")
-        self.label_inf_hw2.setGeometry(QRect(700, 470, 71, 61))
-        self.label_inf_hw2.setMinimumSize(QSize(40, 40))
-        self.label_inf_hw2.setMaximumSize(QSize(80, 80))
-        self.label_inf_hw2.setPixmap(QPixmap(u"imagen/PC01.svg"))
-        self.label_inf_hw2.setScaledContents(True)
+        self.verticalLayout_7 = QVBoxLayout(self.page_inf_hardware_2)
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.textEdit_info_hw2 = QTextEdit(self.page_inf_hardware_2)
+        self.textEdit_info_hw2.setObjectName(u"textEdit_info_hw2")
+        self.textEdit_info_hw2.setStyleSheet(u"font: 9pt \"Consolas\";\n"
+"color: #000000; \n"
+"background-color: #f0f0f0;")
+
+        self.verticalLayout_7.addWidget(self.textEdit_info_hw2)
+
+        self.label_info_hw2 = QLabel(self.page_inf_hardware_2)
+        self.label_info_hw2.setObjectName(u"label_info_hw2")
+        self.label_info_hw2.setMinimumSize(QSize(40, 40))
+        self.label_info_hw2.setMaximumSize(QSize(80, 80))
+        self.label_info_hw2.setPixmap(QPixmap(u"imagen/PC01.svg"))
+        self.label_info_hw2.setScaledContents(True)
+
+        self.verticalLayout_7.addWidget(self.label_info_hw2)
+
         self.stackedWidget.addWidget(self.page_inf_hardware_2)
         self.page_inf_red = QWidget()
         self.page_inf_red.setObjectName(u"page_inf_red")
@@ -1078,16 +1086,26 @@ class Ui_MainWindow(object):
 "    background-color: #F8F9FA;\n"
 "    }\n"
 "")
-        self.label_inf_red = QLabel(self.page_inf_red)
-        self.label_inf_red.setObjectName(u"label_inf_red")
-        self.label_inf_red.setGeometry(QRect(190, 470, 71, 61))
-        self.label_inf_red.setMinimumSize(QSize(40, 40))
-        self.label_inf_red.setMaximumSize(QSize(80, 80))
-        self.label_inf_red.setPixmap(QPixmap(u"imagen/pcnetwork_102250.svg"))
-        self.label_inf_red.setScaledContents(True)
+        self.verticalLayout_9 = QVBoxLayout(self.page_inf_red)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.textEdit_info_red = QTextEdit(self.page_inf_red)
         self.textEdit_info_red.setObjectName(u"textEdit_info_red")
-        self.textEdit_info_red.setGeometry(QRect(190, 20, 581, 441))
+        self.textEdit_info_red.setStyleSheet(u"font: 9pt \"Consolas\";\n"
+"color: #000000; \n"
+"background-color: #f0f0f0;")
+
+        self.verticalLayout_9.addWidget(self.textEdit_info_red)
+
+        self.label_info_red = QLabel(self.page_inf_red)
+        self.label_info_red.setObjectName(u"label_info_red")
+        self.label_info_red.setMinimumSize(QSize(40, 40))
+        self.label_info_red.setMaximumSize(QSize(80, 80))
+        self.label_info_red.setPixmap(QPixmap(u"imagen/Red01.svg"))
+        self.label_info_red.setScaledContents(True)
+        self.label_info_red.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_9.addWidget(self.label_info_red)
+
         self.stackedWidget.addWidget(self.page_inf_red)
         self.page_inf_so = QWidget()
         self.page_inf_so.setObjectName(u"page_inf_so")
@@ -1096,13 +1114,26 @@ class Ui_MainWindow(object):
 "    background-color: #F8F9FA;\n"
 "    }\n"
 "")
-        self.label_inf_so = QLabel(self.page_inf_so)
-        self.label_inf_so.setObjectName(u"label_inf_so")
-        self.label_inf_so.setGeometry(QRect(700, 470, 71, 61))
-        self.label_inf_so.setMinimumSize(QSize(40, 40))
-        self.label_inf_so.setMaximumSize(QSize(80, 80))
-        self.label_inf_so.setPixmap(QPixmap(u"imagen/OS02.svg"))
-        self.label_inf_so.setScaledContents(True)
+        self.verticalLayout_11 = QVBoxLayout(self.page_inf_so)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.textEdit_info_so = QTextEdit(self.page_inf_so)
+        self.textEdit_info_so.setObjectName(u"textEdit_info_so")
+        self.textEdit_info_so.setStyleSheet(u"font: 9pt \"Consolas\";\n"
+"color: #000000; \n"
+"background-color: #f0f0f0;")
+
+        self.verticalLayout_11.addWidget(self.textEdit_info_so)
+
+        self.label_info_so = QLabel(self.page_inf_so)
+        self.label_info_so.setObjectName(u"label_info_so")
+        self.label_info_so.setMinimumSize(QSize(40, 40))
+        self.label_info_so.setMaximumSize(QSize(80, 80))
+        self.label_info_so.setPixmap(QPixmap(u"imagen/OS02.svg"))
+        self.label_info_so.setScaledContents(True)
+        self.label_info_so.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_11.addWidget(self.label_info_so)
+
         self.stackedWidget.addWidget(self.page_inf_so)
         self.page_inf_regional = QWidget()
         self.page_inf_regional.setObjectName(u"page_inf_regional")
@@ -1111,13 +1142,26 @@ class Ui_MainWindow(object):
 "    background-color: #F8F9FA;\n"
 "    }\n"
 "")
-        self.label_inf_regional = QLabel(self.page_inf_regional)
-        self.label_inf_regional.setObjectName(u"label_inf_regional")
-        self.label_inf_regional.setGeometry(QRect(700, 470, 71, 61))
-        self.label_inf_regional.setMinimumSize(QSize(40, 40))
-        self.label_inf_regional.setMaximumSize(QSize(80, 80))
-        self.label_inf_regional.setPixmap(QPixmap(u"imagen/Regional01.svg"))
-        self.label_inf_regional.setScaledContents(True)
+        self.verticalLayout_10 = QVBoxLayout(self.page_inf_regional)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.textEdit_info_regional = QTextEdit(self.page_inf_regional)
+        self.textEdit_info_regional.setObjectName(u"textEdit_info_regional")
+        self.textEdit_info_regional.setStyleSheet(u"font: 9pt \"Consolas\";\n"
+"color: #000000; \n"
+"background-color: #f0f0f0;")
+
+        self.verticalLayout_10.addWidget(self.textEdit_info_regional)
+
+        self.label_info_regional = QLabel(self.page_inf_regional)
+        self.label_info_regional.setObjectName(u"label_info_regional")
+        self.label_info_regional.setMinimumSize(QSize(80, 80))
+        self.label_info_regional.setMaximumSize(QSize(80, 80))
+        self.label_info_regional.setPixmap(QPixmap(u"imagen/filesettings_102180.svg"))
+        self.label_info_regional.setScaledContents(True)
+        self.label_info_regional.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_10.addWidget(self.label_info_regional)
+
         self.stackedWidget.addWidget(self.page_inf_regional)
 
         self.verticalLayout_4.addWidget(self.stackedWidget)
@@ -1135,7 +1179,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1151,36 +1195,37 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(accessibility)
         self.frame_sub_hardware.setAccessibleDescription("")
 #endif // QT_CONFIG(accessibility)
-        self.btn_inf_sistema.setText(QCoreApplication.translate("MainWindow", u"Sistema", None))
-        self.btn_inf_mbd.setText(QCoreApplication.translate("MainWindow", u"      Motherboard", None))
-        self.btn_inf_cpu.setText(QCoreApplication.translate("MainWindow", u"      CPU", None))
+        self.btn_info_sistema.setText(QCoreApplication.translate("MainWindow", u"Sistema", None))
+        self.btn_info_mbd.setText(QCoreApplication.translate("MainWindow", u"      Motherboard", None))
+        self.btn_info_cpu.setText(QCoreApplication.translate("MainWindow", u"      CPU", None))
 #if QT_CONFIG(shortcut)
-        self.btn_inf_cpu.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+R", None))
+        self.btn_info_cpu.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+R", None))
 #endif // QT_CONFIG(shortcut)
-        self.btn_inf_gpu.setText(QCoreApplication.translate("MainWindow", u"      GPU", None))
-        self.btn_inf_ram.setText(QCoreApplication.translate("MainWindow", u"      RAM", None))
-        self.btn_inf_hdd.setText(QCoreApplication.translate("MainWindow", u"      HDD-SSD", None))
-        self.btn_inf_nic.setText(QCoreApplication.translate("MainWindow", u"Tarjetas de Red", None))
-        self.btn_inf_audio.setText(QCoreApplication.translate("MainWindow", u"      Audio", None))
-        self.btn_inf_com.setText(QCoreApplication.translate("MainWindow", u"  Puertos COM", None))
-        self.btn_inf_usb.setText(QCoreApplication.translate("MainWindow", u"      USB", None))
-        self.btn_inf_bth.setText(QCoreApplication.translate("MainWindow", u"      Bluetooth", None))
+        self.btn_info_gpu.setText(QCoreApplication.translate("MainWindow", u"      GPU", None))
+        self.btn_info_ram.setText(QCoreApplication.translate("MainWindow", u"      RAM", None))
+        self.btn_info_hdd.setText(QCoreApplication.translate("MainWindow", u"      HDD-SSD", None))
+        self.btn_info_nic.setText(QCoreApplication.translate("MainWindow", u"Tarjetas de Red", None))
+        self.btn_info_audio.setText(QCoreApplication.translate("MainWindow", u"      Audio", None))
+        self.btn_info_com.setText(QCoreApplication.translate("MainWindow", u"  Puertos COM", None))
+        self.btn_info_usb.setText(QCoreApplication.translate("MainWindow", u"      USB", None))
+        self.btn_info_bth.setText(QCoreApplication.translate("MainWindow", u"      Bluetooth", None))
         self.btn_regresar_menu.setText(QCoreApplication.translate("MainWindow", u"Men\u00fa Principal", None))
         self.btn_info_hardware.setText(QCoreApplication.translate("MainWindow", u"      Hardware", None))
         self.btn_info_red.setText(QCoreApplication.translate("MainWindow", u"      Red", None))
-        self.btn_info_hardware_2.setText(QCoreApplication.translate("MainWindow", u"      Hardware", None))
-        self.btn_inf_so.setText(QCoreApplication.translate("MainWindow", u"      Sistema", None))
-        self.btn_inf_regional.setText(QCoreApplication.translate("MainWindow", u"      Regional", None))
+        self.btn_info_so.setText(QCoreApplication.translate("MainWindow", u"      Sistema", None))
+        self.btn_info_regional.setText(QCoreApplication.translate("MainWindow", u"      Regional", None))
 #if QT_CONFIG(shortcut)
-        self.btn_inf_regional.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+R", None))
+        self.btn_info_regional.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+R", None))
 #endif // QT_CONFIG(shortcut)
         self.btn_limpiar.setText(QCoreApplication.translate("MainWindow", u"      Limpiar", None))
         self.btn_config.setText(QCoreApplication.translate("MainWindow", u"  Configuraci\u00f3n", None))
         self.label_logo_tools.setText("")
-        self.label_inf_hw1.setText("")
-        self.label_inf_hw2.setText("")
-        self.label_inf_red.setText("")
-        self.label_inf_so.setText("")
-        self.label_inf_regional.setText("")
+        self.pie_arkinfo.setText(QCoreApplication.translate("MainWindow", u"\u00a9 2025 Arksoft Integradores de Sistemas, C.A. RIF: J310994692 - Todos los derechos reservados\n"
+"            Contacto: +58 424-3672111 | arksoft.sistemas@gmail.com", None))
+        self.label_info_hw.setText("")
+        self.label_info_hw2.setText("")
+        self.label_info_red.setText("")
+        self.label_info_so.setText("")
+        self.label_info_regional.setText("")
     # retranslateUi
 

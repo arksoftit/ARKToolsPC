@@ -481,7 +481,7 @@ QFrame {
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_5">
              <item>
-              <widget class="QPushButton" name="btn_inf_sistema">
+              <widget class="QPushButton" name="btn_info_sistema">
                <property name="minimumSize">
                 <size>
                  <width>170</width>
@@ -540,7 +540,7 @@ QPushButton:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_inf_mbd">
+              <widget class="QPushButton" name="btn_info_mbd">
                <property name="minimumSize">
                 <size>
                  <width>170</width>
@@ -588,7 +588,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/Motherboard01.svg</normaloff>imagen/Motherboard01.svg</iconset>
+                 <normaloff>imagen/mbd_01.svg</normaloff>imagen/mbd_01.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -599,7 +599,7 @@ QPushButton:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_inf_cpu">
+              <widget class="QPushButton" name="btn_info_cpu">
                <property name="minimumSize">
                 <size>
                  <width>170</width>
@@ -647,7 +647,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/fi-sr-cpu.svg</normaloff>imagen/fi-sr-cpu.svg</iconset>
+                 <normaloff>imagen/cpu01.svg</normaloff>imagen/cpu01.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -661,7 +661,7 @@ QPushButton:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_inf_gpu">
+              <widget class="QPushButton" name="btn_info_gpu">
                <property name="minimumSize">
                 <size>
                  <width>170</width>
@@ -720,7 +720,7 @@ QPushButton:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_inf_ram">
+              <widget class="QPushButton" name="btn_info_ram">
                <property name="minimumSize">
                 <size>
                  <width>170</width>
@@ -779,7 +779,7 @@ QPushButton:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_inf_hdd">
+              <widget class="QPushButton" name="btn_info_hdd">
                <property name="minimumSize">
                 <size>
                  <width>170</width>
@@ -838,7 +838,7 @@ QPushButton:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_inf_nic">
+              <widget class="QPushButton" name="btn_info_nic">
                <property name="minimumSize">
                 <size>
                  <width>170</width>
@@ -897,7 +897,7 @@ QPushButton:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_inf_audio">
+              <widget class="QPushButton" name="btn_info_audio">
                <property name="minimumSize">
                 <size>
                  <width>170</width>
@@ -956,7 +956,7 @@ QPushButton:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_inf_com">
+              <widget class="QPushButton" name="btn_info_com">
                <property name="minimumSize">
                 <size>
                  <width>170</width>
@@ -1015,7 +1015,7 @@ QPushButton:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_inf_usb">
+              <widget class="QPushButton" name="btn_info_usb">
                <property name="minimumSize">
                 <size>
                  <width>170</width>
@@ -1074,7 +1074,7 @@ QPushButton:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_inf_bth">
+              <widget class="QPushButton" name="btn_info_bth">
                <property name="minimumSize">
                 <size>
                  <width>170</width>
@@ -1317,54 +1317,7 @@ QPushButton:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_info_hardware_2">
-               <property name="styleSheet">
-                <string notr="true">/* Estilo base del botón */
-QPushButton {
-    background-color:qlineargradient(
-    spread:pad, 
-    x1:0, 
-    y1:0, 
-    x2:1, 
-    y2:0, 
-    stop:0 rgba(102, 178, 255, 255), 
-    stop:0.55 rgba(61, 148, 235, 255), 
-    stop:0.98 rgba(0, 0, 0, 255), 
-    stop:1 rgba(0, 0, 0, 0)
-);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: bold;
-}
-/* Estilo cuando el mouse pasa por encima */
-QPushButton:hover {
-    background-color: #0056b3;
-}
-/* Estilo cuando el botón es presionado */
-QPushButton:pressed {
-    background-color: #004085;
-}</string>
-               </property>
-               <property name="text">
-                <string>      Hardware</string>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>imagen/PC02.svg</normaloff>imagen/PC02.svg</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>35</width>
-                 <height>35</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="btn_inf_so">
+              <widget class="QPushButton" name="btn_info_so">
                <property name="styleSheet">
                 <string notr="true">/* Estilo base del botón */
 QPushButton {
@@ -1411,7 +1364,7 @@ QPushButton:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_inf_regional">
+              <widget class="QPushButton" name="btn_info_regional">
                <property name="styleSheet">
                 <string notr="true">/* Estilo base del botón */
 QPushButton {
@@ -1601,7 +1554,7 @@ QFrame {
 </string>
                </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>1</number>
                </property>
                <widget class="QWidget" name="page_inicio">
                 <property name="styleSheet">
@@ -1613,39 +1566,93 @@ QFrame {
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_6">
                  <item>
-                  <layout class="QVBoxLayout" name="Layout_logo_inicio">
-                   <item>
-                    <widget class="QLabel" name="label_logo_tools">
-                     <property name="minimumSize">
-                      <size>
-                       <width>120</width>
-                       <height>120</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>260</width>
-                       <height>260</height>
-                      </size>
-                     </property>
-                     <property name="layoutDirection">
-                      <enum>Qt::LayoutDirection::LeftToRight</enum>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="pixmap">
-                      <pixmap>imagen/ArkToolsPC_02.png</pixmap>
-                     </property>
-                     <property name="scaledContents">
-                      <bool>true</bool>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignmentFlag::AlignCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
+                  <widget class="QLabel" name="label_logo_tools">
+                   <property name="minimumSize">
+                    <size>
+                     <width>120</width>
+                     <height>120</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>260</width>
+                     <height>260</height>
+                    </size>
+                   </property>
+                   <property name="layoutDirection">
+                    <enum>Qt::LayoutDirection::LeftToRight</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Shadow::Sunken</enum>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap>imagen/ArkToolsPC_02.png</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>216</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="pie_arkinfo">
+                   <property name="minimumSize">
+                    <size>
+                     <width>40</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Consolas</family>
+                     <pointsize>9</pointsize>
+                     <italic>false</italic>
+                     <bold>false</bold>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Consolas&quot;;
+color: #000000; 
+background-color: #f0f0f0;</string>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Shadow::Sunken</enum>
+                   </property>
+                   <property name="text">
+                    <string>© 2025 Arksoft Integradores de Sistemas, C.A. RIF: J310994692 - Todos los derechos reservados
+            Contacto: +58 424-3672111 | arksoft.sistemas@gmail.com</string>
+                   </property>
+                   <property name="textFormat">
+                    <enum>Qt::TextFormat::PlainText</enum>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
                  </item>
                 </layout>
                </widget>
@@ -1657,37 +1664,39 @@ QFrame {
     }
 </string>
                 </property>
-                <widget class="QLabel" name="label_inf_hw1">
-                 <property name="geometry">
-                  <rect>
-                   <x>700</x>
-                   <y>470</y>
-                   <width>71</width>
-                   <height>61</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>40</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>80</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="pixmap">
-                  <pixmap>imagen/PC02.svg</pixmap>
-                 </property>
-                 <property name="scaledContents">
-                  <bool>true</bool>
-                 </property>
-                </widget>
+                <layout class="QVBoxLayout" name="verticalLayout_8">
+                 <item>
+                  <widget class="QTextEdit" name="textEdit_info_hw">
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Consolas&quot;;
+color: #000000; 
+background-color: #f0f0f0;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_info_hw">
+                   <property name="minimumSize">
+                    <size>
+                     <width>80</width>
+                     <height>80</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>80</width>
+                     <height>80</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
                <widget class="QWidget" name="page_inf_hardware_2">
                 <property name="styleSheet">
@@ -1697,37 +1706,42 @@ QFrame {
     }
 </string>
                 </property>
-                <widget class="QLabel" name="label_inf_hw2">
-                 <property name="geometry">
-                  <rect>
-                   <x>700</x>
-                   <y>470</y>
-                   <width>71</width>
-                   <height>61</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>40</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>80</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="pixmap">
-                  <pixmap>imagen/PC01.svg</pixmap>
-                 </property>
-                 <property name="scaledContents">
-                  <bool>true</bool>
-                 </property>
-                </widget>
+                <layout class="QVBoxLayout" name="verticalLayout_7">
+                 <item>
+                  <widget class="QTextEdit" name="textEdit_info_hw2">
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Consolas&quot;;
+color: #000000; 
+background-color: #f0f0f0;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_info_hw2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>40</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>80</width>
+                     <height>80</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap>imagen/PC01.svg</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
                <widget class="QWidget" name="page_inf_red">
                 <property name="styleSheet">
@@ -1737,47 +1751,45 @@ QFrame {
     }
 </string>
                 </property>
-                <widget class="QLabel" name="label_inf_red">
-                 <property name="geometry">
-                  <rect>
-                   <x>190</x>
-                   <y>470</y>
-                   <width>71</width>
-                   <height>61</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>40</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>80</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="pixmap">
-                  <pixmap>imagen/pcnetwork_102250.svg</pixmap>
-                 </property>
-                 <property name="scaledContents">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-                <widget class="QTextEdit" name="textEdit_info_red">
-                 <property name="geometry">
-                  <rect>
-                   <x>190</x>
-                   <y>20</y>
-                   <width>581</width>
-                   <height>441</height>
-                  </rect>
-                 </property>
-                </widget>
+                <layout class="QVBoxLayout" name="verticalLayout_9">
+                 <item>
+                  <widget class="QTextEdit" name="textEdit_info_red">
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Consolas&quot;;
+color: #000000; 
+background-color: #f0f0f0;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_info_red">
+                   <property name="minimumSize">
+                    <size>
+                     <width>40</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>80</width>
+                     <height>80</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap>imagen/Red01.svg</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
                <widget class="QWidget" name="page_inf_so">
                 <property name="styleSheet">
@@ -1787,37 +1799,45 @@ QFrame {
     }
 </string>
                 </property>
-                <widget class="QLabel" name="label_inf_so">
-                 <property name="geometry">
-                  <rect>
-                   <x>700</x>
-                   <y>470</y>
-                   <width>71</width>
-                   <height>61</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>40</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>80</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="pixmap">
-                  <pixmap>imagen/OS02.svg</pixmap>
-                 </property>
-                 <property name="scaledContents">
-                  <bool>true</bool>
-                 </property>
-                </widget>
+                <layout class="QVBoxLayout" name="verticalLayout_11">
+                 <item>
+                  <widget class="QTextEdit" name="textEdit_info_so">
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Consolas&quot;;
+color: #000000; 
+background-color: #f0f0f0;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_info_so">
+                   <property name="minimumSize">
+                    <size>
+                     <width>40</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>80</width>
+                     <height>80</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap>imagen/OS02.svg</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
                <widget class="QWidget" name="page_inf_regional">
                 <property name="styleSheet">
@@ -1827,37 +1847,45 @@ QFrame {
     }
 </string>
                 </property>
-                <widget class="QLabel" name="label_inf_regional">
-                 <property name="geometry">
-                  <rect>
-                   <x>700</x>
-                   <y>470</y>
-                   <width>71</width>
-                   <height>61</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>40</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>80</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="pixmap">
-                  <pixmap>imagen/Regional01.svg</pixmap>
-                 </property>
-                 <property name="scaledContents">
-                  <bool>true</bool>
-                 </property>
-                </widget>
+                <layout class="QVBoxLayout" name="verticalLayout_10">
+                 <item>
+                  <widget class="QTextEdit" name="textEdit_info_regional">
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Consolas&quot;;
+color: #000000; 
+background-color: #f0f0f0;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_info_regional">
+                   <property name="minimumSize">
+                    <size>
+                     <width>80</width>
+                     <height>80</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>80</width>
+                     <height>80</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap>imagen/filesettings_102180.svg</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </widget>
              </item>

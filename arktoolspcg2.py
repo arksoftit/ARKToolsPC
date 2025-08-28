@@ -1,28 +1,9 @@
 import sys
 from PySide6.QtWidgets import QMainWindow, QApplication, QSizeGrip
 from PySide6.QtCore import Qt, QPropertyAnimation, QEasingCurve, QPoint
+from PySide6.QtGui import QPixmap
 from ui_arktoolspcg2 import Ui_MainWindow
-
-# Importa las funciones de system_info.py (igual que en tu versión original)
-from system_info import (
-    get_system_info, 
-    get_cpu_info, 
-    get_ram_info, 
-    get_disk_info,
-    get_gpu_info, 
-    get_motherboard_info, 
-    get_network_info,
-    get_nic_info, 
-    get_audio_devices, 
-    get_com_ports,
-    get_usb_devices, 
-    get_bluetooth_devices, 
-    get_os_info,
-    get_regional_settings,
-    set_regional_settings,
-    show_current_datetime,
-    show_regional_and_datetime    
-)
+import system_info 
 
 class MiApp(QMainWindow):
     def __init__(self):
@@ -59,15 +40,38 @@ class MiApp(QMainWindow):
         self.ui.btn_info_hardware.clicked.connect(self.toggle_sub_hardware_menu)
         # Conectar el botón de red
         self.ui.btn_info_red.clicked.connect(self.mostrar_info_red)
-        self.ui.btn_inf_so.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_so))
-        self.ui.btn_inf_regional.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_regional))
-        self.ui.btn_regresar_menu.clicked.connect(self.volver_menu_principal)
-        
+        # Conectar el botón de Sistema
+        self.ui.btn_info_so.clicked.connect(self.mostrar_info_os)
+        # Conectar el botón de Configuración Regional
+        self.ui.btn_info_regional.clicked.connect(self.mostrar_info_regional)
+        # Conectar el botón de Placa Base (Motherboard)
+        self.ui.btn_info_mbd.clicked.connect(self.mostrar_info_mbd)
+        # Conectar el botón de CPU
+        self.ui.btn_info_cpu.clicked.connect(self.mostrar_info_cpu_hw)
+        # Conectar el botón de GPU
+        self.ui.btn_info_gpu.clicked.connect(self.mostrar_info_gpu)
+        # Conectar el botón de RAM
+        self.ui.btn_info_ram.clicked.connect(self.mostrar_info_ram)
+        # Conectar el botón de HDD
+        self.ui.btn_info_hdd.clicked.connect(self.mostrar_info_hdd)
+        # Conectar el botón de NIC
+        self.ui.btn_info_nic.clicked.connect(self.mostrar_info_nic)
+        # Conectar el botón de COM
+        self.ui.btn_info_com.clicked.connect(self.mostrar_info_com)
+        # Conectar el botón de Bluetooth
+        self.ui.btn_info_bth.clicked.connect(self.mostrar_info_bth)
+        # Conectar el botón de Audio
+        self.ui.btn_info_audio.clicked.connect(self.mostrar_info_audio)
+        # Conectar el botón de Sistema General
+        self.ui.btn_info_sistema.clicked.connect(self.mostrar_info_sistema_gen)
+        # Conectar el botón de USB
+        self.ui.btn_info_usb.clicked.connect(self.mostrar_info_usb)
+        # Mostrar la página de inicio al iniciar la aplicación        
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_inicio)
-        # Puedes añadir conexiones para otros botones aquí, como el de limpiar o el de configuración.
-        # Por ejemplo:
-        # self.ui.btn_limpiar.clicked.connect(...)
-        # self.ui.btn_config.clicked.connect(...)
+        # Conectar el botón de limpiar textos
+        self.ui.btn_limpiar.clicked.connect(self.limpiar_textos)
+        # Conectar el botón de regresar al menú principal
+        self.ui.btn_regresar_menu.clicked.connect(self.volver_menu_principal)
 
     def control_bt_minimizar(self):
         self.showMinimized()
@@ -158,9 +162,24 @@ class MiApp(QMainWindow):
         else:
             self.showNormal()
     
+    def limpiar_textos(self):
+        """
+        Limpia el contenido de todos los QTextEdit en las páginas relevantes.
+        """
+        self.ui.textEdit_info_red.clear()
+        self.ui.textEdit_info_so.clear()
+        self.ui.textEdit_info_regional.clear()
+        self.ui.textEdit_info_hw.clear()
+        self.ui.textEdit_info_hw2.clear()
+        
+        # Vuelve a la página de inicio
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inicio)
+    
+    # ------------------ MOSTRAR INFORMACIÓN DE RED ------------------
+    
     def mostrar_info_red(self):
         # Llama a la función del módulo system_info para obtener los datos
-        info_red = get_network_info()
+        info_red = system_info.get_network_info()
 
         # Actualiza el QTextEdit con la información
         # Asegúrate de que tu QTextEdit se llame 'textEdit_info_red' en tu UI
@@ -168,6 +187,140 @@ class MiApp(QMainWindow):
         
         # Finalmente, cambia al QWidget correspondiente a la página de red
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_red)
+        
+    # ------------------ MOSTRAR INFORMACIÓN DEL SISTEMA OPERATIVO ------------------
+    
+    def mostrar_info_os(self):
+        # Llama a la función del módulo system_info
+        info_os = system_info.get_os_info()
+
+        # Actualiza el QTextEdit con la información
+        # Asegúrate de que tu QTextEdit se llame 'textEdit_info_os' en tu UI
+        self.ui.textEdit_info_so.setText(info_os)
+        
+        # Finalmente, cambia al QWidget correspondiente a la página del SO
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_so)
+
+    # ------------------ MOSTRAR INFORMACIÓN REGIONAL ------------------
+
+    def mostrar_info_regional(self):
+        # Llama a la función del módulo system_info
+        info_regional = system_info.get_regional_settings()
+
+        # Actualiza el QTextEdit con la información
+        # Asegúrate de que tu QTextEdit se llame 'textEdit_info_regional' en tu UI
+        self.ui.textEdit_info_regional.setText(info_regional)
+
+        # Finalmente, cambia al QWidget correspondiente a la página de configuración regional
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_regional)
+    
+    def mostrar_info_mbd(self):
+        """
+        Muestra la información de la placa base en textEdit_info_hw y cambia la imagen.
+        """
+        # 1. Limpia el textEdit
+        self.ui.textEdit_info_hw.clear()
+
+        # 2. Carga y cambia la imagen del label 
+        pixmap_mbd = QPixmap("imagen/mbd_02.png")
+        self.ui.label_info_hw.setPixmap(pixmap_mbd)
+
+        # 3. Obtiene y muestra la información
+        info_mbd = system_info.get_motherboard_info()
+        self.ui.textEdit_info_hw.setText(info_mbd)
+        
+        # 4. Cambia a la página del hardware 
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
+
+    def mostrar_info_cpu_hw(self):
+        """
+        Muestra la información de la CPU en textEdit_info_hw y cambia la imagen.
+        """
+        # 1. Limpia el textEdit
+        self.ui.textEdit_info_hw.clear()
+
+        # 2. Carga y cambia la imagen del label 
+        pixmap_cpu = QPixmap("imagen/cpu02.svg")
+        self.ui.label_info_hw.setPixmap(pixmap_cpu)
+
+        # 3. Obtiene y muestra la información
+        info_cpu = system_info.get_cpu_info()
+        self.ui.textEdit_info_hw.setText(info_cpu)
+        
+        # 4. Cambia a la página del hardware
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
+    
+    def mostrar_info_gpu(self):
+        self.ui.textEdit_info_hw.clear()
+        pixmap_gpu = QPixmap("imagen/Grafica01.svg")
+        self.ui.label_info_hw.setPixmap(pixmap_gpu)
+        info_gpu = system_info.get_gpu_info()
+        self.ui.textEdit_info_hw.setText(info_gpu)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
+
+    def mostrar_info_ram(self):
+        self.ui.textEdit_info_hw.clear()
+        pixmap_ram = QPixmap("imagen/Ram01.svg")
+        self.ui.label_info_hw.setPixmap(pixmap_ram)
+        info_ram = system_info.get_ram_info()
+        self.ui.textEdit_info_hw.setText(info_ram)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
+
+    def mostrar_info_hdd(self):
+        self.ui.textEdit_info_hw.clear()
+        pixmap_hdd = QPixmap("imagen/hdd03.svg")
+        self.ui.label_info_hw.setPixmap(pixmap_hdd)
+        info_hdd = system_info.get_disk_info()
+        self.ui.textEdit_info_hw.setText(info_hdd)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
+    def mostrar_info_nic(self):
+        self.ui.textEdit_info_hw.clear()
+        pixmap_nic = QPixmap("imagen/nic01.svg")
+        self.ui.label_info_hw.setPixmap(pixmap_nic)
+        info_nic = system_info.get_nic_info()
+        self.ui.textEdit_info_hw.setText(info_nic)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
+
+    def mostrar_info_com(self):
+        self.ui.textEdit_info_hw.clear()
+        pixmap_com = QPixmap("imagen/com02.svg")
+        self.ui.label_info_hw.setPixmap(pixmap_com)
+        info_com = system_info.get_com_ports()
+        self.ui.textEdit_info_hw.setText(info_com)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
+        
+    def mostrar_info_bth(self):
+        self.ui.textEdit_info_hw.clear()
+        pixmap_bth = QPixmap("imagen/bluetooth02.svg")
+        self.ui.label_info_hw.setPixmap(pixmap_bth)
+        info_bth = system_info.get_bluetooth_devices()
+        self.ui.textEdit_info_hw.setText(info_bth)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
+
+    def mostrar_info_audio(self):
+        self.ui.textEdit_info_hw.clear()
+        pixmap_audio = QPixmap("imagen/audio01.svg")
+        self.ui.label_info_hw.setPixmap(pixmap_audio)
+        info_audio = system_info.get_audio_devices()
+        self.ui.textEdit_info_hw.setText(info_audio)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
+
+    def mostrar_info_sistema_gen(self):
+        self.ui.textEdit_info_hw.clear()
+        pixmap_sistema = QPixmap("imagen/sys01.svg")
+        self.ui.label_info_hw.setPixmap(pixmap_sistema)
+        info_sistema = system_info.get_system_info()
+        self.ui.textEdit_info_hw.setText(info_sistema)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
+        
+    def mostrar_info_usb(self):
+        self.ui.textEdit_info_hw.clear()
+        pixmap_usb = QPixmap("imagen/usb03.svg")
+        self.ui.label_info_hw.setPixmap(pixmap_usb)
+        info_usb = system_info.get_usb_devices()
+        self.ui.textEdit_info_hw.setText(info_usb)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
+    
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

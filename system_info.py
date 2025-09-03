@@ -504,63 +504,61 @@ def get_regional_settings():
         
 def set_regional_settings():
     """
-    Establece la configuración regional del sistema en el Registro de Windows
+    Establece la configuración regional del sistema en el Registro de Windows y retorna un mensaje.
     """
     import winreg
-
+    info_str = ""
     key_path = r"Control Panel\International"
     try:
-        # Abrir la clave del Registro con permisos de escritura
         key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, key_path, 0, winreg.KEY_SET_VALUE)
-
-        # Cambiar valores
         winreg.SetValueEx(key, "sDecimal", 0, winreg.REG_SZ, ".")
         winreg.SetValueEx(key, "sThousand", 0, winreg.REG_SZ, ",")
         winreg.SetValueEx(key, "sMonDecimalSep", 0, winreg.REG_SZ, ".")
         winreg.SetValueEx(key, "sMonThousandSep", 0, winreg.REG_SZ, ",")
         winreg.SetValueEx(key, "sShortDate", 0, winreg.REG_SZ, "dd/MM/yyyy")
-        winreg.SetValueEx(key, "sTimeFormat", 0, winreg.REG_SZ, "hh:mm")       # Formato de hora 24 horas
-        winreg.SetValueEx(key, "sCurrency", 0, winreg.REG_SZ, "Bs.")           # Símbolo de moneda
-
-        print("✅ Configuración regional actualizada correctamente.")
+        winreg.SetValueEx(key, "sTimeFormat", 0, winreg.REG_SZ, "hh:mm")
+        winreg.SetValueEx(key, "sCurrency", 0, winreg.REG_SZ, "Bs.")
+        info_str = "✅ Configuración regional actualizada correctamente."
         winreg.CloseKey(key)
 
     except Exception as e:
-        print(f"❌ Error al modificar configuración regional: {e}")
+        info_str = f"❌ Error al modificar configuración regional: {e}"
+    
+    return info_str
 
-def show_regional_and_datetime():
-    """
-    Muestra primero la configuración regional actual y luego un ejemplo de fecha/hora formateada.
-    Ideal para verificar los efectos de un cambio regional.
-    """
-    get_regional_settings()
-    show_current_datetime()
+    
+    return info_str
 
 def show_current_datetime():
     """
-    Muestra la fecha y hora actual usando formatos del sistema (locale)
-    para verificar si los cambios regionales surtieron efecto.
+    Obtiene y retorna la fecha y hora actual usando formatos del sistema (locale).
     """
     import time
     import locale
-
-    print(f"\n=== FECHA Y HORA ACTUAL SEGÚN EL LOCALE DEL SISTEMA ===\n")
-
+    info_str = "\n=== FECHA Y HORA ACTUAL SEGÚN EL LOCALE DEL SISTEMA ===\n\n"
     try:
-        # Forzar recarga del locale actual del sistema
-        locale.setlocale(locale.LC_ALL, '')  # Usa el locale predeterminado del sistema
+        locale.setlocale(locale.LC_ALL, '')
+        fecha_local = time.strftime("%x")
+        hora_local = time.strftime("%X")
+        fecha_hora_local = time.strftime("%c")
 
-        # Formatos que DEBERÍAN verse afectados por el cambio en el registro
-        fecha_local = time.strftime("%x")   # Fecha local (lo que más importa)
-        hora_local = time.strftime("%X")    # Hora local
-        fecha_hora_local = time.strftime("%c")  # Fecha y hora completa local
-
-        print(f"Fecha local (%x): {fecha_local}")
-        print(f"Hora local (%X): {hora_local}")
-        print(f"Fecha/hora completa (%c): {fecha_hora_local}")
+        info_str += f"Fecha local (%x): {fecha_local}\n"
+        info_str += f"Hora local (%X): {hora_local}\n"
+        info_str += f"Fecha/hora completa (%c): {fecha_hora_local}\n"
 
     except Exception as e:
-        print(f"Error al obtener formato local: {e}")
+        info_str += f"Error al obtener formato local: {e}"
 
-    print("-" * 50)
-    print("Este ejemplo muestra CÓMO EL SISTEMA interpreta los formatos tras el cambio regional.")
+    info_str += "-" * 50 + "\n"
+    info_str += "Este ejemplo muestra CÓMO EL SISTEMA interpreta los formatos tras el cambio regional."
+    return info_str
+    
+# Regional and Datetime
+
+def show_regional_and_datetime():
+    """
+    Combina la información de la configuración regional y la fecha/hora actual en un solo texto.
+    """
+    info_regional = get_regional_settings()
+    info_datetime = show_current_datetime()
+    return info_regional + info_datetime

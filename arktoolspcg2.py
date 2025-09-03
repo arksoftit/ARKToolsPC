@@ -1,10 +1,16 @@
 import sys
-from PySide6.QtWidgets import QMainWindow, QApplication, QSizeGrip
+from PySide6.QtWidgets import QMainWindow, QApplication, QSizeGrip, QMessageBox
 from PySide6.QtCore import Qt, QPropertyAnimation, QEasingCurve, QPoint
 from PySide6.QtGui import QPixmap
 from ui_arktoolspcg2 import Ui_MainWindow
-import system_info 
+import system_info
+import logging
 
+logging.basicConfig(
+    filename="app.log",
+    level=logging.DEBUG,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
 class MiApp(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -72,6 +78,13 @@ class MiApp(QMainWindow):
         self.ui.btn_limpiar.clicked.connect(self.limpiar_textos)
         # Conectar el botón de regresar al menú principal
         self.ui.btn_regresar_menu.clicked.connect(self.volver_menu_principal)
+        # Conectar el botón de Configuración
+        self.ui.btn_config.clicked.connect(self.mostrar_inf_config)
+        # Conectar el botón de Configuración Regional
+        self.ui.btn_cambio_regional.clicked.connect(self.aplicar_config_regional)
+        # Conectar el botón de Herramientas
+        #self.ui.btn_config_tools.clicked.connect(self.mostrar_info_regional)
+        
 
     def control_bt_minimizar(self):
         self.showMinimized()
@@ -85,6 +98,44 @@ class MiApp(QMainWindow):
         self.showMaximized()
         self.ui.btn_maximizar.hide()
         self.ui.btn_restaurar.show()
+
+    # ------------------ MOSTRAR MENSAJE DE CONFIRMACIÓN ------------------
+    def show_notification(self, title, message, is_error=False):
+        """
+        Muestra un mensaje informativo o de error al usuario.
+        """
+        msg = QMessageBox(self)
+        msg.setWindowTitle(title)
+        msg.setText(message)
+
+        if is_error:
+            msg.setIcon(QMessageBox.Icon.Critical)
+            msg.setStandardButtons(QMessageBox.StandardButton.Ok)
+        else:
+            msg.setIcon(QMessageBox.Icon.Information)
+            msg.setStandardButtons(QMessageBox.StandardButton.Ok)
+
+        msg.exec()
+
+    def confirm_action(self, title, message, action):
+        """
+        Muestra un mensaje de confirmación antes de ejecutar una acción.
+        """
+        msg = QMessageBox(self)
+        msg.setIcon(QMessageBox.Icon.Question)
+        msg.setWindowTitle(title)
+        msg.setText(message)
+        msg.setStandardButtons(
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
+        )
+        msg.setDefaultButton(QMessageBox.StandardButton.No)
+
+        response = msg.exec()
+        if response == QMessageBox.StandardButton.Yes:
+            try:
+                action()  # Ejecutar la función pasada como parámetro
+            except Exception as e:
+                self.show_notification("Error", f"No se pudo aplicar la configuración: {e}", is_error=True)
 
     # ------------------ MOSTRAR MENÚ DE HARDWARE ------------------
     def mover_menu(self):
@@ -170,7 +221,7 @@ class MiApp(QMainWindow):
         self.ui.textEdit_info_so.clear()
         self.ui.textEdit_info_regional.clear()
         self.ui.textEdit_info_hw.clear()
-        self.ui.textEdit_info_hw2.clear()
+        self.ui.textEdit_info_config.clear()
         
         # Vuelve a la página de inicio
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_inicio)
@@ -178,76 +229,53 @@ class MiApp(QMainWindow):
     # ------------------ MOSTRAR INFORMACIÓN DE RED ------------------
     
     def mostrar_info_red(self):
-        # Llama a la función del módulo system_info para obtener los datos
+        """
+        Muestra la información de la Red en textEdit_info_hw y cambia la imagen.
+        """
         info_red = system_info.get_network_info()
-
-        # Actualiza el QTextEdit con la información
-        # Asegúrate de que tu QTextEdit se llame 'textEdit_info_red' en tu UI
         self.ui.textEdit_info_red.setText(info_red)
-        
-        # Finalmente, cambia al QWidget correspondiente a la página de red
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_red)
         
     # ------------------ MOSTRAR INFORMACIÓN DEL SISTEMA OPERATIVO ------------------
     
     def mostrar_info_os(self):
-        # Llama a la función del módulo system_info
+        """
+        Muestra la información del Sistema Operativo en textEdit_info_hw y cambia la imagen.
+        """
         info_os = system_info.get_os_info()
-
-        # Actualiza el QTextEdit con la información
-        # Asegúrate de que tu QTextEdit se llame 'textEdit_info_os' en tu UI
         self.ui.textEdit_info_so.setText(info_os)
-        
-        # Finalmente, cambia al QWidget correspondiente a la página del SO
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_so)
 
     # ------------------ MOSTRAR INFORMACIÓN REGIONAL ------------------
 
     def mostrar_info_regional(self):
-        # Llama a la función del módulo system_info
+        """
+        Muestra la información Regional en textEdit_info_hw y cambia la imagen.
+        """
         info_regional = system_info.get_regional_settings()
-
-        # Actualiza el QTextEdit con la información
-        # Asegúrate de que tu QTextEdit se llame 'textEdit_info_regional' en tu UI
         self.ui.textEdit_info_regional.setText(info_regional)
-
-        # Finalmente, cambia al QWidget correspondiente a la página de configuración regional
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_regional)
     
     def mostrar_info_mbd(self):
         """
         Muestra la información de la placa base en textEdit_info_hw y cambia la imagen.
         """
-        # 1. Limpia el textEdit
         self.ui.textEdit_info_hw.clear()
-
-        # 2. Carga y cambia la imagen del label 
         pixmap_mbd = QPixmap("imagen/mbd_02.png")
         self.ui.label_info_hw.setPixmap(pixmap_mbd)
-
-        # 3. Obtiene y muestra la información
         info_mbd = system_info.get_motherboard_info()
         self.ui.textEdit_info_hw.setText(info_mbd)
-        
-        # 4. Cambia a la página del hardware 
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
 
     def mostrar_info_cpu_hw(self):
         """
         Muestra la información de la CPU en textEdit_info_hw y cambia la imagen.
         """
-        # 1. Limpia el textEdit
         self.ui.textEdit_info_hw.clear()
-
-        # 2. Carga y cambia la imagen del label 
         pixmap_cpu = QPixmap("imagen/cpu02.svg")
         self.ui.label_info_hw.setPixmap(pixmap_cpu)
-
-        # 3. Obtiene y muestra la información
         info_cpu = system_info.get_cpu_info()
         self.ui.textEdit_info_hw.setText(info_cpu)
-        
-        # 4. Cambia a la página del hardware
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
     
     def mostrar_info_gpu(self):
@@ -273,6 +301,7 @@ class MiApp(QMainWindow):
         info_hdd = system_info.get_disk_info()
         self.ui.textEdit_info_hw.setText(info_hdd)
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
+        
     def mostrar_info_nic(self):
         self.ui.textEdit_info_hw.clear()
         pixmap_nic = QPixmap("imagen/nic01.svg")
@@ -320,6 +349,73 @@ class MiApp(QMainWindow):
         info_usb = system_info.get_usb_devices()
         self.ui.textEdit_info_hw.setText(info_usb)
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
+    
+    def mostrar_inf_config(self):
+        """
+        Muestra la página de configuración del sistema.
+        """
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_config)
+        
+    def aplicar_config_regional(self):
+        """
+        Llama al método de confirmación antes de aplicar la configuración regional.
+        """
+        logging.info("Se ha solicitado cambiar la configuración regional.")
+        # Define una función anónima (lambda) para la acción.
+        # Esta es la función que confirm_action ejecutará si el usuario dice "Sí".
+        accion_a_ejecutar = lambda: self.ejecutar_cambios_y_notificar()
+        
+        # Llama a la función de confirmación, pasando el mensaje y la acción
+        self.confirm_action(
+            "Confirmar Configuración",
+            "¿Estás seguro de que quieres aplicar la nueva configuración regional? Esto puede requerir reiniciar algunas aplicaciones para que los cambios surtan efecto.",
+            accion_a_ejecutar
+        )
+
+    def ejecutar_cambios_y_notificar(self):
+        """
+        Esta función realiza los cambios y notifica el resultado.
+        Es llamada por confirm_action después de que el usuario confirma.
+        """
+        try:
+            logging.info("Iniciando proceso de cambio de configuración regional.")
+            
+            # Limpiar el área de texto inicialmente
+            self.ui.textEdit_info_config.clear()
+            self.ui.textEdit_info_config.setText("Aplicando la configuración regional. Por favor, espera...")
+            
+            # Aplicar los cambios regionales
+            resultado = system_info.set_regional_settings()
+            
+            # Concatenar el resultado al contenido existente
+            contenido_actual = self.ui.textEdit_info_config.toPlainText()
+            nuevo_contenido = f"{contenido_actual}\n{resultado}"
+            
+            # Agregar mensajes adicionales si la operación fue exitosa
+            if "✅" in resultado:
+                advertencia_permisos = (
+                    "\n\n⚠️ ADVERTENCIA: La modificación del Registro requiere permisos elevados. "
+                    "Asegúrate de que la aplicación se ejecute como administrador para evitar errores."
+                )
+                mensaje_reinicio = (
+                    "\n\nℹ️ INFORMACIÓN: Algunos cambios en la configuración regional pueden requerir reiniciar "
+                    "aplicaciones o incluso el sistema para que surtan efecto."
+                )
+                nuevo_contenido += advertencia_permisos + mensaje_reinicio
+                
+                logging.info("Configuración regional actualizada correctamente.")
+                self.show_notification("Éxito", "La configuración regional ha sido actualizada correctamente.")
+            else:
+                logging.error(f"Error al actualizar la configuración regional: {resultado}")
+                self.show_notification("Error", "Ocurrió un error al actualizar la configuración.", is_error=True)
+            
+            # Actualizar el contenido del QTextEdit
+            self.ui.textEdit_info_config.setText(nuevo_contenido)
+        
+        except Exception as e:
+            logging.error(f"Excepción no manejada: {e}")
+            self.show_notification("Error", f"Ocurrió un error inesperado: {e}", is_error=True)
+    
     
 
 if __name__ == "__main__":

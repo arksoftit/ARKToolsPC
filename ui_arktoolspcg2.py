@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'arktoolspcg2gQeJkB.ui'
+## Form generated from reading UI file 'arktoolspcg2PFzZhD.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.1
+## Created by: Qt User Interface Compiler version 6.9.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -673,7 +673,7 @@ class Ui_MainWindow(object):
 "    background-color: #004085;\n"
 "}")
         icon15 = QIcon()
-        icon15.addFile(u"imagen/fi-sr-bluetooth-alt.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon15.addFile(u"imagen/bluetootht.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_info_bth.setIcon(icon15)
         self.btn_info_bth.setIconSize(QSize(28, 28))
 
@@ -1052,33 +1052,134 @@ class Ui_MainWindow(object):
         self.verticalLayout_8.addWidget(self.label_info_hw)
 
         self.stackedWidget.addWidget(self.page_inf_hardware)
-        self.page_inf_hardware_2 = QWidget()
-        self.page_inf_hardware_2.setObjectName(u"page_inf_hardware_2")
-        self.page_inf_hardware_2.setStyleSheet(u"/* Estilo del marco */\n"
+        self.page_inf_config = QWidget()
+        self.page_inf_config.setObjectName(u"page_inf_config")
+        self.page_inf_config.setStyleSheet(u"/* Estilo del marco */\n"
 "QFrame {\n"
 "    background-color: #F8F9FA;\n"
 "    }\n"
 "")
-        self.verticalLayout_7 = QVBoxLayout(self.page_inf_hardware_2)
+        self.verticalLayout_7 = QVBoxLayout(self.page_inf_config)
+        self.verticalLayout_7.setSpacing(0)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.textEdit_info_hw2 = QTextEdit(self.page_inf_hardware_2)
-        self.textEdit_info_hw2.setObjectName(u"textEdit_info_hw2")
-        self.textEdit_info_hw2.setStyleSheet(u"font: 9pt \"Consolas\";\n"
+        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.frame_config = QFrame(self.page_inf_config)
+        self.frame_config.setObjectName(u"frame_config")
+        self.frame_config.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_config.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout_3 = QHBoxLayout(self.frame_config)
+        self.horizontalLayout_3.setSpacing(0)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.frame_btns_config = QFrame(self.frame_config)
+        self.frame_btns_config.setObjectName(u"frame_btns_config")
+        self.frame_btns_config.setMinimumSize(QSize(200, 0))
+        self.frame_btns_config.setMaximumSize(QSize(200, 16777215))
+        self.frame_btns_config.setStyleSheet(u"/* Estilo del marco */\n"
+"QFrame {\n"
+"    background-color: rgb(85, 170, 255);\n"
+"   \n"
+"}")
+        self.frame_btns_config.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_btns_config.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_12 = QVBoxLayout(self.frame_btns_config)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.btn_cambio_regional = QPushButton(self.frame_btns_config)
+        self.btn_cambio_regional.setObjectName(u"btn_cambio_regional")
+        self.btn_cambio_regional.setMinimumSize(QSize(170, 90))
+        self.btn_cambio_regional.setMaximumSize(QSize(170, 90))
+        font2 = QFont()
+        font2.setBold(True)
+        self.btn_cambio_regional.setFont(font2)
+        self.btn_cambio_regional.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+"QPushButton {\n"
+"    background-color: #007BFF;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 10px; /* Un padding uniforme puede ayudar a centrarlo */\n"
+"    font-size: 14px;\n"
+"    font-weight: bold;\n"
+"    text-align: center; /* Justifica el texto al centro */\n"
+"}\n"
+"\n"
+"/* Estilo cuando el mouse pasa por encima */\n"
+"QPushButton:hover {\n"
+"    background-color: #0056b3;\n"
+"}\n"
+"\n"
+"/* Estilo cuando el bot\u00f3n es presionado */\n"
+"QPushButton:pressed {\n"
+"    background-color: #004085;\n"
+"}")
+        icon22 = QIcon()
+        icon22.addFile(u"imagen/Regional01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_cambio_regional.setIcon(icon22)
+        self.btn_cambio_regional.setIconSize(QSize(35, 35))
+
+        self.verticalLayout_12.addWidget(self.btn_cambio_regional)
+
+        self.btn_config_tools = QPushButton(self.frame_btns_config)
+        self.btn_config_tools.setObjectName(u"btn_config_tools")
+        self.btn_config_tools.setMinimumSize(QSize(170, 90))
+        self.btn_config_tools.setMaximumSize(QSize(170, 90))
+        self.btn_config_tools.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+"QPushButton {\n"
+"    background-color: #007BFF;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 10px 20px;\n"
+"    font-size: 14px;\n"
+"    font-weight: bold;\n"
+"}\n"
+"/* Estilo cuando el mouse pasa por encima */\n"
+"QPushButton:hover {\n"
+"    background-color: #0056b3;\n"
+"}\n"
+"/* Estilo cuando el bot\u00f3n es presionado */\n"
+"QPushButton:pressed {\n"
+"    background-color: #004085;\n"
+"}\n"
+"")
+        icon23 = QIcon()
+        icon23.addFile(u"imagen/filesettings_102180.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_config_tools.setIcon(icon23)
+        self.btn_config_tools.setIconSize(QSize(35, 35))
+
+        self.verticalLayout_12.addWidget(self.btn_config_tools)
+
+
+        self.horizontalLayout_3.addWidget(self.frame_btns_config)
+
+        self.textEdit_info_config = QTextEdit(self.frame_config)
+        self.textEdit_info_config.setObjectName(u"textEdit_info_config")
+        self.textEdit_info_config.setStyleSheet(u"font: 9pt \"Consolas\";\n"
 "color: #000000; \n"
-"background-color: #f0f0f0;")
+"background-color: rgb(170, 170, 127);")
 
-        self.verticalLayout_7.addWidget(self.textEdit_info_hw2)
+        self.horizontalLayout_3.addWidget(self.textEdit_info_config)
 
-        self.label_info_hw2 = QLabel(self.page_inf_hardware_2)
-        self.label_info_hw2.setObjectName(u"label_info_hw2")
-        self.label_info_hw2.setMinimumSize(QSize(40, 40))
-        self.label_info_hw2.setMaximumSize(QSize(80, 80))
-        self.label_info_hw2.setPixmap(QPixmap(u"imagen/PC01.svg"))
-        self.label_info_hw2.setScaledContents(True)
 
-        self.verticalLayout_7.addWidget(self.label_info_hw2)
+        self.verticalLayout_7.addWidget(self.frame_config)
 
-        self.stackedWidget.addWidget(self.page_inf_hardware_2)
+        self.frame_pie_config = QFrame(self.page_inf_config)
+        self.frame_pie_config.setObjectName(u"frame_pie_config")
+        self.frame_pie_config.setMinimumSize(QSize(0, 85))
+        self.frame_pie_config.setMaximumSize(QSize(16777215, 85))
+        self.frame_pie_config.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_pie_config.setFrameShadow(QFrame.Shadow.Raised)
+        self.label_info_config = QLabel(self.frame_pie_config)
+        self.label_info_config.setObjectName(u"label_info_config")
+        self.label_info_config.setGeometry(QRect(0, 0, 80, 80))
+        self.label_info_config.setMinimumSize(QSize(40, 40))
+        self.label_info_config.setMaximumSize(QSize(80, 80))
+        self.label_info_config.setPixmap(QPixmap(u"imagen/confi01.svg"))
+        self.label_info_config.setScaledContents(True)
+
+        self.verticalLayout_7.addWidget(self.frame_pie_config)
+
+        self.stackedWidget.addWidget(self.page_inf_config)
         self.page_inf_red = QWidget()
         self.page_inf_red.setObjectName(u"page_inf_red")
         self.page_inf_red.setStyleSheet(u"/* Estilo del marco */\n"
@@ -1179,7 +1280,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1223,7 +1324,13 @@ class Ui_MainWindow(object):
         self.pie_arkinfo.setText(QCoreApplication.translate("MainWindow", u"\u00a9 2025 Arksoft Integradores de Sistemas, C.A. RIF: J310994692 - Todos los derechos reservados\n"
 "            Contacto: +58 424-3672111 | arksoft.sistemas@gmail.com", None))
         self.label_info_hw.setText("")
-        self.label_info_hw2.setText("")
+        self.btn_cambio_regional.setText(QCoreApplication.translate("MainWindow", u"Cambiar \n"
+"Configuraci\u00f3n \n"
+"Regional", None))
+        self.btn_config_tools.setText(QCoreApplication.translate("MainWindow", u"Consultar\n"
+"Configuraci\u00f3n\n"
+"Actual", None))
+        self.label_info_config.setText("")
         self.label_info_red.setText("")
         self.label_info_so.setText("")
         self.label_info_regional.setText("")

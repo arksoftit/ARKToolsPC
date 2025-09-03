@@ -148,7 +148,7 @@ QPushButton:pressed {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>imagen/fi-sr-rectangle-list.svg</normaloff>imagen/fi-sr-rectangle-list.svg</iconset>
+              <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-rectangle-list.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-rectangle-list.svg</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -218,7 +218,7 @@ QPushButton:pressed {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>imagen/fi-sr-arrow-down-left.svg</normaloff>imagen/fi-sr-arrow-down-left.svg</iconset>
+              <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-arrow-down-left.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-arrow-down-left.svg</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -275,7 +275,7 @@ QPushButton:pressed {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>imagen/fi-sr-expand.svg</normaloff>imagen/fi-sr-expand.svg</iconset>
+              <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-expand.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-expand.svg</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -332,7 +332,7 @@ QPushButton:pressed {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>imagen/fi-sr-expand-arrows.svg</normaloff>imagen/fi-sr-expand-arrows.svg</iconset>
+              <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-expand-arrows.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-expand-arrows.svg</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -389,7 +389,7 @@ QPushButton:pressed {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>imagen/fi-sr-cross-small.svg</normaloff>imagen/fi-sr-cross-small.svg</iconset>
+              <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-cross-small.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-cross-small.svg</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -529,7 +529,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/fi-sr-settings.svg</normaloff>imagen/fi-sr-settings.svg</iconset>
+                 <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-settings.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-settings.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -588,7 +588,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/mbd_01.svg</normaloff>imagen/mbd_01.svg</iconset>
+                 <normaloff>C:/Users/juanep/.designer/backup/imagen/mbd_01.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/mbd_01.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -647,7 +647,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/cpu01.svg</normaloff>imagen/cpu01.svg</iconset>
+                 <normaloff>C:/Users/juanep/.designer/backup/imagen/cpu01.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/cpu01.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -709,7 +709,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/Grafica01.svg</normaloff>imagen/Grafica01.svg</iconset>
+                 <normaloff>C:/Users/juanep/.designer/backup/imagen/Grafica01.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/Grafica01.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -768,7 +768,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/RAM.svg</normaloff>imagen/RAM.svg</iconset>
+                 <normaloff>C:/Users/juanep/.designer/backup/imagen/RAM.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/RAM.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -827,7 +827,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/hdd2.svg</normaloff>imagen/hdd2.svg</iconset>
+                 <normaloff>C:/Users/juanep/.designer/backup/imagen/hdd2.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/hdd2.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -886,7 +886,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/Red01.svg</normaloff>imagen/Red01.svg</iconset>
+                 <normaloff>C:/Users/juanep/.designer/backup/imagen/Red01.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/Red01.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -945,7 +945,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/fi-sr-foreign-language-audio.svg</normaloff>imagen/fi-sr-foreign-language-audio.svg</iconset>
+                 <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-foreign-language-audio.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-foreign-language-audio.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1004,7 +1004,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/hdd.svg</normaloff>imagen/hdd.svg</iconset>
+                 <normaloff>C:/Users/juanep/.designer/backup/imagen/hdd.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/hdd.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1063,7 +1063,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/usb1.svg</normaloff>imagen/usb1.svg</iconset>
+                 <normaloff>C:/Users/juanep/.designer/backup/imagen/usb1.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/usb1.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1122,7 +1122,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/fi-sr-bluetooth-alt.svg</normaloff>imagen/fi-sr-bluetooth-alt.svg</iconset>
+                 <normaloff>imagen/bluetootht.svg</normaloff>imagen/bluetootht.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1181,7 +1181,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/fi-sr-angle-double-small-left.svg</normaloff>imagen/fi-sr-angle-double-small-left.svg</iconset>
+                 <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-angle-double-small-left.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-angle-double-small-left.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1259,7 +1259,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/PC02.svg</normaloff>imagen/PC02.svg</iconset>
+                 <normaloff>C:/Users/juanep/.designer/backup/imagen/PC02.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/PC02.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1306,7 +1306,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/netword01.svg</normaloff>imagen/netword01.svg</iconset>
+                 <normaloff>C:/Users/juanep/.designer/backup/imagen/netword01.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/netword01.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1353,7 +1353,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/fi-sr-computer-classic.svg</normaloff>imagen/fi-sr-computer-classic.svg</iconset>
+                 <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-computer-classic.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-computer-classic.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1400,7 +1400,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/Regional01.svg</normaloff>imagen/Regional01.svg</iconset>
+                 <normaloff>C:/Users/juanep/.designer/backup/imagen/Regional01.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/Regional01.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1450,7 +1450,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/Clear01.svg</normaloff>imagen/Clear01.svg</iconset>
+                 <normaloff>C:/Users/juanep/.designer/backup/imagen/Clear01.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/Clear01.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1497,7 +1497,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/fi-sr-settings.svg</normaloff>imagen/fi-sr-settings.svg</iconset>
+                 <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-settings.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-settings.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1554,7 +1554,7 @@ QFrame {
 </string>
                </property>
                <property name="currentIndex">
-                <number>1</number>
+                <number>2</number>
                </property>
                <widget class="QWidget" name="page_inicio">
                 <property name="styleSheet">
@@ -1589,7 +1589,7 @@ QFrame {
                     <string/>
                    </property>
                    <property name="pixmap">
-                    <pixmap>imagen/ArkToolsPC_02.png</pixmap>
+                    <pixmap>C:/Users/juanep/.designer/backup/imagen/ArkToolsPC_02.png</pixmap>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>
@@ -1698,7 +1698,7 @@ background-color: #f0f0f0;</string>
                  </item>
                 </layout>
                </widget>
-               <widget class="QWidget" name="page_inf_hardware_2">
+               <widget class="QWidget" name="page_inf_config">
                 <property name="styleSheet">
                  <string notr="true">/* Estilo del marco */
 QFrame {
@@ -1707,38 +1707,251 @@ QFrame {
 </string>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_7">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
                  <item>
-                  <widget class="QTextEdit" name="textEdit_info_hw2">
-                   <property name="styleSheet">
-                    <string notr="true">font: 9pt &quot;Consolas&quot;;
-color: #000000; 
-background-color: #f0f0f0;</string>
+                  <widget class="QFrame" name="frame_config">
+                   <property name="frameShape">
+                    <enum>QFrame::Shape::StyledPanel</enum>
                    </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Shadow::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_3">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QFrame" name="frame_btns_config">
+                      <property name="minimumSize">
+                       <size>
+                        <width>200</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>200</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">/* Estilo del marco */
+QFrame {
+    background-color: rgb(85, 170, 255);
+   
+}</string>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Raised</enum>
+                      </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_12">
+                       <item>
+                        <widget class="QPushButton" name="btn_cambio_regional">
+                         <property name="minimumSize">
+                          <size>
+                           <width>170</width>
+                           <height>90</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>170</width>
+                           <height>90</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <pointsize>-1</pointsize>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px; /* Un padding uniforme puede ayudar a centrarlo */
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center; /* Justifica el texto al centro */
+}
+
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}</string>
+                         </property>
+                         <property name="text">
+                          <string>Cambiar 
+Configuración 
+Regional</string>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>imagen/Regional01.svg</normaloff>imagen/Regional01.svg</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>35</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="btn_config_tools">
+                         <property name="minimumSize">
+                          <size>
+                           <width>170</width>
+                           <height>90</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>170</width>
+                           <height>90</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}
+</string>
+                         </property>
+                         <property name="text">
+                          <string>Consultar
+Configuración
+Actual</string>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>imagen/filesettings_102180.svg</normaloff>imagen/filesettings_102180.svg</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>35</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QTextEdit" name="textEdit_info_config">
+                      <property name="styleSheet">
+                       <string notr="true">font: 9pt &quot;Consolas&quot;;
+color: #000000; 
+background-color: rgb(170, 170, 127);</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_info_hw2">
+                  <widget class="QFrame" name="frame_pie_config">
                    <property name="minimumSize">
                     <size>
-                     <width>40</width>
-                     <height>40</height>
+                     <width>0</width>
+                     <height>85</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>80</width>
-                     <height>80</height>
+                     <width>16777215</width>
+                     <height>85</height>
                     </size>
                    </property>
-                   <property name="text">
-                    <string/>
+                   <property name="frameShape">
+                    <enum>QFrame::Shape::StyledPanel</enum>
                    </property>
-                   <property name="pixmap">
-                    <pixmap>imagen/PC01.svg</pixmap>
+                   <property name="frameShadow">
+                    <enum>QFrame::Shadow::Raised</enum>
                    </property>
-                   <property name="scaledContents">
-                    <bool>true</bool>
-                   </property>
+                   <widget class="QLabel" name="label_info_config">
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>0</y>
+                      <width>80</width>
+                      <height>80</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>40</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>80</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="pixmap">
+                     <pixmap>C:/Users/juanep/.designer/backup/imagen/confi01.svg</pixmap>
+                    </property>
+                    <property name="scaledContents">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
                   </widget>
                  </item>
                 </layout>
@@ -1779,7 +1992,7 @@ background-color: #f0f0f0;</string>
                     <string/>
                    </property>
                    <property name="pixmap">
-                    <pixmap>imagen/Red01.svg</pixmap>
+                    <pixmap>C:/Users/juanep/.designer/backup/imagen/Red01.svg</pixmap>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>
@@ -1827,7 +2040,7 @@ background-color: #f0f0f0;</string>
                     <string/>
                    </property>
                    <property name="pixmap">
-                    <pixmap>imagen/OS02.svg</pixmap>
+                    <pixmap>C:/Users/juanep/.designer/backup/imagen/OS02.svg</pixmap>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>
@@ -1875,7 +2088,7 @@ background-color: #f0f0f0;</string>
                     <string/>
                    </property>
                    <property name="pixmap">
-                    <pixmap>imagen/filesettings_102180.svg</pixmap>
+                    <pixmap>C:/Users/juanep/.designer/backup/imagen/filesettings_102180.svg</pixmap>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>

@@ -1,8 +1,11 @@
+# arktoolspcg2.py es el archivo Main de la aplicación PySide6 ARKToolsPCG2
+
 import sys
 from PySide6.QtWidgets import QMainWindow, QApplication, QSizeGrip, QMessageBox
 from PySide6.QtCore import Qt, QPropertyAnimation, QEasingCurve, QPoint
 from PySide6.QtGui import QPixmap
 from ui_arktoolspcg2 import Ui_MainWindow
+from database_manager import DatabaseManager
 import system_info
 import logging
 
@@ -17,6 +20,12 @@ class MiApp(QMainWindow):
         
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+        # --- NUEVA INTEGRACIÓN DE BASE DE DATOS (Solo Inicialización) ---
+        self.db_manager = DatabaseManager()
+        self.db_manager.setup_database() # Crea la BD y las tablas si no existen
+        logging.info("Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.")
+        # -----------------------------------------------------------------
         
         # Eliminar barra de título y aplicar opacidad
         self.setWindowFlag(Qt.WindowType.FramelessWindowHint)
@@ -84,6 +93,8 @@ class MiApp(QMainWindow):
         self.ui.btn_cambio_regional.clicked.connect(self.aplicar_config_regional)
         # Conectar el botón de Herramientas
         #self.ui.btn_config_tools.clicked.connect(self.mostrar_info_regional)
+        # Conectar el botón de Herramientas para CONSULTAR DATOS DE LA BD (Ejemplo)
+        self.ui.btn_config_tools.clicked.connect(self.consultar_configuracion_db)
         
 
     def control_bt_minimizar(self):

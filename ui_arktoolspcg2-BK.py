@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'arktoolspcg2dFUzan.ui'
+## Form generated from reading UI file 'arktoolspcg2UhSmTx.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.2
 ##
@@ -83,7 +83,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon = QIcon()
-        icon.addFile(u"C:/Users/juanep/.designer/backup/imagen/fi-sr-rectangle-list.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"assets/icons/fi-sr-rectangle-list.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_menu.setIcon(icon)
         self.btn_menu.setIconSize(QSize(35, 35))
 
@@ -180,7 +180,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon3 = QIcon()
-        icon3.addFile(u"assets/icons/fi-sr-expand-arrows.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon3.addFile(u"assets/icons/fi-sr-expand-arrows-alt.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_maximizar.setIcon(icon3)
         self.btn_maximizar.setIconSize(QSize(28, 28))
 
@@ -211,9 +211,9 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon4 = QIcon()
-        icon4.addFile(u"assets/icons/fi-sr-cross-small.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon4.addFile(u"assets/icons/fi-sr-circle-quarters-alt.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_cerrar.setIcon(icon4)
-        self.btn_cerrar.setIconSize(QSize(35, 35))
+        self.btn_cerrar.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_2.addWidget(self.btn_cerrar)
 
@@ -236,285 +236,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.frame_menu = QFrame(self.frame_inferior)
-        self.frame_menu.setObjectName(u"frame_menu")
-        self.frame_menu.setMinimumSize(QSize(0, 0))
-        self.frame_menu.setMaximumSize(QSize(0, 16777215))
-        self.frame_menu.setStyleSheet(u"/* Estilo del marco */\n"
-"QFrame {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"   \n"
-"}")
-        self.frame_menu.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame_menu.setFrameShadow(QFrame.Shadow.Raised)
-        self.verticalLayout_3 = QVBoxLayout(self.frame_menu)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.btn_info_hardware = QPushButton(self.frame_menu)
-        self.btn_info_hardware.setObjectName(u"btn_info_hardware")
-        self.btn_info_hardware.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
-"QPushButton {\n"
-"    background-color:qlineargradient(\n"
-"    spread:pad, \n"
-"    x1:0, \n"
-"    y1:0, \n"
-"    x2:1, \n"
-"    y2:0, \n"
-"    stop:0 rgba(102, 178, 255, 255), \n"
-"    stop:0.55 rgba(61, 148, 235, 255), \n"
-"    stop:0.98 rgba(0, 0, 0, 255), \n"
-"    stop:1 rgba(0, 0, 0, 0)\n"
-");\n"
-"    color: white;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"    padding: 10px 20px;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"/* Estilo cuando el mouse pasa por encima */\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"/* Estilo cuando el bot\u00f3n es presionado */\n"
-"QPushButton:pressed {\n"
-"    background-color: #004085;\n"
-"}")
-        icon5 = QIcon()
-        icon5.addFile(u"assets/icons/PC01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_info_hardware.setIcon(icon5)
-        self.btn_info_hardware.setIconSize(QSize(35, 35))
-
-        self.verticalLayout_3.addWidget(self.btn_info_hardware)
-
-        self.btn_info_red = QPushButton(self.frame_menu)
-        self.btn_info_red.setObjectName(u"btn_info_red")
-        self.btn_info_red.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
-"QPushButton {\n"
-"    background-color: qlineargradient(\n"
-"    spread:pad, \n"
-"    x1:0, \n"
-"    y1:0, \n"
-"    x2:1, \n"
-"    y2:0, \n"
-"    stop:0 rgba(102, 178, 255, 255), \n"
-"    stop:0.55 rgba(61, 148, 235, 255), \n"
-"    stop:0.98 rgba(0, 0, 0, 255), \n"
-"    stop:1 rgba(0, 0, 0, 0)\n"
-");\n"
-"    color: white;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"    padding: 10px 20px;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"/* Estilo cuando el mouse pasa por encima */\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"/* Estilo cuando el bot\u00f3n es presionado */\n"
-"QPushButton:pressed {\n"
-"    background-color: #004085;\n"
-"}")
-        icon6 = QIcon()
-        icon6.addFile(u"assets/icons/Red01.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_info_red.setIcon(icon6)
-        self.btn_info_red.setIconSize(QSize(35, 35))
-
-        self.verticalLayout_3.addWidget(self.btn_info_red)
-
-        self.btn_info_so = QPushButton(self.frame_menu)
-        self.btn_info_so.setObjectName(u"btn_info_so")
-        self.btn_info_so.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
-"QPushButton {\n"
-"    background-color: qlineargradient(\n"
-"    spread:pad, \n"
-"    x1:0, \n"
-"    y1:0, \n"
-"    x2:1, \n"
-"    y2:0, \n"
-"    stop:0 rgba(102, 178, 255, 255), \n"
-"    stop:0.55 rgba(61, 148, 235, 255), \n"
-"    stop:0.98 rgba(0, 0, 0, 255), \n"
-"    stop:1 rgba(0, 0, 0, 0)\n"
-");\n"
-"    color: white;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"    padding: 10px 20px;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"/* Estilo cuando el mouse pasa por encima */\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"/* Estilo cuando el bot\u00f3n es presionado */\n"
-"QPushButton:pressed {\n"
-"    background-color: #004085;\n"
-"}")
-        icon7 = QIcon()
-        icon7.addFile(u"assets/icons/fi-sr-computer-classic.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_info_so.setIcon(icon7)
-        self.btn_info_so.setIconSize(QSize(35, 36))
-
-        self.verticalLayout_3.addWidget(self.btn_info_so)
-
-        self.btn_info_regional = QPushButton(self.frame_menu)
-        self.btn_info_regional.setObjectName(u"btn_info_regional")
-        self.btn_info_regional.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
-"QPushButton {\n"
-"    background-color: qlineargradient(\n"
-"    spread:pad, \n"
-"    x1:0, \n"
-"    y1:0, \n"
-"    x2:1, \n"
-"    y2:0, \n"
-"    stop:0 rgba(102, 178, 255, 255), \n"
-"    stop:0.55 rgba(61, 148, 235, 255), \n"
-"    stop:0.98 rgba(0, 0, 0, 255), \n"
-"    stop:1 rgba(0, 0, 0, 0)\n"
-");\n"
-"    color: white;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"    padding: 10px 20px;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"/* Estilo cuando el mouse pasa por encima */\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"/* Estilo cuando el bot\u00f3n es presionado */\n"
-"QPushButton:pressed {\n"
-"    background-color: #004085;\n"
-"}")
-        icon8 = QIcon()
-        icon8.addFile(u"assets/icons/Regional01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_info_regional.setIcon(icon8)
-        self.btn_info_regional.setIconSize(QSize(35, 35))
-
-        self.verticalLayout_3.addWidget(self.btn_info_regional)
-
-        self.btn_limpiar = QPushButton(self.frame_menu)
-        self.btn_limpiar.setObjectName(u"btn_limpiar")
-        self.btn_limpiar.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
-"QPushButton {\n"
-"    background-color: qlineargradient(\n"
-"    spread:pad, \n"
-"    x1:0, \n"
-"    y1:0, \n"
-"    x2:1, \n"
-"    y2:0, \n"
-"    stop:0 rgba(102, 178, 255, 255), \n"
-"    stop:0.55 rgba(61, 148, 235, 255), \n"
-"    stop:0.98 rgba(0, 0, 0, 255), \n"
-"    stop:1 rgba(0, 0, 0, 0)\n"
-");\n"
-"    color: white;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"    padding: 10px 20px;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"/* Estilo cuando el mouse pasa por encima */\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"/* Estilo cuando el bot\u00f3n es presionado */\n"
-"QPushButton:pressed {\n"
-"    background-color: #004085;\n"
-"}")
-        icon9 = QIcon()
-        icon9.addFile(u"assets/icons/Clear01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_limpiar.setIcon(icon9)
-        self.btn_limpiar.setIconSize(QSize(35, 35))
-
-        self.verticalLayout_3.addWidget(self.btn_limpiar)
-
-        self.verticalSpacer_3 = QSpacerItem(20, 106, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.verticalLayout_3.addItem(self.verticalSpacer_3)
-
-        self.btn_operations = QPushButton(self.frame_menu)
-        self.btn_operations.setObjectName(u"btn_operations")
-        self.btn_operations.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
-"QPushButton {\n"
-"    background-color: qlineargradient(\n"
-"    spread:pad, \n"
-"    x1:0, \n"
-"    y1:0, \n"
-"    x2:1, \n"
-"    y2:0, \n"
-"    stop:0 rgba(102, 178, 255, 255), \n"
-"    stop:0.55 rgba(61, 148, 235, 255), \n"
-"    stop:0.98 rgba(0, 0, 0, 255), \n"
-"    stop:1 rgba(0, 0, 0, 0)\n"
-");\n"
-"    color: white;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"    padding: 10px 20px;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"/* Estilo cuando el mouse pasa por encima */\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"/* Estilo cuando el bot\u00f3n es presionado */\n"
-"QPushButton:pressed {\n"
-"    background-color: #004085;\n"
-"}")
-        icon10 = QIcon()
-        icon10.addFile(u"assets/icons/fi-sr-menu-dots.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_operations.setIcon(icon10)
-        self.btn_operations.setIconSize(QSize(28, 29))
-
-        self.verticalLayout_3.addWidget(self.btn_operations)
-
-        self.btn_config = QPushButton(self.frame_menu)
-        self.btn_config.setObjectName(u"btn_config")
-        self.btn_config.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
-"QPushButton {\n"
-"    background-color:qlineargradient(\n"
-"    spread:pad, \n"
-"    x1:0, \n"
-"    y1:0, \n"
-"    x2:1, \n"
-"    y2:0, \n"
-"    stop:0 rgba(102, 178, 255, 255), \n"
-"    stop:0.55 rgba(61, 148, 235, 255), \n"
-"    stop:0.98 rgba(0, 0, 0, 255), \n"
-"    stop:1 rgba(0, 0, 0, 0)\n"
-");\n"
-"    color: white;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"    padding: 10px 20px;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"/* Estilo cuando el mouse pasa por encima */\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"/* Estilo cuando el bot\u00f3n es presionado */\n"
-"QPushButton:pressed {\n"
-"    background-color: #004085;\n"
-"}")
-        icon11 = QIcon()
-        icon11.addFile(u"assets/icons/fi-sr-settings.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_config.setIcon(icon11)
-        self.btn_config.setIconSize(QSize(35, 35))
-
-        self.verticalLayout_3.addWidget(self.btn_config)
-
-
-        self.horizontalLayout.addWidget(self.frame_menu)
-
         self.frame_sub_hardware = QFrame(self.frame_inferior)
         self.frame_sub_hardware.setObjectName(u"frame_sub_hardware")
         self.frame_sub_hardware.setMinimumSize(QSize(0, 0))
@@ -561,7 +282,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {\n"
 "    background-color: #004085;\n"
 "}")
-        self.btn_info_sistema.setIcon(icon11)
+        icon5 = QIcon()
+        icon5.addFile(u"assets/icons/fi-sr-settings.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_info_sistema.setIcon(icon5)
         self.btn_info_sistema.setIconSize(QSize(35, 35))
 
         self.verticalLayout_5.addWidget(self.btn_info_sistema)
@@ -598,9 +321,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {\n"
 "    background-color: #004085;\n"
 "}")
-        icon12 = QIcon()
-        icon12.addFile(u"assets/icons/mbd_01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_info_mbd.setIcon(icon12)
+        icon6 = QIcon()
+        icon6.addFile(u"assets/icons/mbd_01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_info_mbd.setIcon(icon6)
         self.btn_info_mbd.setIconSize(QSize(28, 29))
 
         self.verticalLayout_5.addWidget(self.btn_info_mbd)
@@ -637,9 +360,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {\n"
 "    background-color: #004085;\n"
 "}")
-        icon13 = QIcon()
-        icon13.addFile(u"assets/icons/cpu01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_info_cpu.setIcon(icon13)
+        icon7 = QIcon()
+        icon7.addFile(u"assets/icons/cpu01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_info_cpu.setIcon(icon7)
         self.btn_info_cpu.setIconSize(QSize(28, 28))
 
         self.verticalLayout_5.addWidget(self.btn_info_cpu)
@@ -676,9 +399,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {\n"
 "    background-color: #004085;\n"
 "}")
-        icon14 = QIcon()
-        icon14.addFile(u"assets/icons/Grafica01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_info_gpu.setIcon(icon14)
+        icon8 = QIcon()
+        icon8.addFile(u"assets/icons/Grafica01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_info_gpu.setIcon(icon8)
         self.btn_info_gpu.setIconSize(QSize(28, 28))
 
         self.verticalLayout_5.addWidget(self.btn_info_gpu)
@@ -715,9 +438,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {\n"
 "    background-color: #004085;\n"
 "}")
-        icon15 = QIcon()
-        icon15.addFile(u"assets/icons/RAM.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_info_ram.setIcon(icon15)
+        icon9 = QIcon()
+        icon9.addFile(u"assets/icons/RAM.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_info_ram.setIcon(icon9)
         self.btn_info_ram.setIconSize(QSize(28, 28))
 
         self.verticalLayout_5.addWidget(self.btn_info_ram)
@@ -754,9 +477,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {\n"
 "    background-color: #004085;\n"
 "}")
-        icon16 = QIcon()
-        icon16.addFile(u"assets/icons/hdd2.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_info_hdd.setIcon(icon16)
+        icon10 = QIcon()
+        icon10.addFile(u"assets/icons/hdd2.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_info_hdd.setIcon(icon10)
         self.btn_info_hdd.setIconSize(QSize(28, 28))
 
         self.verticalLayout_5.addWidget(self.btn_info_hdd)
@@ -793,9 +516,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {\n"
 "    background-color: #004085;\n"
 "}")
-        icon17 = QIcon()
-        icon17.addFile(u"assets/icons/nic01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_info_nic.setIcon(icon17)
+        icon11 = QIcon()
+        icon11.addFile(u"assets/icons/Red01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_info_nic.setIcon(icon11)
         self.btn_info_nic.setIconSize(QSize(28, 28))
 
         self.verticalLayout_5.addWidget(self.btn_info_nic)
@@ -832,9 +555,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {\n"
 "    background-color: #004085;\n"
 "}")
-        icon18 = QIcon()
-        icon18.addFile(u"assets/icons/audio01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_info_audio.setIcon(icon18)
+        icon12 = QIcon()
+        icon12.addFile(u"assets/icons/fi-sr-foreign-language-audio.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_info_audio.setIcon(icon12)
         self.btn_info_audio.setIconSize(QSize(28, 28))
 
         self.verticalLayout_5.addWidget(self.btn_info_audio)
@@ -871,9 +594,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {\n"
 "    background-color: #004085;\n"
 "}")
-        icon19 = QIcon()
-        icon19.addFile(u"assets/icons/com02.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_info_com.setIcon(icon19)
+        icon13 = QIcon()
+        icon13.addFile(u"assets/icons/hdd.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_info_com.setIcon(icon13)
         self.btn_info_com.setIconSize(QSize(35, 35))
 
         self.verticalLayout_5.addWidget(self.btn_info_com)
@@ -910,9 +633,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {\n"
 "    background-color: #004085;\n"
 "}")
-        icon20 = QIcon()
-        icon20.addFile(u"assets/icons/usb1.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_info_usb.setIcon(icon20)
+        icon14 = QIcon()
+        icon14.addFile(u"assets/icons/usb1.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_info_usb.setIcon(icon14)
         self.btn_info_usb.setIconSize(QSize(28, 28))
 
         self.verticalLayout_5.addWidget(self.btn_info_usb)
@@ -949,9 +672,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {\n"
 "    background-color: #004085;\n"
 "}")
-        icon21 = QIcon()
-        icon21.addFile(u"assets/icons/bluetootht.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_info_bth.setIcon(icon21)
+        icon15 = QIcon()
+        icon15.addFile(u"assets/icons/bluetootht.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_info_bth.setIcon(icon15)
         self.btn_info_bth.setIconSize(QSize(28, 28))
 
         self.verticalLayout_5.addWidget(self.btn_info_bth)
@@ -988,9 +711,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {\n"
 "    background-color: #004085;\n"
 "}")
-        icon22 = QIcon()
-        icon22.addFile(u"assets/icons/fi-sr-angle-double-small-left.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_regresar_menu.setIcon(icon22)
+        icon16 = QIcon()
+        icon16.addFile(u"assets/icons/fi-sr-angle-double-small-left.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_regresar_menu.setIcon(icon16)
         self.btn_regresar_menu.setIconSize(QSize(35, 35))
 
         self.verticalLayout_5.addWidget(self.btn_regresar_menu)
@@ -998,24 +721,22 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.frame_sub_hardware)
 
-        self.frame_operations = QFrame(self.frame_inferior)
-        self.frame_operations.setObjectName(u"frame_operations")
-        self.frame_operations.setMinimumSize(QSize(0, 0))
-        self.frame_operations.setMaximumSize(QSize(0, 16777215))
-        self.frame_operations.setStyleSheet(u"/* Estilo del marco */\n"
+        self.frame_menu = QFrame(self.frame_inferior)
+        self.frame_menu.setObjectName(u"frame_menu")
+        self.frame_menu.setMinimumSize(QSize(0, 0))
+        self.frame_menu.setMaximumSize(QSize(0, 16777215))
+        self.frame_menu.setStyleSheet(u"/* Estilo del marco */\n"
 "QFrame {\n"
 "    background-color: rgb(85, 170, 255);\n"
 "   \n"
 "}")
-        self.frame_operations.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame_operations.setFrameShadow(QFrame.Shadow.Raised)
-        self.verticalLayout_16 = QVBoxLayout(self.frame_operations)
-        self.verticalLayout_16.setSpacing(4)
-        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
-        self.verticalLayout_16.setContentsMargins(4, 4, 4, 4)
-        self.btn_ark_company = QPushButton(self.frame_operations)
-        self.btn_ark_company.setObjectName(u"btn_ark_company")
-        self.btn_ark_company.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+        self.frame_menu.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_menu.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_3 = QVBoxLayout(self.frame_menu)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.btn_info_hardware = QPushButton(self.frame_menu)
+        self.btn_info_hardware.setObjectName(u"btn_info_hardware")
+        self.btn_info_hardware.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
 "QPushButton {\n"
 "    background-color:qlineargradient(\n"
 "    spread:pad, \n"
@@ -1043,25 +764,164 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {\n"
 "    background-color: #004085;\n"
 "}")
-        icon23 = QIcon()
-        icon23.addFile(u"assets/icons/fi-sr-home.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_ark_company.setIcon(icon23)
-        self.btn_ark_company.setIconSize(QSize(18, 18))
+        icon17 = QIcon()
+        icon17.addFile(u"assets/icons/PC02.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_info_hardware.setIcon(icon17)
+        self.btn_info_hardware.setIconSize(QSize(35, 35))
 
-        self.verticalLayout_16.addWidget(self.btn_ark_company)
+        self.verticalLayout_3.addWidget(self.btn_info_hardware)
 
-        self.btn_ark_clients = QPushButton(self.frame_operations)
-        self.btn_ark_clients.setObjectName(u"btn_ark_clients")
-        icon24 = QIcon()
-        icon24.addFile(u"assets/icons/fi-sr-person-shelter.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_ark_clients.setIcon(icon24)
-        self.btn_ark_clients.setIconSize(QSize(18, 18))
+        self.btn_info_red = QPushButton(self.frame_menu)
+        self.btn_info_red.setObjectName(u"btn_info_red")
+        self.btn_info_red.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+"QPushButton {\n"
+"    background-color: qlineargradient(\n"
+"    spread:pad, \n"
+"    x1:0, \n"
+"    y1:0, \n"
+"    x2:1, \n"
+"    y2:0, \n"
+"    stop:0 rgba(102, 178, 255, 255), \n"
+"    stop:0.55 rgba(61, 148, 235, 255), \n"
+"    stop:0.98 rgba(0, 0, 0, 255), \n"
+"    stop:1 rgba(0, 0, 0, 0)\n"
+");\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 10px 20px;\n"
+"    font-size: 14px;\n"
+"    font-weight: bold;\n"
+"}\n"
+"/* Estilo cuando el mouse pasa por encima */\n"
+"QPushButton:hover {\n"
+"    background-color: #0056b3;\n"
+"}\n"
+"/* Estilo cuando el bot\u00f3n es presionado */\n"
+"QPushButton:pressed {\n"
+"    background-color: #004085;\n"
+"}")
+        icon18 = QIcon()
+        icon18.addFile(u"assets/icons/netword01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_info_red.setIcon(icon18)
+        self.btn_info_red.setIconSize(QSize(35, 35))
 
-        self.verticalLayout_16.addWidget(self.btn_ark_clients)
+        self.verticalLayout_3.addWidget(self.btn_info_red)
 
-        self.btn_ark_ark_currencies = QPushButton(self.frame_operations)
-        self.btn_ark_ark_currencies.setObjectName(u"btn_ark_ark_currencies")
-        self.btn_ark_ark_currencies.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+        self.btn_info_so = QPushButton(self.frame_menu)
+        self.btn_info_so.setObjectName(u"btn_info_so")
+        self.btn_info_so.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+"QPushButton {\n"
+"    background-color: qlineargradient(\n"
+"    spread:pad, \n"
+"    x1:0, \n"
+"    y1:0, \n"
+"    x2:1, \n"
+"    y2:0, \n"
+"    stop:0 rgba(102, 178, 255, 255), \n"
+"    stop:0.55 rgba(61, 148, 235, 255), \n"
+"    stop:0.98 rgba(0, 0, 0, 255), \n"
+"    stop:1 rgba(0, 0, 0, 0)\n"
+");\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 10px 20px;\n"
+"    font-size: 14px;\n"
+"    font-weight: bold;\n"
+"}\n"
+"/* Estilo cuando el mouse pasa por encima */\n"
+"QPushButton:hover {\n"
+"    background-color: #0056b3;\n"
+"}\n"
+"/* Estilo cuando el bot\u00f3n es presionado */\n"
+"QPushButton:pressed {\n"
+"    background-color: #004085;\n"
+"}")
+        icon19 = QIcon()
+        icon19.addFile(u"assets/icons/fi-sr-computer-classic.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_info_so.setIcon(icon19)
+        self.btn_info_so.setIconSize(QSize(35, 36))
+
+        self.verticalLayout_3.addWidget(self.btn_info_so)
+
+        self.btn_info_regional = QPushButton(self.frame_menu)
+        self.btn_info_regional.setObjectName(u"btn_info_regional")
+        self.btn_info_regional.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+"QPushButton {\n"
+"    background-color: qlineargradient(\n"
+"    spread:pad, \n"
+"    x1:0, \n"
+"    y1:0, \n"
+"    x2:1, \n"
+"    y2:0, \n"
+"    stop:0 rgba(102, 178, 255, 255), \n"
+"    stop:0.55 rgba(61, 148, 235, 255), \n"
+"    stop:0.98 rgba(0, 0, 0, 255), \n"
+"    stop:1 rgba(0, 0, 0, 0)\n"
+");\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 10px 20px;\n"
+"    font-size: 14px;\n"
+"    font-weight: bold;\n"
+"}\n"
+"/* Estilo cuando el mouse pasa por encima */\n"
+"QPushButton:hover {\n"
+"    background-color: #0056b3;\n"
+"}\n"
+"/* Estilo cuando el bot\u00f3n es presionado */\n"
+"QPushButton:pressed {\n"
+"    background-color: #004085;\n"
+"}")
+        icon20 = QIcon()
+        icon20.addFile(u"assets/icons/Regional01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_info_regional.setIcon(icon20)
+        self.btn_info_regional.setIconSize(QSize(35, 35))
+
+        self.verticalLayout_3.addWidget(self.btn_info_regional)
+
+        self.btn_limpiar = QPushButton(self.frame_menu)
+        self.btn_limpiar.setObjectName(u"btn_limpiar")
+        self.btn_limpiar.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+"QPushButton {\n"
+"    background-color: qlineargradient(\n"
+"    spread:pad, \n"
+"    x1:0, \n"
+"    y1:0, \n"
+"    x2:1, \n"
+"    y2:0, \n"
+"    stop:0 rgba(102, 178, 255, 255), \n"
+"    stop:0.55 rgba(61, 148, 235, 255), \n"
+"    stop:0.98 rgba(0, 0, 0, 255), \n"
+"    stop:1 rgba(0, 0, 0, 0)\n"
+");\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 10px 20px;\n"
+"    font-size: 14px;\n"
+"    font-weight: bold;\n"
+"}\n"
+"/* Estilo cuando el mouse pasa por encima */\n"
+"QPushButton:hover {\n"
+"    background-color: #0056b3;\n"
+"}\n"
+"/* Estilo cuando el bot\u00f3n es presionado */\n"
+"QPushButton:pressed {\n"
+"    background-color: #004085;\n"
+"}")
+        icon21 = QIcon()
+        icon21.addFile(u"assets/icons/Clear01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_limpiar.setIcon(icon21)
+        self.btn_limpiar.setIconSize(QSize(35, 35))
+
+        self.verticalLayout_3.addWidget(self.btn_limpiar)
+
+        self.btn_config = QPushButton(self.frame_menu)
+        self.btn_config.setObjectName(u"btn_config")
+        self.btn_config.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
 "QPushButton {\n"
 "    background-color:qlineargradient(\n"
 "    spread:pad, \n"
@@ -1089,346 +949,13 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {\n"
 "    background-color: #004085;\n"
 "}")
-        icon25 = QIcon()
-        icon25.addFile(u"assets/icons/fi-sr-currency.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_ark_ark_currencies.setIcon(icon25)
-        self.btn_ark_ark_currencies.setIconSize(QSize(18, 18))
+        self.btn_config.setIcon(icon5)
+        self.btn_config.setIconSize(QSize(35, 35))
 
-        self.verticalLayout_16.addWidget(self.btn_ark_ark_currencies)
-
-        self.btn_ark_categories = QPushButton(self.frame_operations)
-        self.btn_ark_categories.setObjectName(u"btn_ark_categories")
-        self.btn_ark_categories.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
-"QPushButton {\n"
-"    background-color:qlineargradient(\n"
-"    spread:pad, \n"
-"    x1:0, \n"
-"    y1:0, \n"
-"    x2:1, \n"
-"    y2:0, \n"
-"    stop:0 rgba(102, 178, 255, 255), \n"
-"    stop:0.55 rgba(61, 148, 235, 255), \n"
-"    stop:0.98 rgba(0, 0, 0, 255), \n"
-"    stop:1 rgba(0, 0, 0, 0)\n"
-");\n"
-"    color: white;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"    padding: 10px 20px;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"/* Estilo cuando el mouse pasa por encima */\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"/* Estilo cuando el bot\u00f3n es presionado */\n"
-"QPushButton:pressed {\n"
-"    background-color: #004085;\n"
-"}")
-        icon26 = QIcon()
-        icon26.addFile(u"assets/icons/fi-sr-category-alt.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_ark_categories.setIcon(icon26)
-        self.btn_ark_categories.setIconSize(QSize(18, 18))
-
-        self.verticalLayout_16.addWidget(self.btn_ark_categories)
-
-        self.btn_ark_functional_units = QPushButton(self.frame_operations)
-        self.btn_ark_functional_units.setObjectName(u"btn_ark_functional_units")
-        self.btn_ark_functional_units.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
-"QPushButton {\n"
-"    background-color:qlineargradient(\n"
-"    spread:pad, \n"
-"    x1:0, \n"
-"    y1:0, \n"
-"    x2:1, \n"
-"    y2:0, \n"
-"    stop:0 rgba(102, 178, 255, 255), \n"
-"    stop:0.55 rgba(61, 148, 235, 255), \n"
-"    stop:0.98 rgba(0, 0, 0, 255), \n"
-"    stop:1 rgba(0, 0, 0, 0)\n"
-");\n"
-"    color: white;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"    padding: 10px 20px;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"/* Estilo cuando el mouse pasa por encima */\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"/* Estilo cuando el bot\u00f3n es presionado */\n"
-"QPushButton:pressed {\n"
-"    background-color: #004085;\n"
-"}")
-        icon27 = QIcon()
-        icon27.addFile(u"assets/icons/fi-sr-department-structure.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_ark_functional_units.setIcon(icon27)
-        self.btn_ark_functional_units.setIconSize(QSize(18, 18))
-
-        self.verticalLayout_16.addWidget(self.btn_ark_functional_units)
-
-        self.btn_ark_actions = QPushButton(self.frame_operations)
-        self.btn_ark_actions.setObjectName(u"btn_ark_actions")
-        self.btn_ark_actions.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
-"QPushButton {\n"
-"    background-color:qlineargradient(\n"
-"    spread:pad, \n"
-"    x1:0, \n"
-"    y1:0, \n"
-"    x2:1, \n"
-"    y2:0, \n"
-"    stop:0 rgba(102, 178, 255, 255), \n"
-"    stop:0.55 rgba(61, 148, 235, 255), \n"
-"    stop:0.98 rgba(0, 0, 0, 255), \n"
-"    stop:1 rgba(0, 0, 0, 0)\n"
-");\n"
-"    color: white;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"    padding: 10px 20px;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"/* Estilo cuando el mouse pasa por encima */\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"/* Estilo cuando el bot\u00f3n es presionado */\n"
-"QPushButton:pressed {\n"
-"    background-color: #004085;\n"
-"}")
-        icon28 = QIcon()
-        icon28.addFile(u"assets/icons/fi-sr-tasks.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_ark_actions.setIcon(icon28)
-        self.btn_ark_actions.setIconSize(QSize(18, 18))
-
-        self.verticalLayout_16.addWidget(self.btn_ark_actions)
-
-        self.btn_ark_employees = QPushButton(self.frame_operations)
-        self.btn_ark_employees.setObjectName(u"btn_ark_employees")
-        self.btn_ark_employees.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
-"QPushButton {\n"
-"    background-color:qlineargradient(\n"
-"    spread:pad, \n"
-"    x1:0, \n"
-"    y1:0, \n"
-"    x2:1, \n"
-"    y2:0, \n"
-"    stop:0 rgba(102, 178, 255, 255), \n"
-"    stop:0.55 rgba(61, 148, 235, 255), \n"
-"    stop:0.98 rgba(0, 0, 0, 255), \n"
-"    stop:1 rgba(0, 0, 0, 0)\n"
-");\n"
-"    color: white;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"    padding: 10px 20px;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"/* Estilo cuando el mouse pasa por encima */\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"/* Estilo cuando el bot\u00f3n es presionado */\n"
-"QPushButton:pressed {\n"
-"    background-color: #004085;\n"
-"}")
-        icon29 = QIcon()
-        icon29.addFile(u"assets/icons/fi-sr-employee-man-alt.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_ark_employees.setIcon(icon29)
-        self.btn_ark_employees.setIconSize(QSize(18, 18))
-
-        self.verticalLayout_16.addWidget(self.btn_ark_employees)
-
-        self.btn_ark_device_types = QPushButton(self.frame_operations)
-        self.btn_ark_device_types.setObjectName(u"btn_ark_device_types")
-        self.btn_ark_device_types.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
-"QPushButton {\n"
-"    background-color:qlineargradient(\n"
-"    spread:pad, \n"
-"    x1:0, \n"
-"    y1:0, \n"
-"    x2:1, \n"
-"    y2:0, \n"
-"    stop:0 rgba(102, 178, 255, 255), \n"
-"    stop:0.55 rgba(61, 148, 235, 255), \n"
-"    stop:0.98 rgba(0, 0, 0, 255), \n"
-"    stop:1 rgba(0, 0, 0, 0)\n"
-");\n"
-"    color: white;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"    padding: 10px 20px;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"/* Estilo cuando el mouse pasa por encima */\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"/* Estilo cuando el bot\u00f3n es presionado */\n"
-"QPushButton:pressed {\n"
-"    background-color: #004085;\n"
-"}")
-        icon30 = QIcon()
-        icon30.addFile(u"assets/icons/fi-sr-list.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_ark_device_types.setIcon(icon30)
-        self.btn_ark_device_types.setIconSize(QSize(18, 18))
-
-        self.verticalLayout_16.addWidget(self.btn_ark_device_types)
-
-        self.btn_ark_it_assets = QPushButton(self.frame_operations)
-        self.btn_ark_it_assets.setObjectName(u"btn_ark_it_assets")
-        self.btn_ark_it_assets.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
-"QPushButton {\n"
-"    background-color:qlineargradient(\n"
-"    spread:pad, \n"
-"    x1:0, \n"
-"    y1:0, \n"
-"    x2:1, \n"
-"    y2:0, \n"
-"    stop:0 rgba(102, 178, 255, 255), \n"
-"    stop:0.55 rgba(61, 148, 235, 255), \n"
-"    stop:0.98 rgba(0, 0, 0, 255), \n"
-"    stop:1 rgba(0, 0, 0, 0)\n"
-");\n"
-"    color: white;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"    padding: 10px 20px;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"/* Estilo cuando el mouse pasa por encima */\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"/* Estilo cuando el bot\u00f3n es presionado */\n"
-"QPushButton:pressed {\n"
-"    background-color: #004085;\n"
-"}")
-        icon31 = QIcon()
-        icon31.addFile(u"assets/icons/fi-sr-resources.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_ark_it_assets.setIcon(icon31)
-        self.btn_ark_it_assets.setIconSize(QSize(18, 18))
-
-        self.verticalLayout_16.addWidget(self.btn_ark_it_assets)
-
-        self.btn_ark_job_titles = QPushButton(self.frame_operations)
-        self.btn_ark_job_titles.setObjectName(u"btn_ark_job_titles")
-        self.btn_ark_job_titles.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
-"QPushButton {\n"
-"    background-color:qlineargradient(\n"
-"    spread:pad, \n"
-"    x1:0, \n"
-"    y1:0, \n"
-"    x2:1, \n"
-"    y2:0, \n"
-"    stop:0 rgba(102, 178, 255, 255), \n"
-"    stop:0.55 rgba(61, 148, 235, 255), \n"
-"    stop:0.98 rgba(0, 0, 0, 255), \n"
-"    stop:1 rgba(0, 0, 0, 0)\n"
-");\n"
-"    color: white;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"    padding: 10px 20px;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"/* Estilo cuando el mouse pasa por encima */\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"/* Estilo cuando el bot\u00f3n es presionado */\n"
-"QPushButton:pressed {\n"
-"    background-color: #004085;\n"
-"}")
-        icon32 = QIcon()
-        icon32.addFile(u"assets/icons/fi-sr-person-chalkboard.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_ark_job_titles.setIcon(icon32)
-        self.btn_ark_job_titles.setIconSize(QSize(18, 18))
-
-        self.verticalLayout_16.addWidget(self.btn_ark_job_titles)
-
-        self.btn_ark_users = QPushButton(self.frame_operations)
-        self.btn_ark_users.setObjectName(u"btn_ark_users")
-        self.btn_ark_users.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
-"QPushButton {\n"
-"    background-color:qlineargradient(\n"
-"    spread:pad, \n"
-"    x1:0, \n"
-"    y1:0, \n"
-"    x2:1, \n"
-"    y2:0, \n"
-"    stop:0 rgba(102, 178, 255, 255), \n"
-"    stop:0.55 rgba(61, 148, 235, 255), \n"
-"    stop:0.98 rgba(0, 0, 0, 255), \n"
-"    stop:1 rgba(0, 0, 0, 0)\n"
-");\n"
-"    color: white;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"    padding: 10px 20px;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"/* Estilo cuando el mouse pasa por encima */\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"/* Estilo cuando el bot\u00f3n es presionado */\n"
-"QPushButton:pressed {\n"
-"    background-color: #004085;\n"
-"}")
-        icon33 = QIcon()
-        icon33.addFile(u"assets/icons/fi-sr-person-simple.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_ark_users.setIcon(icon33)
-        self.btn_ark_users.setIconSize(QSize(18, 18))
-
-        self.verticalLayout_16.addWidget(self.btn_ark_users)
-
-        self.btn_menu_ppal = QPushButton(self.frame_operations)
-        self.btn_menu_ppal.setObjectName(u"btn_menu_ppal")
-        self.btn_menu_ppal.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
-"QPushButton {\n"
-"    background-color:qlineargradient(\n"
-"    spread:pad, \n"
-"    x1:0, \n"
-"    y1:0, \n"
-"    x2:1, \n"
-"    y2:0, \n"
-"    stop:0 rgba(102, 178, 255, 255), \n"
-"    stop:0.55 rgba(61, 148, 235, 255), \n"
-"    stop:0.98 rgba(0, 0, 0, 255), \n"
-"    stop:1 rgba(0, 0, 0, 0)\n"
-");\n"
-"    color: white;\n"
-"    border: none;\n"
-"    border-radius: 5px;\n"
-"    padding: 10px 20px;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"/* Estilo cuando el mouse pasa por encima */\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"/* Estilo cuando el bot\u00f3n es presionado */\n"
-"QPushButton:pressed {\n"
-"    background-color: #004085;\n"
-"}")
-        self.btn_menu_ppal.setIcon(icon22)
-        self.btn_menu_ppal.setIconSize(QSize(18, 18))
-
-        self.verticalLayout_16.addWidget(self.btn_menu_ppal)
+        self.verticalLayout_3.addWidget(self.btn_config)
 
 
-        self.horizontalLayout.addWidget(self.frame_operations)
+        self.horizontalLayout.addWidget(self.frame_menu)
 
         self.frame_consolas = QFrame(self.frame_inferior)
         self.frame_consolas.setObjectName(u"frame_consolas")
@@ -1443,10 +970,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.sw_consolas = QStackedWidget(self.frame_consolas)
-        self.sw_consolas.setObjectName(u"sw_consolas")
-        self.sw_consolas.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
-        self.sw_consolas.setStyleSheet(u"/* Estilo del marco */\n"
+        self.stackedWidget = QStackedWidget(self.frame_consolas)
+        self.stackedWidget.setObjectName(u"stackedWidget")
+        self.stackedWidget.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.stackedWidget.setStyleSheet(u"/* Estilo del marco */\n"
 "QFrame {\n"
 "    background-color: #F8F9FA;\n"
 "    }\n"
@@ -1458,54 +985,9 @@ class Ui_MainWindow(object):
 "    background-color: #F8F9FA;\n"
 "    }\n"
 "")
-        self.verticalLayout_13 = QVBoxLayout(self.page_inicio)
-        self.verticalLayout_13.setSpacing(0)
-        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
-        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
-        self.frame_inicio_head = QFrame(self.page_inicio)
-        self.frame_inicio_head.setObjectName(u"frame_inicio_head")
-        self.frame_inicio_head.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame_inicio_head.setFrameShadow(QFrame.Shadow.Raised)
-        self.verticalLayout_14 = QVBoxLayout(self.frame_inicio_head)
-        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
-        self.title_arktoolspc = QLabel(self.frame_inicio_head)
-        self.title_arktoolspc.setObjectName(u"title_arktoolspc")
-        self.title_arktoolspc.setMinimumSize(QSize(40, 60))
-        self.title_arktoolspc.setMaximumSize(QSize(16777215, 40))
-        font1 = QFont()
-        font1.setFamilies([u"Consolas"])
-        font1.setPointSize(9)
-        font1.setBold(False)
-        font1.setItalic(False)
-        self.title_arktoolspc.setFont(font1)
-        self.title_arktoolspc.setStyleSheet(u"font: 9pt \"Consolas\";\n"
-"color: #000000; \n"
-"background-color: #f0f0f0;")
-        self.title_arktoolspc.setFrameShadow(QFrame.Shadow.Sunken)
-        self.title_arktoolspc.setTextFormat(Qt.TextFormat.PlainText)
-        self.title_arktoolspc.setPixmap(QPixmap(u"assets/images/ArlToolsPC2.png"))
-        self.title_arktoolspc.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.verticalLayout_14.addWidget(self.title_arktoolspc)
-
-        self.verticalSpacer_2 = QSpacerItem(20, 94, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.verticalLayout_14.addItem(self.verticalSpacer_2)
-
-
-        self.verticalLayout_13.addWidget(self.frame_inicio_head)
-
-        self.frame_inicio_middle = QFrame(self.page_inicio)
-        self.frame_inicio_middle.setObjectName(u"frame_inicio_middle")
-        self.frame_inicio_middle.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame_inicio_middle.setFrameShadow(QFrame.Shadow.Raised)
-        self.horizontalLayout_4 = QHBoxLayout(self.frame_inicio_middle)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.horizontalSpacer_2 = QSpacerItem(248, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_4.addItem(self.horizontalSpacer_2)
-
-        self.label_logo_tools = QLabel(self.frame_inicio_middle)
+        self.verticalLayout_6 = QVBoxLayout(self.page_inicio)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.label_logo_tools = QLabel(self.page_inicio)
         self.label_logo_tools.setObjectName(u"label_logo_tools")
         self.label_logo_tools.setMinimumSize(QSize(120, 120))
         self.label_logo_tools.setMaximumSize(QSize(260, 260))
@@ -1515,31 +997,21 @@ class Ui_MainWindow(object):
         self.label_logo_tools.setScaledContents(True)
         self.label_logo_tools.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.horizontalLayout_4.addWidget(self.label_logo_tools)
+        self.verticalLayout_6.addWidget(self.label_logo_tools)
 
-        self.horizontalSpacer_3 = QSpacerItem(248, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_4.addItem(self.horizontalSpacer_3)
-
-
-        self.verticalLayout_13.addWidget(self.frame_inicio_middle)
-
-        self.frame_inicio_pie = QFrame(self.page_inicio)
-        self.frame_inicio_pie.setObjectName(u"frame_inicio_pie")
-        self.frame_inicio_pie.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame_inicio_pie.setFrameShadow(QFrame.Shadow.Raised)
-        self.verticalLayout_6 = QVBoxLayout(self.frame_inicio_pie)
-        self.verticalLayout_6.setSpacing(6)
-        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.verticalLayout_6.setContentsMargins(0, 0, 0, 9)
-        self.verticalSpacer = QSpacerItem(20, 123, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.verticalSpacer = QSpacerItem(20, 216, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_6.addItem(self.verticalSpacer)
 
-        self.pie_arkinfo = QLabel(self.frame_inicio_pie)
+        self.pie_arkinfo = QLabel(self.page_inicio)
         self.pie_arkinfo.setObjectName(u"pie_arkinfo")
         self.pie_arkinfo.setMinimumSize(QSize(40, 40))
         self.pie_arkinfo.setMaximumSize(QSize(16777215, 40))
+        font1 = QFont()
+        font1.setFamilies([u"Consolas"])
+        font1.setPointSize(9)
+        font1.setBold(False)
+        font1.setItalic(False)
         self.pie_arkinfo.setFont(font1)
         self.pie_arkinfo.setStyleSheet(u"font: 9pt \"Consolas\";\n"
 "color: #000000; \n"
@@ -1550,15 +1022,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_6.addWidget(self.pie_arkinfo)
 
-        self.verticalLayout_6.setStretch(0, 1)
-        self.verticalLayout_6.setStretch(1, 1)
-
-        self.verticalLayout_13.addWidget(self.frame_inicio_pie)
-
-        self.verticalLayout_13.setStretch(0, 1)
-        self.verticalLayout_13.setStretch(1, 1)
-        self.verticalLayout_13.setStretch(2, 1)
-        self.sw_consolas.addWidget(self.page_inicio)
+        self.stackedWidget.addWidget(self.page_inicio)
         self.page_inf_hardware = QWidget()
         self.page_inf_hardware.setObjectName(u"page_inf_hardware")
         self.page_inf_hardware.setStyleSheet(u"/* Estilo del marco */\n"
@@ -1584,7 +1048,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.label_info_hw)
 
-        self.sw_consolas.addWidget(self.page_inf_hardware)
+        self.stackedWidget.addWidget(self.page_inf_hardware)
         self.page_inf_config = QWidget()
         self.page_inf_config.setObjectName(u"page_inf_config")
         self.page_inf_config.setStyleSheet(u"/* Estilo del marco */\n"
@@ -1645,7 +1109,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {\n"
 "    background-color: #004085;\n"
 "}")
-        self.btn_cambio_regional.setIcon(icon8)
+        icon22 = QIcon()
+        icon22.addFile(u"assets/icons/Regional01.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_cambio_regional.setIcon(icon22)
         self.btn_cambio_regional.setIconSize(QSize(35, 35))
 
         self.verticalLayout_12.addWidget(self.btn_cambio_regional)
@@ -1654,31 +1120,28 @@ class Ui_MainWindow(object):
         self.btn_config_sql_tools.setObjectName(u"btn_config_sql_tools")
         self.btn_config_sql_tools.setMinimumSize(QSize(170, 90))
         self.btn_config_sql_tools.setMaximumSize(QSize(170, 90))
-        self.btn_config_sql_tools.setFont(font2)
         self.btn_config_sql_tools.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
 "QPushButton {\n"
 "    background-color: #007BFF;\n"
 "    color: white;\n"
 "    border: none;\n"
 "    border-radius: 5px;\n"
-"    padding: 10px; /* Un padding uniforme puede ayudar a centrarlo */\n"
+"    padding: 10px 20px;\n"
 "    font-size: 14px;\n"
 "    font-weight: bold;\n"
-"    text-align: center; /* Justifica el texto al centro */\n"
 "}\n"
-"\n"
 "/* Estilo cuando el mouse pasa por encima */\n"
 "QPushButton:hover {\n"
 "    background-color: #0056b3;\n"
 "}\n"
-"\n"
 "/* Estilo cuando el bot\u00f3n es presionado */\n"
 "QPushButton:pressed {\n"
 "    background-color: #004085;\n"
-"}")
-        icon34 = QIcon()
-        icon34.addFile(u"assets/icons/fi-sr-sql-server.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_config_sql_tools.setIcon(icon34)
+"}\n"
+"")
+        icon23 = QIcon()
+        icon23.addFile(u"assets/icons/fi-sr-sql-server.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_config_sql_tools.setIcon(icon23)
         self.btn_config_sql_tools.setIconSize(QSize(35, 35))
 
         self.verticalLayout_12.addWidget(self.btn_config_sql_tools)
@@ -1706,9 +1169,9 @@ class Ui_MainWindow(object):
 "    background-color: #004085;\n"
 "}\n"
 "")
-        icon35 = QIcon()
-        icon35.addFile(u"assets/icons/filesettings_102180.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_config_tools.setIcon(icon35)
+        icon24 = QIcon()
+        icon24.addFile(u"assets/icons/filesettings_102180.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_config_tools.setIcon(icon24)
         self.btn_config_tools.setIconSize(QSize(35, 35))
 
         self.verticalLayout_12.addWidget(self.btn_config_tools)
@@ -1733,21 +1196,17 @@ class Ui_MainWindow(object):
         self.frame_pie_config.setMaximumSize(QSize(16777215, 85))
         self.frame_pie_config.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_pie_config.setFrameShadow(QFrame.Shadow.Raised)
-        self.verticalLayout_15 = QVBoxLayout(self.frame_pie_config)
-        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.label_info_config = QLabel(self.frame_pie_config)
         self.label_info_config.setObjectName(u"label_info_config")
+        self.label_info_config.setGeometry(QRect(0, 0, 80, 80))
         self.label_info_config.setMinimumSize(QSize(40, 40))
         self.label_info_config.setMaximumSize(QSize(80, 80))
-        self.label_info_config.setPixmap(QPixmap(u"C:/Users/juanep/.designer/backup/imagen/confi01.svg"))
+        self.label_info_config.setPixmap(QPixmap(u"assets/icons/confi01.svg"))
         self.label_info_config.setScaledContents(True)
-
-        self.verticalLayout_15.addWidget(self.label_info_config)
-
 
         self.verticalLayout_7.addWidget(self.frame_pie_config)
 
-        self.sw_consolas.addWidget(self.page_inf_config)
+        self.stackedWidget.addWidget(self.page_inf_config)
         self.page_inf_red = QWidget()
         self.page_inf_red.setObjectName(u"page_inf_red")
         self.page_inf_red.setStyleSheet(u"/* Estilo del marco */\n"
@@ -1769,13 +1228,13 @@ class Ui_MainWindow(object):
         self.label_info_red.setObjectName(u"label_info_red")
         self.label_info_red.setMinimumSize(QSize(40, 40))
         self.label_info_red.setMaximumSize(QSize(80, 80))
-        self.label_info_red.setPixmap(QPixmap(u"C:/Users/juanep/.designer/backup/imagen/Red01.svg"))
+        self.label_info_red.setPixmap(QPixmap(u"assets/icons/Red01.svg"))
         self.label_info_red.setScaledContents(True)
         self.label_info_red.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_9.addWidget(self.label_info_red)
 
-        self.sw_consolas.addWidget(self.page_inf_red)
+        self.stackedWidget.addWidget(self.page_inf_red)
         self.page_inf_so = QWidget()
         self.page_inf_so.setObjectName(u"page_inf_so")
         self.page_inf_so.setStyleSheet(u"/* Estilo del marco */\n"
@@ -1797,13 +1256,13 @@ class Ui_MainWindow(object):
         self.label_info_so.setObjectName(u"label_info_so")
         self.label_info_so.setMinimumSize(QSize(40, 40))
         self.label_info_so.setMaximumSize(QSize(80, 80))
-        self.label_info_so.setPixmap(QPixmap(u"C:/Users/juanep/.designer/backup/imagen/OS02.svg"))
+        self.label_info_so.setPixmap(QPixmap(u"assets/icons/OS02.svg"))
         self.label_info_so.setScaledContents(True)
         self.label_info_so.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_11.addWidget(self.label_info_so)
 
-        self.sw_consolas.addWidget(self.page_inf_so)
+        self.stackedWidget.addWidget(self.page_inf_so)
         self.page_inf_regional = QWidget()
         self.page_inf_regional.setObjectName(u"page_inf_regional")
         self.page_inf_regional.setStyleSheet(u"/* Estilo del marco */\n"
@@ -1825,15 +1284,15 @@ class Ui_MainWindow(object):
         self.label_info_regional.setObjectName(u"label_info_regional")
         self.label_info_regional.setMinimumSize(QSize(80, 80))
         self.label_info_regional.setMaximumSize(QSize(80, 80))
-        self.label_info_regional.setPixmap(QPixmap(u"C:/Users/juanep/.designer/backup/imagen/filesettings_102180.svg"))
+        self.label_info_regional.setPixmap(QPixmap(u"assets/icons/filesettings_102180.svg"))
         self.label_info_regional.setScaledContents(True)
         self.label_info_regional.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_10.addWidget(self.label_info_regional)
 
-        self.sw_consolas.addWidget(self.page_inf_regional)
+        self.stackedWidget.addWidget(self.page_inf_regional)
 
-        self.verticalLayout_4.addWidget(self.sw_consolas)
+        self.verticalLayout_4.addWidget(self.stackedWidget)
 
 
         self.horizontalLayout.addWidget(self.frame_consolas)
@@ -1848,7 +1307,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.sw_consolas.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1861,20 +1320,10 @@ class Ui_MainWindow(object):
         self.btn_restaurar.setText("")
         self.btn_maximizar.setText("")
         self.btn_cerrar.setText("")
-        self.btn_info_hardware.setText(QCoreApplication.translate("MainWindow", u"      Hardware", None))
-        self.btn_info_red.setText(QCoreApplication.translate("MainWindow", u"      Red", None))
-        self.btn_info_so.setText(QCoreApplication.translate("MainWindow", u"      Sistema", None))
-        self.btn_info_regional.setText(QCoreApplication.translate("MainWindow", u"      Regional", None))
-#if QT_CONFIG(shortcut)
-        self.btn_info_regional.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+R", None))
-#endif // QT_CONFIG(shortcut)
-        self.btn_limpiar.setText(QCoreApplication.translate("MainWindow", u"      Limpiar", None))
-        self.btn_operations.setText(QCoreApplication.translate("MainWindow", u"  Operaciones", None))
-        self.btn_config.setText(QCoreApplication.translate("MainWindow", u"  Configuraci\u00f3n", None))
 #if QT_CONFIG(accessibility)
         self.frame_sub_hardware.setAccessibleDescription("")
 #endif // QT_CONFIG(accessibility)
-        self.btn_info_sistema.setText(QCoreApplication.translate("MainWindow", u"  Sistema", None))
+        self.btn_info_sistema.setText(QCoreApplication.translate("MainWindow", u"Sistema", None))
         self.btn_info_mbd.setText(QCoreApplication.translate("MainWindow", u"      Motherboard", None))
         self.btn_info_cpu.setText(QCoreApplication.translate("MainWindow", u"      CPU", None))
 #if QT_CONFIG(shortcut)
@@ -1889,32 +1338,28 @@ class Ui_MainWindow(object):
         self.btn_info_usb.setText(QCoreApplication.translate("MainWindow", u"      USB", None))
         self.btn_info_bth.setText(QCoreApplication.translate("MainWindow", u"      Bluetooth", None))
         self.btn_regresar_menu.setText(QCoreApplication.translate("MainWindow", u"Men\u00fa Principal", None))
-        self.btn_ark_company.setText(QCoreApplication.translate("MainWindow", u"      Empresa", None))
-        self.btn_ark_clients.setText(QCoreApplication.translate("MainWindow", u"      Clientes", None))
-        self.btn_ark_ark_currencies.setText(QCoreApplication.translate("MainWindow", u"      Monedas", None))
-        self.btn_ark_categories.setText(QCoreApplication.translate("MainWindow", u"    Categor\u00edas", None))
-        self.btn_ark_functional_units.setText(QCoreApplication.translate("MainWindow", u" Unidades", None))
-        self.btn_ark_actions.setText(QCoreApplication.translate("MainWindow", u"      Acciones", None))
-        self.btn_ark_employees.setText(QCoreApplication.translate("MainWindow", u"      Empleados", None))
-        self.btn_ark_device_types.setText(QCoreApplication.translate("MainWindow", u"      Tipos", None))
-        self.btn_ark_it_assets.setText(QCoreApplication.translate("MainWindow", u"    Recursos", None))
-        self.btn_ark_job_titles.setText(QCoreApplication.translate("MainWindow", u"   Profesiones", None))
-        self.btn_ark_users.setText(QCoreApplication.translate("MainWindow", u"    Usuarios", None))
-        self.btn_menu_ppal.setText(QCoreApplication.translate("MainWindow", u"Men\u00fa Principal", None))
-        self.title_arktoolspc.setText("")
+        self.btn_info_hardware.setText(QCoreApplication.translate("MainWindow", u"      Hardware", None))
+        self.btn_info_red.setText(QCoreApplication.translate("MainWindow", u"      Red", None))
+        self.btn_info_so.setText(QCoreApplication.translate("MainWindow", u"      Sistema", None))
+        self.btn_info_regional.setText(QCoreApplication.translate("MainWindow", u"      Regional", None))
+#if QT_CONFIG(shortcut)
+        self.btn_info_regional.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+R", None))
+#endif // QT_CONFIG(shortcut)
+        self.btn_limpiar.setText(QCoreApplication.translate("MainWindow", u"      Limpiar", None))
+        self.btn_config.setText(QCoreApplication.translate("MainWindow", u"  Configuraci\u00f3n", None))
         self.label_logo_tools.setText("")
         self.pie_arkinfo.setText(QCoreApplication.translate("MainWindow", u"\u00a9 2025 Arksoft Integradores de Sistemas, C.A. RIF: J310994692 - Todos los derechos reservados\n"
 "            Contacto: +58 424-3672111 | arksoft.sistemas@gmail.com", None))
         self.label_info_hw.setText("")
-        self.btn_cambio_regional.setText(QCoreApplication.translate("MainWindow", u"  Cambiar \n"
-"  Configuraci\u00f3n \n"
-"  Regional", None))
-        self.btn_config_sql_tools.setText(QCoreApplication.translate("MainWindow", u"  Consultar\n"
-"  Conexi\u00f3n\n"
-"  SQLite", None))
-        self.btn_config_tools.setText(QCoreApplication.translate("MainWindow", u"  Consultar\n"
-"  Configuraci\u00f3n\n"
-"  Actual", None))
+        self.btn_cambio_regional.setText(QCoreApplication.translate("MainWindow", u"Cambiar \n"
+"Configuraci\u00f3n \n"
+"Regional", None))
+        self.btn_config_sql_tools.setText(QCoreApplication.translate("MainWindow", u"Consultar\n"
+"Conexi\u00f3n\n"
+"SQLite", None))
+        self.btn_config_tools.setText(QCoreApplication.translate("MainWindow", u"Consultar\n"
+"Configuraci\u00f3n\n"
+"Actual", None))
         self.label_info_config.setText("")
         self.label_info_red.setText("")
         self.label_info_so.setText("")

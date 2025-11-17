@@ -38,7 +38,6 @@ class MiApp(QMainWindow):
 
         # Mover ventana (con PySide6, el evento debe ser conectado a un método de la clase)
         self.ui.frame_superior.mouseMoveEvent = self.mover_ventana
-        self.ui.frame_superior.mousePressEvent = self.mousePressEvent
 
         # Conectar botones de la barra superior
         self.ui.btn_minimizar.clicked.connect(self.control_bt_minimizar)
@@ -51,8 +50,6 @@ class MiApp(QMainWindow):
 
         # Conectar el botón del menú lateral
         self.ui.btn_menu.clicked.connect(self.mover_menu)
-        self.ui.btn_info_hardware.clicked.connect(self.toggle_sub_hardware_menu)
-        self.ui.btn_operations.clicked.connect(self.toggle_operations_menu)
 
         # Conectar los botones del menú a las páginas del stackedWidget
         self.ui.btn_info_hardware.clicked.connect(self.toggle_sub_hardware_menu)
@@ -85,20 +82,19 @@ class MiApp(QMainWindow):
         # Conectar el botón de USB
         self.ui.btn_info_usb.clicked.connect(self.mostrar_info_usb)
         # Mostrar la página de inicio al iniciar la aplicación        
-        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inicio)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inicio)
         # Conectar el botón de limpiar textos
         self.ui.btn_limpiar.clicked.connect(self.limpiar_textos)
         # Conectar el botón de regresar al menú principal
         self.ui.btn_regresar_menu.clicked.connect(self.volver_menu_principal)
-        self.ui.btn_menu_ppal.clicked.connect(self.volver_menu_principal)
         # Conectar el botón de Configuración
         self.ui.btn_config.clicked.connect(self.mostrar_inf_config)
         # Conectar el botón de Configuración Regional
         self.ui.btn_cambio_regional.clicked.connect(self.aplicar_config_regional)
         # Conectar el botón de Herramientas
-        self.ui.btn_config_tools.clicked.connect(self.mostrar_info_regional)
+        #self.ui.btn_config_tools.clicked.connect(self.mostrar_info_regional)
         # Conectar el botón de Herramientas para CONSULTAR DATOS DE LA BD (Ejemplo)
-        self.ui.btn_config_sql_tools.clicked.connect(self.consultar_configuracion_db)
+        # self.ui.btn_config_sql_tools.clicked.connect(self.consultar_configuracion_db)
         
 
     def control_bt_minimizar(self):
@@ -113,26 +109,22 @@ class MiApp(QMainWindow):
         self.showMaximized()
         self.ui.btn_maximizar.hide()
         self.ui.btn_restaurar.show()
+    
+    # ------------------ NUEVAS FUNCIONES DE INTEGRACIÓN SQLITE ------------------
+    
     def consultar_configuracion_db(self):
         """
         Función conectada a btn_config_sql_tools que lee datos de la tabla ark_company 
         y los muestra en el área de texto de configuración (textEdit_info_config).
         ESTA FUNCIÓN ES EXCLUSIVAMENTE PARA CONSULTA (SELECT).
         """
-        # Consulta SQL para obtener los datos de la empresa
         sql = "SELECT emp_IDauto, emp_Codigo, emp_Descripcion, emp_IDfiscal, emp_FechaCreacion FROM ark_company ORDER BY emp_IDauto DESC;"
         
         self.ui.textEdit_info_config.clear() 
         filas = self.db_manager.fetch_data(sql)
         output = "--- RESULTADO DE CONSULTA SQL (ark_company) ---\n\n"
         
-        # Verificar si hay registros en la tabla
         if filas:
-            # Obtener la primera empresa registrada (la más reciente según el ORDER BY)
-            empresa_registrada = filas[0]['emp_Descripcion']
-            output += f"La operadora Empresa registrada en la aplicación \"ArkToolsPC\" es: {empresa_registrada}.\n\n"
-            
-            # Mostrar el resto de los registros
             for i, fila in enumerate(filas):
                 output += f"Registro {i+1} (ID: {fila['emp_IDauto']}):\n"
                 output += f"  Código: {fila['emp_Codigo']}\n"
@@ -142,11 +134,10 @@ class MiApp(QMainWindow):
         else:
             output += "No se encontraron registros en la tabla 'ark_company'.\n"
             output += "Utiliza la sección de gestión (que definiremos más tarde) para insertar datos."
-        
-        # Mostrar el resultado en el QTextEdit
+            
         self.ui.textEdit_info_config.setText(output)
         logging.info("Consulta a ark_company ejecutada y resultados mostrados.")
-    
+
     # ------------------ MOSTRAR MENSAJE DE CONFIRMACIÓN ------------------
     def show_notification(self, title, message, is_error=False):
         """
@@ -187,21 +178,16 @@ class MiApp(QMainWindow):
 
     # ------------------ MOSTRAR MENÚ DE HARDWARE ------------------
     def mover_menu(self):
-        """
-        Muestra u oculta el menú principal (frame_menu).
-        Asegura que los submenús (frame_sub_hardware y frame_operations) estén cerrados antes de abrir el menú principal.
-        """
-        # Cerrar los submenús antes de abrir el menú principal
+        # Asegurarse de que el submenú de hardware está cerrado antes de abrir el menú principal
         self.ui.frame_sub_hardware.setMaximumWidth(0)
         self.ui.frame_operations.setMaximumWidth(0)
 
         width = self.ui.frame_menu.maximumWidth()
         if width == 0:
-            extender = 200  # Mostrar el menú principal
+            extender = 200
         else:
-            extender = 0  # Ocultar el menú principal
-
-        # Animación para el menú principal
+            extender = 0
+        
         self.animacion = QPropertyAnimation(self.ui.frame_menu, b'maximumWidth')
         self.animacion.setDuration(300)
         self.animacion.setStartValue(width)
@@ -211,21 +197,18 @@ class MiApp(QMainWindow):
 
     # ------------------ MOSTRAR SUBMENÚ DE HARDWARE ------------------
     def toggle_sub_hardware_menu(self):
-        """
-        Alterna la visibilidad del submenú de hardware (frame_sub_hardware).
-        Si el submenú está visible, lo oculta y muestra el menú principal.
-        Si el submenú está oculto, lo muestra y oculta el menú principal.
-        """
         # Obtener el ancho actual del submenú
         current_width_sub = self.ui.frame_sub_hardware.maximumWidth()
         
         # Definir el ancho de la animación (0 para ocultar, 200 para mostrar)
         if current_width_sub == 0:
-            end_width_sub = 200  # Mostrar el submenú
-            end_width_menu = 0   # Ocultar el menú principal
+            # Si el submenú está oculto, lo mostramos y ocultamos el menú principal
+            end_width_sub = 200
+            end_width_menu = 0
         else:
-            end_width_sub = 0    # Ocultar el submenú
-            end_width_menu = 200 # Mostrar el menú principal
+            # Si el submenú está visible, lo ocultamos y mostramos el menú principal
+            end_width_sub = 0
+            end_width_menu = 200
 
         # Animación para el submenú
         self.animacion_sub_hardware = QPropertyAnimation(self.ui.frame_sub_hardware, b'maximumWidth')
@@ -242,73 +225,12 @@ class MiApp(QMainWindow):
         self.animacion_menu.setEndValue(end_width_menu)
         self.animacion_menu.setEasingCurve(QEasingCurve.Type.InOutQuart)
         self.animacion_menu.start()
-
-    # ------------------ MOSTRAR SUBMENÚ DE OPERACIONES ------------------
-    def toggle_operations_menu(self):
-        """
-        Alterna la visibilidad del submenú de operaciones (frame_operations).
-        Si el submenú está visible, lo oculta y muestra el menú principal.
-        Si el submenú está oculto, lo muestra y oculta el menú principal.
-        """
-        # Obtener el ancho actual del submenú
-        current_width_operations = self.ui.frame_operations.maximumWidth()
-        
-        # Definir el ancho de la animación (0 para ocultar, 200 para mostrar)
-        if current_width_operations == 0:
-            end_width_operations = 200  # Mostrar el submenú
-            end_width_menu = 0         # Ocultar el menú principal
-        else:
-            end_width_operations = 0   # Ocultar el submenú
-            end_width_menu = 200       # Mostrar el menú principal
-
-        # Animación para el submenú de operaciones
-        self.animacion_operations = QPropertyAnimation(self.ui.frame_operations, b'maximumWidth')
-        self.animacion_operations.setDuration(300)
-        self.animacion_operations.setStartValue(current_width_operations)
-        self.animacion_operations.setEndValue(end_width_operations)
-        self.animacion_operations.setEasingCurve(QEasingCurve.Type.InOutQuart)
-        self.animacion_operations.start()
-
-        # Animación para el menú principal
-        self.animacion_menu = QPropertyAnimation(self.ui.frame_menu, b'maximumWidth')
-        self.animacion_menu.setDuration(300)
-        self.animacion_menu.setStartValue(self.ui.frame_menu.maximumWidth())
-        self.animacion_menu.setEndValue(end_width_menu)
-        self.animacion_menu.setEasingCurve(QEasingCurve.Type.InOutQuart)
-        self.animacion_menu.start()
-        # ---------------------------------------------------
+    # ---------------------------------------------------
     
     # Función para volver al menú principal
     def volver_menu_principal(self):
-        """
-        Cierra todos los submenús y muestra el menú principal (frame_menu) con animaciones.
-        """
-        # Animación para cerrar el submenú de hardware
-        if self.ui.frame_sub_hardware.maximumWidth() > 0:
-            self.animacion_sub_hardware = QPropertyAnimation(self.ui.frame_sub_hardware, b'maximumWidth')
-            self.animacion_sub_hardware.setDuration(300)
-            self.animacion_sub_hardware.setStartValue(self.ui.frame_sub_hardware.maximumWidth())
-            self.animacion_sub_hardware.setEndValue(0)
-            self.animacion_sub_hardware.setEasingCurve(QEasingCurve.Type.InOutQuart)
-            self.animacion_sub_hardware.start()
-
-        # Animación para cerrar el submenú de operaciones
-        if self.ui.frame_operations.maximumWidth() > 0:
-            self.animacion_operations = QPropertyAnimation(self.ui.frame_operations, b'maximumWidth')
-            self.animacion_operations.setDuration(300)
-            self.animacion_operations.setStartValue(self.ui.frame_operations.maximumWidth())
-            self.animacion_operations.setEndValue(0)
-            self.animacion_operations.setEasingCurve(QEasingCurve.Type.InOutQuart)
-            self.animacion_operations.start()
-
-        # Animación para mostrar el menú principal
-        if self.ui.frame_menu.maximumWidth() == 0:
-            self.animacion_menu = QPropertyAnimation(self.ui.frame_menu, b'maximumWidth')
-            self.animacion_menu.setDuration(300)
-            self.animacion_menu.setStartValue(self.ui.frame_menu.maximumWidth())
-            self.animacion_menu.setEndValue(200)
-            self.animacion_menu.setEasingCurve(QEasingCurve.Type.InOutQuart)
-            self.animacion_menu.start()
+        # Contrae el submenú de hardware y despliega el menú principal
+        self.toggle_sub_hardware_menu()
 
     # SizeGrip
     def resizeEvent(self, event):
@@ -317,23 +239,15 @@ class MiApp(QMainWindow):
 
     # Mover ventana
     def mousePressEvent(self, event):
-        """
-        Guarda la posición inicial del mouse cuando se presiona el botón del mouse.
-        """
-        if event.button() == Qt.MouseButton.LeftButton:
-            self.clickPosition = event.globalPosition().toPoint()
+        self.clickPosition = event.globalPosition().toPoint()
 
     def mover_ventana(self, event):
-        """
-        Permite mover la ventana cuando el usuario arrastra el mouse sobre el frame superior.
-        """
         if not self.isMaximized():
             if event.buttons() == Qt.MouseButton.LeftButton:
                 self.move(self.pos() + event.globalPosition().toPoint() - self.clickPosition)
                 self.clickPosition = event.globalPosition().toPoint()
                 event.accept()
 
-        # Maximizar/restaurar la ventana si el mouse está cerca de la parte superior
         if event.globalPosition().y() <= 20:
             self.showMaximized()
         else:
@@ -350,7 +264,7 @@ class MiApp(QMainWindow):
         self.ui.textEdit_info_config.clear()
         
         # Vuelve a la página de inicio
-        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inicio)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inicio)
     
     # ------------------ MOSTRAR INFORMACIÓN DE RED ------------------
     
@@ -360,7 +274,7 @@ class MiApp(QMainWindow):
         """
         info_red = system_info.get_network_info()
         self.ui.textEdit_info_red.setText(info_red)
-        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inf_red)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_red)
         
     # ------------------ MOSTRAR INFORMACIÓN DEL SISTEMA OPERATIVO ------------------
     
@@ -370,7 +284,7 @@ class MiApp(QMainWindow):
         """
         info_os = system_info.get_os_info()
         self.ui.textEdit_info_so.setText(info_os)
-        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inf_so)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_so)
 
     # ------------------ MOSTRAR INFORMACIÓN REGIONAL ------------------
 
@@ -380,7 +294,7 @@ class MiApp(QMainWindow):
         """
         info_regional = system_info.get_regional_settings()
         self.ui.textEdit_info_regional.setText(info_regional)
-        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inf_regional)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_regional)
     
     def mostrar_info_mbd(self):
         """
@@ -391,7 +305,7 @@ class MiApp(QMainWindow):
         self.ui.label_info_hw.setPixmap(pixmap_mbd)
         info_mbd = system_info.get_motherboard_info()
         self.ui.textEdit_info_hw.setText(info_mbd)
-        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inf_hardware)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
 
     def mostrar_info_cpu_hw(self):
         """
@@ -402,7 +316,7 @@ class MiApp(QMainWindow):
         self.ui.label_info_hw.setPixmap(pixmap_cpu)
         info_cpu = system_info.get_cpu_info()
         self.ui.textEdit_info_hw.setText(info_cpu)
-        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inf_hardware)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
     
     def mostrar_info_gpu(self):
         self.ui.textEdit_info_hw.clear()
@@ -410,7 +324,7 @@ class MiApp(QMainWindow):
         self.ui.label_info_hw.setPixmap(pixmap_gpu)
         info_gpu = system_info.get_gpu_info()
         self.ui.textEdit_info_hw.setText(info_gpu)
-        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inf_hardware)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
 
     def mostrar_info_ram(self):
         self.ui.textEdit_info_hw.clear()
@@ -418,7 +332,7 @@ class MiApp(QMainWindow):
         self.ui.label_info_hw.setPixmap(pixmap_ram)
         info_ram = system_info.get_ram_info()
         self.ui.textEdit_info_hw.setText(info_ram)
-        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inf_hardware)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
 
     def mostrar_info_hdd(self):
         self.ui.textEdit_info_hw.clear()
@@ -426,7 +340,7 @@ class MiApp(QMainWindow):
         self.ui.label_info_hw.setPixmap(pixmap_hdd)
         info_hdd = system_info.get_disk_info()
         self.ui.textEdit_info_hw.setText(info_hdd)
-        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inf_hardware)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
         
     def mostrar_info_nic(self):
         self.ui.textEdit_info_hw.clear()
@@ -434,7 +348,7 @@ class MiApp(QMainWindow):
         self.ui.label_info_hw.setPixmap(pixmap_nic)
         info_nic = system_info.get_nic_info()
         self.ui.textEdit_info_hw.setText(info_nic)
-        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inf_hardware)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
 
     def mostrar_info_com(self):
         self.ui.textEdit_info_hw.clear()
@@ -442,7 +356,7 @@ class MiApp(QMainWindow):
         self.ui.label_info_hw.setPixmap(pixmap_com)
         info_com = system_info.get_com_ports()
         self.ui.textEdit_info_hw.setText(info_com)
-        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inf_hardware)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
         
     def mostrar_info_bth(self):
         self.ui.textEdit_info_hw.clear()
@@ -450,7 +364,7 @@ class MiApp(QMainWindow):
         self.ui.label_info_hw.setPixmap(pixmap_bth)
         info_bth = system_info.get_bluetooth_devices()
         self.ui.textEdit_info_hw.setText(info_bth)
-        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inf_hardware)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
 
     def mostrar_info_audio(self):
         self.ui.textEdit_info_hw.clear()
@@ -458,7 +372,7 @@ class MiApp(QMainWindow):
         self.ui.label_info_hw.setPixmap(pixmap_audio)
         info_audio = system_info.get_audio_devices()
         self.ui.textEdit_info_hw.setText(info_audio)
-        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inf_hardware)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
 
     def mostrar_info_sistema_gen(self):
         self.ui.textEdit_info_hw.clear()
@@ -466,7 +380,7 @@ class MiApp(QMainWindow):
         self.ui.label_info_hw.setPixmap(pixmap_sistema)
         info_sistema = system_info.get_system_info()
         self.ui.textEdit_info_hw.setText(info_sistema)
-        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inf_hardware)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
         
     def mostrar_info_usb(self):
         self.ui.textEdit_info_hw.clear()
@@ -474,13 +388,13 @@ class MiApp(QMainWindow):
         self.ui.label_info_hw.setPixmap(pixmap_usb)
         info_usb = system_info.get_usb_devices()
         self.ui.textEdit_info_hw.setText(info_usb)
-        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inf_hardware)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_hardware)
     
     def mostrar_inf_config(self):
         """
         Muestra la página de configuración del sistema.
         """
-        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inf_config)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_inf_config)
         
     def aplicar_config_regional(self):
         """

@@ -218,7 +218,7 @@ QPushButton:pressed {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-arrow-down-left.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-arrow-down-left.svg</iconset>
+              <normaloff>assets/icons/fi-sr-arrow-down-left.svg</normaloff>assets/icons/fi-sr-arrow-down-left.svg</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -275,7 +275,7 @@ QPushButton:pressed {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-expand.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-expand.svg</iconset>
+              <normaloff>assets/icons/fi-sr-expand.svg</normaloff>assets/icons/fi-sr-expand.svg</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -332,7 +332,7 @@ QPushButton:pressed {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-expand-arrows.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-expand-arrows.svg</iconset>
+              <normaloff>assets/icons/fi-sr-expand-arrows.svg</normaloff>assets/icons/fi-sr-expand-arrows.svg</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -389,12 +389,12 @@ QPushButton:pressed {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-cross-small.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-cross-small.svg</iconset>
+              <normaloff>assets/icons/fi-sr-cross-small.svg</normaloff>assets/icons/fi-sr-cross-small.svg</iconset>
             </property>
             <property name="iconSize">
              <size>
-              <width>28</width>
-              <height>28</height>
+              <width>35</width>
+              <height>35</height>
              </size>
             </property>
            </widget>
@@ -446,6 +446,382 @@ QFrame {
           <property name="bottomMargin">
            <number>0</number>
           </property>
+          <item>
+           <widget class="QFrame" name="frame_menu">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>0</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">/* Estilo del marco */
+QFrame {
+    background-color: rgb(85, 170, 255);
+   
+}</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Shape::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QPushButton" name="btn_info_hardware">
+               <property name="styleSheet">
+                <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color:qlineargradient(
+    spread:pad, 
+    x1:0, 
+    y1:0, 
+    x2:1, 
+    y2:0, 
+    stop:0 rgba(102, 178, 255, 255), 
+    stop:0.55 rgba(61, 148, 235, 255), 
+    stop:0.98 rgba(0, 0, 0, 255), 
+    stop:1 rgba(0, 0, 0, 0)
+);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}</string>
+               </property>
+               <property name="text">
+                <string>      Hardware</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>assets/icons/PC01.svg</normaloff>assets/icons/PC01.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>35</width>
+                 <height>35</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_info_red">
+               <property name="styleSheet">
+                <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color: qlineargradient(
+    spread:pad, 
+    x1:0, 
+    y1:0, 
+    x2:1, 
+    y2:0, 
+    stop:0 rgba(102, 178, 255, 255), 
+    stop:0.55 rgba(61, 148, 235, 255), 
+    stop:0.98 rgba(0, 0, 0, 255), 
+    stop:1 rgba(0, 0, 0, 0)
+);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}</string>
+               </property>
+               <property name="text">
+                <string>      Red</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>assets/icons/Red01.png</normaloff>assets/icons/Red01.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>35</width>
+                 <height>35</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_info_so">
+               <property name="styleSheet">
+                <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color: qlineargradient(
+    spread:pad, 
+    x1:0, 
+    y1:0, 
+    x2:1, 
+    y2:0, 
+    stop:0 rgba(102, 178, 255, 255), 
+    stop:0.55 rgba(61, 148, 235, 255), 
+    stop:0.98 rgba(0, 0, 0, 255), 
+    stop:1 rgba(0, 0, 0, 0)
+);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}</string>
+               </property>
+               <property name="text">
+                <string>      Sistema</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>assets/icons/fi-sr-computer-classic.svg</normaloff>assets/icons/fi-sr-computer-classic.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>35</width>
+                 <height>36</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_info_regional">
+               <property name="styleSheet">
+                <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color: qlineargradient(
+    spread:pad, 
+    x1:0, 
+    y1:0, 
+    x2:1, 
+    y2:0, 
+    stop:0 rgba(102, 178, 255, 255), 
+    stop:0.55 rgba(61, 148, 235, 255), 
+    stop:0.98 rgba(0, 0, 0, 255), 
+    stop:1 rgba(0, 0, 0, 0)
+);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}</string>
+               </property>
+               <property name="text">
+                <string>      Regional</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>assets/icons/Regional01.svg</normaloff>assets/icons/Regional01.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>35</width>
+                 <height>35</height>
+                </size>
+               </property>
+               <property name="shortcut">
+                <string>Ctrl+R</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_limpiar">
+               <property name="styleSheet">
+                <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color: qlineargradient(
+    spread:pad, 
+    x1:0, 
+    y1:0, 
+    x2:1, 
+    y2:0, 
+    stop:0 rgba(102, 178, 255, 255), 
+    stop:0.55 rgba(61, 148, 235, 255), 
+    stop:0.98 rgba(0, 0, 0, 255), 
+    stop:1 rgba(0, 0, 0, 0)
+);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}</string>
+               </property>
+               <property name="text">
+                <string>      Limpiar</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>assets/icons/Clear01.svg</normaloff>assets/icons/Clear01.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>35</width>
+                 <height>35</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_3">
+               <property name="orientation">
+                <enum>Qt::Orientation::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>106</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_operations">
+               <property name="styleSheet">
+                <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color: qlineargradient(
+    spread:pad, 
+    x1:0, 
+    y1:0, 
+    x2:1, 
+    y2:0, 
+    stop:0 rgba(102, 178, 255, 255), 
+    stop:0.55 rgba(61, 148, 235, 255), 
+    stop:0.98 rgba(0, 0, 0, 255), 
+    stop:1 rgba(0, 0, 0, 0)
+);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}</string>
+               </property>
+               <property name="text">
+                <string>  Operaciones</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>assets/icons/fi-sr-menu-dots.svg</normaloff>assets/icons/fi-sr-menu-dots.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>28</width>
+                 <height>29</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_config">
+               <property name="styleSheet">
+                <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color:qlineargradient(
+    spread:pad, 
+    x1:0, 
+    y1:0, 
+    x2:1, 
+    y2:0, 
+    stop:0 rgba(102, 178, 255, 255), 
+    stop:0.55 rgba(61, 148, 235, 255), 
+    stop:0.98 rgba(0, 0, 0, 255), 
+    stop:1 rgba(0, 0, 0, 0)
+);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}</string>
+               </property>
+               <property name="text">
+                <string>  Configuración</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>assets/icons/fi-sr-settings.svg</normaloff>assets/icons/fi-sr-settings.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>35</width>
+                 <height>35</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
           <item>
            <widget class="QFrame" name="frame_sub_hardware">
             <property name="minimumSize">
@@ -525,11 +901,11 @@ QPushButton:pressed {
 }</string>
                </property>
                <property name="text">
-                <string>Sistema</string>
+                <string>  Sistema</string>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-settings.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-settings.svg</iconset>
+                 <normaloff>assets/icons/fi-sr-settings.svg</normaloff>assets/icons/fi-sr-settings.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -588,7 +964,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>C:/Users/juanep/.designer/backup/imagen/mbd_01.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/mbd_01.svg</iconset>
+                 <normaloff>assets/icons/mbd_01.svg</normaloff>assets/icons/mbd_01.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -647,7 +1023,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>C:/Users/juanep/.designer/backup/imagen/cpu01.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/cpu01.svg</iconset>
+                 <normaloff>assets/icons/cpu01.svg</normaloff>assets/icons/cpu01.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -709,7 +1085,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>C:/Users/juanep/.designer/backup/imagen/Grafica01.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/Grafica01.svg</iconset>
+                 <normaloff>assets/icons/Grafica01.svg</normaloff>assets/icons/Grafica01.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -768,7 +1144,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>C:/Users/juanep/.designer/backup/imagen/RAM.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/RAM.svg</iconset>
+                 <normaloff>assets/icons/RAM.svg</normaloff>assets/icons/RAM.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -827,7 +1203,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>C:/Users/juanep/.designer/backup/imagen/hdd2.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/hdd2.svg</iconset>
+                 <normaloff>assets/icons/hdd2.svg</normaloff>assets/icons/hdd2.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -886,7 +1262,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>C:/Users/juanep/.designer/backup/imagen/Red01.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/Red01.svg</iconset>
+                 <normaloff>assets/icons/nic01.svg</normaloff>assets/icons/nic01.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -945,7 +1321,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-foreign-language-audio.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-foreign-language-audio.svg</iconset>
+                 <normaloff>assets/icons/audio01.svg</normaloff>assets/icons/audio01.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1004,7 +1380,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>C:/Users/juanep/.designer/backup/imagen/hdd.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/hdd.svg</iconset>
+                 <normaloff>assets/icons/com02.svg</normaloff>assets/icons/com02.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1063,7 +1439,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>C:/Users/juanep/.designer/backup/imagen/usb1.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/usb1.svg</iconset>
+                 <normaloff>assets/icons/usb1.svg</normaloff>assets/icons/usb1.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1122,7 +1498,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>imagen/bluetootht.svg</normaloff>imagen/bluetootht.svg</iconset>
+                 <normaloff>assets/icons/bluetootht.svg</normaloff>assets/icons/bluetootht.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1181,7 +1557,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-angle-double-small-left.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-angle-double-small-left.svg</iconset>
+                 <normaloff>assets/icons/fi-sr-angle-double-small-left.svg</normaloff>assets/icons/fi-sr-angle-double-small-left.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1195,7 +1571,7 @@ QPushButton:pressed {
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="frame_menu">
+           <widget class="QFrame" name="frame_operations">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -1221,9 +1597,24 @@ QFrame {
             <property name="frameShadow">
              <enum>QFrame::Shadow::Raised</enum>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_3">
+            <layout class="QVBoxLayout" name="verticalLayout_16">
+             <property name="spacing">
+              <number>4</number>
+             </property>
+             <property name="leftMargin">
+              <number>4</number>
+             </property>
+             <property name="topMargin">
+              <number>4</number>
+             </property>
+             <property name="rightMargin">
+              <number>4</number>
+             </property>
+             <property name="bottomMargin">
+              <number>4</number>
+             </property>
              <item>
-              <widget class="QPushButton" name="btn_info_hardware">
+              <widget class="QPushButton" name="btn_ark_company">
                <property name="styleSheet">
                 <string notr="true">/* Estilo base del botón */
 QPushButton {
@@ -1255,213 +1646,39 @@ QPushButton:pressed {
 }</string>
                </property>
                <property name="text">
-                <string>      Hardware</string>
+                <string>      Empresa</string>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>C:/Users/juanep/.designer/backup/imagen/PC02.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/PC02.svg</iconset>
+                 <normaloff>assets/icons/fi-sr-home.svg</normaloff>assets/icons/fi-sr-home.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
-                 <width>35</width>
-                 <height>35</height>
+                 <width>18</width>
+                 <height>18</height>
                 </size>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_info_red">
-               <property name="styleSheet">
-                <string notr="true">/* Estilo base del botón */
-QPushButton {
-    background-color: qlineargradient(
-    spread:pad, 
-    x1:0, 
-    y1:0, 
-    x2:1, 
-    y2:0, 
-    stop:0 rgba(102, 178, 255, 255), 
-    stop:0.55 rgba(61, 148, 235, 255), 
-    stop:0.98 rgba(0, 0, 0, 255), 
-    stop:1 rgba(0, 0, 0, 0)
-);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: bold;
-}
-/* Estilo cuando el mouse pasa por encima */
-QPushButton:hover {
-    background-color: #0056b3;
-}
-/* Estilo cuando el botón es presionado */
-QPushButton:pressed {
-    background-color: #004085;
-}</string>
-               </property>
+              <widget class="QPushButton" name="btn_ark_clients">
                <property name="text">
-                <string>      Red</string>
+                <string>      Clientes</string>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>C:/Users/juanep/.designer/backup/imagen/netword01.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/netword01.svg</iconset>
+                 <normaloff>assets/icons/fi-sr-person-shelter.svg</normaloff>assets/icons/fi-sr-person-shelter.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
-                 <width>35</width>
-                 <height>35</height>
+                 <width>18</width>
+                 <height>18</height>
                 </size>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_info_so">
-               <property name="styleSheet">
-                <string notr="true">/* Estilo base del botón */
-QPushButton {
-    background-color: qlineargradient(
-    spread:pad, 
-    x1:0, 
-    y1:0, 
-    x2:1, 
-    y2:0, 
-    stop:0 rgba(102, 178, 255, 255), 
-    stop:0.55 rgba(61, 148, 235, 255), 
-    stop:0.98 rgba(0, 0, 0, 255), 
-    stop:1 rgba(0, 0, 0, 0)
-);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: bold;
-}
-/* Estilo cuando el mouse pasa por encima */
-QPushButton:hover {
-    background-color: #0056b3;
-}
-/* Estilo cuando el botón es presionado */
-QPushButton:pressed {
-    background-color: #004085;
-}</string>
-               </property>
-               <property name="text">
-                <string>      Sistema</string>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-computer-classic.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-computer-classic.svg</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>35</width>
-                 <height>36</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="btn_info_regional">
-               <property name="styleSheet">
-                <string notr="true">/* Estilo base del botón */
-QPushButton {
-    background-color: qlineargradient(
-    spread:pad, 
-    x1:0, 
-    y1:0, 
-    x2:1, 
-    y2:0, 
-    stop:0 rgba(102, 178, 255, 255), 
-    stop:0.55 rgba(61, 148, 235, 255), 
-    stop:0.98 rgba(0, 0, 0, 255), 
-    stop:1 rgba(0, 0, 0, 0)
-);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: bold;
-}
-/* Estilo cuando el mouse pasa por encima */
-QPushButton:hover {
-    background-color: #0056b3;
-}
-/* Estilo cuando el botón es presionado */
-QPushButton:pressed {
-    background-color: #004085;
-}</string>
-               </property>
-               <property name="text">
-                <string>      Regional</string>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>C:/Users/juanep/.designer/backup/imagen/Regional01.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/Regional01.svg</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>35</width>
-                 <height>35</height>
-                </size>
-               </property>
-               <property name="shortcut">
-                <string>Ctrl+R</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="btn_limpiar">
-               <property name="styleSheet">
-                <string notr="true">/* Estilo base del botón */
-QPushButton {
-    background-color: qlineargradient(
-    spread:pad, 
-    x1:0, 
-    y1:0, 
-    x2:1, 
-    y2:0, 
-    stop:0 rgba(102, 178, 255, 255), 
-    stop:0.55 rgba(61, 148, 235, 255), 
-    stop:0.98 rgba(0, 0, 0, 255), 
-    stop:1 rgba(0, 0, 0, 0)
-);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: bold;
-}
-/* Estilo cuando el mouse pasa por encima */
-QPushButton:hover {
-    background-color: #0056b3;
-}
-/* Estilo cuando el botón es presionado */
-QPushButton:pressed {
-    background-color: #004085;
-}</string>
-               </property>
-               <property name="text">
-                <string>      Limpiar</string>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>C:/Users/juanep/.designer/backup/imagen/Clear01.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/Clear01.svg</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>35</width>
-                 <height>35</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="btn_config">
+              <widget class="QPushButton" name="btn_ark_ark_currencies">
                <property name="styleSheet">
                 <string notr="true">/* Estilo base del botón */
 QPushButton {
@@ -1493,16 +1710,439 @@ QPushButton:pressed {
 }</string>
                </property>
                <property name="text">
-                <string>  Configuración</string>
+                <string>      Monedas</string>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-settings.svg</normaloff>C:/Users/juanep/.designer/backup/imagen/fi-sr-settings.svg</iconset>
+                 <normaloff>assets/icons/fi-sr-currency.svg</normaloff>assets/icons/fi-sr-currency.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
-                 <width>35</width>
-                 <height>35</height>
+                 <width>18</width>
+                 <height>18</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_ark_categories">
+               <property name="styleSheet">
+                <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color:qlineargradient(
+    spread:pad, 
+    x1:0, 
+    y1:0, 
+    x2:1, 
+    y2:0, 
+    stop:0 rgba(102, 178, 255, 255), 
+    stop:0.55 rgba(61, 148, 235, 255), 
+    stop:0.98 rgba(0, 0, 0, 255), 
+    stop:1 rgba(0, 0, 0, 0)
+);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}</string>
+               </property>
+               <property name="text">
+                <string>    Categorías</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>assets/icons/fi-sr-category-alt.svg</normaloff>assets/icons/fi-sr-category-alt.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>18</width>
+                 <height>18</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_ark_functional_units">
+               <property name="styleSheet">
+                <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color:qlineargradient(
+    spread:pad, 
+    x1:0, 
+    y1:0, 
+    x2:1, 
+    y2:0, 
+    stop:0 rgba(102, 178, 255, 255), 
+    stop:0.55 rgba(61, 148, 235, 255), 
+    stop:0.98 rgba(0, 0, 0, 255), 
+    stop:1 rgba(0, 0, 0, 0)
+);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}</string>
+               </property>
+               <property name="text">
+                <string> Unidades</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>assets/icons/fi-sr-department-structure.svg</normaloff>assets/icons/fi-sr-department-structure.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>18</width>
+                 <height>18</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_ark_actions">
+               <property name="styleSheet">
+                <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color:qlineargradient(
+    spread:pad, 
+    x1:0, 
+    y1:0, 
+    x2:1, 
+    y2:0, 
+    stop:0 rgba(102, 178, 255, 255), 
+    stop:0.55 rgba(61, 148, 235, 255), 
+    stop:0.98 rgba(0, 0, 0, 255), 
+    stop:1 rgba(0, 0, 0, 0)
+);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}</string>
+               </property>
+               <property name="text">
+                <string>      Acciones</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>assets/icons/fi-sr-tasks.svg</normaloff>assets/icons/fi-sr-tasks.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>18</width>
+                 <height>18</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_ark_employees">
+               <property name="styleSheet">
+                <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color:qlineargradient(
+    spread:pad, 
+    x1:0, 
+    y1:0, 
+    x2:1, 
+    y2:0, 
+    stop:0 rgba(102, 178, 255, 255), 
+    stop:0.55 rgba(61, 148, 235, 255), 
+    stop:0.98 rgba(0, 0, 0, 255), 
+    stop:1 rgba(0, 0, 0, 0)
+);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}</string>
+               </property>
+               <property name="text">
+                <string>      Empleados</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>assets/icons/fi-sr-employee-man-alt.svg</normaloff>assets/icons/fi-sr-employee-man-alt.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>18</width>
+                 <height>18</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_ark_device_types">
+               <property name="styleSheet">
+                <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color:qlineargradient(
+    spread:pad, 
+    x1:0, 
+    y1:0, 
+    x2:1, 
+    y2:0, 
+    stop:0 rgba(102, 178, 255, 255), 
+    stop:0.55 rgba(61, 148, 235, 255), 
+    stop:0.98 rgba(0, 0, 0, 255), 
+    stop:1 rgba(0, 0, 0, 0)
+);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}</string>
+               </property>
+               <property name="text">
+                <string>      Tipos</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>assets/icons/fi-sr-list.svg</normaloff>assets/icons/fi-sr-list.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>18</width>
+                 <height>18</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_ark_it_assets">
+               <property name="styleSheet">
+                <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color:qlineargradient(
+    spread:pad, 
+    x1:0, 
+    y1:0, 
+    x2:1, 
+    y2:0, 
+    stop:0 rgba(102, 178, 255, 255), 
+    stop:0.55 rgba(61, 148, 235, 255), 
+    stop:0.98 rgba(0, 0, 0, 255), 
+    stop:1 rgba(0, 0, 0, 0)
+);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}</string>
+               </property>
+               <property name="text">
+                <string>    Recursos</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>assets/icons/fi-sr-resources.svg</normaloff>assets/icons/fi-sr-resources.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>18</width>
+                 <height>18</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_ark_job_titles">
+               <property name="styleSheet">
+                <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color:qlineargradient(
+    spread:pad, 
+    x1:0, 
+    y1:0, 
+    x2:1, 
+    y2:0, 
+    stop:0 rgba(102, 178, 255, 255), 
+    stop:0.55 rgba(61, 148, 235, 255), 
+    stop:0.98 rgba(0, 0, 0, 255), 
+    stop:1 rgba(0, 0, 0, 0)
+);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}</string>
+               </property>
+               <property name="text">
+                <string>   Profesiones</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>assets/icons/fi-sr-person-chalkboard.svg</normaloff>assets/icons/fi-sr-person-chalkboard.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>18</width>
+                 <height>18</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_ark_users">
+               <property name="styleSheet">
+                <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color:qlineargradient(
+    spread:pad, 
+    x1:0, 
+    y1:0, 
+    x2:1, 
+    y2:0, 
+    stop:0 rgba(102, 178, 255, 255), 
+    stop:0.55 rgba(61, 148, 235, 255), 
+    stop:0.98 rgba(0, 0, 0, 255), 
+    stop:1 rgba(0, 0, 0, 0)
+);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}</string>
+               </property>
+               <property name="text">
+                <string>    Usuarios</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>assets/icons/fi-sr-person-simple.svg</normaloff>assets/icons/fi-sr-person-simple.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>18</width>
+                 <height>18</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_menu_ppal">
+               <property name="styleSheet">
+                <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color:qlineargradient(
+    spread:pad, 
+    x1:0, 
+    y1:0, 
+    x2:1, 
+    y2:0, 
+    stop:0 rgba(102, 178, 255, 255), 
+    stop:0.55 rgba(61, 148, 235, 255), 
+    stop:0.98 rgba(0, 0, 0, 255), 
+    stop:1 rgba(0, 0, 0, 0)
+);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}</string>
+               </property>
+               <property name="text">
+                <string>Menú Principal</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>assets/icons/fi-sr-angle-double-small-left.svg</normaloff>assets/icons/fi-sr-angle-double-small-left.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>18</width>
+                 <height>18</height>
                 </size>
                </property>
               </widget>
@@ -1542,7 +2182,7 @@ QFrame {
               <number>0</number>
              </property>
              <item>
-              <widget class="QStackedWidget" name="stackedWidget">
+              <widget class="QStackedWidget" name="sw_consolas">
                <property name="layoutDirection">
                 <enum>Qt::LayoutDirection::LeftToRight</enum>
                </property>
@@ -1554,7 +2194,7 @@ QFrame {
 </string>
                </property>
                <property name="currentIndex">
-                <number>2</number>
+                <number>0</number>
                </property>
                <widget class="QWidget" name="page_inicio">
                 <property name="styleSheet">
@@ -1564,94 +2204,243 @@ QFrame {
     }
 </string>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_6">
+                <layout class="QVBoxLayout" name="verticalLayout_13" stretch="1,1,1">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
                  <item>
-                  <widget class="QLabel" name="label_logo_tools">
-                   <property name="minimumSize">
-                    <size>
-                     <width>120</width>
-                     <height>120</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>260</width>
-                     <height>260</height>
-                    </size>
-                   </property>
-                   <property name="layoutDirection">
-                    <enum>Qt::LayoutDirection::LeftToRight</enum>
+                  <widget class="QFrame" name="frame_inicio_head">
+                   <property name="frameShape">
+                    <enum>QFrame::Shape::StyledPanel</enum>
                    </property>
                    <property name="frameShadow">
-                    <enum>QFrame::Shadow::Sunken</enum>
+                    <enum>QFrame::Shadow::Raised</enum>
                    </property>
-                   <property name="text">
-                    <string/>
-                   </property>
-                   <property name="pixmap">
-                    <pixmap>C:/Users/juanep/.designer/backup/imagen/ArkToolsPC_02.png</pixmap>
-                   </property>
-                   <property name="scaledContents">
-                    <bool>true</bool>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignmentFlag::AlignCenter</set>
-                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_14">
+                    <item>
+                     <widget class="QLabel" name="title_arktoolspc">
+                      <property name="minimumSize">
+                       <size>
+                        <width>40</width>
+                        <height>60</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Consolas</family>
+                        <pointsize>9</pointsize>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 9pt &quot;Consolas&quot;;
+color: #000000; 
+background-color: #f0f0f0;</string>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="textFormat">
+                       <enum>Qt::TextFormat::PlainText</enum>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap>assets/images/ArlToolsPC2.png</pixmap>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="verticalSpacer_2">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Vertical</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>94</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                  <item>
-                  <spacer name="verticalSpacer">
-                   <property name="orientation">
-                    <enum>Qt::Orientation::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>216</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="pie_arkinfo">
-                   <property name="minimumSize">
-                    <size>
-                     <width>40</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>Consolas</family>
-                     <pointsize>9</pointsize>
-                     <italic>false</italic>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">font: 9pt &quot;Consolas&quot;;
-color: #000000; 
-background-color: #f0f0f0;</string>
+                  <widget class="QFrame" name="frame_inicio_middle">
+                   <property name="frameShape">
+                    <enum>QFrame::Shape::StyledPanel</enum>
                    </property>
                    <property name="frameShadow">
-                    <enum>QFrame::Shadow::Sunken</enum>
+                    <enum>QFrame::Shadow::Raised</enum>
                    </property>
-                   <property name="text">
-                    <string>© 2025 Arksoft Integradores de Sistemas, C.A. RIF: J310994692 - Todos los derechos reservados
+                   <layout class="QHBoxLayout" name="horizontalLayout_4">
+                    <item>
+                     <spacer name="horizontalSpacer_2">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>248</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="label_logo_tools">
+                      <property name="minimumSize">
+                       <size>
+                        <width>120</width>
+                        <height>120</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>260</width>
+                        <height>260</height>
+                       </size>
+                      </property>
+                      <property name="layoutDirection">
+                       <enum>Qt::LayoutDirection::LeftToRight</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap>assets/images/ArkToolsPC_02.png</pixmap>
+                      </property>
+                      <property name="scaledContents">
+                       <bool>true</bool>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="horizontalSpacer_3">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>248</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frame_inicio_pie">
+                   <property name="frameShape">
+                    <enum>QFrame::Shape::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Shadow::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_6" stretch="1,1">
+                    <property name="spacing">
+                     <number>6</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>9</number>
+                    </property>
+                    <item>
+                     <spacer name="verticalSpacer">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Vertical</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>123</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="pie_arkinfo">
+                      <property name="minimumSize">
+                       <size>
+                        <width>40</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Consolas</family>
+                        <pointsize>9</pointsize>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 9pt &quot;Consolas&quot;;
+color: #000000; 
+background-color: #f0f0f0;</string>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="text">
+                       <string>© 2025 Arksoft Integradores de Sistemas, C.A. RIF: J310994692 - Todos los derechos reservados
             Contacto: +58 424-3672111 | arksoft.sistemas@gmail.com</string>
-                   </property>
-                   <property name="textFormat">
-                    <enum>Qt::TextFormat::PlainText</enum>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignmentFlag::AlignCenter</set>
-                   </property>
+                      </property>
+                      <property name="textFormat">
+                       <enum>Qt::TextFormat::PlainText</enum>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                 </layout>
@@ -1818,13 +2607,73 @@ QPushButton:pressed {
 }</string>
                          </property>
                          <property name="text">
-                          <string>Cambiar 
-Configuración 
-Regional</string>
+                          <string>  Cambiar 
+  Configuración 
+  Regional</string>
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>imagen/Regional01.svg</normaloff>imagen/Regional01.svg</iconset>
+                           <normaloff>assets/icons/Regional01.svg</normaloff>assets/icons/Regional01.svg</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>35</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="btn_config_sql_tools">
+                         <property name="minimumSize">
+                          <size>
+                           <width>170</width>
+                           <height>90</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>170</width>
+                           <height>90</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <pointsize>-1</pointsize>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px; /* Un padding uniforme puede ayudar a centrarlo */
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center; /* Justifica el texto al centro */
+}
+
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}</string>
+                         </property>
+                         <property name="text">
+                          <string>  Consultar
+  Conexión
+  SQLite</string>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>assets/icons/fi-sr-sql-server.svg</normaloff>assets/icons/fi-sr-sql-server.svg</iconset>
                          </property>
                          <property name="iconSize">
                           <size>
@@ -1870,13 +2719,13 @@ QPushButton:pressed {
 </string>
                          </property>
                          <property name="text">
-                          <string>Consultar
-Configuración
-Actual</string>
+                          <string>  Consultar
+  Configuración
+  Actual</string>
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>imagen/filesettings_102180.svg</normaloff>imagen/filesettings_102180.svg</iconset>
+                           <normaloff>assets/icons/filesettings_102180.svg</normaloff>assets/icons/filesettings_102180.svg</iconset>
                          </property>
                          <property name="iconSize">
                           <size>
@@ -1921,37 +2770,33 @@ background-color: rgb(170, 170, 127);</string>
                    <property name="frameShadow">
                     <enum>QFrame::Shadow::Raised</enum>
                    </property>
-                   <widget class="QLabel" name="label_info_config">
-                    <property name="geometry">
-                     <rect>
-                      <x>0</x>
-                      <y>0</y>
-                      <width>80</width>
-                      <height>80</height>
-                     </rect>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>40</width>
-                      <height>40</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>80</width>
-                      <height>80</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                    <property name="pixmap">
-                     <pixmap>C:/Users/juanep/.designer/backup/imagen/confi01.svg</pixmap>
-                    </property>
-                    <property name="scaledContents">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
+                   <layout class="QVBoxLayout" name="verticalLayout_15">
+                    <item>
+                     <widget class="QLabel" name="label_info_config">
+                      <property name="minimumSize">
+                       <size>
+                        <width>40</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>80</width>
+                        <height>80</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap>C:/Users/juanep/.designer/backup/imagen/confi01.svg</pixmap>
+                      </property>
+                      <property name="scaledContents">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                 </layout>

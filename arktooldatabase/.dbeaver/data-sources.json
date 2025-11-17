@@ -1,0 +1,36 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-199fa58bbee-59b22494f9e3cff8": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "ArkToolsBD.sqlite",
+			"save-password": true,
+			"configuration": {
+				"database": "S:\\Desarrollos\\MyPython\\PySide6\\ARKToolsPC\\arktooldatabase\\ArkToolsBD.sqlite",
+				"url": "jdbc:sqlite:S:\\Desarrollos\\MyPython\\PySide6\\ARKToolsPC\\arktooldatabase\\ArkToolsBD.sqlite",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		}
+	},
+	"virtual-models": {"sqlite_jdbc-199fa58bbee-59b22494f9e3cff8":{"@properties":{"erd.diagram.state":{"serialized":"\u003cdiagram version\u003d\"1\" name\u003d\"empty\" time\u003d\"202510191211\"\u003e\u003centities\u003e\u003cdata-source id\u003d\"sqlite_jdbc-199fa58bbee-59b22494f9e3cff8\"\u003e\u003centity id\u003d\"1\" name\u003d\"ark_action_categories\" fq-name\u003d\"ark_action_categories\" order\u003d\"0\" x\u003d\"503\" y\u003d\"858\"/\u003e\u003centity id\u003d\"2\" name\u003d\"ark_actions\" fq-name\u003d\"ark_actions\" order\u003d\"1\" x\u003d\"284\" y\u003d\"848\"/\u003e\u003centity id\u003d\"3\" name\u003d\"ark_clients\" fq-name\u003d\"ark_clients\" order\u003d\"2\" x\u003d\"958\" y\u003d\"651\"/\u003e\u003centity id\u003d\"4\" name\u003d\"ark_company\" fq-name\u003d\"ark_company\" order\u003d\"3\" x\u003d\"40\" y\u003d\"1560\"/\u003e\u003centity id\u003d\"5\" name\u003d\"ark_currencies\" fq-name\u003d\"ark_currencies\" order\u003d\"4\" x\u003d\"638\" y\u003d\"1337\"/\u003e\u003centity id\u003d\"6\" name\u003d\"ark_device_types\" fq-name\u003d\"ark_device_types\" order\u003d\"5\" x\u003d\"40\" y\u003d\"1336\"/\u003e\u003centity id\u003d\"7\" name\u003d\"ark_employees\" fq-name\u003d\"ark_employees\" order\u003d\"6\" x\u003d\"737\" y\u003d\"410\"/\u003e\u003centity id\u003d\"8\" name\u003d\"ark_functional_units\" fq-name\u003d\"ark_functional_units\" order\u003d\"7\" x\u003d\"812\" y\u003d\"76\"/\u003e\u003centity id\u003d\"9\" name\u003d\"ark_it_assets\" fq-name\u003d\"ark_it_assets\" order\u003d\"8\" x\u003d\"503\" y\u003d\"40\"/\u003e\u003centity id\u003d\"10\" name\u003d\"ark_job_titles\" fq-name\u003d\"ark_job_titles\" order\u003d\"9\" x\u003d\"958\" y\u003d\"427\"/\u003e\u003centity id\u003d\"11\" name\u003d\"ark_requests\" fq-name\u003d\"ark_requests\" order\u003d\"10\" border-width\u003d\"3\" x\u003d\"369\" y\u003d\"1096\"/\u003e\u003centity id\u003d\"12\" name\u003d\"ark_session_details\" fq-name\u003d\"ark_session_details\" order\u003d\"11\" x\u003d\"40\" y\u003d\"838\"/\u003e\u003centity id\u003d\"13\" name\u003d\"ark_sessions\" fq-name\u003d\"ark_sessions\" order\u003d\"12\" x\u003d\"284\" y\u003d\"404\"/\u003e\u003centity id\u003d\"14\" name\u003d\"ark_tasks_completed\" fq-name\u003d\"ark_tasks_completed\" order\u003d\"13\" x\u003d\"378\" y\u003d\"1325\"/\u003e\u003centity id\u003d\"15\" name\u003d\"ark_users\" fq-name\u003d\"ark_users\" order\u003d\"14\" x\u003d\"503\" y\u003d\"464\"/\u003e\u003c/data-source\u003e\u003c/entities\u003e\u003crelations\u003e\u003crelation name\u003d\"FK_ark_actions_ark_action_categories\" fq-name\u003d\"ark_actions.FK_ark_actions_ark_action_categories\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"2\"/\u003e\u003crelation name\u003d\"FK_ark_session_details_ark_actions\" fq-name\u003d\"ark_session_details.FK_ark_session_details_ark_actions\" type\u003d\"fk\" pk-ref\u003d\"2\" fk-ref\u003d\"12\"/\u003e\u003crelation name\u003d\"FK_ark_employees_ark_clients\" fq-name\u003d\"ark_employees.FK_ark_employees_ark_clients\" type\u003d\"fk\" pk-ref\u003d\"3\" fk-ref\u003d\"7\"/\u003e\u003crelation name\u003d\"FK_ark_requests_ark_clients\" fq-name\u003d\"ark_requests.FK_ark_requests_ark_clients\" type\u003d\"fk\" pk-ref\u003d\"3\" fk-ref\u003d\"11\"\u003e\u003cbend type\u003d\"abs\" x\u003d\"503\" y\u003d\"1052\"/\u003e\u003cbend type\u003d\"abs\" x\u003d\"737\" y\u003d\"1052\"/\u003e\u003c/relation\u003e\u003crelation name\u003d\"FK_ark_sessions_ark_clients\" fq-name\u003d\"ark_sessions.FK_ark_sessions_ark_clients\" type\u003d\"fk\" pk-ref\u003d\"3\" fk-ref\u003d\"13\"\u003e\u003cbend type\u003d\"abs\" x\u003d\"503\" y\u003d\"758\"/\u003e\u003cbend type\u003d\"abs\" x\u003d\"737\" y\u003d\"758\"/\u003e\u003c/relation\u003e\u003crelation name\u003d\"FK_ark_it_assets_ark_employees\" fq-name\u003d\"ark_it_assets.FK_ark_it_assets_ark_employees\" type\u003d\"fk\" pk-ref\u003d\"7\" fk-ref\u003d\"9\"/\u003e\u003crelation name\u003d\"FK_ark_users_ark_employees\" fq-name\u003d\"ark_users.FK_ark_users_ark_employees\" type\u003d\"fk\" pk-ref\u003d\"7\" fk-ref\u003d\"15\"/\u003e\u003crelation name\u003d\"FK_ark_it_assets_ark_functional_units_2\" fq-name\u003d\"ark_it_assets.FK_ark_it_assets_ark_functional_units_2\" type\u003d\"fk\" pk-ref\u003d\"8\" fk-ref\u003d\"9\"/\u003e\u003crelation name\u003d\"FK_ark_employees_ark_job_titles_2\" fq-name\u003d\"ark_employees.FK_ark_employees_ark_job_titles_2\" type\u003d\"fk\" pk-ref\u003d\"10\" fk-ref\u003d\"7\"/\u003e\u003crelation name\u003d\"FK_ark_session_details_ark_requests_2\" fq-name\u003d\"ark_session_details.FK_ark_session_details_ark_requests_2\" type\u003d\"fk\" pk-ref\u003d\"11\" fk-ref\u003d\"12\"/\u003e\u003crelation name\u003d\"FK_ark_session_details_ark_sessions_3\" fq-name\u003d\"ark_session_details.FK_ark_session_details_ark_sessions_3\" type\u003d\"fk\" pk-ref\u003d\"13\" fk-ref\u003d\"12\"/\u003e\u003crelation name\u003d\"FK_ark_sessions_ark_users_2\" fq-name\u003d\"ark_sessions.FK_ark_sessions_ark_users_2\" type\u003d\"fk\" pk-ref\u003d\"15\" fk-ref\u003d\"13\"/\u003e\u003c/relations\u003e\u003c/diagram\u003e"}}}},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": true,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800,
+			"auto-close-connections": true,
+			"close-connections-period": 14400
+		}
+	}
+}

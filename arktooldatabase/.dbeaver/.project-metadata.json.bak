@@ -1,0 +1,1 @@
+{"resources":{"Scripts/Script-1.sql":{"default-datasource":"sqlite_jdbc-199fa58bbee-59b22494f9e3cff8"},"Scripts/Script.sql":{"default-datasource":"file_database_S_Desarrollos_MyPython_PySide6_ARKToolsPC_arktoo_54f29804-d6a1-4b12-be78-5d68d0c067e6"},"Scripts/ScriptCreateTable.sql":{"default-datasource":"sqlite_jdbc-199fa58bbee-59b22494f9e3cff8"}}}

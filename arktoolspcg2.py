@@ -1,12 +1,14 @@
 # arktoolspcg2.py es el archivo Main de la aplicación PySide6 ARKToolsPCG2
 
 import sys
-from PySide6.QtWidgets import QMainWindow, QApplication, QSizeGrip, QMessageBox
-from PySide6.QtCore import Qt, QPropertyAnimation, QEasingCurve, QPoint
+from PySide6.QtWidgets import (QMainWindow, QApplication, QSizeGrip, QMessageBox, QWidget,
+                               QLineEdit, QComboBox, QTextEdit, QDateEdit, QTimeEdit)
+from PySide6.QtCore import Qt, QPropertyAnimation, QEasingCurve, QPoint, QDate, QTime
 from PySide6.QtGui import QPixmap
 from ui_arktoolspcg2 import Ui_MainWindow
 from database_manager import DatabaseManager
 import system_info
+#  
 import logging
 
 logging.basicConfig(
@@ -17,7 +19,6 @@ logging.basicConfig(
 class MiApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
@@ -53,6 +54,29 @@ class MiApp(QMainWindow):
         self.ui.btn_menu.clicked.connect(self.mover_menu)
         self.ui.btn_info_hardware.clicked.connect(self.toggle_sub_hardware_menu)
         self.ui.btn_operations.clicked.connect(self.toggle_operations_menu)
+        
+       # --- ESTADO INICIAL: DESHABILITAR FORMULARIOS ---
+        self.set_form_enabled(self.ui.frm_a_company, False)
+        self.set_form_enabled(self.ui.frm_actions_categories, False)
+        self.set_form_enabled(self.ui.frm_actions, False)
+        self.set_form_enabled(self.ui.frm_clients, False)
+        self.set_form_enabled(self.ui.frm_currencies, False)
+        self.set_form_enabled(self.ui.frm_device_types, False)
+        self.set_form_enabled(self.ui.frm_employees, False)
+        self.set_form_enabled(self.ui.frm_functional_units, False)
+        self.set_form_enabled(self.ui.frm_it_assets, False)
+        self.set_form_enabled(self.ui.frm_job_titles, False)
+        self.set_form_enabled(self.ui.frm_requests, False)
+        self.set_form_enabled(self.ui.frm_sessions, False)
+        self.set_form_enabled(self.ui.frm_users, False)
+    # --- VALORES POR DEFECTO: FECHA Y HORA ---
+    # Esto busca todos los QDateEdit y QTimeEdit en toda la ventana y los actualiza
+        for de in self.findChildren(QDateEdit):
+            de.setDate(QDate.currentDate())
+
+        for te in self.findChildren(QTimeEdit):
+            te.setTime(QTime.currentTime())
+        
 
         # Conectar los botones del menú a las páginas del stackedWidget
         self.ui.btn_info_hardware.clicked.connect(self.toggle_sub_hardware_menu)
@@ -90,17 +114,204 @@ class MiApp(QMainWindow):
         self.ui.btn_limpiar.clicked.connect(self.limpiar_textos)
         # Conectar el botón de regresar al menú principal
         self.ui.btn_regresar_menu.clicked.connect(self.volver_menu_principal)
-        self.ui.btn_menu_ppal.clicked.connect(self.volver_menu_principal)
+        #self.ui.btn_menu_ppal.clicked.connect(self.volver_menu_principal)
         # Conectar el botón de Configuración
         self.ui.btn_config.clicked.connect(self.mostrar_inf_config)
         # Conectar el botón de Configuración Regional
         self.ui.btn_cambio_regional.clicked.connect(self.aplicar_config_regional)
         # Conectar el botón de Herramientas
-        self.ui.btn_config_tools.clicked.connect(self.mostrar_info_regional)
+        # self.ui.btn_config_tools.clicked.connect(self.mostrar_info_regional)
+        self.ui.btn_config_tools.clicked.connect(self.mostrar_configuracion)
         # Conectar el botón de Herramientas para CONSULTAR DATOS DE LA BD (Ejemplo)
         self.ui.btn_config_sql_tools.clicked.connect(self.consultar_configuracion_db)
         
+        # Conexiones para formularios de gestion de datos
+        self.ui.btn_ark_actions.clicked.connect(lambda: self.mostrar_pagina("page_frm_actions"))
+        self.ui.btn_ark_categories.clicked.connect(lambda: self.mostrar_pagina("page_frm_actions_categories"))
+        self.ui.btn_ark_clients.clicked.connect(lambda: self.mostrar_pagina("page_frm_clients"))
+        # self.ui.btn_ark_company.clicked.connect(lambda: self.mostrar_pagina("page_frm_company"))
+        self.ui.btn_ark_company.clicked.connect(lambda: self.mostrar_pagina("page_frm_a_company"))
+        self.ui.btn_ark_currencies.clicked.connect(lambda: self.mostrar_pagina("page_frm_currencies"))
+        self.ui.btn_ark_categories.clicked.connect(lambda: self.mostrar_pagina("page_frm_action_categories"))
+        self.ui.btn_ark_device_types.clicked.connect(lambda: self.mostrar_pagina("page_frm_device_types"))
+        self.ui.btn_ark_employees.clicked.connect(lambda: self.mostrar_pagina("page_frm_employees"))
+        self.ui.btn_ark_functional_units.clicked.connect(lambda: self.mostrar_pagina("page_frm_functional_units"))
+        self.ui.btn_ark_it_assets.clicked.connect(lambda: self.mostrar_pagina("page_frm_it_assets"))
+        self.ui.btn_ark_job_titles.clicked.connect(lambda: self.mostrar_pagina("page_frm_job_titles"))
+        self.ui.btn_ark_requests.clicked.connect(lambda: self.mostrar_pagina("page_frm_requests"))
+        self.ui.btn_ark_sessions.clicked.connect(lambda: self.mostrar_pagina("page_frm_sessions"))
+        self.ui.btn_ark_users.clicked.connect(lambda: self.mostrar_pagina("page_frm_users"))
+        self.ui.btn_menu_ppal.clicked.connect(self.volver_menu_principal)
+        
+        # Conexiones de botones de las barras de acciones
+        # Conectar botón Incluir y Cancelar de company (Empresa)
+        self.ui.btn_add_a_company.clicked.connect(self.accion_incluir_empresa)
+        self.ui.btn_cancel_a_company.clicked.connect(self.accion_cancelar_empresa)
 
+        # Conectar botón Incluir y Cancelar de actions (Acciones)
+        self.ui.btn_add_action.clicked.connect(self.accion_incluir_acciones)
+        self.ui.btn_cancel_action.clicked.connect(self.accion_cancelar_acciones)
+
+        # Conectar botón Incluir y Cancelar de categories (Categorias)
+        self.ui.btn_add_actions_categories.clicked.connect(self.accion_incluir_categorias)
+        self.ui.btn_cancel_actions_categories.clicked.connect(self.accion_cancelar_categorias)
+
+        # Conectar botón Incluir y Cancelar de clients (Clientes)
+        self.ui.btn_add_clients.clicked.connect(self.accion_incluir_clientes)
+        self.ui.btn_cancel_clients.clicked.connect(self.accion_cancelar_clientes)
+
+        # Conectar botón Incluir y Cancelar de currencies (Monedas)
+        self.ui.btn_add_currencies.clicked.connect(self.accion_incluir_monedas)
+        self.ui.btn_cancel_currencies.clicked.connect(self.accion_cancelar_monedas)
+
+        # Conectar botón Incluir y Cancelar de device_types (Tipo de Dispositivos)
+        self.ui.btn_add_device_types.clicked.connect(self.accion_incluir_tipos)
+        self.ui.btn_cancel_device_types.clicked.connect(self.accion_cancelar_tipos)
+
+        # Conectar botón Incluir y Cancelar de employees (Empleados)
+        self.ui.btn_add_employees.clicked.connect(self.accion_incluir_empleados)
+        self.ui.btn_cancel_employees.clicked.connect(self.accion_cancelar_empleados)
+
+        # Conectar botón Incluir y Cancelar de functional_units (Unidades Funcionales)
+        self.ui.btn_add_functional_units.clicked.connect(self.accion_incluir_unidades)
+        self.ui.btn_cancel_functional_units.clicked.connect(self.accion_cancelar_unidades)
+
+        # Conectar botón Incluir y Cancelar de assets (Recursos)
+        self.ui.btn_add_it_assets.clicked.connect(self.accion_incluir_recursos)
+        self.ui.btn_cancel_it_assets.clicked.connect(self.accion_cancelar_recursos)
+
+        # Conectar botón Incluir y Cancelar de job_titles (Profesiones)
+        self.ui.btn_add_job_titles.clicked.connect(self.accion_incluir_profesiones)
+        self.ui.btn_cancel_job_titles.clicked.connect(self.accion_cancelar_profesiones)
+
+        # Conectar botón Incluir y Cancelar de requests (Requerimientos)
+        self.ui.btn_add_requests.clicked.connect(self.accion_incluir_requerimientos)
+        self.ui.btn_cancel_requests.clicked.connect(self.accion_cancelar_requerimientos)
+
+        # Conectar botón Incluir y Cancelar de sessions (Sesiones)
+        self.ui.btn_add_sessions.clicked.connect(self.accion_incluir_sesiones)
+        self.ui.btn_cancel_sessions.clicked.connect(self.accion_cancelar_sesiones)
+
+        # Conectar botón Incluir y Cancelar de users (Usuarios)
+        self.ui.btn_add_users.clicked.connect(self.accion_incluir_usuarios)
+        self.ui.btn_cancel_users.clicked.connect(self.accion_cancelar_usuarios)
+
+        # ===***===***===***===***===***===***===***===***===***===***===***===***===***===***===***===***===***===
+        
+    # --- MÉTODOS DE UTILIDAD DE INTERFAZ ---
+    def set_form_enabled(self, container, enabled=True):
+        """Habilita o deshabilita widgets de entrada en un contenedor."""
+        # Buscamos TODOS los widgets hijos que heredan de QWidget
+        all_widgets = container.findChildren(QWidget)
+        
+        # Definimos la tupla de tipos que queremos controlar
+        tipos_entrada = (QLineEdit, QComboBox, QTextEdit, QDateEdit, QTimeEdit)
+        
+        for widget in all_widgets:
+            if isinstance(widget, tipos_entrada):
+                widget.setEnabled(enabled)
+
+    # --- MÉTODOS DE ACCIÓN (SLOTS) ---
+    # ============GESTION DE EMPRESAS============
+    def accion_incluir_empresa(self):
+        """Habilita los campos del formulario de Empresa."""
+        self.set_form_enabled(self.ui.frm_a_company, True)
+        self.ui.lineEdit_emp_codigo.setFocus()
+    
+    def accion_cancelar_empresa(self):
+        if self.confirmar_accion_cancelar():
+            self.set_form_enabled(self.ui.frm_a_company, False)
+    # ============GESTION DE ACCIONES============
+    def accion_incluir_acciones(self):
+        self.set_form_enabled(self.ui.frm_actions, True)
+        self.ui.lineEdit_act_codigo.setFocus()
+
+    def accion_cancelar_acciones(self):
+        if self.confirmar_accion_cancelar():
+            self.set_form_enabled(self.ui.frm_actions, False)
+    # ============GESTION DE CATEGORIAS============
+    def accion_incluir_categorias(self):
+        self.set_form_enabled(self.ui.frm_actions_categories, True)
+        self.ui.lineEdit_cat_codigo.setFocus()  
+    def accion_cancelar_categorias(self):
+        if self.confirmar_accion_cancelar():
+            self.set_form_enabled(self.ui.frm_actions_categories, False)
+    # ============GESTION DE CLIENTES============
+    def accion_incluir_clientes(self):   
+        self.set_form_enabled(self.ui.frm_clients, True)
+        self.ui.lineEdit_clt_codigo.setFocus()
+    def accion_cancelar_clientes(self):
+        if self.confirmar_accion_cancelar():
+            self.set_form_enabled(self.ui.frm_clients, False)
+    # ============GESTION DE MONEDAS============
+    def accion_incluir_monedas(self):
+        self.set_form_enabled(self.ui.frm_currencies, True)
+        self.ui.lineEdit_mda_codigo.setFocus()
+    def accion_cancelar_monedas(self):
+        if self.confirmar_accion_cancelar():
+            self.set_form_enabled(self.ui.frm_currencies, False)
+    # ============GESTION DE TIPOS DE DISPOSITIVOS============
+    def accion_incluir_tipos(self):
+        self.set_form_enabled(self.ui.frm_device_types, True)
+        self.ui.lineEdit_dty_vodigo.setFocus()
+    def accion_cancelar_tipos(self):
+        if self.confirmar_accion_cancelar():
+            self.set_form_enabled(self.ui.frm_device_types, False)
+    # ============GESTION DE EMPLEADOS============
+    def accion_incluir_empleados(self):
+        self.set_form_enabled(self.ui.frm_employees, True)
+        self.ui.lineEdit_emy_codigo.setFocus()
+    def accion_cancelar_empleados(self):
+        if self.confirmar_accion_cancelar():
+            self.set_form_enabled(self.ui.frm_employees, False)
+    # ============GESTION DE UNIDADES FUNCIONALES============
+    def accion_incluir_unidades(self):
+        self.set_form_enabled(self.ui.frm_functional_units, True)
+        self.ui.lineEdit_fun_codigo.setFocus()
+    def accion_cancelar_unidades(self):
+        if self.confirmar_accion_cancelar():
+            self.set_form_enabled(self.ui.frm_functional_units, False)
+    # ============GESTION DE RECURSOS============
+    def accion_incluir_recursos(self):
+        self.set_form_enabled(self.ui.frm_it_assets, True)
+        self.ui.page_frm_it_assets.setFocus()
+    def accion_cancelar_recursos(self):
+        if self.confirmar_accion_cancelar():
+            self.set_form_enabled(self.ui.frm_it_assets, False)
+    # ============GESTION DE PROFESIONES============
+    def accion_incluir_profesiones(self):
+        self.set_form_enabled(self.ui.frm_job_titles, True)
+        self.ui.page_frm_job_titles.setFocus()
+    def accion_cancelar_profesiones(self):
+        if self.confirmar_accion_cancelar():
+            self.set_form_enabled(self.ui.frm_job_titles, False)
+    # ============GESTION DE REQUERIMIENTOS============
+    def accion_incluir_requerimientos(self):
+        self.set_form_enabled(self.ui.frm_requests, True)
+        self.ui.lineEdit_req_codigo.setFocus()
+    def accion_cancelar_requerimientos(self):
+        if self.confirmar_accion_cancelar():
+            self.set_form_enabled(self.ui.frm_requests, False)
+    # ============GESTION DE SESIONES============
+    def accion_incluir_sesiones(self):
+        self.set_form_enabled(self.ui.frm_sessions, True)
+        self.ui.lineEdit_ses_numero.setFocus()
+    def accion_cancelar_sesiones(self):
+        if self.confirmar_accion_cancelar():
+            self.set_form_enabled(self.ui.frm_sessions, False)
+    # ============GESTION DE USUARIOS============
+    def accion_incluir_usuarios(self):
+        self.set_form_enabled(self.ui.frm_users, True)
+        self.ui.lineEdit_usr_codigo.setFocus()
+    def accion_cancelar_usuarios(self):
+        if self.confirmar_accion_cancelar():
+            self.set_form_enabled(self.ui.frm_users, False)
+      
+    
+    
+        
+    # ------------------ CONTROLES DE LA BARRA SUPERIOR ------------------      
+    
     def control_bt_minimizar(self):
         self.showMinimized()
 
@@ -184,6 +395,17 @@ class MiApp(QMainWindow):
                 action()  # Ejecutar la función pasada como parámetro
             except Exception as e:
                 self.show_notification("Error", f"No se pudo aplicar la configuración: {e}", is_error=True)
+    
+    def confirmar_accion_cancelar(self):
+        """Muestra el cuadro de diálogo y retorna True si el usuario confirma."""
+        respuesta = QMessageBox.question(
+            self, 
+            "Confirmar Cancelación", 
+            "¿Está seguro de cancelar la operación actual? Se perderán los cambios no guardados.",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No
+        )
+        return respuesta == QMessageBox.StandardButton.Yes
 
     # ------------------ MOSTRAR MENÚ DE HARDWARE ------------------
     def mover_menu(self):
@@ -309,12 +531,55 @@ class MiApp(QMainWindow):
             self.animacion_menu.setEndValue(200)
             self.animacion_menu.setEasingCurve(QEasingCurve.Type.InOutQuart)
             self.animacion_menu.start()
+        # Cambiar a la página de inicio en el QStackedWidget
+        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inicio)
 
     # SizeGrip
     def resizeEvent(self, event):
+        """
+        Maneja el evento de redimensionamiento de la ventana.
+        Ajusta automáticamente los elementos según el tamaño de la ventana.
+        """
+        # Llama al método padre para mantener la funcionalidad original
+        super().resizeEvent(event)
+        
+        # Ajustar los formularios según el nuevo tamaño
+        self.ajustar_formularios_según_tamaño()
+        
+        # Mover el SizeGrip si es necesario
         rect = self.rect()
         self.grip.move(rect.right() - self.gripSize, rect.bottom() - self.gripSize)
 
+    def ajustar_formularios_según_tamaño(self):
+        """
+        Ajusta los formularios según el tamaño actual de la ventana.
+        """
+        # Obtener el tamaño actual de la ventana
+        tamaño_ventana = self.size()
+        
+        # Ajustar según el ancho de la ventana
+        ancho_ventana = tamaño_ventana.width()
+        
+        # Ajustar el tamaño de los formularios según el tamaño de la ventana
+        if hasattr(self.ui, 'frm_bar_company') and hasattr(self.ui, 'frm_form_company'):
+            if ancho_ventana > 1200:
+                # Ventana grande - usar tamaño completo
+                self.ui.frm_bar_company.setMaximumWidth(250)
+                self.ui.frm_bar_company.setMinimumWidth(200)
+                self.ui.frm_form_company.setMinimumWidth(800)
+                
+            elif ancho_ventana > 800:
+                # Ventana mediana
+                self.ui.frm_bar_company.setMaximumWidth(200)
+                self.ui.frm_bar_company.setMinimumWidth(150)
+                self.ui.frm_form_company.setMinimumWidth(600)
+                
+            else:
+                # Ventana pequeña - ajuste compacto
+                self.ui.frm_bar_company.setMaximumWidth(150)
+                self.ui.frm_bar_company.setMinimumWidth(100)
+                self.ui.frm_form_company.setMinimumWidth(400)
+            
     # Mover ventana
     def mousePressEvent(self, event):
         """
@@ -371,8 +636,28 @@ class MiApp(QMainWindow):
         info_os = system_info.get_os_info()
         self.ui.textEdit_info_so.setText(info_os)
         self.ui.sw_consolas.setCurrentWidget(self.ui.page_inf_so)
+        
+    # ------------------ MOSTRAR FORMULARIOS DE GESTION DE DATOS ------------------
+    
+    def mostrar_pagina(self, nombre_pagina):
+        """
+        Muestra la página correspondiente en el QStackedWidget (qsw_forms).
+        
+        :param nombre_pagina: Nombre de la página o widget a mostrar (str).
+        """
+        # Cambiar a page_forms si es necesario
+        if nombre_pagina.startswith("page_frm_"):
+            self.ui.sw_consolas.setCurrentWidget(self.ui.page_forms)
+        
+        # Obtener el widget correspondiente
+        pagina = getattr(self.ui, nombre_pagina, None)
+        if pagina:
+            logging.info(f"Página encontrada: {nombre_pagina}")
+            self.ui.qsw_forms.setCurrentWidget(pagina)  # Usa el QStackedWidget dentro de page_forms
+        else:
+            logging.error(f"Página no encontrada: {nombre_pagina}")
 
-    # ------------------ MOSTRAR INFORMACIÓN REGIONAL ------------------
+    # ------------------ MOSTRAR INFORMACIÓN TECNICA DEL DISPOSITIVO ------------------
 
     def mostrar_info_regional(self):
         """
@@ -381,6 +666,14 @@ class MiApp(QMainWindow):
         info_regional = system_info.get_regional_settings()
         self.ui.textEdit_info_regional.setText(info_regional)
         self.ui.sw_consolas.setCurrentWidget(self.ui.page_inf_regional)
+    
+    def mostrar_configuracion(self):
+        """
+        Muestra la configuración regional en textEdit_info_config y cambia a page_inf_config.
+        """
+        info_regional = system_info.get_regional_settings()
+        self.ui.textEdit_info_config.setText(info_regional)
+        self.ui.sw_consolas.setCurrentWidget(self.ui.page_inf_config)
     
     def mostrar_info_mbd(self):
         """

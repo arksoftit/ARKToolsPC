@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'arktoolspcg2IUhIdu.ui'
+## Form generated from reading UI file 'arktoolspcg2iEJCiw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.2
 ##
@@ -4441,7 +4441,7 @@ class Ui_MainWindow(object):
         self.dateEdit_ses_fechaemision.setMinimumSize(QSize(100, 20))
         self.dateEdit_ses_fechaemision.setMaximumSize(QSize(100, 20))
         self.dateEdit_ses_fechaemision.setStyleSheet(u"")
-        self.dateEdit_ses_fechaemision.setMaximumDateTime(QDateTime(QDate(2501, 1, 1), QTime(23, 59, 59)))
+        self.dateEdit_ses_fechaemision.setMaximumDateTime(QDateTime(QDate(2501, 1, 3), QTime(23, 59, 59)))
         self.dateEdit_ses_fechaemision.setMinimumDateTime(QDateTime(QDate(1752, 12, 1), QTime(0, 0, 0)))
         self.dateEdit_ses_fechaemision.setMinimumDate(QDate(1752, 12, 1))
         self.dateEdit_ses_fechaemision.setMaximumTime(QTime(23, 59, 59))
@@ -4530,7 +4530,7 @@ class Ui_MainWindow(object):
         self.dateEdit_ses_fechasesion.setMinimumSize(QSize(100, 20))
         self.dateEdit_ses_fechasesion.setMaximumSize(QSize(100, 20))
         self.dateEdit_ses_fechasesion.setStyleSheet(u"")
-        self.dateEdit_ses_fechasesion.setMaximumDateTime(QDateTime(QDate(2501, 1, 3), QTime(23, 59, 59)))
+        self.dateEdit_ses_fechasesion.setMaximumDateTime(QDateTime(QDate(2501, 1, 5), QTime(23, 59, 59)))
         self.dateEdit_ses_fechasesion.setMinimumDateTime(QDateTime(QDate(1752, 12, 1), QTime(0, 0, 0)))
         self.dateEdit_ses_fechasesion.setMinimumDate(QDate(1752, 12, 1))
         self.dateEdit_ses_fechasesion.setMaximumTime(QTime(23, 59, 59))
@@ -6600,7 +6600,7 @@ class Ui_MainWindow(object):
 "    color: #000000;                       /* Color del texto */\n"
 "    border: 2px solid rgb(85, 170, 255); /* Borde */\n"
 "    border-radius: 5px;                   /* Esquinas redondeadas */\n"
-"    font: 10pt \"Segoe UI\";                /* Fuente para QTextEdit */\n"
+"    font: 8pt \"Segoe UI\";                /* Fuente para QTextEdit */\n"
 "}\n"
 "\n"
 "/* Estilo de QLineEdit */\n"
@@ -6609,17 +6609,17 @@ class Ui_MainWindow(object):
 "    color: #000000;                       /* Color del texto */\n"
 "    border: 2px solid rgb(85, 170, 255); /* Borde */\n"
 "    border-radius: 5px;                   /* Esquinas redondeadas */\n"
-"    font: 10pt \"Segoe UI\";                /* Fuente para QLineEdit */\n"
+"    font: 8pt \"Segoe UI\";                /* Fuente para QLineEdit */\n"
 "}\n"
 "\n"
 "/* Estilo de QComboBox */\n"
 "QComboBox {\n"
 "    background-color: rgb(255, 255, 255); /* Color de fondo */\n"
-"    color: #000000;                       /* Co"
-                        "lor del texto */\n"
+"    color: #000000;                       /* Colo"
+                        "r del texto */\n"
 "    border: 2px solid rgb(85, 170, 255); /* Borde */\n"
 "    border-radius: 5px;                   /* Esquinas redondeadas */\n"
-"    font: 10pt \"Segoe UI\";                /* Fuente para QComboBox */\n"
+"    font: 8pt \"Segoe UI\";                /* Fuente para QComboBox */\n"
 "    padding-top: 0px;\n"
 "	padding-bottom: 2px;\n"
 "}\n"
@@ -6630,7 +6630,7 @@ class Ui_MainWindow(object):
 "    color: #000000;                       /* Color del texto */\n"
 "    border: 2px solid rgb(85, 170, 255); /* Borde */\n"
 "    border-radius: 5px;                   /* Esquinas redondeadas */\n"
-"    font: 10pt \"Segoe UI\";                /* Fuente para QDateEdit */\n"
+"    font: 8pt \"Segoe UI\";                /* Fuente para QDateEdit */\n"
 "	padding-top: 0px;\n"
 "	padding-bottom: 2px;\n"
 "}\n"
@@ -6639,9 +6639,9 @@ class Ui_MainWindow(object):
 "    background-color: rgb(255, 255, 255); /* Color de fondo */\n"
 "    color: #000000;                       /* Color del texto */\n"
 "    border: 2px solid rgb(85, 170, 255); /* Borde */\n"
-"    border-radius: 5px;                   /* Esquinas r"
-                        "edondeadas */\n"
-"    font: 10pt \"Segoe UI\";                /* Fuente para QDateEdit */\n"
+"    border-radius: 5px;                   /* Esquinas redon"
+                        "deadas */\n"
+"    font: 8pt \"Segoe UI\";                /* Fuente para QDateEdit */\n"
 "	padding-top: 0px;\n"
 "	padding-bottom: 2px;\n"
 "}\n"
@@ -6793,11 +6793,11 @@ class Ui_MainWindow(object):
         self.label_clt_rmailempresa.setObjectName(u"label_clt_rmailempresa")
         self.label_clt_rmailempresa.setGeometry(QRect(10, 115, 101, 20))
         self.label_clt_rmailempresa.setMaximumSize(QSize(150, 20))
-        self.lineEdit_clt_rmailempresa = QLineEdit(self.grb_direccion_telefono_cliente)
-        self.lineEdit_clt_rmailempresa.setObjectName(u"lineEdit_clt_rmailempresa")
-        self.lineEdit_clt_rmailempresa.setGeometry(QRect(119, 115, 260, 20))
-        self.lineEdit_clt_rmailempresa.setMinimumSize(QSize(260, 0))
-        self.lineEdit_clt_rmailempresa.setMaximumSize(QSize(260, 20))
+        self.lineEdit_clt_emailempresa = QLineEdit(self.grb_direccion_telefono_cliente)
+        self.lineEdit_clt_emailempresa.setObjectName(u"lineEdit_clt_emailempresa")
+        self.lineEdit_clt_emailempresa.setGeometry(QRect(119, 115, 260, 20))
+        self.lineEdit_clt_emailempresa.setMinimumSize(QSize(260, 0))
+        self.lineEdit_clt_emailempresa.setMaximumSize(QSize(260, 20))
 
         self.vly_clients.addWidget(self.grb_direccion_telefono_cliente)
 
@@ -6849,6 +6849,7 @@ class Ui_MainWindow(object):
         self.label_clt_origen.setGeometry(QRect(10, 110, 101, 20))
         self.label_clt_origen.setMaximumSize(QSize(150, 20))
         self.cmb_clt_origen = QComboBox(self.grb_sontactos_cliente)
+        self.cmb_clt_origen.addItem("")
         self.cmb_clt_origen.addItem("")
         self.cmb_clt_origen.addItem("")
         self.cmb_clt_origen.addItem("")
@@ -7617,8 +7618,9 @@ class Ui_MainWindow(object):
         self.label_clt_origen.setText(QCoreApplication.translate("MainWindow", u"Origen:", None))
         self.cmb_clt_origen.setItemText(0, QCoreApplication.translate("MainWindow", u"Hybrid", None))
         self.cmb_clt_origen.setItemText(1, QCoreApplication.translate("MainWindow", u"a2Softway", None))
-        self.cmb_clt_origen.setItemText(2, QCoreApplication.translate("MainWindow", u"Pagina Web", None))
-        self.cmb_clt_origen.setItemText(3, "")
+        self.cmb_clt_origen.setItemText(2, QCoreApplication.translate("MainWindow", u"Gesti\u00f3n de Redes", None))
+        self.cmb_clt_origen.setItemText(3, QCoreApplication.translate("MainWindow", u"Soporte Genberal", None))
+        self.cmb_clt_origen.setItemText(4, "")
 
         self.btn_add_clients.setText(QCoreApplication.translate("MainWindow", u"Incluir", None))
         self.btn_save_clients.setText(QCoreApplication.translate("MainWindow", u"Guardar", None))

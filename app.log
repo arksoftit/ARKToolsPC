@@ -1617,3 +1617,58 @@
 2025-12-21 19:53:54,337 - INFO - Página encontrada: page_frm_requests
 2025-12-21 19:53:55,097 - INFO - Página encontrada: page_frm_sessions
 2025-12-21 19:53:55,729 - INFO - Página encontrada: page_frm_users
+2025-12-24 13:58:15,347 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2025-12-24 14:00:32,097 - INFO - Página encontrada: page_frm_a_company
+2025-12-24 14:01:09,346 - INFO - Página encontrada: page_frm_sessions
+2025-12-24 14:01:11,387 - INFO - Página encontrada: page_frm_requests
+2025-12-24 14:01:17,704 - INFO - Página encontrada: page_frm_clients
+2025-12-24 14:01:20,056 - INFO - Página encontrada: page_frm_currencies
+2025-12-24 14:01:25,786 - INFO - Página encontrada: page_frm_functional_units
+2025-12-24 14:01:27,475 - INFO - Página encontrada: page_frm_actions
+2025-12-24 14:01:30,128 - INFO - Página encontrada: page_frm_employees
+2025-12-24 14:01:31,336 - INFO - Página encontrada: page_frm_device_types
+2025-12-24 14:01:32,896 - INFO - Página encontrada: page_frm_it_assets
+2025-12-24 14:01:35,760 - INFO - Página encontrada: page_frm_job_titles
+2025-12-24 14:01:38,007 - INFO - Página encontrada: page_frm_requests
+2025-12-24 14:01:40,772 - INFO - Página encontrada: page_frm_sessions
+2025-12-24 14:02:16,552 - INFO - Consulta a ark_company ejecutada y resultados mostrados.
+2025-12-24 14:02:33,250 - INFO - Se ha solicitado cambiar la configuración regional.
+2025-12-24 14:02:46,447 - INFO - Iniciando proceso de cambio de configuración regional.
+2025-12-24 14:02:46,465 - INFO - Configuración regional actualizada correctamente.
+2026-01-06 19:51:59,049 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-06 19:52:05,423 - INFO - Página encontrada: page_frm_a_company
+2026-01-06 19:52:17,619 - INFO - Página encontrada: page_frm_clients
+2026-01-06 19:52:27,572 - INFO - Página encontrada: page_frm_currencies
+2026-01-06 19:53:20,116 - INFO - Página encontrada: page_frm_actions_categories
+2026-01-06 19:53:20,117 - ERROR - Página no encontrada: page_frm_action_categories
+2026-01-06 19:53:27,668 - INFO - Página encontrada: page_frm_functional_units
+2026-01-06 19:53:34,900 - INFO - Página encontrada: page_frm_actions
+2026-01-06 19:53:42,741 - INFO - Página encontrada: page_frm_actions
+2026-01-06 19:53:48,412 - INFO - Página encontrada: page_frm_device_types
+2026-01-06 19:53:56,037 - INFO - Página encontrada: page_frm_employees
+2026-01-06 19:54:05,189 - INFO - Página encontrada: page_frm_device_types
+2026-01-06 19:54:11,325 - INFO - Página encontrada: page_frm_device_types
+2026-01-06 19:54:23,165 - INFO - Página encontrada: page_frm_it_assets
+2026-01-06 19:54:33,989 - INFO - Página encontrada: page_frm_job_titles
+2026-01-06 19:54:47,029 - INFO - Página encontrada: page_frm_requests
+2026-01-06 19:54:52,989 - INFO - Página encontrada: page_frm_requests
+2026-01-06 19:54:58,677 - INFO - Página encontrada: page_frm_sessions
+2026-01-06 19:55:14,845 - INFO - Página encontrada: page_frm_sessions
+2026-01-06 19:55:20,094 - INFO - Página encontrada: page_frm_users
+2026-01-06 22:02:54,682 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-06 22:29:11,430 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-06 22:29:18,314 - INFO - Página encontrada: page_frm_clients
+2026-01-06 22:34:06,116 - INFO - Cliente guardado exitosamente: B002
+2026-01-06 22:34:08,948 - INFO - Formulario de clientes limpiado.
+2026-01-06 22:34:14,698 - INFO - Formulario de clientes limpiado.
+2026-01-06 22:34:14,700 - INFO - Acción cancelar confirmada: Formulario limpiado y deshabilitado.
+2026-01-06 22:39:28,836 - INFO - Cliente guardado exitosamente: J310994692
+2026-01-06 22:39:31,238 - INFO - Formulario de clientes limpiado.
+2026-01-06 22:39:37,605 - INFO - Formulario de clientes limpiado.
+2026-01-06 22:39:37,607 - INFO - Acción cancelar confirmada: Formulario limpiado y deshabilitado.
+2026-01-06 22:58:55,815 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-06 22:59:01,550 - INFO - Página encontrada: page_frm_clients
+2026-01-06 23:02:17,733 - INFO - Cliente guardado exitosamente: J310994693
+2026-01-06 23:02:20,780 - INFO - Formulario de clientes limpiado.
+2026-01-06 23:02:42,772 - INFO - Formulario de clientes limpiado.
+2026-01-06 23:02:42,775 - INFO - Acción cancelar confirmada: Formulario limpiado y deshabilitado.

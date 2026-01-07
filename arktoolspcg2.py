@@ -155,9 +155,13 @@ class MiApp(QMainWindow):
         # Conectar botón Incluir y Cancelar de categories (Categorias)
         self.ui.btn_add_actions_categories.clicked.connect(self.accion_incluir_categorias)
         self.ui.btn_cancel_actions_categories.clicked.connect(self.accion_cancelar_categorias)
+        
+        # Conexión para Guardar
+        self.ui.btn_save_clients.clicked.connect(self.guardar_cliente)
 
         # Conectar botón Incluir y Cancelar de clients (Clientes)
         self.ui.btn_add_clients.clicked.connect(self.accion_incluir_clientes)
+        # self.ui.btn_cancel_clients.clicked.connect(self.limpiar_formulario_clientes)
         self.ui.btn_cancel_clients.clicked.connect(self.accion_cancelar_clientes)
 
         # Conectar botón Incluir y Cancelar de currencies (Monedas)
@@ -242,7 +246,9 @@ class MiApp(QMainWindow):
         self.ui.lineEdit_clt_codigo.setFocus()
     def accion_cancelar_clientes(self):
         if self.confirmar_accion_cancelar():
+            self.limpiar_formulario_clientes()
             self.set_form_enabled(self.ui.frm_clients, False)
+        logging.info("Acción cancelar confirmada: Formulario limpiado y deshabilitado.")
     # ============GESTION DE MONEDAS============
     def accion_incluir_monedas(self):
         self.set_form_enabled(self.ui.frm_currencies, True)
@@ -306,8 +312,113 @@ class MiApp(QMainWindow):
     def accion_cancelar_usuarios(self):
         if self.confirmar_accion_cancelar():
             self.set_form_enabled(self.ui.frm_users, False)
-      
     
+    # ============INSERT  DE DATOS============
+    
+    # ============INSERT  DE DATOS CLIENTES============
+    
+    def guardar_cliente(self):
+        """
+        Recopila los datos del formulario frm_form_clients e inserta
+        un nuevo registro en la tabla ark_clients.
+        """
+        try:
+            # 1. Recolección de datos desde los widgets de PySide6
+            # Nota: Usamos .strip() en textos para evitar espacios accidentales
+            codigo       = self.ui.lineEdit_clt_codigo.text().strip()
+            descripcion  = self.ui.lineEdit_clt_descripcion.text().strip()
+            id_fiscal    = self.ui.lineEdit_clt_idfiscaliscal.text().strip() # Según tu nombre con typo 'iscal'
+            status       = self.ui.cmb_clt_status.currentIndex()             # INTEGER
+            direccion_f  = self.ui.textEdit_clt_direccionF.toPlainText().strip()
+            direccion_l  = self.ui.textEdit_clt_direccionL.toPlainText().strip()
+            tel1         = self.ui.lineEdit_clt_telefono1.text().strip()
+            tel2         = self.ui.lineEdit_clt_telefono2.text().strip()
+            rep          = self.ui.lineEdit_clt_representante.text().strip()
+            id_rep       = self.ui.lineEdit_clt_idrepresentante.text().strip()
+            tel_cont     = self.ui.lineEdit_clt_telefonocontacto.text().strip()
+            email_cont   = self.ui.lineEdit_clt_emailcontacto.text().strip()
+            email_emp    = self.ui.lineEdit_clt_emailempresa.text().strip()
+            tipo_cont    = self.ui.cmb_clt_tipocontribuyente.currentIndex()  # INTEGER
+            origen       = self.ui.cmb_clt_origen.currentText()              # TEXT
+            codigo_orig  = "" # Puedes vincularlo a un widget si lo creas luego
+            fecha_crea   = self.ui.dateEdit_clt_fechacreacion.date().toString("yyyy-MM-dd")
+
+            # 2. Validación básica de campos obligatorios
+            if not codigo:
+                QMessageBox.warning(self, "Validación", "El Código del cliente es obligatorio.")
+                return
+
+            # 3. Preparación de la consulta SQL
+            # No incluimos clt_IDauto porque es AUTOINCREMENT
+            sql = """
+            INSERT INTO ark_clients (
+                clt_Codigo, clt_Descripcion, clt_IDfiscal, clt_Status,
+                clt_DireccionF, clt_DireccionL, clt_Telefono1, clt_Telefono2,
+                clt_Representante, clt_IDRepresentante, clt_TelefonoContacto,
+                clt_EmailContacto, clt_EmailEmpresa, clt_TipoContribuyente,
+                clt_Origen, clt_CodigoOrigen, clt_FechaCreacion
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """
+
+            # 4. Tupla de parámetros (DEBE seguir el mismo orden que el INSERT)
+            params = (
+                codigo, descripcion, id_fiscal, status,
+                direccion_f, direccion_l, tel1, tel2,
+                rep, id_rep, tel_cont,
+                email_cont, email_emp, tipo_cont,
+                origen, codigo_orig, fecha_crea
+            )
+
+            # 5. Ejecución mediante el DatabaseManager
+            # execute_query retorna el cursor si fue exitoso, o None si falló
+            exito = self.db_manager.execute_query(sql, params)
+
+            if exito:
+                logging.info(f"Cliente guardado exitosamente: {codigo}")
+                QMessageBox.information(self, "Éxito", f"El cliente '{codigo}' ha sido registrado correctamente.")
+                self.limpiar_formulario_clientes() # Función que haremos a continuación
+            else:
+                QMessageBox.critical(self, "Error", "No se pudo guardar el registro en la base de datos.")
+
+        except Exception as e:
+            logging.error(f"Error crítico en guardar_cliente: {str(e)}")
+            QMessageBox.critical(self, "Error de Sistema", f"Ocurrió un error inesperado:\n{e}")
+    
+    # ============LIMPEZA DE FORMULARIO CLIENTES============
+    
+    def limpiar_formulario_clientes(self):
+        """
+        Resetea todos los campos del formulario de clientes a sus valores iniciales.
+        """
+        # 1. Limpiar QLineEdits y QTextEdits
+        self.ui.lineEdit_clt_codigo.clear()
+        self.ui.lineEdit_clt_descripcion.clear()
+        self.ui.lineEdit_clt_idfiscaliscal.clear()
+        self.ui.lineEdit_clt_telefono1.clear()
+        self.ui.lineEdit_clt_telefono2.clear()
+        self.ui.lineEdit_clt_representante.clear()
+        self.ui.lineEdit_clt_idrepresentante.clear()
+        self.ui.lineEdit_clt_telefonocontacto.clear()
+        self.ui.lineEdit_clt_emailcontacto.clear()
+        self.ui.lineEdit_clt_emailempresa.clear()
+        
+        self.ui.textEdit_clt_direccionF.clear()
+        self.ui.textEdit_clt_direccionL.clear()
+
+        # 2. Resetear QComboBoxes al primer elemento (índice 0)
+        self.ui.cmb_clt_status.setCurrentIndex(0)
+        self.ui.cmb_clt_tipocontribuyente.setCurrentIndex(0)
+        self.ui.cmb_clt_origen.setCurrentIndex(0)
+
+        # 3. Resetear QDateEdit a la fecha actual
+        self.ui.dateEdit_clt_fechacreacion.setDate(QDate.currentDate())
+
+        # 4. (Opcional) Poner el foco de nuevo en el primer campo
+        self.ui.lineEdit_clt_codigo.setFocus()
+        
+        logging.info("Formulario de clientes limpiado.")  
+        
+    # ============FIN INSERT DE DATOS============
     
         
     # ------------------ CONTROLES DE LA BARRA SUPERIOR ------------------      

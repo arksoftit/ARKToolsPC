@@ -9972,7 +9972,7 @@ QComboBox:disabled {
                                 <second>59</second>
                                 <year>2501</year>
                                 <month>1</month>
-                                <day>1</day>
+                                <day>3</day>
                                </datetime>
                               </property>
                               <property name="minimumDateTime">
@@ -10060,8 +10060,7 @@ QComboBox:disabled {
                                </size>
                               </property>
                               <property name="styleSheet">
-                               <string notr="true">
-</string>
+                               <string notr="true"/>
                               </property>
                              </widget>
                              <widget class="QLabel" name="label_ses_direccionf">
@@ -10339,7 +10338,7 @@ Fiscal</string>
                                 <second>59</second>
                                 <year>2501</year>
                                 <month>1</month>
-                                <day>3</day>
+                                <day>5</day>
                                </datetime>
                               </property>
                               <property name="minimumDateTime">
@@ -15775,7 +15774,7 @@ QTextEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
 }
 
 /* Estilo de QLineEdit */
@@ -15784,7 +15783,7 @@ QLineEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
+    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
 }
 
 /* Estilo de QComboBox */
@@ -15793,7 +15792,7 @@ QComboBox {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
+    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
     padding-top: 0px;
 	padding-bottom: 2px;
 }
@@ -15804,7 +15803,7 @@ QDateEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
+    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
 }
@@ -15814,7 +15813,7 @@ QTimeEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
+    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
 }
@@ -16369,7 +16368,7 @@ Antención:</string>
                                <string>Email Empresa:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_clt_rmailempresa">
+                             <widget class="QLineEdit" name="lineEdit_clt_emailempresa">
                               <property name="geometry">
                                <rect>
                                 <x>119</x>
@@ -16647,7 +16646,12 @@ Antención:</string>
                               </item>
                               <item>
                                <property name="text">
-                                <string>Pagina Web</string>
+                                <string>Gestión de Redes</string>
+                               </property>
+                              </item>
+                              <item>
+                               <property name="text">
+                                <string>Soporte Genberal</string>
                                </property>
                               </item>
                               <item>

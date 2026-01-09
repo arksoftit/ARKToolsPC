@@ -6451,7 +6451,7 @@ QTextEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
 }
 
 /* Estilo de QLineEdit */
@@ -6460,7 +6460,7 @@ QLineEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
+    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
 }
 
 /* Estilo de QComboBox */
@@ -6469,7 +6469,7 @@ QComboBox {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
+    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
     padding-top: 0px;
 	padding-bottom: 2px;
 }
@@ -6480,7 +6480,7 @@ QDateEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
+    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
 }
@@ -6490,7 +6490,7 @@ QTimeEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
+    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
 }
@@ -6664,7 +6664,7 @@ QComboBox:disabled {
                                <string>Estado:</string>
                               </property>
                              </widget>
-                             <widget class="QComboBox" name="cmb_cat_ststus">
+                             <widget class="QComboBox" name="cmb_cat_status">
                               <property name="geometry">
                                <rect>
                                 <x>436</x>
@@ -9972,7 +9972,7 @@ QComboBox:disabled {
                                 <second>59</second>
                                 <year>2501</year>
                                 <month>1</month>
-                                <day>3</day>
+                                <day>4</day>
                                </datetime>
                               </property>
                               <property name="minimumDateTime">
@@ -10338,7 +10338,7 @@ Fiscal</string>
                                 <second>59</second>
                                 <year>2501</year>
                                 <month>1</month>
-                                <day>5</day>
+                                <day>6</day>
                                </datetime>
                               </property>
                               <property name="minimumDateTime">
@@ -14943,7 +14943,7 @@ QTextEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
 }
 
 /* Estilo de QLineEdit */
@@ -14952,7 +14952,7 @@ QLineEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
+    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
 }
 
 /* Estilo de QComboBox */
@@ -14961,7 +14961,7 @@ QComboBox {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
+    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
     padding-top: 0px;
 	padding-bottom: 2px;
 }
@@ -14972,7 +14972,7 @@ QDateEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
+    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
 }
@@ -14982,7 +14982,7 @@ QTimeEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
+    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
 }
@@ -15033,7 +15033,7 @@ QComboBox:disabled {
                             <number>4</number>
                            </property>
                            <item>
-                            <widget class="QGroupBox" name="grb_frm_actions">
+                            <widget class="QGroupBox" name="grp_actions">
                              <property name="minimumSize">
                               <size>
                                <width>0</width>
@@ -15202,6 +15202,17 @@ QComboBox:disabled {
                                 <height>20</height>
                                </size>
                               </property>
+                              <property name="font">
+                               <font>
+                                <family>Segoe UI</family>
+                                <pointsize>8</pointsize>
+                                <italic>false</italic>
+                                <bold>false</bold>
+                               </font>
+                              </property>
+                              <property name="readOnly">
+                               <bool>true</bool>
+                              </property>
                              </widget>
                              <widget class="QComboBox" name="cmb_act_status">
                               <property name="geometry">
@@ -15337,6 +15348,76 @@ Detallada:</string>
                               </property>
                               <property name="styleSheet">
                                <string notr="true"/>
+                              </property>
+                             </widget>
+                             <widget class="QPushButton" name="btn_buscar_categoria">
+                              <property name="geometry">
+                               <rect>
+                                <x>528</x>
+                                <y>87</y>
+                                <width>24</width>
+                                <height>24</height>
+                               </rect>
+                              </property>
+                              <property name="sizePolicy">
+                               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                                <horstretch>0</horstretch>
+                                <verstretch>1</verstretch>
+                               </sizepolicy>
+                              </property>
+                              <property name="minimumSize">
+                               <size>
+                                <width>24</width>
+                                <height>24</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>24</width>
+                                <height>24</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <family>Consolas</family>
+                                <pointsize>-1</pointsize>
+                                <italic>false</italic>
+                                <bold>true</bold>
+                               </font>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}
+</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="icon">
+                               <iconset resource="resources.qrc">
+                                <normaloff>:/rec/assets/icons/fi-sr-search.svg</normaloff>:/rec/assets/icons/fi-sr-search.svg</iconset>
+                              </property>
+                              <property name="iconSize">
+                               <size>
+                                <width>18</width>
+                                <height>18</height>
+                               </size>
                               </property>
                              </widget>
                             </widget>

@@ -1,3 +1,22 @@
+## ark_action_categories = frm_actions_categories
+cat_IDauto(INTEGER) = Auto
+cat_Codigo(TEXT)  = lineEdit_cat_codigo
+cat_Descripcion(TEXT) = lineEdit_cat_descripcion
+cat_Status(INTEGER) = cmb_cat_ststus
+cat_DescripcionTec(TEXT) = textEdit_cat_descripciontec
+cat_FechaCreacion(TEXT) = dateEdit_cat_fechacreacion
+
+## ark_actions
+act_IDauto INTEGER PRIMARY KEY AUTOINCREMENT,
+act_Codigo TEXT NOT NULL,
+act_Descripcion TEXT,
+act_Status INTEGER DEFAULT 1,
+act_DescripcionTec TEXT,
+act_FechaCreacion TEXT DEFAULT (datetime('now')),
+id_category INTEGER,
+FOREIGN KEY (id_category) REFERENCES ark_action_categories(cat_IDauto)
+
+## ark_clients
 lineEdit_clt_codigo = clt_Codigo (TEXT)
 cmb_clt_status = clt_Status (INTEGER)
 dateEdit_clt_fechacreacion = clt_FechaCreacion (TEXT)
@@ -14,3 +33,192 @@ lineEdit_clt_idrepresentante = clt_IDRepresentante (TEXT)
 lineEdit_clt_telefonocontacto = clt_TelefonoContacto (TEXT)
 lineEdit_clt_emailcontacto = clt_EmailContacto (TEXT)
 cmb_clt_origen = clt_Origen (TEXT)
+
+
+## ark_company
+emp_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
+emp_Codigo TEXT CONSTRAINT Requerido NOT NULL ON CONFLICT ROLLBACK, 
+emp_Descripcion TEXT, emp_IDfiscal TEXT, 
+emp_Status INTEGER DEFAULT 1, 
+emp_DireccionF TEXT, 
+emp_DireccionL TEXT, 
+emp_Telefono1 TEXT, 
+emp_Telefono2 TEXT, 
+emp_Representante TEXT, 
+emp_IdRepresentante TEXT, 
+emp_TelefonoContacto TEXT, 
+emp_EmailContacto TEXT, 
+emp_EmailEmpresa TEXT, 
+emp_TipoContribuyente INTEGER, 
+emp_FechaCreacion TEXT DEFAULT (datetime('now')));
+
+## ark_currencies
+mda_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
+mda_Codigo TEXT NOT NULL, 
+mda_Descripcion TEXT, 
+mda_Status INTEGER DEFAULT 1, 
+mda_ISO4217 TEXT, 
+mda_Simbolo TEXT, 
+mda_FactorActivo REAL, 
+mda_FactorPasivo REAL, 
+mda_OperadorCalculo INTEGER, 
+mda_AplicaImp INTEGER DEFAULT 0, 
+mda_FechaCreacion TEXT DEFAULT (datetime('now')), 
+mda_FechaActualizacion TEXT, 
+mda_FechaUltima TEXT);
+
+## ark_device_types
+dty_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
+dty_Codigo TEXT NOT NULL, 
+dty_Descripcion TEXT, 
+dty_Status INTEGER DEFAULT 1, 
+dty_DescripcionTec TEXT, 
+dty_FechaCreacion TEXT DEFAULT (datetime('now')));
+
+## ark_employees
+emy_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
+emy_Codigo TEXT NOT NULL, 
+emy_Descripcion TEXT, 
+emy_Status INTEGER DEFAULT 1, 
+emy_IDEmployees TEXT, 
+emy_Telefono1 TEXT, 
+emy_Cargo INTEGER, 
+emy_Cliente INTEGER, 
+emy_Rol TEXT, 
+emy_EmailUsuario TEXT, 
+emy_Password TEXT, 
+emy_FechaCreacion TEXT DEFAULT (datetime('now')), 
+FOREIGN KEY (emy_Cargo) REFERENCES ark_job_titles (job_IDauto), 
+FOREIGN KEY (emy_Cliente) REFERENCES ark_clients (clt_IDauto));
+
+## ark_functional_units
+fun_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
+fun_Codigo TEXT NOT NULL, 
+fun_Descripcion TEXT, 
+fun_DescripcionTec TEXT, 
+fun_Status INTEGER DEFAULT 1, 
+fun_FechaCreacion TEXT DEFAULT (datetime('now')));
+
+## ark_it_assets
+ita_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
+ita_Codigo TEXT NOT NULL, 
+ita_Descripcion TEXT, 
+ita_marca TEXT, 
+ita_Clasificacion TEXT, 
+ita_Status INTEGER DEFAULT 1, 
+ita_DescripcionTec TEXT, 
+ita_NotasTech TEXT, 
+ita_macadrees TEXT, 
+ita_ipadrees TEXT, 
+ita_functional_units INTEGER, 
+ita_Rol TEXT, 
+ita_idRDP1 TEXT, 
+ita_idRDP2 TEXT, 
+ita_iprdp TEXT, 
+ita_idemployees INTEGER, 
+ita_FechaCreacion TEXT DEFAULT (datetime('now')), 
+FOREIGN KEY (ita_functional_units) REFERENCES ark_functional_units (fun_IDauto), 
+FOREIGN KEY (ita_idemployees) REFERENCES ark_employees (emy_IDauto));
+
+## ark_job_titles
+job_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
+job_Codigo TEXT NOT NULL, 
+job_Descripcion TEXT, 
+job_Status INTEGER DEFAULT 1, 
+job_DescripcionTec TEXT, 
+job_FechaCreacion TEXT DEFAULT (datetime('now')));
+
+## ark_requests
+req_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
+req_Codigo TEXT NOT NULL, 
+req_Descripcion TEXT, 
+req_Status INTEGER DEFAULT 1, 
+req_DescripcionTec TEXT, 
+req_FechaCreacion TEXT DEFAULT (datetime('now')), 
+req_CodigoCliente INTEGER, 
+FOREIGN KEY (req_CodigoCliente) REFERENCES ark_clients (clt_IDauto));
+
+## ark_session_details
+dts_IDauto INTEGER PRIMARY KEY AUTOINCREMENT,
+dts_ses_IDauto INTEGER,
+dts_act_Codigo INTEGER,
+dts_req_IDauto INTEGER,
+dts_description TEXT,
+dts_result TEXT,
+dts_time_spent REAL,
+dts_date_logged TEXT DEFAULT (datetime('now')),
+FOREIGN KEY (dts_ses_IDauto) REFERENCES ark_sessions(ses_IDauto),
+FOREIGN KEY (dts_act_Codigo) REFERENCES ark_actions(act_IDauto),
+FOREIGN KEY (dts_req_IDauto) REFERENCES ark_requests(req_IDauto)
+
+## ark_sessions
+ses_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
+ses_numero TEXT (8), 
+ses_Status TEXT, 
+ses_FechaEmision TEXT, 
+ses_clt_IDauto INTEGER, 
+ses_clt_Codigo TEXT, 
+ses_clt_Descripcion TEXT, 
+ses_clt_IDfiscal TEXT, 
+ses_clt_Status INTEGER DEFAULT 1, 
+ses_clt_DireccionF TEXT, 
+ses_clt_DireccionA TEXT, 
+ses_clt_Telefono1 TEXT, 
+ses_clt_Telefono2 TEXT, 
+ses_usr_IDauto INTEGER, 
+ses_usr_Codigo TEXT, 
+ses_usr_Descripcion TEXT, 
+ses_FechaSesion TEXT, 
+ses_HoraInicial TEXT, 
+ses_HoraFinal TEXT, 
+ses_TotalHora INTEGER, 
+FOREIGN KEY (ses_clt_IDauto) REFERENCES ark_clients (clt_IDauto), 
+FOREIGN KEY (ses_usr_IDauto) REFERENCES ark_users (usr_IDauto));
+
+## ark_sessions_details
+dts_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
+dts_ses_IDauto INTEGER, 
+dts_act_Codigo INTEGER, 
+dts_req_IDauto INTEGER, 
+dts_description TEXT, 
+dts_result TEXT, 
+dts_time_spent REAL, 
+dts_date_logged TEXT DEFAULT (datetime('now')), 
+FOREIGN KEY (dts_ses_IDauto) REFERENCES ark_sessions (ses_IDauto),
+FOREIGN KEY (dts_act_Codigo) REFERENCES ark_actions (act_IDauto), 
+FOREIGN KEY (dts_req_IDauto) REFERENCES ark_requests (req_IDauto));
+
+
+## ark_tasks_completed
+tsc_IDauto INTEGER PRIMARY KEY AUTOINCREMENT,
+tsc_Codigo TEXT NOT NULL,
+tsc_Descripcion TEXT,
+tsc_Status INTEGER DEFAULT 1,
+tsc_DescripcionTec TEXT,
+tsc_FechaCreacion TEXT DEFAULT (datetime('now'));
+
+## ark_users
+usr_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
+usr_Codigo TEXT NOT NULL, 
+usr_Descripcion TEXT, 
+usr_Status INTEGER DEFAULT 1, 
+usr_Telefono TEXT, 
+usr_Cargo TEXT, 
+usr_Rol TEXT, 
+usr_EmailUsuario TEXT, 
+usr_Password TEXT, 
+usr_FechaCreacion TEXT DEFAULT (datetime('now')), 
+id_employee INTEGER, 
+FOREIGN KEY (id_employee) REFERENCES ark_employees (emy_IDauto));
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1672,3 +1672,41 @@
 2026-01-06 23:02:20,780 - INFO - Formulario de clientes limpiado.
 2026-01-06 23:02:42,772 - INFO - Formulario de clientes limpiado.
 2026-01-06 23:02:42,775 - INFO - Acción cancelar confirmada: Formulario limpiado y deshabilitado.
+2026-01-07 19:14:24,269 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-07 19:14:34,329 - INFO - Página encontrada: page_frm_actions_categories
+2026-01-07 19:14:34,330 - ERROR - Página no encontrada: page_frm_action_categories
+2026-01-07 19:15:56,254 - INFO - Categoría guardada exitosamente: 010201
+2026-01-07 19:15:59,675 - INFO - Formulario de categorías  limpiado.
+2026-01-07 19:16:06,847 - INFO - Formulario de categorías  limpiado.
+2026-01-07 19:21:34,798 - INFO - Categoría guardada exitosamente: 010101
+2026-01-07 19:21:36,649 - INFO - Formulario de categorías  limpiado.
+2026-01-07 19:21:39,993 - INFO - Formulario de categorías  limpiado.
+2026-01-07 19:22:31,753 - INFO - Formulario de categorías  limpiado.
+2026-01-07 23:45:39,247 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-07 23:45:44,483 - INFO - Página encontrada: page_frm_actions_categories
+2026-01-07 23:45:44,484 - ERROR - Página no encontrada: page_frm_action_categories
+2026-01-07 23:45:47,531 - INFO - Página encontrada: page_frm_actions
+2026-01-08 19:54:52,210 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 19:54:58,702 - INFO - Página encontrada: page_frm_actions_categories
+2026-01-08 19:54:58,703 - ERROR - Página no encontrada: page_frm_action_categories
+2026-01-08 19:55:03,029 - INFO - Página encontrada: page_frm_actions
+2026-01-08 19:56:00,540 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 19:56:09,014 - INFO - Página encontrada: page_frm_actions
+2026-01-08 19:59:05,285 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 19:59:13,096 - INFO - Página encontrada: page_frm_actions
+2026-01-08 20:03:45,250 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 20:03:50,817 - INFO - Página encontrada: page_frm_actions
+2026-01-08 20:05:05,623 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 20:05:09,601 - INFO - Página encontrada: page_frm_actions
+2026-01-08 20:09:07,332 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 20:09:12,923 - INFO - Página encontrada: page_frm_actions
+2026-01-08 20:09:37,298 - INFO - Categoría seleccionada: Instalación (ID: 2)
+2026-01-08 20:21:44,914 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 20:21:51,680 - INFO - Página encontrada: page_frm_actions
+2026-01-08 20:29:54,800 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 20:30:01,019 - INFO - Página encontrada: page_frm_actions
+2026-01-08 20:30:29,894 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 20:30:34,667 - INFO - Página encontrada: page_frm_actions
+2026-01-08 20:33:15,537 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 20:33:20,404 - INFO - Página encontrada: page_frm_actions
+2026-01-08 20:36:20,378 - INFO - Categoría vinculada: Instalación (ID: 2)

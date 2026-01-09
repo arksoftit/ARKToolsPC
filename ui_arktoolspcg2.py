@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'arktoolspcg2iEJCiw.ui'
+## Form generated from reading UI file 'arktoolspcg2MCkpSo.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.2
 ##
@@ -3158,7 +3158,7 @@ class Ui_MainWindow(object):
 "    color: #000000;                       /* Color del texto */\n"
 "    border: 2px solid rgb(85, 170, 255); /* Borde */\n"
 "    border-radius: 5px;                   /* Esquinas redondeadas */\n"
-"    font: 10pt \"Segoe UI\";                /* Fuente para QTextEdit */\n"
+"    font: 8pt \"Segoe UI\";                /* Fuente para QTextEdit */\n"
 "}\n"
 "\n"
 "/* Estilo de QLineEdit */\n"
@@ -3167,17 +3167,17 @@ class Ui_MainWindow(object):
 "    color: #000000;                       /* Color del texto */\n"
 "    border: 2px solid rgb(85, 170, 255); /* Borde */\n"
 "    border-radius: 5px;                   /* Esquinas redondeadas */\n"
-"    font: 10pt \"Segoe UI\";                /* Fuente para QLineEdit */\n"
+"    font: 8pt \"Segoe UI\";                /* Fuente para QLineEdit */\n"
 "}\n"
 "\n"
 "/* Estilo de QComboBox */\n"
 "QComboBox {\n"
 "    background-color: rgb(255, 255, 255); /* Color de fondo */\n"
-"    color: #000000;                       /* Co"
-                        "lor del texto */\n"
+"    color: #000000;                       /* Colo"
+                        "r del texto */\n"
 "    border: 2px solid rgb(85, 170, 255); /* Borde */\n"
 "    border-radius: 5px;                   /* Esquinas redondeadas */\n"
-"    font: 10pt \"Segoe UI\";                /* Fuente para QComboBox */\n"
+"    font: 8pt \"Segoe UI\";                /* Fuente para QComboBox */\n"
 "    padding-top: 0px;\n"
 "	padding-bottom: 2px;\n"
 "}\n"
@@ -3188,7 +3188,7 @@ class Ui_MainWindow(object):
 "    color: #000000;                       /* Color del texto */\n"
 "    border: 2px solid rgb(85, 170, 255); /* Borde */\n"
 "    border-radius: 5px;                   /* Esquinas redondeadas */\n"
-"    font: 10pt \"Segoe UI\";                /* Fuente para QDateEdit */\n"
+"    font: 8pt \"Segoe UI\";                /* Fuente para QDateEdit */\n"
 "	padding-top: 0px;\n"
 "	padding-bottom: 2px;\n"
 "}\n"
@@ -3197,9 +3197,9 @@ class Ui_MainWindow(object):
 "    background-color: rgb(255, 255, 255); /* Color de fondo */\n"
 "    color: #000000;                       /* Color del texto */\n"
 "    border: 2px solid rgb(85, 170, 255); /* Borde */\n"
-"    border-radius: 5px;                   /* Esquinas r"
-                        "edondeadas */\n"
-"    font: 10pt \"Segoe UI\";                /* Fuente para QDateEdit */\n"
+"    border-radius: 5px;                   /* Esquinas redon"
+                        "deadas */\n"
+"    font: 8pt \"Segoe UI\";                /* Fuente para QDateEdit */\n"
 "	padding-top: 0px;\n"
 "	padding-bottom: 2px;\n"
 "}\n"
@@ -3260,16 +3260,16 @@ class Ui_MainWindow(object):
         self.label_cat_status.setObjectName(u"label_cat_status")
         self.label_cat_status.setGeometry(QRect(368, 30, 61, 20))
         self.label_cat_status.setMaximumSize(QSize(100, 20))
-        self.cmb_cat_ststus = QComboBox(self.grb_actions_categories)
-        self.cmb_cat_ststus.addItem("")
-        self.cmb_cat_ststus.addItem("")
-        self.cmb_cat_ststus.setObjectName(u"cmb_cat_ststus")
-        self.cmb_cat_ststus.setGeometry(QRect(436, 30, 80, 20))
-        sizePolicy.setHeightForWidth(self.cmb_cat_ststus.sizePolicy().hasHeightForWidth())
-        self.cmb_cat_ststus.setSizePolicy(sizePolicy)
-        self.cmb_cat_ststus.setMinimumSize(QSize(80, 20))
-        self.cmb_cat_ststus.setMaximumSize(QSize(80, 20))
-        self.cmb_cat_ststus.setStyleSheet(u"")
+        self.cmb_cat_status = QComboBox(self.grb_actions_categories)
+        self.cmb_cat_status.addItem("")
+        self.cmb_cat_status.addItem("")
+        self.cmb_cat_status.setObjectName(u"cmb_cat_status")
+        self.cmb_cat_status.setGeometry(QRect(436, 30, 80, 20))
+        sizePolicy.setHeightForWidth(self.cmb_cat_status.sizePolicy().hasHeightForWidth())
+        self.cmb_cat_status.setSizePolicy(sizePolicy)
+        self.cmb_cat_status.setMinimumSize(QSize(80, 20))
+        self.cmb_cat_status.setMaximumSize(QSize(80, 20))
+        self.cmb_cat_status.setStyleSheet(u"")
         self.label_cat_fechacreacion = QLabel(self.grb_actions_categories)
         self.label_cat_fechacreacion.setObjectName(u"label_cat_fechacreacion")
         self.label_cat_fechacreacion.setGeometry(QRect(10, 160, 130, 20))
@@ -4441,7 +4441,7 @@ class Ui_MainWindow(object):
         self.dateEdit_ses_fechaemision.setMinimumSize(QSize(100, 20))
         self.dateEdit_ses_fechaemision.setMaximumSize(QSize(100, 20))
         self.dateEdit_ses_fechaemision.setStyleSheet(u"")
-        self.dateEdit_ses_fechaemision.setMaximumDateTime(QDateTime(QDate(2501, 1, 3), QTime(23, 59, 59)))
+        self.dateEdit_ses_fechaemision.setMaximumDateTime(QDateTime(QDate(2501, 1, 4), QTime(23, 59, 59)))
         self.dateEdit_ses_fechaemision.setMinimumDateTime(QDateTime(QDate(1752, 12, 1), QTime(0, 0, 0)))
         self.dateEdit_ses_fechaemision.setMinimumDate(QDate(1752, 12, 1))
         self.dateEdit_ses_fechaemision.setMaximumTime(QTime(23, 59, 59))
@@ -4530,7 +4530,7 @@ class Ui_MainWindow(object):
         self.dateEdit_ses_fechasesion.setMinimumSize(QSize(100, 20))
         self.dateEdit_ses_fechasesion.setMaximumSize(QSize(100, 20))
         self.dateEdit_ses_fechasesion.setStyleSheet(u"")
-        self.dateEdit_ses_fechasesion.setMaximumDateTime(QDateTime(QDate(2501, 1, 5), QTime(23, 59, 59)))
+        self.dateEdit_ses_fechasesion.setMaximumDateTime(QDateTime(QDate(2501, 1, 6), QTime(23, 59, 59)))
         self.dateEdit_ses_fechasesion.setMinimumDateTime(QDateTime(QDate(1752, 12, 1), QTime(0, 0, 0)))
         self.dateEdit_ses_fechasesion.setMinimumDate(QDate(1752, 12, 1))
         self.dateEdit_ses_fechasesion.setMaximumTime(QTime(23, 59, 59))
@@ -6267,7 +6267,7 @@ class Ui_MainWindow(object):
 "    color: #000000;                       /* Color del texto */\n"
 "    border: 2px solid rgb(85, 170, 255); /* Borde */\n"
 "    border-radius: 5px;                   /* Esquinas redondeadas */\n"
-"    font: 10pt \"Segoe UI\";                /* Fuente para QTextEdit */\n"
+"    font: 8pt \"Segoe UI\";                /* Fuente para QTextEdit */\n"
 "}\n"
 "\n"
 "/* Estilo de QLineEdit */\n"
@@ -6276,17 +6276,17 @@ class Ui_MainWindow(object):
 "    color: #000000;                       /* Color del texto */\n"
 "    border: 2px solid rgb(85, 170, 255); /* Borde */\n"
 "    border-radius: 5px;                   /* Esquinas redondeadas */\n"
-"    font: 10pt \"Segoe UI\";                /* Fuente para QLineEdit */\n"
+"    font: 8pt \"Segoe UI\";                /* Fuente para QLineEdit */\n"
 "}\n"
 "\n"
 "/* Estilo de QComboBox */\n"
 "QComboBox {\n"
 "    background-color: rgb(255, 255, 255); /* Color de fondo */\n"
-"    color: #000000;                       /* Co"
-                        "lor del texto */\n"
+"    color: #000000;                       /* Colo"
+                        "r del texto */\n"
 "    border: 2px solid rgb(85, 170, 255); /* Borde */\n"
 "    border-radius: 5px;                   /* Esquinas redondeadas */\n"
-"    font: 10pt \"Segoe UI\";                /* Fuente para QComboBox */\n"
+"    font: 8pt \"Segoe UI\";                /* Fuente para QComboBox */\n"
 "    padding-top: 0px;\n"
 "	padding-bottom: 2px;\n"
 "}\n"
@@ -6297,7 +6297,7 @@ class Ui_MainWindow(object):
 "    color: #000000;                       /* Color del texto */\n"
 "    border: 2px solid rgb(85, 170, 255); /* Borde */\n"
 "    border-radius: 5px;                   /* Esquinas redondeadas */\n"
-"    font: 10pt \"Segoe UI\";                /* Fuente para QDateEdit */\n"
+"    font: 8pt \"Segoe UI\";                /* Fuente para QDateEdit */\n"
 "	padding-top: 0px;\n"
 "	padding-bottom: 2px;\n"
 "}\n"
@@ -6306,9 +6306,9 @@ class Ui_MainWindow(object):
 "    background-color: rgb(255, 255, 255); /* Color de fondo */\n"
 "    color: #000000;                       /* Color del texto */\n"
 "    border: 2px solid rgb(85, 170, 255); /* Borde */\n"
-"    border-radius: 5px;                   /* Esquinas r"
-                        "edondeadas */\n"
-"    font: 10pt \"Segoe UI\";                /* Fuente para QDateEdit */\n"
+"    border-radius: 5px;                   /* Esquinas redon"
+                        "deadas */\n"
+"    font: 8pt \"Segoe UI\";                /* Fuente para QDateEdit */\n"
 "	padding-top: 0px;\n"
 "	padding-bottom: 2px;\n"
 "}\n"
@@ -6341,45 +6341,52 @@ class Ui_MainWindow(object):
         self.vly_action.setSpacing(3)
         self.vly_action.setObjectName(u"vly_action")
         self.vly_action.setContentsMargins(4, 4, 4, 4)
-        self.grb_frm_actions = QGroupBox(self.frm_actions)
-        self.grb_frm_actions.setObjectName(u"grb_frm_actions")
-        self.grb_frm_actions.setMinimumSize(QSize(0, 0))
-        self.grb_frm_actions.setMaximumSize(QSize(16777215, 544))
-        self.grb_frm_actions.setStyleSheet(u"")
-        self.label_act_codigo = QLabel(self.grb_frm_actions)
+        self.grp_actions = QGroupBox(self.frm_actions)
+        self.grp_actions.setObjectName(u"grp_actions")
+        self.grp_actions.setMinimumSize(QSize(0, 0))
+        self.grp_actions.setMaximumSize(QSize(16777215, 544))
+        self.grp_actions.setStyleSheet(u"")
+        self.label_act_codigo = QLabel(self.grp_actions)
         self.label_act_codigo.setObjectName(u"label_act_codigo")
         self.label_act_codigo.setGeometry(QRect(10, 30, 61, 20))
         self.label_act_codigo.setMaximumSize(QSize(100, 20))
         self.label_act_codigo.setAutoFillBackground(False)
-        self.lineEdit_act_codigo = QLineEdit(self.grb_frm_actions)
+        self.lineEdit_act_codigo = QLineEdit(self.grp_actions)
         self.lineEdit_act_codigo.setObjectName(u"lineEdit_act_codigo")
         self.lineEdit_act_codigo.setGeometry(QRect(78, 30, 100, 20))
         self.lineEdit_act_codigo.setMaximumSize(QSize(100, 20))
-        self.label_act_descripcion = QLabel(self.grb_frm_actions)
+        self.label_act_descripcion = QLabel(self.grp_actions)
         self.label_act_descripcion.setObjectName(u"label_act_descripcion")
         self.label_act_descripcion.setGeometry(QRect(10, 60, 101, 20))
         self.label_act_descripcion.setMaximumSize(QSize(150, 20))
-        self.lineEdit_act_descripcion = QLineEdit(self.grb_frm_actions)
+        self.lineEdit_act_descripcion = QLineEdit(self.grp_actions)
         self.lineEdit_act_descripcion.setObjectName(u"lineEdit_act_descripcion")
         self.lineEdit_act_descripcion.setGeometry(QRect(120, 60, 400, 20))
         self.lineEdit_act_descripcion.setMinimumSize(QSize(400, 20))
         self.lineEdit_act_descripcion.setMaximumSize(QSize(400, 20))
         self.lineEdit_act_descripcion.setStyleSheet(u"")
-        self.label_id_category = QLabel(self.grb_frm_actions)
+        self.label_id_category = QLabel(self.grp_actions)
         self.label_id_category.setObjectName(u"label_id_category")
         self.label_id_category.setGeometry(QRect(10, 90, 101, 20))
         self.label_id_category.setMinimumSize(QSize(101, 0))
         self.label_id_category.setMaximumSize(QSize(101, 20))
-        self.label_act_status = QLabel(self.grb_frm_actions)
+        self.label_act_status = QLabel(self.grp_actions)
         self.label_act_status.setObjectName(u"label_act_status")
         self.label_act_status.setGeometry(QRect(364, 30, 61, 20))
         self.label_act_status.setMaximumSize(QSize(100, 20))
-        self.lineEdit_id_category = QLineEdit(self.grb_frm_actions)
+        self.lineEdit_id_category = QLineEdit(self.grp_actions)
         self.lineEdit_id_category.setObjectName(u"lineEdit_id_category")
         self.lineEdit_id_category.setGeometry(QRect(120, 90, 400, 20))
         self.lineEdit_id_category.setMinimumSize(QSize(400, 20))
         self.lineEdit_id_category.setMaximumSize(QSize(400, 20))
-        self.cmb_act_status = QComboBox(self.grb_frm_actions)
+        font6 = QFont()
+        font6.setFamilies([u"Segoe UI"])
+        font6.setPointSize(8)
+        font6.setBold(False)
+        font6.setItalic(False)
+        self.lineEdit_id_category.setFont(font6)
+        self.lineEdit_id_category.setReadOnly(True)
+        self.cmb_act_status = QComboBox(self.grp_actions)
         self.cmb_act_status.addItem("")
         self.cmb_act_status.addItem("")
         self.cmb_act_status.setObjectName(u"cmb_act_status")
@@ -6389,30 +6396,68 @@ class Ui_MainWindow(object):
         self.cmb_act_status.setMinimumSize(QSize(80, 20))
         self.cmb_act_status.setMaximumSize(QSize(80, 20))
         self.cmb_act_status.setStyleSheet(u"")
-        self.label_act_fechacreacion = QLabel(self.grb_frm_actions)
+        self.label_act_fechacreacion = QLabel(self.grp_actions)
         self.label_act_fechacreacion.setObjectName(u"label_act_fechacreacion")
         self.label_act_fechacreacion.setGeometry(QRect(10, 190, 130, 20))
         self.label_act_fechacreacion.setMaximumSize(QSize(130, 20))
-        self.dateEdit_act_fechacreacion = QDateEdit(self.grb_frm_actions)
+        self.dateEdit_act_fechacreacion = QDateEdit(self.grp_actions)
         self.dateEdit_act_fechacreacion.setObjectName(u"dateEdit_act_fechacreacion")
         self.dateEdit_act_fechacreacion.setGeometry(QRect(146, 190, 100, 20))
         self.dateEdit_act_fechacreacion.setMaximumSize(QSize(100, 20))
         self.dateEdit_act_fechacreacion.setStyleSheet(u"")
         self.dateEdit_act_fechacreacion.setCalendarPopup(True)
-        self.label_act_descripciontec = QLabel(self.grb_frm_actions)
+        self.label_act_descripciontec = QLabel(self.grp_actions)
         self.label_act_descripciontec.setObjectName(u"label_act_descripciontec")
         self.label_act_descripciontec.setGeometry(QRect(10, 120, 100, 41))
         self.label_act_descripciontec.setMinimumSize(QSize(100, 0))
         self.label_act_descripciontec.setMaximumSize(QSize(100, 60))
         self.label_act_descripciontec.setScaledContents(False)
-        self.textEdit_act_descripciontec = QTextEdit(self.grb_frm_actions)
+        self.textEdit_act_descripciontec = QTextEdit(self.grp_actions)
         self.textEdit_act_descripciontec.setObjectName(u"textEdit_act_descripciontec")
         self.textEdit_act_descripciontec.setGeometry(QRect(120, 120, 400, 60))
         self.textEdit_act_descripciontec.setMinimumSize(QSize(400, 60))
         self.textEdit_act_descripciontec.setMaximumSize(QSize(400, 60))
         self.textEdit_act_descripciontec.setStyleSheet(u"")
+        self.btn_buscar_categoria = QPushButton(self.grp_actions)
+        self.btn_buscar_categoria.setObjectName(u"btn_buscar_categoria")
+        self.btn_buscar_categoria.setGeometry(QRect(528, 87, 24, 24))
+        sizePolicy6 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(1)
+        sizePolicy6.setHeightForWidth(self.btn_buscar_categoria.sizePolicy().hasHeightForWidth())
+        self.btn_buscar_categoria.setSizePolicy(sizePolicy6)
+        self.btn_buscar_categoria.setMinimumSize(QSize(24, 24))
+        self.btn_buscar_categoria.setMaximumSize(QSize(24, 24))
+        font7 = QFont()
+        font7.setFamilies([u"Consolas"])
+        font7.setBold(True)
+        font7.setItalic(False)
+        self.btn_buscar_categoria.setFont(font7)
+        self.btn_buscar_categoria.setStyleSheet(u"/* Estilo base del bot\u00f3n */\n"
+"QPushButton {\n"
+"    background-color: #007BFF;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 10px 20px;\n"
+"    font-size: 14px;\n"
+"    font-weight: bold;\n"
+"}\n"
+"/* Estilo cuando el mouse pasa por encima */\n"
+"QPushButton:hover {\n"
+"    background-color: #0056b3;\n"
+"}\n"
+"/* Estilo cuando el bot\u00f3n es presionado */\n"
+"QPushButton:pressed {\n"
+"    background-color: #004085;\n"
+"}\n"
+"")
+        icon42 = QIcon()
+        icon42.addFile(u":/rec/assets/icons/fi-sr-search.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_buscar_categoria.setIcon(icon42)
+        self.btn_buscar_categoria.setIconSize(QSize(18, 18))
 
-        self.vly_action.addWidget(self.grb_frm_actions)
+        self.vly_action.addWidget(self.grp_actions)
 
 
         self.vly_frm_form_action.addWidget(self.frm_actions)
@@ -7312,8 +7357,8 @@ class Ui_MainWindow(object):
         self.label_cat_codigo.setText(QCoreApplication.translate("MainWindow", u"C\u00f3digo:", None))
         self.label_cat_descripcion.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Descripci\u00f3n:</p></body></html>", None))
         self.label_cat_status.setText(QCoreApplication.translate("MainWindow", u"Estado:", None))
-        self.cmb_cat_ststus.setItemText(0, QCoreApplication.translate("MainWindow", u"Activo", None))
-        self.cmb_cat_ststus.setItemText(1, QCoreApplication.translate("MainWindow", u"Inactivo", None))
+        self.cmb_cat_status.setItemText(0, QCoreApplication.translate("MainWindow", u"Activo", None))
+        self.cmb_cat_status.setItemText(1, QCoreApplication.translate("MainWindow", u"Inactivo", None))
 
         self.label_cat_fechacreacion.setText(QCoreApplication.translate("MainWindow", u"Fecha de Creaci\u00f3n:", None))
         self.label_cat_descripciontec.setText(QCoreApplication.translate("MainWindow", u"Descripci\u00f3n\n"
@@ -7561,7 +7606,7 @@ class Ui_MainWindow(object):
         self.btn_cancel_a_company.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+Shift+E", None))
 #endif // QT_CONFIG(shortcut)
         self.btn_delete_a_company.setText(QCoreApplication.translate("MainWindow", u"Borrar", None))
-        self.grb_frm_actions.setTitle(QCoreApplication.translate("MainWindow", u"Acciones", None))
+        self.grp_actions.setTitle(QCoreApplication.translate("MainWindow", u"Acciones", None))
 #if QT_CONFIG(accessibility)
         self.label_act_codigo.setAccessibleDescription("")
 #endif // QT_CONFIG(accessibility)
@@ -7575,6 +7620,7 @@ class Ui_MainWindow(object):
         self.label_act_fechacreacion.setText(QCoreApplication.translate("MainWindow", u"Fecha de Creaci\u00f3n:", None))
         self.label_act_descripciontec.setText(QCoreApplication.translate("MainWindow", u"Descripci\u00f3n\n"
 "Detallada:", None))
+        self.btn_buscar_categoria.setText("")
         self.btn_add_action.setText(QCoreApplication.translate("MainWindow", u"  Incluir", None))
         self.btn_save_action.setText(QCoreApplication.translate("MainWindow", u" Guardar", None))
 #if QT_CONFIG(shortcut)

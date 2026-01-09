@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="rec">
+    <file>assets/icons/fi-sr-search.svg</file>
     <file>assets/icons/audio01.svg</file>
     <file>assets/icons/bluetooth02.svg</file>
     <file>assets/icons/bluetootht.svg</file>

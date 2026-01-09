@@ -8,7 +8,7 @@ from PySide6.QtGui import QPixmap
 from ui_arktoolspcg2 import Ui_MainWindow
 from database_manager import DatabaseManager
 import system_info
-#  
+from dialogos import BuscadorBaseDialog 
 import logging
 
 logging.basicConfig(
@@ -27,6 +27,10 @@ class MiApp(QMainWindow):
         self.db_manager.setup_database() # Crea la BD y las tablas si no existen
         logging.info("Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.")
         # -----------------------------------------------------------------
+        
+        # ------------INICIALIZACION DE VARIABLES PARA GESTION DE BASE DE DATOS------------
+        self.id_categoria_actual = None
+        
         
         # Eliminar barra de título y aplicar opacidad
         self.setWindowFlag(Qt.WindowType.FramelessWindowHint)
@@ -152,16 +156,16 @@ class MiApp(QMainWindow):
         self.ui.btn_add_action.clicked.connect(self.accion_incluir_acciones)
         self.ui.btn_cancel_action.clicked.connect(self.accion_cancelar_acciones)
 
-        # Conectar botón Incluir y Cancelar de categories (Categorias)
+        # Categorias
+        # Conectar botón Incluir, Guardar y Cancelar de categories (Categorias)
         self.ui.btn_add_actions_categories.clicked.connect(self.accion_incluir_categorias)
+        self.ui.btn_save_actions_categories.clicked.connect(self.guardar_categories)
         self.ui.btn_cancel_actions_categories.clicked.connect(self.accion_cancelar_categorias)
         
-        # Conexión para Guardar
-        self.ui.btn_save_clients.clicked.connect(self.guardar_cliente)
-
-        # Conectar botón Incluir y Cancelar de clients (Clientes)
+        # Clientes
+        # Conectar botón Incluir, Guardar y Cancelar de clients (Clientes)
         self.ui.btn_add_clients.clicked.connect(self.accion_incluir_clientes)
-        # self.ui.btn_cancel_clients.clicked.connect(self.limpiar_formulario_clientes)
+        self.ui.btn_save_clients.clicked.connect(self.guardar_cliente)
         self.ui.btn_cancel_clients.clicked.connect(self.accion_cancelar_clientes)
 
         # Conectar botón Incluir y Cancelar de currencies (Monedas)
@@ -199,6 +203,10 @@ class MiApp(QMainWindow):
         # Conectar botón Incluir y Cancelar de users (Usuarios)
         self.ui.btn_add_users.clicked.connect(self.accion_incluir_usuarios)
         self.ui.btn_cancel_users.clicked.connect(self.accion_cancelar_usuarios)
+        
+        # Conectar botón para activar buscadores
+        self.ui.btn_buscar_categoria.clicked.connect(self.abrir_buscador_categorias)
+        
 
         # ===***===***===***===***===***===***===***===***===***===***===***===***===***===***===***===***===***===
         
@@ -239,6 +247,7 @@ class MiApp(QMainWindow):
         self.ui.lineEdit_cat_codigo.setFocus()  
     def accion_cancelar_categorias(self):
         if self.confirmar_accion_cancelar():
+            self.limpiar_formulario_categories()
             self.set_form_enabled(self.ui.frm_actions_categories, False)
     # ============GESTION DE CLIENTES============
     def accion_incluir_clientes(self):   
@@ -416,11 +425,98 @@ class MiApp(QMainWindow):
         # 4. (Opcional) Poner el foco de nuevo en el primer campo
         self.ui.lineEdit_clt_codigo.setFocus()
         
-        logging.info("Formulario de clientes limpiado.")  
-        
-    # ============FIN INSERT DE DATOS============
+        logging.info("Formulario de clientes limpiado.")
+    # ============INSERT  DE DATOS CATEGORIES============
     
+    def guardar_categories(self):
+        """
+        Recopila los datos del formulario frm_form_categories e inserta
+        un nuevo registro en la tabla ark_action_categories.
+        """
+        try:
+            # 1. Recolección de datos desde frm_actions_categories
+            codigo       = self.ui.lineEdit_cat_codigo.text().strip()
+            descripcion  = self.ui.lineEdit_cat_descripcion.text().strip()
+            status       = self.ui.cmb_cat_status.currentIndex()
+            descripciontec  = self.ui.textEdit_cat_descripciontec.toPlainText().strip()
+            fecha_crea   = self.ui.dateEdit_cat_fechacreacion.date().toString("yyyy-MM-dd")
+
+            # 2. Validación básica de campos obligatorios
+            if not codigo:
+                QMessageBox.warning(self, "Validación", "El Código de la categoría es obligatorio.")
+                return
+
+            # 3. Preparación de la consulta SQL
+            # No incluimos clt_IDauto porque es AUTOINCREMENT
+            sql = """
+            INSERT INTO ark_action_categories (
+                cat_Codigo, cat_Descripcion, cat_Status,
+                cat_DescripcionTec, cat_FechaCreacion
+            ) VALUES (?, ?, ?, ?, ?)
+            """
+
+            # 4. Tupla de parámetros (DEBE seguir el mismo orden que el INSERT)
+            params = (
+                codigo, descripcion, status,
+                descripciontec, fecha_crea
+            )
+
+            # 5. Ejecución mediante el DatabaseManager
+            # execute_query retorna el cursor si fue exitoso, o None si falló
+            exito = self.db_manager.execute_query(sql, params)
+
+            if exito:
+                logging.info(f"Categoría guardada exitosamente: {codigo}")
+                QMessageBox.information(self, "Éxito", f"La Categoría '{codigo}' ha sido registrada correctamente.")
+                self.limpiar_formulario_categories() # Función que haremos a continuación
+            else:
+                QMessageBox.critical(self, "Error", "No se pudo guardar el registro en la base de datos.")
+
+        except Exception as e:
+            logging.error(f"Error crítico en guardar_categories: {str(e)}")
+            QMessageBox.critical(self, "Error de Sistema", f"Ocurrió un error inesperado:\n{e}")
+
+    # ============LIMPEZA DE FORMULARIO CATEGORIES============
+
+    def limpiar_formulario_categories(self):
+        """
+        Resetea todos los campos del formulario de categorías a sus valores iniciales.
+        """
+        # 1. Limpiar QLineEdits y QTextEdits
+        self.ui.lineEdit_cat_codigo.clear()
+        self.ui.lineEdit_cat_descripcion.clear()
+        self.ui.textEdit_cat_descripciontec.clear()
+        # 2. Resetear QComboBoxes al primer elemento (índice 0)
+        self.ui.cmb_cat_status.setCurrentIndex(0)
+        # 3. Resetear QDateEdit a la fecha actual
+        self.ui.dateEdit_cat_fechacreacion.setDate(QDate.currentDate())
+
+        # 4. (Opcional) Poner el foco de nuevo en el primer campo
+        self.ui.lineEdit_cat_codigo.setFocus()
         
+        logging.info("Formulario de categorías  limpiado.")  
+          
+        
+    # ==================================FIN INSERT DE DATOS==================================
+    
+    # ==============================ACTIVACION DE BUSCADORES==================================
+    def abrir_buscador_categorias(self):
+        # Definimos la consulta y las cabeceras
+        sql = "SELECT cat_IDauto, cat_Codigo, cat_Descripcion FROM ark_action_categories WHERE cat_Status = 1"
+        columnas = ["ID", "Código", "Descripción"]
+        
+        # Instanciamos y ejecutamos
+        dialogo = BuscadorBaseDialog(self.db_manager, "Categorías de Acciones", sql, columnas)
+        
+        if dialogo.exec():
+            # Si el usuario seleccionó algo, guardamos el ID y mostramos el nombre
+            self.id_categoria_actual = dialogo.id_seleccionado
+            # self.ui.lineEdit_id_category.setText(dialogo.nombre_seleccionado)
+            self.ui.lineEdit_id_category.setText(dialogo.valor_adicional)
+            #logging.info(f"Categoría seleccionada: {dialogo.nombre_seleccionado} (ID: {self.id_categoria_actual})")
+            logging.info(f"Categoría vinculada: {dialogo.valor_adicional} (ID: {self.id_categoria_actual})")
+            
+       
     # ------------------ CONTROLES DE LA BARRA SUPERIOR ------------------      
     
     def control_bt_minimizar(self):

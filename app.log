@@ -1710,3 +1710,66 @@
 2026-01-08 20:33:15,537 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
 2026-01-08 20:33:20,404 - INFO - Página encontrada: page_frm_actions
 2026-01-08 20:36:20,378 - INFO - Categoría vinculada: Instalación (ID: 2)
+2026-01-08 20:52:20,991 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 20:52:26,115 - INFO - Página encontrada: page_frm_actions
+2026-01-08 20:56:39,570 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 20:56:45,276 - INFO - Página encontrada: page_frm_actions
+2026-01-08 20:56:50,276 - INFO - Página encontrada: page_frm_actions
+2026-01-08 20:56:54,561 - INFO - Categoría vinculada: CAT002 - Instalación (ID: 2)
+2026-01-08 22:05:15,814 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 22:05:22,842 - INFO - Página encontrada: page_frm_actions
+2026-01-08 22:06:23,236 - INFO - Categoría vinculada: 010101 - DIAGNOSTICO DE EQUIPOS (ID: 4)
+2026-01-08 22:08:28,980 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 22:08:40,831 - INFO - Página encontrada: page_frm_actions
+2026-01-08 22:09:23,317 - INFO - Categoría vinculada: 010101 - DIAGNOSTICO DE EQUIPOS (ID: 4)
+2026-01-08 22:12:18,529 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 22:13:00,961 - INFO - Página encontrada: page_frm_actions
+2026-01-08 22:13:28,183 - INFO - Categoría vinculada: 010101 - DIAGNOSTICO DE EQUIPOS (ID: 4)
+2026-01-08 22:15:49,190 - INFO - Formulario de categorías  limpiado.
+2026-01-08 22:16:08,877 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 22:16:17,746 - INFO - Página encontrada: page_frm_actions
+2026-01-08 22:16:36,799 - INFO - Categoría vinculada: 010101 - DIAGNOSTICO DE EQUIPOS (ID: 4)
+2026-01-08 22:17:02,128 - INFO - Acción guardada exitosamente: ACC0001
+2026-01-08 22:17:05,511 - INFO - Formulario de acciones limpiado.
+2026-01-08 22:17:13,135 - INFO - Formulario de categorías  limpiado.
+2026-01-08 22:25:08,942 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 22:25:15,637 - INFO - Página encontrada: page_frm_actions
+2026-01-08 22:25:59,852 - INFO - Categoría vinculada: 010101 - DIAGNOSTICO DE EQUIPOS (ID: 4)
+2026-01-08 22:26:17,394 - INFO - Acción guardada exitosamente: ACC0002
+2026-01-08 22:26:20,394 - INFO - Formulario de acciones limpiado.
+2026-01-08 22:26:31,394 - INFO - Formulario de categorías  limpiado.
+2026-01-08 22:27:02,941 - INFO - Página encontrada: page_frm_employees
+2026-01-08 23:02:15,034 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 23:02:20,801 - INFO - Página encontrada: page_frm_actions
+2026-01-08 23:05:00,593 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 23:05:05,714 - INFO - Página encontrada: page_frm_actions
+2026-01-08 23:05:32,351 - INFO - Buscador: Seleccionado ID 4
+2026-01-08 23:06:02,550 - INFO - Acción guardada exitosamente: ACC00003
+2026-01-08 23:06:04,751 - INFO - Formulario de acciones limpiado.
+2026-01-08 23:06:30,910 - INFO - Formulario de categorías  limpiado.
+2026-01-08 23:14:13,876 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 23:14:26,052 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-08 23:14:36,709 - INFO - Página encontrada: page_frm_actions
+2026-01-08 23:15:11,251 - INFO - Buscador: Seleccionado ID 4
+2026-01-08 23:15:30,203 - INFO - Acción guardada exitosamente: ACC0004
+2026-01-08 23:15:32,075 - INFO - Formulario de acciones limpiado.
+2026-01-08 23:15:36,769 - INFO - Formulario de categorías  limpiado.
+2026-01-09 11:27:58,472 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-09 11:28:21,139 - INFO - Página encontrada: page_frm_actions
+2026-01-09 13:52:51,581 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-09 13:52:57,620 - INFO - Página encontrada: page_frm_actions
+2026-01-09 13:54:02,938 - INFO - Buscador: Seleccionado ID 4
+2026-01-09 13:57:14,871 - INFO - Acción guardada exitosamente: CSS0005
+2026-01-09 13:57:17,019 - INFO - Formulario de acciones limpiado.
+2026-01-09 15:10:54,432 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-09 15:10:58,811 - INFO - Página encontrada: page_frm_actions
+2026-01-09 15:11:51,257 - INFO - Buscador: Seleccionado ID 4
+2026-01-09 16:04:33,862 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-09 16:04:41,245 - INFO - Página encontrada: page_frm_actions
+2026-01-09 16:04:55,261 - INFO - Página encontrada: page_frm_functional_units
+2026-01-09 16:04:56,741 - INFO - Página encontrada: page_frm_actions_categories
+2026-01-09 16:04:56,741 - ERROR - Página no encontrada: page_frm_action_categories
+2026-01-09 16:04:58,204 - INFO - Página encontrada: page_frm_currencies
+2026-01-09 16:04:59,269 - INFO - Página encontrada: page_frm_a_company
+2026-01-09 16:10:21,723 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-01-09 16:10:29,464 - INFO - Página encontrada: page_frm_a_company

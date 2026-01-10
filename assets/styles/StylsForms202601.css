@@ -1,0 +1,116 @@
+/* Estilos para la seccion de formularios */
+/* Estilo del marco */
+QFrame {
+    background-color: rgb(85, 170, 255);
+    border-radius: 10px; /* Esquinas redondeadas */
+}
+
+/* Estilo del marco */
+QGroupBox {
+    background-color: rgb(188, 246, 255);
+    border-radius: 10px; /* Esquinas redondeadas */
+}
+
+/* Estilo del título del QGroupBox */
+QGroupBox::title {
+    color: #000000;                  /* Color del texto */
+    font: bold 24pt "Segoe UI";     /* Fuente más grande y en negrita */
+    subcontrol-origin: margin;      /* Posición del título */
+    subcontrol-position: top left;  /* Alineación del título */
+    padding: 4px;                   /* Espacio alrededor del texto */
+}
+
+/* Estilo de las etiquetas */
+QLabel {
+    color: #000000;                /* Color del texto */
+    background-color: rgb(188, 246, 255); /* Opcional: fondo */
+    font: 10pt "Segoe UI";         /* Fuente de Etiquetas */
+    line-height: 12px;
+}
+
+/* Estilo de QTextEdit */
+QTextEdit {
+    background-color: rgb(255, 255, 255); /* Color de fondo */
+    color: #000000;                       /* Color del texto */
+    border: 2px solid rgb(85, 170, 255); /* Borde */
+    border-radius: 5px;                   /* Esquinas redondeadas */
+    font: 10pt "Segoe UI";                /* Fuente para QTextEdit */
+    
+}
+
+/* Estilo de QLineEdit */
+QLineEdit {
+    background-color: rgb(255, 255, 255); /* Color de fondo */
+    color: #000000;                       /* Color del texto */
+    border: 2px solid rgb(85, 170, 255); /* Borde */
+    border-radius: 5px;                   /* Esquinas redondeadas */
+    font: 10pt "Segoe UI";  
+    padding: 0px 5px;       
+}
+
+/* Estilo de QComboBox */
+QComboBox {
+    background-color: rgb(255, 255, 255); /* Color de fondo */
+    color: #000000;                       /* Color del texto */
+    border: 2px solid rgb(85, 170, 255); /* Borde */
+    border-radius: 5px;                   /* Esquinas redondeadas */
+    font: 10pt "Segoe UI"; 
+    padding-top: 0px;
+	padding-bottom: 2px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    selection-background-color: rgb(85, 170, 255); /* Color de realce de tu tema */
+    selection-color: #ffffff;
+    outline: 0px;
+}
+
+/* Estilo de QDateEdit */
+QDateEdit {
+    background-color: rgb(255, 255, 255); /* Color de fondo */
+    color: #000000;                       /* Color del texto */
+    border: 2px solid rgb(85, 170, 255); /* Borde */
+    border-radius: 5px;                   /* Esquinas redondeadas */
+    font: 10pt "Segoe UI";                /* Fuente para QDateEdit */
+	padding-top: 0px;
+	padding-bottom: 2px;
+}
+/* Estilo de QTimeEdit */
+QTimeEdit {
+    background-color: rgb(255, 255, 255); /* Color de fondo */
+    color: #000000;                       /* Color del texto */
+    border: 2px solid rgb(85, 170, 255); /* Borde */
+    border-radius: 5px;                   /* Esquinas redondeadas */
+    font: 10pt "Segoe UI";                /* Fuente para QDateEdit */
+	padding-top: 0px;
+	padding-bottom: 2px;
+}
+
+QCalendarWidget QWidget {
+    background-color: #ffffff; /* Fondo blanco para el cuerpo */
+}
+/* --- ESTADO DESHABILITADO REFORZADO --- */
+
+QLineEdit:disabled, 
+QComboBox:disabled, 
+QDateEdit:disabled, 
+QTimeEdit:disabled {
+    background-color: #e1e1e1;
+    color: #808080;
+    border: 2px solid #b0b0b0;
+}
+
+/* Forzamos el QTextEdit */
+QTextEdit:disabled {
+    background-color: #e1e1e1 !important; 
+    color: #808080 !important;
+    border: 2px solid #b0b0b0;
+}
+/* Forzamos el QComboBox */
+QComboBox:disabled {
+    background-color: #e1e1e1 !important; 
+    color: #808080 !important;
+    border: 2px solid #b0b0b0;
+}

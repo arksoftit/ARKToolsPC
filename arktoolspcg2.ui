@@ -50,6 +50,9 @@
         <height>1080</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="frameShape">
        <enum>QFrame::Shape::StyledPanel</enum>
       </property>
@@ -3253,10 +3256,7 @@ background-color: rgb(170, 170, 127);</string>
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">   font: 9pt &quot;Consolas&quot;;
-  color: #000000; 
-   background-color: rgb(19, 255, 168)
-</string>
+                    <string notr="true"/>
                    </property>
                    <widget class="QWidget" name="page_frm_currencies">
                     <property name="sizePolicy">
@@ -3407,6 +3407,7 @@ QTextEdit {
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    
 }
 
 /* Estilo de QLineEdit */
@@ -3415,7 +3416,8 @@ QLineEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
+    font: 10pt &quot;Segoe UI&quot;;  
+    padding: 0px 5px;       
 }
 
 /* Estilo de QComboBox */
@@ -3424,9 +3426,17 @@ QComboBox {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
+    font: 10pt &quot;Segoe UI&quot;; 
     padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    selection-background-color: rgb(85, 170, 255); /* Color de realce de tu tema */
+    selection-color: #ffffff;
+    outline: 0px;
 }
 
 /* Estilo de QDateEdit */
@@ -3448,6 +3458,10 @@ QTimeEdit {
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QCalendarWidget QWidget {
+    background-color: #ffffff; /* Fondo blanco para el cuerpo */
 }
 /* --- ESTADO DESHABILITADO REFORZADO --- */
 
@@ -4552,6 +4566,7 @@ QTextEdit {
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    
 }
 
 /* Estilo de QLineEdit */
@@ -4560,7 +4575,8 @@ QLineEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
+    font: 10pt &quot;Segoe UI&quot;;  
+    padding: 0px 5px;       
 }
 
 /* Estilo de QComboBox */
@@ -4569,9 +4585,17 @@ QComboBox {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
+    font: 10pt &quot;Segoe UI&quot;; 
     padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    selection-background-color: rgb(85, 170, 255); /* Color de realce de tu tema */
+    selection-color: #ffffff;
+    outline: 0px;
 }
 
 /* Estilo de QDateEdit */
@@ -4593,6 +4617,10 @@ QTimeEdit {
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QCalendarWidget QWidget {
+    background-color: #ffffff; /* Fondo blanco para el cuerpo */
 }
 /* --- ESTADO DESHABILITADO REFORZADO --- */
 
@@ -5642,6 +5670,7 @@ QTextEdit {
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    
 }
 
 /* Estilo de QLineEdit */
@@ -5650,7 +5679,8 @@ QLineEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
+    font: 10pt &quot;Segoe UI&quot;;  
+    padding: 0px 5px;       
 }
 
 /* Estilo de QComboBox */
@@ -5659,9 +5689,17 @@ QComboBox {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
+    font: 10pt &quot;Segoe UI&quot;; 
     padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    selection-background-color: rgb(85, 170, 255); /* Color de realce de tu tema */
+    selection-color: #ffffff;
+    outline: 0px;
 }
 
 /* Estilo de QDateEdit */
@@ -5683,6 +5721,10 @@ QTimeEdit {
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QCalendarWidget QWidget {
+    background-color: #ffffff; /* Fondo blanco para el cuerpo */
 }
 /* --- ESTADO DESHABILITADO REFORZADO --- */
 
@@ -6451,7 +6493,8 @@ QTextEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    
 }
 
 /* Estilo de QLineEdit */
@@ -6460,7 +6503,8 @@ QLineEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
+    font: 10pt &quot;Segoe UI&quot;;  
+    padding: 0px 5px;       
 }
 
 /* Estilo de QComboBox */
@@ -6469,9 +6513,17 @@ QComboBox {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
+    font: 10pt &quot;Segoe UI&quot;; 
     padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    selection-background-color: rgb(85, 170, 255); /* Color de realce de tu tema */
+    selection-color: #ffffff;
+    outline: 0px;
 }
 
 /* Estilo de QDateEdit */
@@ -6480,7 +6532,7 @@ QDateEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
+    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
 }
@@ -6490,9 +6542,13 @@ QTimeEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
+    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QCalendarWidget QWidget {
+    background-color: #ffffff; /* Fondo blanco para el cuerpo */
 }
 /* --- ESTADO DESHABILITADO REFORZADO --- */
 
@@ -7253,6 +7309,7 @@ QTextEdit {
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    
 }
 
 /* Estilo de QLineEdit */
@@ -7261,7 +7318,8 @@ QLineEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
+    font: 10pt &quot;Segoe UI&quot;;  
+    padding: 0px 5px;       
 }
 
 /* Estilo de QComboBox */
@@ -7270,9 +7328,17 @@ QComboBox {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
+    font: 10pt &quot;Segoe UI&quot;; 
     padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    selection-background-color: rgb(85, 170, 255); /* Color de realce de tu tema */
+    selection-color: #ffffff;
+    outline: 0px;
 }
 
 /* Estilo de QDateEdit */
@@ -7294,6 +7360,10 @@ QTimeEdit {
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QCalendarWidget QWidget {
+    background-color: #ffffff; /* Fondo blanco para el cuerpo */
 }
 /* --- ESTADO DESHABILITADO REFORZADO --- */
 
@@ -8635,6 +8705,7 @@ QTextEdit {
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    
 }
 
 /* Estilo de QLineEdit */
@@ -8643,7 +8714,8 @@ QLineEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
+    font: 10pt &quot;Segoe UI&quot;;  
+    padding: 0px 5px;       
 }
 
 /* Estilo de QComboBox */
@@ -8652,9 +8724,17 @@ QComboBox {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
+    font: 10pt &quot;Segoe UI&quot;; 
     padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    selection-background-color: rgb(85, 170, 255); /* Color de realce de tu tema */
+    selection-color: #ffffff;
+    outline: 0px;
 }
 
 /* Estilo de QDateEdit */
@@ -8676,6 +8756,10 @@ QTimeEdit {
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QCalendarWidget QWidget {
+    background-color: #ffffff; /* Fondo blanco para el cuerpo */
 }
 /* --- ESTADO DESHABILITADO REFORZADO --- */
 
@@ -9638,6 +9722,7 @@ QTextEdit {
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    
 }
 
 /* Estilo de QLineEdit */
@@ -9646,7 +9731,8 @@ QLineEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
+    font: 10pt &quot;Segoe UI&quot;;  
+    padding: 0px 5px;       
 }
 
 /* Estilo de QComboBox */
@@ -9655,9 +9741,17 @@ QComboBox {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
+    font: 10pt &quot;Segoe UI&quot;; 
     padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    selection-background-color: rgb(85, 170, 255); /* Color de realce de tu tema */
+    selection-color: #ffffff;
+    outline: 0px;
 }
 
 /* Estilo de QDateEdit */
@@ -9679,6 +9773,10 @@ QTimeEdit {
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QCalendarWidget QWidget {
+    background-color: #ffffff; /* Fondo blanco para el cuerpo */
 }
 /* --- ESTADO DESHABILITADO REFORZADO --- */
 
@@ -9972,7 +10070,7 @@ QComboBox:disabled {
                                 <second>59</second>
                                 <year>2501</year>
                                 <month>1</month>
-                                <day>4</day>
+                                <day>7</day>
                                </datetime>
                               </property>
                               <property name="minimumDateTime">
@@ -10338,7 +10436,7 @@ Fiscal</string>
                                 <second>59</second>
                                 <year>2501</year>
                                 <month>1</month>
-                                <day>6</day>
+                                <day>9</day>
                                </datetime>
                               </property>
                               <property name="minimumDateTime">
@@ -11045,6 +11143,7 @@ QTextEdit {
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    
 }
 
 /* Estilo de QLineEdit */
@@ -11053,7 +11152,8 @@ QLineEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
+    font: 10pt &quot;Segoe UI&quot;;  
+    padding: 0px 5px;       
 }
 
 /* Estilo de QComboBox */
@@ -11062,9 +11162,17 @@ QComboBox {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
+    font: 10pt &quot;Segoe UI&quot;; 
     padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    selection-background-color: rgb(85, 170, 255); /* Color de realce de tu tema */
+    selection-color: #ffffff;
+    outline: 0px;
 }
 
 /* Estilo de QDateEdit */
@@ -11086,6 +11194,10 @@ QTimeEdit {
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QCalendarWidget QWidget {
+    background-color: #ffffff; /* Fondo blanco para el cuerpo */
 }
 /* --- ESTADO DESHABILITADO REFORZADO --- */
 
@@ -11924,6 +12036,7 @@ QTextEdit {
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    
 }
 
 /* Estilo de QLineEdit */
@@ -11932,7 +12045,8 @@ QLineEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
+    font: 10pt &quot;Segoe UI&quot;;  
+    padding: 0px 5px;       
 }
 
 /* Estilo de QComboBox */
@@ -11941,9 +12055,17 @@ QComboBox {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
+    font: 10pt &quot;Segoe UI&quot;; 
     padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    selection-background-color: rgb(85, 170, 255); /* Color de realce de tu tema */
+    selection-color: #ffffff;
+    outline: 0px;
 }
 
 /* Estilo de QDateEdit */
@@ -11965,6 +12087,10 @@ QTimeEdit {
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QCalendarWidget QWidget {
+    background-color: #ffffff; /* Fondo blanco para el cuerpo */
 }
 /* --- ESTADO DESHABILITADO REFORZADO --- */
 
@@ -12750,6 +12876,7 @@ QTextEdit {
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    
 }
 
 /* Estilo de QLineEdit */
@@ -12758,7 +12885,8 @@ QLineEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
+    font: 10pt &quot;Segoe UI&quot;;  
+    padding: 0px 5px;       
 }
 
 /* Estilo de QComboBox */
@@ -12767,9 +12895,17 @@ QComboBox {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
+    font: 10pt &quot;Segoe UI&quot;; 
     padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    selection-background-color: rgb(85, 170, 255); /* Color de realce de tu tema */
+    selection-color: #ffffff;
+    outline: 0px;
 }
 
 /* Estilo de QDateEdit */
@@ -12791,6 +12927,10 @@ QTimeEdit {
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QCalendarWidget QWidget {
+    background-color: #ffffff; /* Fondo blanco para el cuerpo */
 }
 /* --- ESTADO DESHABILITADO REFORZADO --- */
 
@@ -13442,6 +13582,9 @@ QPushButton:pressed {
                       <height>1080</height>
                      </size>
                     </property>
+                    <property name="styleSheet">
+                     <string notr="true"/>
+                    </property>
                     <layout class="QHBoxLayout" name="hly_page_frm_aaa_company">
                      <property name="spacing">
                       <number>0</number>
@@ -13561,6 +13704,7 @@ QTextEdit {
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
     font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    
 }
 
 /* Estilo de QLineEdit */
@@ -13569,7 +13713,8 @@ QLineEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
+    font: 10pt &quot;Segoe UI&quot;;  
+    padding: 0px 5px;       
 }
 
 /* Estilo de QComboBox */
@@ -13578,9 +13723,17 @@ QComboBox {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
+    font: 10pt &quot;Segoe UI&quot;; 
     padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    selection-background-color: rgb(85, 170, 255); /* Color de realce de tu tema */
+    selection-color: #ffffff;
+    outline: 0px;
 }
 
 /* Estilo de QDateEdit */
@@ -13603,6 +13756,30 @@ QTimeEdit {
 	padding-top: 0px;
 	padding-bottom: 2px;
 }
+
+QCalendarWidget QWidget {
+    background-color: #ffffff; /* Fondo blanco para el cuerpo */
+}
+/* Estilo para el calendario del QDateEdit */
+QCalendarWidget QAbstractItemView {
+    background-color: #ffffff;
+    color: #000000;
+    selection-background-color: rgb(85, 170, 255);
+    selection-color: #ffffff;
+}
+
+/* Encabezado (Mes y Año) */
+QCalendarWidget QWidget#qt_calendar_navigationbar {
+    background-color: #ffffff;
+}
+
+/* Botones de navegación (Flechas) */
+QCalendarWidget QToolButton {
+    background-color: transparent;
+    color: #000000;
+    font: bold 10pt &quot;Segoe UI&quot;;
+}
+
 /* --- ESTADO DESHABILITADO REFORZADO --- */
 
 QLineEdit:disabled, 
@@ -14943,7 +15120,8 @@ QTextEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    
 }
 
 /* Estilo de QLineEdit */
@@ -14952,7 +15130,8 @@ QLineEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
+    font: 10pt &quot;Segoe UI&quot;;  
+    padding: 0px 5px;       
 }
 
 /* Estilo de QComboBox */
@@ -14961,9 +15140,17 @@ QComboBox {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
+    font: 10pt &quot;Segoe UI&quot;; 
     padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    selection-background-color: rgb(85, 170, 255); /* Color de realce de tu tema */
+    selection-color: #ffffff;
+    outline: 0px;
 }
 
 /* Estilo de QDateEdit */
@@ -14972,7 +15159,7 @@ QDateEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
+    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
 }
@@ -14982,9 +15169,13 @@ QTimeEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
+    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QCalendarWidget QWidget {
+    background-color: #ffffff; /* Fondo blanco para el cuerpo */
 }
 /* --- ESTADO DESHABILITADO REFORZADO --- */
 
@@ -15205,7 +15396,7 @@ QComboBox:disabled {
                               <property name="font">
                                <font>
                                 <family>Segoe UI</family>
-                                <pointsize>8</pointsize>
+                                <pointsize>10</pointsize>
                                 <italic>false</italic>
                                 <bold>false</bold>
                                </font>
@@ -15855,7 +16046,8 @@ QTextEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    
 }
 
 /* Estilo de QLineEdit */
@@ -15864,7 +16056,8 @@ QLineEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QLineEdit */
+    font: 10pt &quot;Segoe UI&quot;;  
+    padding: 0px 5px;       
 }
 
 /* Estilo de QComboBox */
@@ -15873,9 +16066,17 @@ QComboBox {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QComboBox */
+    font: 10pt &quot;Segoe UI&quot;; 
     padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    selection-background-color: rgb(85, 170, 255); /* Color de realce de tu tema */
+    selection-color: #ffffff;
+    outline: 0px;
 }
 
 /* Estilo de QDateEdit */
@@ -15884,7 +16085,7 @@ QDateEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
+    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
 }
@@ -15894,9 +16095,13 @@ QTimeEdit {
     color: #000000;                       /* Color del texto */
     border: 2px solid rgb(85, 170, 255); /* Borde */
     border-radius: 5px;                   /* Esquinas redondeadas */
-    font: 8pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
+    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QDateEdit */
 	padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+QCalendarWidget QWidget {
+    background-color: #ffffff; /* Fondo blanco para el cuerpo */
 }
 /* --- ESTADO DESHABILITADO REFORZADO --- */
 

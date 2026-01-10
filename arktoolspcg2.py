@@ -150,10 +150,12 @@ class MiApp(QMainWindow):
         # Conexiones de botones de las barras de acciones
         # Conectar botón Incluir y Cancelar de company (Empresa)
         self.ui.btn_add_a_company.clicked.connect(self.accion_incluir_empresa)
+        self.ui.btn_save_a_company.clicked.connect(self.guardar_company)
         self.ui.btn_cancel_a_company.clicked.connect(self.accion_cancelar_empresa)
 
         # Conectar botón Incluir y Cancelar de actions (Acciones)
         self.ui.btn_add_action.clicked.connect(self.accion_incluir_acciones)
+        self.ui.btn_save_action.clicked.connect(self.guardar_acciones)
         self.ui.btn_cancel_action.clicked.connect(self.accion_cancelar_acciones)
 
         # Categorias
@@ -232,6 +234,7 @@ class MiApp(QMainWindow):
     
     def accion_cancelar_empresa(self):
         if self.confirmar_accion_cancelar():
+            self.limpiar_formulario_company()
             self.set_form_enabled(self.ui.frm_a_company, False)
     # ============GESTION DE ACCIONES============
     def accion_incluir_acciones(self):
@@ -240,11 +243,13 @@ class MiApp(QMainWindow):
 
     def accion_cancelar_acciones(self):
         if self.confirmar_accion_cancelar():
+            self.limpiar_formulario_categories()
             self.set_form_enabled(self.ui.frm_actions, False)
     # ============GESTION DE CATEGORIAS============
     def accion_incluir_categorias(self):
         self.set_form_enabled(self.ui.frm_actions_categories, True)
-        self.ui.lineEdit_cat_codigo.setFocus()  
+        self.ui.lineEdit_cat_codigo.setFocus()
+          
     def accion_cancelar_categorias(self):
         if self.confirmar_accion_cancelar():
             self.limpiar_formulario_categories()
@@ -253,6 +258,7 @@ class MiApp(QMainWindow):
     def accion_incluir_clientes(self):   
         self.set_form_enabled(self.ui.frm_clients, True)
         self.ui.lineEdit_clt_codigo.setFocus()
+        logging.info("Formulario de clientes habilitado.")
     def accion_cancelar_clientes(self):
         if self.confirmar_accion_cancelar():
             self.limpiar_formulario_clientes()
@@ -323,7 +329,87 @@ class MiApp(QMainWindow):
             self.set_form_enabled(self.ui.frm_users, False)
     
     # ============INSERT  DE DATOS============
+
+    # ============INSERT  DE DATOS EMPRESAS============
     
+    def guardar_company(self):
+        """
+        Recopila los datos del formulario frm_a_company e inserta
+        un nuevo registro en la tabla ark_company.
+        """
+        try:
+            # 1. Recolección de datos desde los widgets de PySide6
+            # Nota: Usamos .strip() en textos para evitar espacios accidentales
+            codigo       = self.ui.lineEdit_emp_codigo.text().strip()
+            descripcion  = self.ui.lineEdit_emp_descripcion.text().strip()
+            id_fiscal    = self.ui.lineEdit_emp_idfiscal.text().strip()
+            status       = self.ui.cmb_emp_ststus.currentIndex()             
+            direccion_f  = self.ui.textEdit_emp_direccionf.toPlainText().strip()
+            direccion_l  = self.ui.textEdit_emp_direccionl.toPlainText().strip()
+            tel1         = self.ui.lineEdit_emp_telefono1.text().strip()
+            tel2         = self.ui.lineEdit_emp_telefono2.text().strip()
+            rep          = self.ui.lineEdit_emp_representante.text().strip()
+            id_rep       = self.ui.lineEdit_emp_idrepresentante.text().strip()
+            tel_rep     = self.ui.lineEdit_emp_TelefonoContacto.text().strip()
+            email_rep   = self.ui.lineEdit_emp_EmailContacto.text().strip()
+            email_emp    = self.ui.lineEdit_emp_EmailEmpresa.text().strip()
+            tipo_cont    = self.ui.cmb_emp_tipo_contribuyente.currentIndex()
+            fecha_crea   = self.ui.dateEdit_creation_company.date().toString("yyyy-MM-dd")
+
+            # 2. Validación básica de campos obligatorios
+            if not codigo:
+                QMessageBox.warning(self, "Validación", "El Código de la empresa es obligatorio.")
+                return
+
+            # 3. Preparación de la consulta SQL
+            sql = """
+            INSERT INTO ark_company (
+                emp_Codigo, emp_Descripcion, emp_IDfiscal, emp_Status, emp_DireccionF, emp_DireccionL, emp_Telefono1, emp_Telefono2, emp_Representante, emp_IDRepresentante, emp_TelefonoContacto, emp_EmailContacto, emp_EmailEmpresa, emp_TipoContribuyente, emp_FechaCreacion
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """
+
+            # 4. Tupla de parámetros (DEBE seguir el mismo orden que el INSERT)
+            params = (
+                codigo, descripcion, id_fiscal, status, direccion_f, direccion_l, tel1, tel2, rep, id_rep, tel_rep, email_rep, email_emp, tipo_cont, fecha_crea
+            )
+
+            # 5. Ejecución mediante el DatabaseManager
+            exito = self.db_manager.execute_query(sql, params)
+
+            if exito:
+                logging.info(f"Empresa guardada exitosamente: {codigo}")
+                QMessageBox.information(self, "Éxito", f"La Empresa '{codigo}' ha sido registrada correctamente.")
+                self.limpiar_formulario_clientes() # Función que haremos a continuación
+            else:
+                QMessageBox.critical(self, "Error", "No se pudo guardar el registro en la base de datos.")
+        except Exception as e:
+            logging.error(f"Error crítico en guardar_company: {str(e)}")
+            QMessageBox.critical(self, "Error de Sistema", f"Ocurrió un error inesperado:\n{e}")
+    # ============LIMPEZA DE FORMULARIO EMPRESAS============
+
+    def limpiar_formulario_company(self):
+        """
+        Limpia todos los campos del formulario de clientes.
+        """
+        self.ui.lineEdit_emp_codigo.clear()
+        self.ui.lineEdit_emp_descripcion.clear()
+        self.ui.lineEdit_emp_idfiscal.clear()
+        self.ui.cmb_emp_ststus.setCurrentIndex(0)
+        self.ui.textEdit_emp_direccionf.clear()
+        self.ui.textEdit_emp_direccionl.clear()
+        self.ui.lineEdit_emp_telefono1.clear()
+        self.ui.lineEdit_emp_telefono2.clear()
+        self.ui.lineEdit_emp_representante.clear()
+        self.ui.lineEdit_emp_idrepresentante.clear()
+        self.ui.lineEdit_emp_TelefonoContacto.clear()
+        self.ui.lineEdit_emp_EmailContacto.clear()
+        self.ui.lineEdit_emp_EmailEmpresa.clear()
+        self.ui.cmb_emp_tipo_contribuyente.setCurrentIndex(0)
+        self.ui.dateEdit_creation_company.setDate(QDate.currentDate())
+        self.ui.lineEdit_emp_codigo.setFocus()
+        logging.info("Formulario de empresa limpiado.")
+        
+
     # ============INSERT  DE DATOS CLIENTES============
     
     def guardar_cliente(self):
@@ -358,7 +444,6 @@ class MiApp(QMainWindow):
                 return
 
             # 3. Preparación de la consulta SQL
-            # No incluimos clt_IDauto porque es AUTOINCREMENT
             sql = """
             INSERT INTO ark_clients (
                 clt_Codigo, clt_Descripcion, clt_IDfiscal, clt_Status,
@@ -379,7 +464,6 @@ class MiApp(QMainWindow):
             )
 
             # 5. Ejecución mediante el DatabaseManager
-            # execute_query retorna el cursor si fue exitoso, o None si falló
             exito = self.db_manager.execute_query(sql, params)
 
             if exito:
@@ -426,6 +510,7 @@ class MiApp(QMainWindow):
         self.ui.lineEdit_clt_codigo.setFocus()
         
         logging.info("Formulario de clientes limpiado.")
+    
     # ============INSERT  DE DATOS CATEGORIES============
     
     def guardar_categories(self):
@@ -447,7 +532,6 @@ class MiApp(QMainWindow):
                 return
 
             # 3. Preparación de la consulta SQL
-            # No incluimos clt_IDauto porque es AUTOINCREMENT
             sql = """
             INSERT INTO ark_action_categories (
                 cat_Codigo, cat_Descripcion, cat_Status,
@@ -495,27 +579,108 @@ class MiApp(QMainWindow):
         self.ui.lineEdit_cat_codigo.setFocus()
         
         logging.info("Formulario de categorías  limpiado.")  
-          
+
+    # ============INSERT DE DATOS ACCIONES============
+    
+    def guardar_acciones(self):
+        """
+        Recopila los datos del formulario frm_actions e inserta
+        un nuevo registro en la tabla ark_actions.
+        """
+        try:
+            # 1. Recolección de datos desde frm_actions_categories
+            codigo       = self.ui.lineEdit_act_codigo.text().strip()
+            descripcion  = self.ui.lineEdit_act_descripcion.text().strip()
+            status       = self.ui.cmb_act_status.currentIndex()
+            descripciontec  = self.ui.textEdit_act_descripciontec.toPlainText().strip()
+            categoria    = self.id_categoria_actual  # ID de la categoría vinculada            
+            fecha_crea   = self.ui.dateEdit_act_fechacreacion.date().toString("yyyy-MM-dd")
+
+            # 2. Validación básica de campos obligatorios
+            if not codigo:
+                QMessageBox.warning(self, "Validación", "El Código de la acción es obligatorio.")
+                return
+
+            # 3. Preparación de la consulta SQL
+            sql = """
+            INSERT INTO ark_actions (
+                act_Codigo, act_Descripcion, act_Status,
+                act_DescripcionTec, id_category, act_FechaCreacion
+            ) VALUES (?, ?, ?, ?, ?, ?)
+            """
+
+            # 4. Tupla de parámetros (DEBE seguir el mismo orden que el INSERT)
+            params = (
+                codigo, descripcion, status,
+                descripciontec, categoria, fecha_crea
+            )
+
+            # 5. Ejecución mediante el DatabaseManager
+            # execute_query retorna el cursor si fue exitoso, o None si falló
+            exito = self.db_manager.execute_query(sql, params)
+
+            if exito:
+                logging.info(f"Acción guardada exitosamente: {codigo}")
+                QMessageBox.information(self, "Éxito", f"La Acción '{codigo}' ha sido registrada correctamente.")
+                self.limpiar_formulario_accion() # Función que haremos a continuación
+            else:
+                QMessageBox.critical(self, "Error", "No se pudo guardar el registro en la base de datos.")
+
+        except Exception as e:
+            logging.error(f"Error crítico en guardar_categories: {str(e)}")
+            QMessageBox.critical(self, "Error de Sistema", f"Ocurrió un error inesperado:\n{e}")
+
+    # ============LIMPEZA DE FORMULARIO ACCIONES============
+
+    def limpiar_formulario_accion(self):
+        """
+        Resetea todos los campos del formulario de acciones a sus valores iniciales.
+        """
+        # 1. Limpiar QLineEdits y QTextEdits
+        self.ui.lineEdit_act_codigo.clear()
+        self.ui.lineEdit_act_descripcion.clear()
+        self.ui.textEdit_act_descripciontec.clear()
+        self.ui.lineEdit_id_category.clear()
+        # 2. Resetear QComboBoxes al primer elemento (índice 0)
+        self.ui.cmb_act_status.setCurrentIndex(0)
+        # 3. Resetear QDateEdit a la fecha actual
+        self.ui.dateEdit_act_fechacreacion.setDate(QDate.currentDate())
+
+        # 4. (Opcional) Poner el foco de nuevo en el primer campo
+        self.ui.lineEdit_act_codigo.setFocus()
         
+        logging.info("Formulario de acciones limpiado.")  
+                  
     # ==================================FIN INSERT DE DATOS==================================
     
-    # ==============================ACTIVACION DE BUSCADORES==================================
-    def abrir_buscador_categorias(self):
-        # Definimos la consulta y las cabeceras
-        sql = "SELECT cat_IDauto, cat_Codigo, cat_Descripcion FROM ark_action_categories WHERE cat_Status = 1"
-        columnas = ["ID", "Código", "Descripción"]
-        
-        # Instanciamos y ejecutamos
-        dialogo = BuscadorBaseDialog(self.db_manager, "Categorías de Acciones", sql, columnas)
+    # ==============================ACTIVACION DE BUSCADORES=================================
+    
+    def ejecutar_buscador_generico(self, titulo, sql, columnas):
+        """
+        Lógica centralizada para abrir cualquier buscador tipo lupa.
+        Retorna una tupla (ID, Texto_Combinado) o (None, None)
+        """
+        dialogo = BuscadorBaseDialog(self.db_manager, titulo, sql, columnas)
         
         if dialogo.exec():
-            # Si el usuario seleccionó algo, guardamos el ID y mostramos el nombre
-            self.id_categoria_actual = dialogo.id_seleccionado
-            # self.ui.lineEdit_id_category.setText(dialogo.nombre_seleccionado)
-            self.ui.lineEdit_id_category.setText(dialogo.valor_adicional)
-            #logging.info(f"Categoría seleccionada: {dialogo.nombre_seleccionado} (ID: {self.id_categoria_actual})")
-            logging.info(f"Categoría vinculada: {dialogo.valor_adicional} (ID: {self.id_categoria_actual})")
-            
+            return dialogo.id_seleccionado, dialogo.texto_combinado
+        
+        return None, None
+    
+    def abrir_buscador_categorias(self):
+        # 1. Definimos la configuración específica
+        sql = "SELECT cat_IDauto, cat_Codigo, cat_Descripcion FROM ark_action_categories WHERE cat_Status = 0"
+        columnas = ["ID", "Código", "Descripción"]
+        
+        # 2. Llamamos al motor genérico
+        id_sel, texto_sel = self.ejecutar_buscador_generico("Categorías de Acciones", sql, columnas)
+        
+        # 3. Si el usuario eligió algo, actualizamos la App
+        if id_sel is not None:
+            self.id_categoria_actual = id_sel
+            self.ui.lineEdit_id_category.setText(texto_sel)
+            logging.info(f"Buscador: Seleccionado ID {id_sel}")
+                
        
     # ------------------ CONTROLES DE LA BARRA SUPERIOR ------------------      
     

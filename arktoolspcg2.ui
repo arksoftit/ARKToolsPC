@@ -2830,10 +2830,6 @@ background-color: #f0f0f0;</string>
                       <property name="frameShadow">
                        <enum>QFrame::Shadow::Sunken</enum>
                       </property>
-                      <property name="text">
-                       <string>© 2025 Arksoft Integradores de Sistemas, C.A. RIF: J310994692 - Todos los derechos reservados
-            Contacto: +58 424-3672111 | arksoft.sistemas@gmail.com</string>
-                      </property>
                       <property name="textFormat">
                        <enum>Qt::TextFormat::PlainText</enum>
                       </property>
@@ -3410,6 +3406,18 @@ QTextEdit {
     
 }
 
+/* Estilo de QDoubleSpinBox */
+QDoubleSpinBox {
+    background-color: rgb(255, 255, 255); /* Color de fondo */
+    color: #000000;                       /* Color del texto */
+    border: 2px solid rgb(85, 170, 255); /* Borde */
+    border-radius: 5px;                   /* Esquinas redondeadas */
+    font: 10pt &quot;Segoe UI&quot;;                /* Fuente para QTextEdit */
+    padding-top: 0px;
+	padding-bottom: 2px;
+    
+}
+
 /* Estilo de QLineEdit */
 QLineEdit {
     background-color: rgb(255, 255, 255); /* Color de fondo */
@@ -3482,6 +3490,12 @@ QTextEdit:disabled {
 }
 /* Forzamos el QComboBox */
 QComboBox:disabled {
+    background-color: #e1e1e1 !important; 
+    color: #808080 !important;
+    border: 2px solid #b0b0b0;
+}
+/* Forzamos el QDoubleSpinBox */
+QDoubleSpinBox::disabled {
     background-color: #e1e1e1 !important; 
     color: #808080 !important;
     border: 2px solid #b0b0b0;
@@ -3619,7 +3633,7 @@ QComboBox:disabled {
                                <string>Denominación:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_mda_codigo">
+                             <widget class="QLineEdit" name="lineEdit_mda_code">
                               <property name="geometry">
                                <rect>
                                 <x>90</x>
@@ -3716,7 +3730,7 @@ QComboBox:disabled {
                                <string>Estado:</string>
                               </property>
                              </widget>
-                             <widget class="QLabel" name="label_mda_codigo">
+                             <widget class="QLabel" name="label_mda_code">
                               <property name="geometry">
                                <rect>
                                 <x>15</x>
@@ -3739,59 +3753,6 @@ QComboBox:disabled {
                               </property>
                               <property name="text">
                                <string>Código:</string>
-                              </property>
-                             </widget>
-                             <widget class="QLabel" name="label_mda_fechacreacion">
-                              <property name="geometry">
-                               <rect>
-                                <x>20</x>
-                                <y>120</y>
-                                <width>130</width>
-                                <height>20</height>
-                               </rect>
-                              </property>
-                              <property name="minimumSize">
-                               <size>
-                                <width>130</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>130</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                              <property name="text">
-                               <string>Fecha de Creación:</string>
-                              </property>
-                             </widget>
-                             <widget class="QDateEdit" name="dateEdit_mda_fechacreacion">
-                              <property name="geometry">
-                               <rect>
-                                <x>150</x>
-                                <y>120</y>
-                                <width>100</width>
-                                <height>20</height>
-                               </rect>
-                              </property>
-                              <property name="sizePolicy">
-                               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                               </sizepolicy>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>100</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true"/>
-                              </property>
-                              <property name="calendarPopup">
-                               <bool>true</bool>
                               </property>
                              </widget>
                              <widget class="QComboBox" name="cmb_mda_status">
@@ -3881,6 +3842,66 @@ QComboBox:disabled {
                                </property>
                               </item>
                              </widget>
+                             <widget class="QLabel" name="label_mda_operator">
+                              <property name="geometry">
+                               <rect>
+                                <x>15</x>
+                                <y>130</y>
+                                <width>80</width>
+                                <height>16</height>
+                               </rect>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>150</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="text">
+                               <string>Operador:</string>
+                              </property>
+                             </widget>
+                             <widget class="QComboBox" name="cmb_mda_operator">
+                              <property name="geometry">
+                               <rect>
+                                <x>111</x>
+                                <y>130</y>
+                                <width>120</width>
+                                <height>20</height>
+                               </rect>
+                              </property>
+                              <property name="sizePolicy">
+                               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                               </sizepolicy>
+                              </property>
+                              <property name="minimumSize">
+                               <size>
+                                <width>120</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>120</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true"/>
+                              </property>
+                              <item>
+                               <property name="text">
+                                <string>Multiplicción</string>
+                               </property>
+                              </item>
+                              <item>
+                               <property name="text">
+                                <string>Divición</string>
+                               </property>
+                              </item>
+                             </widget>
                             </widget>
                            </item>
                            <item>
@@ -3906,7 +3927,7 @@ QComboBox:disabled {
                              <widget class="QLabel" name="label_mda_fechaactualizacion">
                               <property name="geometry">
                                <rect>
-                                <x>10</x>
+                                <x>15</x>
                                 <y>30</y>
                                 <width>140</width>
                                 <height>20</height>
@@ -3950,28 +3971,6 @@ QComboBox:disabled {
                                <bool>true</bool>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_mda_factorpasivo">
-                              <property name="geometry">
-                               <rect>
-                                <x>471</x>
-                                <y>70</y>
-                                <width>100</width>
-                                <height>20</height>
-                               </rect>
-                              </property>
-                              <property name="sizePolicy">
-                               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                               </sizepolicy>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>100</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                             </widget>
                              <widget class="QLabel" name="label_mda_factorpasivo">
                               <property name="geometry">
                                <rect>
@@ -4004,28 +4003,6 @@ QComboBox:disabled {
                               </property>
                               <property name="textFormat">
                                <enum>Qt::TextFormat::AutoText</enum>
-                              </property>
-                             </widget>
-                             <widget class="QLineEdit" name="lineEdit_mda_factoractivo">
-                              <property name="geometry">
-                               <rect>
-                                <x>130</x>
-                                <y>70</y>
-                                <width>100</width>
-                                <height>20</height>
-                               </rect>
-                              </property>
-                              <property name="sizePolicy">
-                               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                               </sizepolicy>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>100</width>
-                                <height>20</height>
-                               </size>
                               </property>
                              </widget>
                              <widget class="QLabel" name="label_mda_factoractivo">
@@ -4110,6 +4087,133 @@ QComboBox:disabled {
                               </property>
                               <property name="text">
                                <string>Ultima Actualización:</string>
+                              </property>
+                             </widget>
+                             <widget class="QDoubleSpinBox" name="dsb_mda_factoractivo">
+                              <property name="geometry">
+                               <rect>
+                                <x>160</x>
+                                <y>70</y>
+                                <width>100</width>
+                                <height>20</height>
+                               </rect>
+                              </property>
+                              <property name="minimumSize">
+                               <size>
+                                <width>100</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>100</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="alignment">
+                               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                              </property>
+                              <property name="buttonSymbols">
+                               <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+                              </property>
+                              <property name="decimals">
+                               <number>4</number>
+                              </property>
+                              <property name="maximum">
+                               <double>999999990000.000000000000000</double>
+                              </property>
+                              <property name="stepType">
+                               <enum>QAbstractSpinBox::StepType::AdaptiveDecimalStepType</enum>
+                              </property>
+                             </widget>
+                             <widget class="QDoubleSpinBox" name="dsb_mda_factorpasivo">
+                              <property name="geometry">
+                               <rect>
+                                <x>470</x>
+                                <y>70</y>
+                                <width>100</width>
+                                <height>20</height>
+                               </rect>
+                              </property>
+                              <property name="minimumSize">
+                               <size>
+                                <width>100</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>100</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="alignment">
+                               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                              </property>
+                              <property name="buttonSymbols">
+                               <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+                              </property>
+                              <property name="decimals">
+                               <number>4</number>
+                              </property>
+                              <property name="maximum">
+                               <double>999999990000.000000000000000</double>
+                              </property>
+                              <property name="stepType">
+                               <enum>QAbstractSpinBox::StepType::AdaptiveDecimalStepType</enum>
+                              </property>
+                             </widget>
+                             <widget class="QDateEdit" name="dateEdit_mda_fechacreacion">
+                              <property name="geometry">
+                               <rect>
+                                <x>160</x>
+                                <y>110</y>
+                                <width>100</width>
+                                <height>20</height>
+                               </rect>
+                              </property>
+                              <property name="sizePolicy">
+                               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                               </sizepolicy>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>100</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true"/>
+                              </property>
+                              <property name="calendarPopup">
+                               <bool>true</bool>
+                              </property>
+                             </widget>
+                             <widget class="QLabel" name="label_mda_fechacreacion">
+                              <property name="geometry">
+                               <rect>
+                                <x>15</x>
+                                <y>110</y>
+                                <width>130</width>
+                                <height>20</height>
+                               </rect>
+                              </property>
+                              <property name="minimumSize">
+                               <size>
+                                <width>130</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>130</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="text">
+                               <string>Fecha de Creación:</string>
                               </property>
                              </widget>
                             </widget>
@@ -4688,7 +4792,7 @@ QComboBox:disabled {
                              <property name="title">
                               <string>Empleados</string>
                              </property>
-                             <widget class="QLabel" name="label_emy_codigo">
+                             <widget class="QLabel" name="label_emy_code">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -4713,7 +4817,7 @@ QComboBox:disabled {
                                <string>Código:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_emy_codigo">
+                             <widget class="QLineEdit" name="lineEdit_emy_code">
                               <property name="geometry">
                                <rect>
                                 <x>78</x>
@@ -5054,7 +5158,7 @@ QComboBox:disabled {
                                <string>Cliente:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_emy_cliente">
+                             <widget class="QLineEdit" name="lineEdit_id_cliente">
                               <property name="geometry">
                                <rect>
                                 <x>120</x>
@@ -5206,6 +5310,76 @@ QComboBox:disabled {
                               </property>
                               <property name="text">
                                <string>Fecha de Creación:</string>
+                              </property>
+                             </widget>
+                             <widget class="QPushButton" name="btn_buscar_cliente">
+                              <property name="geometry">
+                               <rect>
+                                <x>525</x>
+                                <y>30</y>
+                                <width>24</width>
+                                <height>24</height>
+                               </rect>
+                              </property>
+                              <property name="sizePolicy">
+                               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                                <horstretch>0</horstretch>
+                                <verstretch>1</verstretch>
+                               </sizepolicy>
+                              </property>
+                              <property name="minimumSize">
+                               <size>
+                                <width>24</width>
+                                <height>24</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>24</width>
+                                <height>24</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <family>Consolas</family>
+                                <pointsize>-1</pointsize>
+                                <italic>false</italic>
+                                <bold>true</bold>
+                               </font>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}
+</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="icon">
+                               <iconset resource="resources.qrc">
+                                <normaloff>:/rec/assets/icons/fi-sr-search.svg</normaloff>:/rec/assets/icons/fi-sr-search.svg</iconset>
+                              </property>
+                              <property name="iconSize">
+                               <size>
+                                <width>18</width>
+                                <height>18</height>
+                               </size>
                               </property>
                              </widget>
                             </widget>
@@ -5792,7 +5966,7 @@ QComboBox:disabled {
                              <property name="title">
                               <string>Tipos de Dispositivos</string>
                              </property>
-                             <widget class="QLabel" name="label_dty_vodigo">
+                             <widget class="QLabel" name="label_dty_code">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -5817,7 +5991,7 @@ QComboBox:disabled {
                                <string>Código:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_dty_vodigo">
+                             <widget class="QLineEdit" name="lineEdit_dty_code">
                               <property name="geometry">
                                <rect>
                                 <x>78</x>
@@ -6616,7 +6790,7 @@ QComboBox:disabled {
                              <property name="title">
                               <string>Categorias</string>
                              </property>
-                             <widget class="QLabel" name="label_cat_codigo">
+                             <widget class="QLabel" name="label_cat_code">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -6641,7 +6815,7 @@ QComboBox:disabled {
                                <string>Código:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_cat_codigo">
+                             <widget class="QLineEdit" name="lineEdit_cat_code">
                               <property name="geometry">
                                <rect>
                                 <x>78</x>
@@ -7431,7 +7605,7 @@ QComboBox:disabled {
                              <property name="title">
                               <string>Recursos</string>
                              </property>
-                             <widget class="QLabel" name="label_ita_codigo">
+                             <widget class="QLabel" name="label_ita_code">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -7456,7 +7630,7 @@ QComboBox:disabled {
                                <string>Código:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_ita_codigo">
+                             <widget class="QLineEdit" name="lineEdit_ita_code">
                               <property name="geometry">
                                <rect>
                                 <x>78</x>
@@ -7812,21 +7986,21 @@ Técnica:</string>
                              <widget class="QLabel" name="label_ita_rol">
                               <property name="geometry">
                                <rect>
-                                <x>360</x>
+                                <x>390</x>
                                 <y>190</y>
-                                <width>40</width>
+                                <width>25</width>
                                 <height>20</height>
                                </rect>
                               </property>
                               <property name="minimumSize">
                                <size>
-                                <width>40</width>
+                                <width>25</width>
                                 <height>20</height>
                                </size>
                               </property>
                               <property name="maximumSize">
                                <size>
-                                <width>40</width>
+                                <width>25</width>
                                 <height>20</height>
                                </size>
                               </property>
@@ -7837,7 +8011,7 @@ Técnica:</string>
                              <widget class="QLineEdit" name="lineEdit_ita_rol">
                               <property name="geometry">
                                <rect>
-                                <x>400</x>
+                                <x>420</x>
                                 <y>190</y>
                                 <width>160</width>
                                 <height>20</height>
@@ -7861,19 +8035,19 @@ Técnica:</string>
                                <rect>
                                 <x>10</x>
                                 <y>190</y>
-                                <width>120</width>
+                                <width>110</width>
                                 <height>20</height>
                                </rect>
                               </property>
                               <property name="minimumSize">
                                <size>
-                                <width>120</width>
+                                <width>110</width>
                                 <height>0</height>
                                </size>
                               </property>
                               <property name="maximumSize">
                                <size>
-                                <width>120</width>
+                                <width>110</width>
                                 <height>20</height>
                                </size>
                               </property>
@@ -7931,7 +8105,7 @@ Técnica:</string>
                              <widget class="QLineEdit" name="lineEdit_ita_ipadrees">
                               <property name="geometry">
                                <rect>
-                                <x>422</x>
+                                <x>439</x>
                                 <y>220</y>
                                 <width>140</width>
                                 <height>20</height>
@@ -7953,21 +8127,21 @@ Técnica:</string>
                              <widget class="QLabel" name="label_ita_ipadrees">
                               <property name="geometry">
                                <rect>
-                                <x>329</x>
+                                <x>360</x>
                                 <y>220</y>
-                                <width>90</width>
+                                <width>75</width>
                                 <height>20</height>
                                </rect>
                               </property>
                               <property name="minimumSize">
                                <size>
-                                <width>90</width>
+                                <width>75</width>
                                 <height>20</height>
                                </size>
                               </property>
                               <property name="maximumSize">
                                <size>
-                                <width>90</width>
+                                <width>75</width>
                                 <height>20</height>
                                </size>
                               </property>
@@ -7978,7 +8152,7 @@ Técnica:</string>
                              <widget class="QLineEdit" name="lineEdit_ita_idRDP2">
                               <property name="geometry">
                                <rect>
-                                <x>422</x>
+                                <x>439</x>
                                 <y>250</y>
                                 <width>140</width>
                                 <height>20</height>
@@ -8047,7 +8221,7 @@ Técnica:</string>
                              <widget class="QLabel" name="label_ita_idRDP2">
                               <property name="geometry">
                                <rect>
-                                <x>358</x>
+                                <x>376</x>
                                 <y>250</y>
                                 <width>60</width>
                                 <height>20</height>
@@ -8103,7 +8277,7 @@ Técnica:</string>
                              <widget class="QLineEdit" name="lineEdit_ita_iprdp">
                               <property name="geometry">
                                <rect>
-                                <x>422</x>
+                                <x>438</x>
                                 <y>280</y>
                                 <width>140</width>
                                 <height>20</height>
@@ -8125,21 +8299,21 @@ Técnica:</string>
                              <widget class="QLabel" name="label_ita_iprdp">
                               <property name="geometry">
                                <rect>
-                                <x>369</x>
+                                <x>390</x>
                                 <y>280</y>
-                                <width>50</width>
+                                <width>45</width>
                                 <height>20</height>
                                </rect>
                               </property>
                               <property name="minimumSize">
                                <size>
-                                <width>50</width>
+                                <width>45</width>
                                 <height>20</height>
                                </size>
                               </property>
                               <property name="maximumSize">
                                <size>
-                                <width>50</width>
+                                <width>45</width>
                                 <height>20</height>
                                </size>
                               </property>
@@ -8147,57 +8321,7 @@ Técnica:</string>
                                <string>IP RDP:</string>
                               </property>
                              </widget>
-                             <widget class="QComboBox" name="cmb_ita_functional_units">
-                              <property name="geometry">
-                               <rect>
-                                <x>130</x>
-                                <y>190</y>
-                                <width>200</width>
-                                <height>20</height>
-                               </rect>
-                              </property>
-                              <property name="minimumSize">
-                               <size>
-                                <width>200</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>200</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true"/>
-                              </property>
-                             </widget>
-                             <widget class="QComboBox" name="cmb_ita_idemployees">
-                              <property name="geometry">
-                               <rect>
-                                <x>130</x>
-                                <y>280</y>
-                                <width>200</width>
-                                <height>20</height>
-                               </rect>
-                              </property>
-                              <property name="minimumSize">
-                               <size>
-                                <width>200</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>200</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true"/>
-                              </property>
-                             </widget>
-                             <widget class="QTextEdit" name="textEdit_ita_NotasTech">
+                             <widget class="QTextEdit" name="textEdit_ita_notastech">
                               <property name="geometry">
                                <rect>
                                 <x>102</x>
@@ -8249,6 +8373,190 @@ Técnicas:</string>
                               </property>
                               <property name="scaledContents">
                                <bool>false</bool>
+                              </property>
+                             </widget>
+                             <widget class="QLineEdit" name="lineEdit_id_functional_units">
+                              <property name="geometry">
+                               <rect>
+                                <x>122</x>
+                                <y>190</y>
+                                <width>200</width>
+                                <height>20</height>
+                               </rect>
+                              </property>
+                              <property name="minimumSize">
+                               <size>
+                                <width>200</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>200</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                             </widget>
+                             <widget class="QPushButton" name="btn_buscar_functional_units">
+                              <property name="geometry">
+                               <rect>
+                                <x>335</x>
+                                <y>187</y>
+                                <width>24</width>
+                                <height>24</height>
+                               </rect>
+                              </property>
+                              <property name="sizePolicy">
+                               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                                <horstretch>0</horstretch>
+                                <verstretch>1</verstretch>
+                               </sizepolicy>
+                              </property>
+                              <property name="minimumSize">
+                               <size>
+                                <width>24</width>
+                                <height>24</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>24</width>
+                                <height>24</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <family>Consolas</family>
+                                <pointsize>-1</pointsize>
+                                <italic>false</italic>
+                                <bold>true</bold>
+                               </font>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}
+</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="icon">
+                               <iconset resource="resources.qrc">
+                                <normaloff>:/rec/assets/icons/fi-sr-search.svg</normaloff>:/rec/assets/icons/fi-sr-search.svg</iconset>
+                              </property>
+                              <property name="iconSize">
+                               <size>
+                                <width>18</width>
+                                <height>18</height>
+                               </size>
+                              </property>
+                             </widget>
+                             <widget class="QLineEdit" name="lineEdit_id_employees">
+                              <property name="geometry">
+                               <rect>
+                                <x>130</x>
+                                <y>280</y>
+                                <width>200</width>
+                                <height>20</height>
+                               </rect>
+                              </property>
+                              <property name="minimumSize">
+                               <size>
+                                <width>200</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>200</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                             </widget>
+                             <widget class="QPushButton" name="btn_buscar_id_employees">
+                              <property name="geometry">
+                               <rect>
+                                <x>335</x>
+                                <y>278</y>
+                                <width>24</width>
+                                <height>24</height>
+                               </rect>
+                              </property>
+                              <property name="sizePolicy">
+                               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                                <horstretch>0</horstretch>
+                                <verstretch>1</verstretch>
+                               </sizepolicy>
+                              </property>
+                              <property name="minimumSize">
+                               <size>
+                                <width>24</width>
+                                <height>24</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>24</width>
+                                <height>24</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <family>Consolas</family>
+                                <pointsize>-1</pointsize>
+                                <italic>false</italic>
+                                <bold>true</bold>
+                               </font>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}
+</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="icon">
+                               <iconset resource="resources.qrc">
+                                <normaloff>:/rec/assets/icons/fi-sr-search.svg</normaloff>:/rec/assets/icons/fi-sr-search.svg</iconset>
+                              </property>
+                              <property name="iconSize">
+                               <size>
+                                <width>18</width>
+                                <height>18</height>
+                               </size>
                               </property>
                              </widget>
                             </widget>
@@ -8827,7 +9135,7 @@ QComboBox:disabled {
                              <property name="title">
                               <string>Usuarios</string>
                              </property>
-                             <widget class="QLabel" name="label_usr_codigo">
+                             <widget class="QLabel" name="label_usr_code">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -8852,7 +9160,7 @@ QComboBox:disabled {
                                <string>Código:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_usr_codigo">
+                             <widget class="QLineEdit" name="lineEdit_usr_code">
                               <property name="geometry">
                                <rect>
                                 <x>80</x>
@@ -9847,7 +10155,7 @@ QComboBox:disabled {
                              <property name="alignment">
                               <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
                              </property>
-                             <widget class="QLabel" name="label_ses_numero">
+                             <widget class="QLabel" name="label_ses_number">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -9878,7 +10186,7 @@ QComboBox:disabled {
                                <string>Número:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_ses_numero">
+                             <widget class="QLineEdit" name="lineEdit_ses_number">
                               <property name="geometry">
                                <rect>
                                 <x>67</x>
@@ -10070,7 +10378,7 @@ QComboBox:disabled {
                                 <second>59</second>
                                 <year>2501</year>
                                 <month>1</month>
-                                <day>7</day>
+                                <day>11</day>
                                </datetime>
                               </property>
                               <property name="minimumDateTime">
@@ -10436,7 +10744,7 @@ Fiscal</string>
                                 <second>59</second>
                                 <year>2501</year>
                                 <month>1</month>
-                                <day>9</day>
+                                <day>13</day>
                                </datetime>
                               </property>
                               <property name="minimumDateTime">
@@ -11265,7 +11573,7 @@ QComboBox:disabled {
                              <property name="title">
                               <string>Requerimientos</string>
                              </property>
-                             <widget class="QLabel" name="label_req_codigo">
+                             <widget class="QLabel" name="label_req_code">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -11290,7 +11598,7 @@ QComboBox:disabled {
                                <string>Código:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_req_codigo">
+                             <widget class="QLineEdit" name="lineEdit_req_code">
                               <property name="geometry">
                                <rect>
                                 <x>66</x>
@@ -11523,31 +11831,6 @@ Detallada:</string>
                                <bool>false</bool>
                               </property>
                              </widget>
-                             <widget class="QComboBox" name="cmb_req_codigocliente">
-                              <property name="geometry">
-                               <rect>
-                                <x>101</x>
-                                <y>150</y>
-                                <width>400</width>
-                                <height>20</height>
-                               </rect>
-                              </property>
-                              <property name="minimumSize">
-                               <size>
-                                <width>400</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>400</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true"/>
-                              </property>
-                             </widget>
                              <widget class="QLabel" name="label_req_codigocliente">
                               <property name="geometry">
                                <rect>
@@ -11577,6 +11860,101 @@ Detallada:</string>
                               </property>
                               <property name="text">
                                <string>Cliente:</string>
+                              </property>
+                             </widget>
+                             <widget class="QLineEdit" name="lineEdit_req_descripcion_2">
+                              <property name="geometry">
+                               <rect>
+                                <x>100</x>
+                                <y>150</y>
+                                <width>400</width>
+                                <height>20</height>
+                               </rect>
+                              </property>
+                              <property name="minimumSize">
+                               <size>
+                                <width>400</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>400</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true"/>
+                              </property>
+                             </widget>
+                             <widget class="QPushButton" name="btn_buscar_cliente_2">
+                              <property name="geometry">
+                               <rect>
+                                <x>510</x>
+                                <y>149</y>
+                                <width>24</width>
+                                <height>24</height>
+                               </rect>
+                              </property>
+                              <property name="sizePolicy">
+                               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                                <horstretch>0</horstretch>
+                                <verstretch>1</verstretch>
+                               </sizepolicy>
+                              </property>
+                              <property name="minimumSize">
+                               <size>
+                                <width>24</width>
+                                <height>24</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>24</width>
+                                <height>24</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <family>Consolas</family>
+                                <pointsize>-1</pointsize>
+                                <italic>false</italic>
+                                <bold>true</bold>
+                               </font>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">/* Estilo base del botón */
+QPushButton {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo cuando el mouse pasa por encima */
+QPushButton:hover {
+    background-color: #0056b3;
+}
+/* Estilo cuando el botón es presionado */
+QPushButton:pressed {
+    background-color: #004085;
+}
+</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="icon">
+                               <iconset resource="resources.qrc">
+                                <normaloff>:/rec/assets/icons/fi-sr-search.svg</normaloff>:/rec/assets/icons/fi-sr-search.svg</iconset>
+                              </property>
+                              <property name="iconSize">
+                               <size>
+                                <width>18</width>
+                                <height>18</height>
+                               </size>
                               </property>
                              </widget>
                             </widget>
@@ -12158,7 +12536,7 @@ QComboBox:disabled {
                              <property name="title">
                               <string>Profesiones</string>
                              </property>
-                             <widget class="QLabel" name="label_job_codigo">
+                             <widget class="QLabel" name="label_job_code">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -12183,7 +12561,7 @@ QComboBox:disabled {
                                <string>Código:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_job_codigo">
+                             <widget class="QLineEdit" name="lineEdit_job_code">
                               <property name="geometry">
                                <rect>
                                 <x>78</x>
@@ -12998,7 +13376,7 @@ QComboBox:disabled {
                              <property name="title">
                               <string>Unidades Funcionales</string>
                              </property>
-                             <widget class="QLabel" name="label_fun_codigo">
+                             <widget class="QLabel" name="label_fun_code">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -13023,7 +13401,7 @@ QComboBox:disabled {
                                <string>Código:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_fun_codigo">
+                             <widget class="QLineEdit" name="lineEdit_fun_code">
                               <property name="geometry">
                                <rect>
                                 <x>78</x>
@@ -13039,7 +13417,7 @@ QComboBox:disabled {
                                </size>
                               </property>
                              </widget>
-                             <widget class="QLabel" name="label_fun_descripcion">
+                             <widget class="QLabel" name="label_fun_description">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -13058,7 +13436,7 @@ QComboBox:disabled {
                                <string>Razón Social:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_fun_descripcion">
+                             <widget class="QLineEdit" name="lineEdit_fun_description">
                               <property name="geometry">
                                <rect>
                                 <x>120</x>
@@ -13143,7 +13521,7 @@ QComboBox:disabled {
                                </property>
                               </item>
                              </widget>
-                             <widget class="QLabel" name="label_fun_fechacreacion">
+                             <widget class="QLabel" name="label_fun_create_date">
                               <property name="geometry">
                                <rect>
                                 <x>12</x>
@@ -13168,7 +13546,7 @@ QComboBox:disabled {
                                <string>Fecha de Creación:</string>
                               </property>
                              </widget>
-                             <widget class="QDateEdit" name="dateEdit_fun_fechacreacion">
+                             <widget class="QDateEdit" name="dateEdit_fun_create_date">
                               <property name="geometry">
                                <rect>
                                 <x>142</x>
@@ -13190,7 +13568,7 @@ QComboBox:disabled {
                                <bool>true</bool>
                               </property>
                              </widget>
-                             <widget class="QLabel" name="label_fun_DescripcionTec">
+                             <widget class="QLabel" name="label_fun_descriptiontec">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -13219,7 +13597,7 @@ Detallada:</string>
                                <bool>false</bool>
                               </property>
                              </widget>
-                             <widget class="QTextEdit" name="textEdit_fun_descripciontec">
+                             <widget class="QTextEdit" name="textEdit_fun_descriptiontec">
                               <property name="geometry">
                                <rect>
                                 <x>120</x>
@@ -13827,7 +14205,7 @@ QComboBox:disabled {
                             <number>4</number>
                            </property>
                            <item>
-                            <widget class="QGroupBox" name="grb_datos_generales">
+                            <widget class="QGroupBox" name="grb_general_information">
                              <property name="minimumSize">
                               <size>
                                <width>0</width>
@@ -13871,7 +14249,7 @@ QComboBox:disabled {
                                <string>Código:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_emp_codigo">
+                             <widget class="QLineEdit" name="lineEdit_emp_code">
                               <property name="geometry">
                                <rect>
                                 <x>78</x>
@@ -13887,7 +14265,7 @@ QComboBox:disabled {
                                </size>
                               </property>
                              </widget>
-                             <widget class="QLabel" name="label_emp_descripcion">
+                             <widget class="QLabel" name="label_emp_description">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -13906,7 +14284,7 @@ QComboBox:disabled {
                                <string>Razón Social:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_emp_descripcion">
+                             <widget class="QLineEdit" name="lineEdit_emp_description">
                               <property name="geometry">
                                <rect>
                                 <x>120</x>
@@ -13931,7 +14309,7 @@ QComboBox:disabled {
                                <string notr="true"/>
                               </property>
                              </widget>
-                             <widget class="QLabel" name="label_emp_idfiscal">
+                             <widget class="QLabel" name="label_emp_tax_id">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -13981,7 +14359,7 @@ QComboBox:disabled {
                                <string>Estado:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_emp_idfiscal">
+                             <widget class="QLineEdit" name="lineEdit_emp_tax_id">
                               <property name="geometry">
                                <rect>
                                 <x>133</x>
@@ -14038,7 +14416,7 @@ QComboBox:disabled {
                                </property>
                               </item>
                              </widget>
-                             <widget class="QComboBox" name="cmb_emp_tipo_contribuyente">
+                             <widget class="QComboBox" name="cmb_emp_tipo_taxpayer">
                               <property name="geometry">
                                <rect>
                                 <x>512</x>
@@ -14073,7 +14451,7 @@ QComboBox:disabled {
                                </property>
                               </item>
                              </widget>
-                             <widget class="QLabel" name="label_emp_tipo_contribuyente">
+                             <widget class="QLabel" name="label_emp_tipo_taxpayer">
                               <property name="geometry">
                                <rect>
                                 <x>387</x>
@@ -14101,7 +14479,7 @@ QComboBox:disabled {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QGroupBox" name="grb_direccion_telefonos">
+                            <widget class="QGroupBox" name="grb_phone_address">
                              <property name="minimumSize">
                               <size>
                                <width>0</width>
@@ -14114,7 +14492,7 @@ QComboBox:disabled {
                              <property name="title">
                               <string>Dirección y Teléfonos</string>
                              </property>
-                             <widget class="QTextEdit" name="textEdit_emp_direccionf">
+                             <widget class="QTextEdit" name="textEdit_emp_tax_address">
                               <property name="geometry">
                                <rect>
                                 <x>87</x>
@@ -14139,7 +14517,7 @@ QComboBox:disabled {
                                <string notr="true"/>
                               </property>
                              </widget>
-                             <widget class="QLabel" name="label_emp_DireccionF">
+                             <widget class="QLabel" name="label_emp_tax_address">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -14156,7 +14534,7 @@ Fiscal</string>
                                <bool>false</bool>
                               </property>
                              </widget>
-                             <widget class="QLabel" name="label_emp_Direccionl">
+                             <widget class="QLabel" name="label_emp_local_address">
                               <property name="geometry">
                                <rect>
                                 <x>310</x>
@@ -14167,10 +14545,10 @@ Fiscal</string>
                               </property>
                               <property name="text">
                                <string>Dirección 
-Fiscal</string>
+Local</string>
                               </property>
                              </widget>
-                             <widget class="QTextEdit" name="textEdit_emp_direccionl">
+                             <widget class="QTextEdit" name="textEdit_emp_local_address">
                               <property name="geometry">
                                <rect>
                                 <x>386</x>
@@ -14195,7 +14573,7 @@ Fiscal</string>
                                <string notr="true"/>
                               </property>
                              </widget>
-                             <widget class="QLabel" name="label_emp_telefono1">
+                             <widget class="QLabel" name="label_emp_phone">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -14214,7 +14592,7 @@ Fiscal</string>
                                <string>Teléfono Ppal:</string>
                               </property>
                              </widget>
-                             <widget class="QLabel" name="label_emp_telefono2">
+                             <widget class="QLabel" name="label_emp_mobile">
                               <property name="geometry">
                                <rect>
                                 <x>310</x>
@@ -14233,7 +14611,7 @@ Fiscal</string>
                                <string>Teléfono Móvil:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_emp_telefono1">
+                             <widget class="QLineEdit" name="lineEdit_emp_phone">
                               <property name="geometry">
                                <rect>
                                 <x>119</x>
@@ -14255,7 +14633,7 @@ Fiscal</string>
                                </size>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_emp_telefono2">
+                             <widget class="QLineEdit" name="lineEdit_emp_mobile">
                               <property name="geometry">
                                <rect>
                                 <x>419</x>
@@ -14277,7 +14655,7 @@ Fiscal</string>
                                </size>
                               </property>
                              </widget>
-                             <widget class="QLabel" name="label_emp_EmailEmpresa">
+                             <widget class="QLabel" name="label_emp_company_email">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -14296,7 +14674,7 @@ Fiscal</string>
                                <string>Email Empresa:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_emp_EmailEmpresa">
+                             <widget class="QLineEdit" name="lineEdit_emp_company_email">
                               <property name="geometry">
                                <rect>
                                 <x>119</x>
@@ -14321,7 +14699,7 @@ Fiscal</string>
                             </widget>
                            </item>
                            <item>
-                            <widget class="QGroupBox" name="grb_sontactos">
+                            <widget class="QGroupBox" name="grb_contact">
                              <property name="minimumSize">
                               <size>
                                <width>0</width>
@@ -14334,7 +14712,7 @@ Fiscal</string>
                              <property name="title">
                               <string>Contactos</string>
                              </property>
-                             <widget class="QLabel" name="label_emp_representante">
+                             <widget class="QLabel" name="label_emp_legal_representative">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -14359,7 +14737,7 @@ Fiscal</string>
                                <string>Representante legal:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_emp_representante">
+                             <widget class="QLineEdit" name="lineEdit_emp_legal_representative">
                               <property name="geometry">
                                <rect>
                                 <x>162</x>
@@ -14384,7 +14762,7 @@ Fiscal</string>
                                <string notr="true"/>
                               </property>
                              </widget>
-                             <widget class="QLabel" name="label_emp_idrepresentante">
+                             <widget class="QLabel" name="label_emp_legal_representative_id">
                               <property name="geometry">
                                <rect>
                                 <x>430</x>
@@ -14409,7 +14787,7 @@ Fiscal</string>
                                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cédula:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_emp_idrepresentante">
+                             <widget class="QLineEdit" name="lineEdit_emp_legal_representative_id">
                               <property name="geometry">
                                <rect>
                                 <x>485</x>
@@ -14425,7 +14803,7 @@ Fiscal</string>
                                </size>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_emp_TelefonoContacto">
+                             <widget class="QLineEdit" name="lineEdit_emp_contact_phone">
                               <property name="geometry">
                                <rect>
                                 <x>162</x>
@@ -14447,7 +14825,7 @@ Fiscal</string>
                                </size>
                               </property>
                              </widget>
-                             <widget class="QLabel" name="label_emp_TelefonoContacto">
+                             <widget class="QLabel" name="label_emp_contact_phone">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -14472,7 +14850,7 @@ Fiscal</string>
                                <string>Teléfono Contacto:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_emp_EmailContacto">
+                             <widget class="QLineEdit" name="lineEdit_emp_contact_email">
                               <property name="geometry">
                                <rect>
                                 <x>162</x>
@@ -14494,7 +14872,7 @@ Fiscal</string>
                                </size>
                               </property>
                              </widget>
-                             <widget class="QLabel" name="label_emp_EmailContacto">
+                             <widget class="QLabel" name="label_emp_contact_email">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -14513,7 +14891,7 @@ Fiscal</string>
                                <string>Email Contacto:</string>
                               </property>
                              </widget>
-                             <widget class="QDateEdit" name="dateEdit_creation_company">
+                             <widget class="QDateEdit" name="dateEdit_creation_date">
                               <property name="geometry">
                                <rect>
                                 <x>512</x>
@@ -14535,7 +14913,7 @@ Fiscal</string>
                                <bool>true</bool>
                               </property>
                              </widget>
-                             <widget class="QLabel" name="label_emp_creation_company">
+                             <widget class="QLabel" name="label_emp_creation_date">
                               <property name="geometry">
                                <rect>
                                 <x>391</x>
@@ -15243,7 +15621,7 @@ QComboBox:disabled {
                              <property name="title">
                               <string>Acciones</string>
                              </property>
-                             <widget class="QLabel" name="label_act_codigo">
+                             <widget class="QLabel" name="label_act_code">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -15268,7 +15646,7 @@ QComboBox:disabled {
                                <string>Código:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_act_codigo">
+                             <widget class="QLineEdit" name="lineEdit_act_code">
                               <property name="geometry">
                                <rect>
                                 <x>78</x>
@@ -15284,7 +15662,7 @@ QComboBox:disabled {
                                </size>
                               </property>
                              </widget>
-                             <widget class="QLabel" name="label_act_descripcion">
+                             <widget class="QLabel" name="label_act_description">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -15303,7 +15681,7 @@ QComboBox:disabled {
                                <string>Descripción:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_act_descripcion">
+                             <widget class="QLineEdit" name="lineEdit_act_description">
                               <property name="geometry">
                                <rect>
                                 <x>120</x>
@@ -15446,7 +15824,7 @@ QComboBox:disabled {
                                </property>
                               </item>
                              </widget>
-                             <widget class="QLabel" name="label_act_fechacreacion">
+                             <widget class="QLabel" name="label_act_create_date">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -15465,7 +15843,7 @@ QComboBox:disabled {
                                <string>Fecha de Creación:</string>
                               </property>
                              </widget>
-                             <widget class="QDateEdit" name="dateEdit_act_fechacreacion">
+                             <widget class="QDateEdit" name="dateEdit_act_create_date">
                               <property name="geometry">
                                <rect>
                                 <x>146</x>
@@ -15487,7 +15865,7 @@ QComboBox:disabled {
                                <bool>true</bool>
                               </property>
                              </widget>
-                             <widget class="QLabel" name="label_act_descripciontec">
+                             <widget class="QLabel" name="label_act_descriptiontec">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -15516,7 +15894,7 @@ Detallada:</string>
                                <bool>false</bool>
                               </property>
                              </widget>
-                             <widget class="QTextEdit" name="textEdit_act_descripciontec">
+                             <widget class="QTextEdit" name="textEdit_act_descriptiontec">
                               <property name="geometry">
                                <rect>
                                 <x>120</x>
@@ -16169,7 +16547,7 @@ QComboBox:disabled {
                              <property name="title">
                               <string>Cliente</string>
                              </property>
-                             <widget class="QLabel" name="label_clt_codigo">
+                             <widget class="QLabel" name="label_clt_code">
                               <property name="geometry">
                                <rect>
                                 <x>10</x>
@@ -16194,7 +16572,7 @@ QComboBox:disabled {
                                <string>Código:</string>
                               </property>
                              </widget>
-                             <widget class="QLineEdit" name="lineEdit_clt_codigo">
+                             <widget class="QLineEdit" name="lineEdit_clt_code">
                               <property name="geometry">
                                <rect>
                                 <x>78</x>
@@ -17469,6 +17847,8 @@ background-color: #f0f0f0;</string>
  </tabstops>
  <resources>
   <include location="resources.qrc"/>
+  <include location="resources.qrc"/>
+  <include location="C:/Users/juanep/.designer/backup/resources.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -1,0 +1,53 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-19ba64e1cb0-37b25e9d1149d2e4": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "ArkToolsBD.sqlite",
+			"save-password": true,
+			"configuration": {
+				"database": "S:\\Desarrollos\\MyPython\\PySide6\\ARKToolsPC\\arktooldatabase\\ArkToolsBD.sqlite",
+				"url": "jdbc:sqlite:S:\\Desarrollos\\MyPython\\PySide6\\ARKToolsPC\\arktooldatabase\\ArkToolsBD.sqlite",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true
+			}
+		},
+		"mariaDB-19bca17c439-14bc9eb9e6bd0032": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "NAUTILUS",
+			"save-password": true,
+			"configuration": {
+				"host": "192.168.120.169",
+				"port": "3306",
+				"database": "NAUTILUS",
+				"url": "jdbc:mariadb://192.168.120.169:3306/NAUTILUS",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"provider-properties": {
+					"@dbeaver-show-all-dbs@": "true"
+				},
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": true,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800,
+			"auto-close-connections": true,
+			"close-connections-period": 14400
+		}
+	}
+}

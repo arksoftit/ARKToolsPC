@@ -1,28 +1,46 @@
 ## ark_action_categories = frm_actions_categories
-cat_IDauto(INTEGER) = Auto
+cat_IDauto((INTEGER)) = Auto
 cat_Codigo(TEXT)  = lineEdit_cat_codigo
 cat_Descripcion(TEXT) = lineEdit_cat_descripcion
-cat_Status(INTEGER) = cmb_cat_ststus
-cat_DescripcionTec(TEXT) = textEdit_cat_descripciontec
+cat_Status((INTEGER)) = cmb_cat_status
+cat_DescripcionTec(TEXT) =(TEXT)Edit_cat_descripciontec
 cat_FechaCreacion(TEXT) = dateEdit_cat_fechacreacion
+cat_systemdate(TEXT) = f_sistema
+cat_systemtime(TEXT) = h_sistema
+cat_namemachine(TEXT) = nom_equipo
+cat_lastupdatedate(TEXT) = last_f_sistemas
+cat_lastupdatetime(TEXT) = last_h_sistemas
+cat_lastmachine(TEXT) = last_nom_equipo
+cat_usercreator(TEXT) = usuario
+cat_userlastupdate(TEXT) = last_usuario
 
-## ark_actions
-act_IDauto INTEGER PRIMARY KEY AUTOINCREMENT,
-act_Codigo TEXT NOT NULL,
-act_Descripcion TEXT,
-act_Status INTEGER DEFAULT 1,
-act_DescripcionTec TEXT,
-act_FechaCreacion TEXT DEFAULT (datetime('now')),
-id_category INTEGER,
+
+## ark_actions = frm_actions
+act_IDauto (INTEGER) PRIMARY KEY AUTOINCREMENT = 
+act_Codigo(TEXT) = lineEdit_act_codigo
+act_Descripcion(TEXT) = lineEdit_act_descripcion
+act_Status (INTEGER) = cmb_act_status
+act_DescripcionTec(TEXT) = textEdit_act_descripciontec
+act_FechaCreacion(TEXT) = dateEdit_act_fechacreacion
+id_category (INTEGER) = lineEdit_id_category
 FOREIGN KEY (id_category) REFERENCES ark_action_categories(cat_IDauto)
+act_systemdate(TEXT) = f_sistema
+act_systemtime(TEXT) = h_sistema
+act_namemachine(TEXT) = nom_equipo
+act_lastupdatedate(TEXT) = last_f_sistemas
+act_lastupdatetime(TEXT) = last_h_sistemas
+act_lastmachine(TEXT) = last_nom_equipo
+act_usercreator(TEXT) = usuario
+act_userlastupdate(TEXT) = last_usuario
+
 
 ## ark_clients
 lineEdit_clt_codigo = clt_Codigo (TEXT)
-cmb_clt_status = clt_Status (INTEGER)
+cmb_clt_status = clt_Status ((INTEGER))
 dateEdit_clt_fechacreacion = clt_FechaCreacion (TEXT)
 lineEdit_clt_descripcion = clt_Descripcion (TEXT)
 lineEdit_clt_idfiscaliscal = clt_IDfiscal (TEXT)
-cmb_clt_tipocontribuyente = clt_TipoContribuyente (INTEGER)
+cmb_clt_tipocontribuyente = clt_TipoContribuyente ((INTEGER))
 textEdit_clt_direccionF = clt_DireccionF (TEXT)
 textEdit_clt_direccionL = clt_DireccionL (TEXT)
 lineEdit_clt_telefono1 = clt_Telefono1 (TEXT)
@@ -33,183 +51,283 @@ lineEdit_clt_idrepresentante = clt_IDRepresentante (TEXT)
 lineEdit_clt_telefonocontacto = clt_TelefonoContacto (TEXT)
 lineEdit_clt_emailcontacto = clt_EmailContacto (TEXT)
 cmb_clt_origen = clt_Origen (TEXT)
+clt_systemdate(TEXT) = f_sistema
+clt_systemtime(TEXT) = h_sistema
+clt_namemachine(TEXT) = nom_equipo
+clt_lastupdatedate(TEXT) = last_f_sistemas
+clt_lastupdatetime(TEXT) = last_h_sistemas
+clt_lastmachine(TEXT) = last_nom_equipo
+clt_usercreator(TEXT) = usuario
+clt_userlastupdate(TEXT) = last_usuario
 
 
-## ark_company
-emp_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
-emp_Codigo TEXT CONSTRAINT Requerido NOT NULL ON CONFLICT ROLLBACK, 
-emp_Descripcion TEXT, emp_IDfiscal TEXT, 
-emp_Status INTEGER DEFAULT 1, 
-emp_DireccionF TEXT, 
-emp_DireccionL TEXT, 
-emp_Telefono1 TEXT, 
-emp_Telefono2 TEXT, 
-emp_Representante TEXT, 
-emp_IdRepresentante TEXT, 
-emp_TelefonoContacto TEXT, 
-emp_EmailContacto TEXT, 
-emp_EmailEmpresa TEXT, 
-emp_TipoContribuyente INTEGER, 
-emp_FechaCreacion TEXT DEFAULT (datetime('now')));
+## ark_company = frm_a_company
+emp_IDauto (INTEGER) PRIMARY KEY AUTOINCREMENT =  
+emp_Codigo(TEXT) = lineEdit_emp_codigo 
+emp_Descripcion(TEXT) = lineEdit_emp_descripcion
+emp_IDfiscal = lineEdit_emp_idfiscal
+emp_Status (INTEGER) = cmb_emp_ststus
+emp_DireccionF(TEXT) = textEdit_emp_direccionf 
+emp_DireccionL(TEXT) = textEdit_emp_direccionl
+emp_Telefono1(TEXT) = lineEdit_emp_telefono1
+emp_Telefono2(TEXT) = lineEdit_emp_telefono2
+emp_Representante(TEXT) = lineEdit_emp_representante
+emp_IdRepresentante(TEXT) = lineEdit_emp_idrepresentante
+emp_TelefonoContacto(TEXT) = lineEdit_emp_TelefonoContacto 
+emp_EmailContacto(TEXT) = lineEdit_emp_EmailContacto
+emp_EmailEmpresa(TEXT) = lineEdit_emp_EmailEmpresa
+emp_TipoContribuyente (INTEGER) = cmb_emp_tipo_contribuyente
+emp_FechaCreacion(TEXT) = dateEdit_creation_company
+emp_systemdate(TEXT) = f_sistema
+emp_systemtime(TEXT) = h_sistema
+emp_namemachine(TEXT) = nom_equipo
+emp_lastupdatedate(TEXT) = last_f_sistemas
+emp_lastupdatetime(TEXT) = last_h_sistemas
+emp_lastmachine(TEXT) = last_nom_equipo
+emp_usercreator(TEXT) = usuario
+emp_userlastupdate(TEXT) = last_usuario
 
-## ark_currencies
-mda_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
-mda_Codigo TEXT NOT NULL, 
-mda_Descripcion TEXT, 
-mda_Status INTEGER DEFAULT 1, 
-mda_ISO4217 TEXT, 
-mda_Simbolo TEXT, 
-mda_FactorActivo REAL, 
-mda_FactorPasivo REAL, 
-mda_OperadorCalculo INTEGER, 
-mda_AplicaImp INTEGER DEFAULT 0, 
-mda_FechaCreacion TEXT DEFAULT (datetime('now')), 
-mda_FechaActualizacion TEXT, 
-mda_FechaUltima TEXT);
 
-## ark_device_types
-dty_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
-dty_Codigo TEXT NOT NULL, 
-dty_Descripcion TEXT, 
-dty_Status INTEGER DEFAULT 1, 
-dty_DescripcionTec TEXT, 
-dty_FechaCreacion TEXT DEFAULT (datetime('now')));
+## ark_currencies = frm_currencies
+mda_IDauto (INTEGER) PRIMARY KEY AUTOINCREMENT =  
+mda_Codigo(TEXT) =  lineEdit_mda_codigo
+mda_Descripcion(TEXT) = lineEdit_mda_descripcion
+mda_Status(INTEGER) = cmb_mda_status 
+mda_ISO4217(TEXT) = cmb_mda_iso4217 
+mda_Simbolo(TEXT) = cmb_mda_simbolo
+mda_FactorActivo REAL = dsb_mda_factoractivo
+mda_FactorPasivo REAL = dsb_mda_factorpasivo
+mda_OperadorCalculo (INTEGER) = cmb_mda_operator
+mda_AplicaImp (INTEGER) DEFAULT 0 =  
+mda_FechaCreacion(TEXT) = dateEdit_mda_fechacreacion 
+mda_FechaActualizacion(TEXT) = dateEdit_mda_fechaactualizacion
+mda_FechaUltima(TEXT) = dateEdit_mda_label_mda_fechaultima
+mda_SystemDate(TEXT) = f_sistema
+mda_SystemTime(TEXT) = h_sistema
+mda_NameMachine(TEXT) = nom_equipo
+mda_LastUpdateDate(TEXT) = last_f_sistemas
+mda_LastUpdateTime(TEXT) = last_h_sistemas
+mda_LastMachine(TEXT) = last_nom_equipo
+mda_UserCreator(TEXT) = usuario
+mda_UserLastUpdate(TEXT) = last_usuario
 
-## ark_employees
-emy_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
-emy_Codigo TEXT NOT NULL, 
-emy_Descripcion TEXT, 
-emy_Status INTEGER DEFAULT 1, 
-emy_IDEmployees TEXT, 
-emy_Telefono1 TEXT, 
-emy_Cargo INTEGER, 
-emy_Cliente INTEGER, 
-emy_Rol TEXT, 
-emy_EmailUsuario TEXT, 
-emy_Password TEXT, 
-emy_FechaCreacion TEXT DEFAULT (datetime('now')), 
-FOREIGN KEY (emy_Cargo) REFERENCES ark_job_titles (job_IDauto), 
+## ark_device_types = frm_device_types
+dty_IDauto (INTEGER) PRIMARY KEY AUTOINCREMENT =  
+dty_Codigo(TEXT) =  lineEdit_dty_vodigo
+dty_Descripcion(TEXT) = lineEdit_dty_Descripcion
+dty_Status(INTEGER) = cmb_dty_status 
+dty_DescripcionTec(TEXT) = textEdit_dty_DescripcionTec
+dty_FechaCreacion(TEXT) = dateEdit_dty_fechacreacion
+dty_systemdate(TEXT) = f_sistema
+dty_systemtime(TEXT) = h_sistema
+dty_namemachine(TEXT) = nom_equipo
+dty_lastupdatedate(TEXT) = last_f_sistemas
+dty_lastupdatetime(TEXT) = last_h_sistemas
+dty_lastmachine(TEXT) = last_nom_equipo
+dty_usercreator(TEXT) = usuario
+dty_userlastupdate(TEXT) = last_usuario
+
+## ark_employees = frm_employees
+emy_IDauto (INTEGER) PRIMARY KEY AUTOINCREMENT =  
+emy_Codigo(TEXT) = lineEdit_emy_codigo 
+emy_Descripcion(TEXT) = lineEdit_emy_descripcion
+emy_Status(INTEGER) = cmb_emy_status 
+emy_IDEmployees(TEXT) = lineEdit_emy_idemployees 
+emy_Telefono1(TEXT) = lineEdit_emy_telefono1 
+emy_Cargo (INTEGER) =  
+emy_Cliente (INTEGER) =  
+emy_Rol(TEXT) = lineEdit_emy_rol
+emy_EmailUsuario(TEXT) = lineEdit_emy_emailusuario 
+emy_Password(TEXT) = lineEdit_emy_password 
+emy_FechaCreacion(TEXT) DEFAULT (datetime('now')) =  
+FOREIGN KEY (emy_Cargo) REFERENCES ark_job_titles (job_IDauto) =  
 FOREIGN KEY (emy_Cliente) REFERENCES ark_clients (clt_IDauto));
+emy_systemdate(TEXT) = f_sistema
+emy_systemtime(TEXT) = h_sistema
+emy_namemachine(TEXT) = nom_equipo
+emy_lastupdatedate(TEXT) = last_f_sistemas
+emy_lastupdatetime(TEXT) = last_h_sistemas
+emy_lastmachine(TEXT) = last_nom_equipo
+emy_usercreator(TEXT) = usuario
+emy_userlastupdate(TEXT) = last_usuario
 
-## ark_functional_units
-fun_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
-fun_Codigo TEXT NOT NULL, 
-fun_Descripcion TEXT, 
-fun_DescripcionTec TEXT, 
-fun_Status INTEGER DEFAULT 1, 
-fun_FechaCreacion TEXT DEFAULT (datetime('now')));
+
+## ark_functional_= frm_functional_units
+fun_IDauto (INTEGER) PRIMARY KEY AUTOINCREMENT =  
+fun_Codigo(TEXT) = lineEdit_fun_codigo
+fun_Descripcion(TEXT) = lineEdit_fun_descripcion
+fun_DescripcionTec(TEXT) = textEdit_fun_descripciontec
+fun_Status(INTEGER) = cmb_fun_status
+fun_FechaCreacion(TEXT) = dateEdit_fun_fechacreacion
+fun_systemdate(TEXT) = f_sistema
+fun_systemtime(TEXT) = h_sistema
+fun_namemachine(TEXT) = nom_equipo
+fun_lastupdatedate(TEXT) = last_f_sistemas
+fun_lastupdatetime(TEXT) = last_h_sistemas
+fun_lastmachine(TEXT)  = last_nom_equipo
+fun_usercreator(TEXT)  = usuario
+fun_userlastupdate(TEXT) = last_usuario
+
+
 
 ## ark_it_assets
-ita_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
-ita_Codigo TEXT NOT NULL, 
-ita_Descripcion TEXT, 
-ita_marca TEXT, 
-ita_Clasificacion TEXT, 
-ita_Status INTEGER DEFAULT 1, 
-ita_DescripcionTec TEXT, 
-ita_NotasTech TEXT, 
-ita_macadrees TEXT, 
-ita_ipadrees TEXT, 
-ita_functional_units INTEGER, 
-ita_Rol TEXT, 
-ita_idRDP1 TEXT, 
-ita_idRDP2 TEXT, 
-ita_iprdp TEXT, 
-ita_idemployees INTEGER, 
-ita_FechaCreacion TEXT DEFAULT (datetime('now')), 
-FOREIGN KEY (ita_functional_units) REFERENCES ark_functional_units (fun_IDauto), 
+ita_IDauto (INTEGER) PRIMARY KEY AUTOINCREMENT =  
+ita_Codigo(TEXT) = lineEdit_ita_codigo  
+ita_Descripcion(TEXT) = lineEdit_ita_descripcion
+ita_marca(TEXT) = lineEdit_ita_marca
+ita_Clasificacion(TEXT) =  cmb_ita_Clasificacion
+ita_Status(INTEGER) = cmb_ita_status  
+ita_DescripcionTec(TEXT) =  textEdit_ita_descripciontec
+ita_NotasTech(TEXT) =  textEdit_ita_notastech
+ita_macadrees(TEXT) = lineEdit_ita_macadrees 
+ita_ipadrees(TEXT) = lineEdit_ita_ipadrees 
+ita_functional_units (INTEGER) = lineEdit_id_functional_units 
+ita_Rol(TEXT) =  lineEdit_ita_rol
+ita_idRDP1(TEXT) = lineEdit_ita_idRDP1 
+ita_idRDP2(TEXT) = lineEdit_ita_idRDP2 
+ita_iprdp(TEXT) =  lineEdit_ita_iprdp
+ita_idemployees (INTEGER) = lineEdit_id_employees 
+ita_FechaCreacion(TEXT) DEFAULT (datetime('now')) =  
+FOREIGN KEY (ita_functional_units) REFERENCES ark_functional_units (fun_IDauto) =  
 FOREIGN KEY (ita_idemployees) REFERENCES ark_employees (emy_IDauto));
+ita_systemdate(TEXT) = f_sistema
+ita_systemtime(TEXT) = h_sistema
+ita_namemachine(TEXT) = nom_equipo
+ita_lastupdatedate(TEXT) = last_f_sistemas
+ita_lastupdatetime(TEXT) = last_h_sistemas
+ita_lastmachine(TEXT) = last_nom_equipo
+ita_usercreator(TEXT) = usuario
+ita_userlastupdate(TEXT) = last_usuario
 
-## ark_job_titles
-job_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
-job_Codigo TEXT NOT NULL, 
-job_Descripcion TEXT, 
-job_Status INTEGER DEFAULT 1, 
-job_DescripcionTec TEXT, 
-job_FechaCreacion TEXT DEFAULT (datetime('now')));
+
+## ark_job_titles = frm_form_job_titles
+job_IDauto (INTEGER) PRIMARY KEY AUTOINCREMENT =  
+job_Codigo(TEXT) =  lineEdit_job_codigo
+job_Descripcion(TEXT) =  lineEdit_job_descripcion
+job_Status(INTEGER) =  cmb_job_status
+job_DescripcionTec(TEXT) =  textEdit_job_descripciontec
+job_FechaCreacion(TEXT) DEFAULT (datetime('now')));
+job_systemdate(TEXT) = f_sistema
+job_systemtime(TEXT) = h_sistema
+job_namemachine(TEXT) = nom_equipo
+job_lastupdatedate(TEXT) = last_f_sistemas
+job_lastupdatetime(TEXT) = last_h_sistemas
+job_lastmachine(TEXT) = last_nom_equipo
+job_usercreator(TEXT) = usuario
+job_userlastupdate(TEXT) = last_usuario
+
 
 ## ark_requests
-req_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
-req_Codigo TEXT NOT NULL, 
-req_Descripcion TEXT, 
-req_Status INTEGER DEFAULT 1, 
-req_DescripcionTec TEXT, 
-req_FechaCreacion TEXT DEFAULT (datetime('now')), 
-req_CodigoCliente INTEGER, 
+req_IDauto (INTEGER) PRIMARY KEY AUTOINCREMENT =  
+req_Codigo(TEXT) =  lineEdit_req_codigo
+req_Descripcion(TEXT) =  lineEdit_req_descripcion
+req_Status(INTEGER) =  cmb_req_status
+req_DescripcionTec(TEXT) =  textEdit_req_descripciontec
+req_FechaCreacion(TEXT) DEFAULT (datetime('now')) =  dateEdit_req_fechacreacion
+req_CodigoCliente (INTEGER) =  
 FOREIGN KEY (req_CodigoCliente) REFERENCES ark_clients (clt_IDauto));
+req_systemdate(TEXT) = f_sistema
+req_systemtime(TEXT) = h_sistema
+req_namemachine(TEXT) = nom_equipo
+req_lastupdatedate(TEXT) = last_f_sistemas
+req_lastupdatetime(TEXT) = last_h_sistemas
+req_lastmachine(TEXT) = last_nom_equipo
+req_usercreator(TEXT) = usuario
+req_userlastupdate(TEXT) = last_usuario
 
 ## ark_session_details
-dts_IDauto INTEGER PRIMARY KEY AUTOINCREMENT,
-dts_ses_IDauto INTEGER,
-dts_act_Codigo INTEGER,
-dts_req_IDauto INTEGER,
-dts_description TEXT,
-dts_result TEXT,
-dts_time_spent REAL,
-dts_date_logged TEXT DEFAULT (datetime('now')),
-FOREIGN KEY (dts_ses_IDauto) REFERENCES ark_sessions(ses_IDauto),
-FOREIGN KEY (dts_act_Codigo) REFERENCES ark_actions(act_IDauto),
+dts_IDauto (INTEGER) PRIMARY KEY AUTOINCREMENT = 
+dts_ses_IDauto (INTEGER) = 
+dts_act_Codigo (INTEGER) = 
+dts_req_IDauto (INTEGER) = 
+dts_description(TEXT) = 
+dts_result(TEXT) = 
+dts_time_spent REAL = 
+dts_date_logged(TEXT) DEFAULT (datetime('now')) = 
+FOREIGN KEY (dts_ses_IDauto) REFERENCES ark_sessions(ses_IDauto) = 
+FOREIGN KEY (dts_act_Codigo) REFERENCES ark_actions(act_IDauto) = 
 FOREIGN KEY (dts_req_IDauto) REFERENCES ark_requests(req_IDauto)
+dts_systemdate(TEXT) = f_sistema
+dts_systemtime(TEXT) = h_sistema
+dts_namemachine(TEXT) = nom_equipo
+dts_lastupdatedate(TEXT) = last_f_sistemas
+dts_lastupdatetime(TEXT) = last_h_sistemas
+dts_lastmachine(TEXT) = last_nom_equipo
+dts_usercreator(TEXT) = usuario
+dts_userlastupdate(TEXT) = last_usuario
+
 
 ## ark_sessions
-ses_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
-ses_numero TEXT (8), 
-ses_Status TEXT, 
-ses_FechaEmision TEXT, 
-ses_clt_IDauto INTEGER, 
-ses_clt_Codigo TEXT, 
-ses_clt_Descripcion TEXT, 
-ses_clt_IDfiscal TEXT, 
-ses_clt_Status INTEGER DEFAULT 1, 
-ses_clt_DireccionF TEXT, 
-ses_clt_DireccionA TEXT, 
-ses_clt_Telefono1 TEXT, 
-ses_clt_Telefono2 TEXT, 
-ses_usr_IDauto INTEGER, 
-ses_usr_Codigo TEXT, 
-ses_usr_Descripcion TEXT, 
-ses_FechaSesion TEXT, 
-ses_HoraInicial TEXT, 
-ses_HoraFinal TEXT, 
-ses_TotalHora INTEGER, 
-FOREIGN KEY (ses_clt_IDauto) REFERENCES ark_clients (clt_IDauto), 
+ses_IDauto (INTEGER) PRIMARY KEY AUTOINCREMENT =  
+ses_numero(TEXT) (8) =  
+ses_Status(TEXT) =  
+ses_FechaEmision(TEXT) =  
+ses_clt_IDauto (INTEGER) =  
+ses_clt_Codigo(TEXT) =  
+ses_clt_Descripcion(TEXT) =  
+ses_clt_IDfiscal(TEXT) =  
+ses_clt_Status(INTEGER) =  
+ses_clt_DireccionF(TEXT) =  
+ses_clt_DireccionA(TEXT) =  
+ses_clt_Telefono1(TEXT) =  
+ses_clt_Telefono2(TEXT) =  
+ses_usr_IDauto (INTEGER) =  
+ses_usr_Codigo(TEXT) =  
+ses_usr_Descripcion(TEXT) =  
+ses_FechaSesion(TEXT) =  
+ses_HoraInicial(TEXT) =  
+ses_HoraFinal(TEXT) =  
+ses_TotalHora (INTEGER) =  
+FOREIGN KEY (ses_clt_IDauto) REFERENCES ark_clients (clt_IDauto) =  
 FOREIGN KEY (ses_usr_IDauto) REFERENCES ark_users (usr_IDauto));
-
-## ark_sessions_details
-dts_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
-dts_ses_IDauto INTEGER, 
-dts_act_Codigo INTEGER, 
-dts_req_IDauto INTEGER, 
-dts_description TEXT, 
-dts_result TEXT, 
-dts_time_spent REAL, 
-dts_date_logged TEXT DEFAULT (datetime('now')), 
-FOREIGN KEY (dts_ses_IDauto) REFERENCES ark_sessions (ses_IDauto),
-FOREIGN KEY (dts_act_Codigo) REFERENCES ark_actions (act_IDauto), 
-FOREIGN KEY (dts_req_IDauto) REFERENCES ark_requests (req_IDauto));
+ses_systemdate(TEXT) = f_sistema
+ses_systemtime(TEXT) = h_sistema
+ses_namemachine(TEXT) = nom_equipo
+ses_lastupdatedate(TEXT) = last_f_sistemas
+ses_lastupdatetime(TEXT) = last_h_sistemas
+ses_lastmachine(TEXT) = last_nom_equipo
+ses_usercreator(TEXT) = usuario
+ses_userlastupdate(TEXT) = last_usuario
 
 
 ## ark_tasks_completed
-tsc_IDauto INTEGER PRIMARY KEY AUTOINCREMENT,
-tsc_Codigo TEXT NOT NULL,
-tsc_Descripcion TEXT,
-tsc_Status INTEGER DEFAULT 1,
-tsc_DescripcionTec TEXT,
-tsc_FechaCreacion TEXT DEFAULT (datetime('now'));
+tsc_IDauto (INTEGER) PRIMARY KEY AUTOINCREMENT = 
+tsc_Codigo(TEXT) = 
+tsc_Descripcion(TEXT) = 
+tsc_Status(INTEGER) = 
+tsc_DescripcionTec(TEXT) = 
+tsc_FechaCreacion(TEXT) DEFAULT (datetime('now'));
+tsc_systemdate(TEXT) = f_sistema
+tsc_systemtime(TEXT) = h_sistema
+tsc_namemachine(TEXT) = nom_equipo
+tsc_lastupdatedate(TEXT) = last_f_sistemas
+tsc_lastupdatetime(TEXT) = last_h_sistemas
+tsc_lastmachine(TEXT) = last_nom_equipo
+tsc_usercreator(TEXT) = usuario
+tsc_userlastupdate(TEXT) = last_usuario
+
 
 ## ark_users
-usr_IDauto INTEGER PRIMARY KEY AUTOINCREMENT, 
-usr_Codigo TEXT NOT NULL, 
-usr_Descripcion TEXT, 
-usr_Status INTEGER DEFAULT 1, 
-usr_Telefono TEXT, 
-usr_Cargo TEXT, 
-usr_Rol TEXT, 
-usr_EmailUsuario TEXT, 
-usr_Password TEXT, 
-usr_FechaCreacion TEXT DEFAULT (datetime('now')), 
-id_employee INTEGER, 
+usr_IDauto (INTEGER) PRIMARY KEY AUTOINCREMENT =  
+usr_Codigo(TEXT) =  
+usr_Descripcion(TEXT) =  
+usr_Status(INTEGER) =  
+usr_Telefono(TEXT) =  
+usr_Cargo(TEXT) =  
+usr_Rol(TEXT) =  
+usr_EmailUsuario(TEXT) =  
+usr_Password(TEXT) =  
+usr_FechaCreacion(TEXT) DEFAULT (datetime('now')) =  
+id_employee (INTEGER) =  
 FOREIGN KEY (id_employee) REFERENCES ark_employees (emy_IDauto));
+usr_systemdate(TEXT) = f_sistema
+usr_systemtime(TEXT) = h_sistema
+usr_namemachine(TEXT) = nom_equipo
+usr_lastupdatedate(TEXT) = last_f_sistemas
+usr_lastupdatetime(TEXT) = last_h_sistemas
+usr_lastmachine(TEXT) = last_nom_equipo
+usr_usercreator(TEXT) = usuario
+usr_userlastupdate(TEXT) = last_usuario
 
 
 

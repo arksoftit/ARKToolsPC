@@ -29,9 +29,9 @@ class MiApp(QMainWindow):
         # -----------------------------------------------------------------
         
         # ------------INICIALIZACION DE VARIABLES PARA GESTION DE BASE DE DATOS------------
-        self.id_categoria_actual = None
-        
-        
+        self.id_categoria_seleccionada = None
+        self.id_cliente_seleccionado = None
+
         # Eliminar barra de título y aplicar opacidad
         self.setWindowFlag(Qt.WindowType.FramelessWindowHint)
         self.setWindowOpacity(1)
@@ -172,10 +172,12 @@ class MiApp(QMainWindow):
 
         # Conectar botón Incluir y Cancelar de currencies (Monedas)
         self.ui.btn_add_currencies.clicked.connect(self.accion_incluir_monedas)
+        self.ui.btn_save_currencies.clicked.connect(self.guardar_currencies)
         self.ui.btn_cancel_currencies.clicked.connect(self.accion_cancelar_monedas)
 
         # Conectar botón Incluir y Cancelar de device_types (Tipo de Dispositivos)
         self.ui.btn_add_device_types.clicked.connect(self.accion_incluir_tipos)
+        self.ui.btn_save_device_types.clicked.connect(self.guardar_device_types)
         self.ui.btn_cancel_device_types.clicked.connect(self.accion_cancelar_tipos)
 
         # Conectar botón Incluir y Cancelar de employees (Empleados)
@@ -184,6 +186,7 @@ class MiApp(QMainWindow):
 
         # Conectar botón Incluir y Cancelar de functional_units (Unidades Funcionales)
         self.ui.btn_add_functional_units.clicked.connect(self.accion_incluir_unidades)
+        self.ui.btn_save_functional_units.clicked.connect(self.guardar_functional_units)
         self.ui.btn_cancel_functional_units.clicked.connect(self.accion_cancelar_unidades)
 
         # Conectar botón Incluir y Cancelar de assets (Recursos)
@@ -203,11 +206,16 @@ class MiApp(QMainWindow):
         self.ui.btn_cancel_sessions.clicked.connect(self.accion_cancelar_sesiones)
 
         # Conectar botón Incluir y Cancelar de users (Usuarios)
-        self.ui.btn_add_users.clicked.connect(self.accion_incluir_usuarios)
-        self.ui.btn_cancel_users.clicked.connect(self.accion_cancelar_usuarios)
+        self.ui.btn_add_users.clicked.connect(self.accion_incluir_users)
+        self.ui.btn_cancel_users.clicked.connect(self.accion_cancelar_users)
         
         # Conectar botón para activar buscadores
         self.ui.btn_buscar_categoria.clicked.connect(self.abrir_buscador_categorias)
+        self.ui.btn_buscar_cliente.clicked.connect(self.abrir_buscador_clientes)
+        
+        
+        # LLAMADA OBLIGATORIA PARA QUE SE MUESTRE AL ABRIR
+        self.actualizar_barra_estado()
         
 
         # ===***===***===***===***===***===***===***===***===***===***===***===***===***===***===***===***===***===
@@ -224,13 +232,34 @@ class MiApp(QMainWindow):
         for widget in all_widgets:
             if isinstance(widget, tipos_entrada):
                 widget.setEnabled(enabled)
-
+                
+    # --- ACTUALIZAR BARRA DE ESTADO CON INFO DEL SISTEMA ---
+    
+    def actualizar_barra_estado(self):
+        try:
+            # Extraemos los datos de tu sistema_info
+            fecha   = system_info.get_date_audit()
+            user = system_info.get_current_user()
+            equipo  = system_info.get_machine_name()
+            
+            # Formateamos la cadena
+            info_sesion = f" SESIÓN ACTIVA | Usuario: {user} | Equipo: {equipo} | Fecha: {fecha}"
+            
+            # Aplicamos al QLabel que mencionaste
+            self.ui.pie_arkinfo.setText(info_sesion)
+            
+            # Log para verificar en consola/archivo si se ejecutó
+            logging.info("Barra de estado actualizada correctamente.")
+            
+        except Exception as e:
+            logging.error(f"Error al actualizar pie_arkinfo: {e}")
+    
     # --- MÉTODOS DE ACCIÓN (SLOTS) ---
     # ============GESTION DE EMPRESAS============
     def accion_incluir_empresa(self):
         """Habilita los campos del formulario de Empresa."""
         self.set_form_enabled(self.ui.frm_a_company, True)
-        self.ui.lineEdit_emp_codigo.setFocus()
+        self.ui.lineEdit_emp_code.setFocus()
     
     def accion_cancelar_empresa(self):
         if self.confirmar_accion_cancelar():
@@ -239,7 +268,7 @@ class MiApp(QMainWindow):
     # ============GESTION DE ACCIONES============
     def accion_incluir_acciones(self):
         self.set_form_enabled(self.ui.frm_actions, True)
-        self.ui.lineEdit_act_codigo.setFocus()
+        self.ui.lineEdit_act_code.setFocus()
 
     def accion_cancelar_acciones(self):
         if self.confirmar_accion_cancelar():
@@ -248,8 +277,8 @@ class MiApp(QMainWindow):
     # ============GESTION DE CATEGORIAS============
     def accion_incluir_categorias(self):
         self.set_form_enabled(self.ui.frm_actions_categories, True)
-        self.ui.lineEdit_cat_codigo.setFocus()
-          
+        self.ui.lineEdit_cat_code.setFocus()
+        
     def accion_cancelar_categorias(self):
         if self.confirmar_accion_cancelar():
             self.limpiar_formulario_categories()
@@ -257,8 +286,9 @@ class MiApp(QMainWindow):
     # ============GESTION DE CLIENTES============
     def accion_incluir_clientes(self):   
         self.set_form_enabled(self.ui.frm_clients, True)
-        self.ui.lineEdit_clt_codigo.setFocus()
+        self.ui.lineEdit_clt_code.setFocus()
         logging.info("Formulario de clientes habilitado.")
+        
     def accion_cancelar_clientes(self):
         if self.confirmar_accion_cancelar():
             self.limpiar_formulario_clientes()
@@ -267,31 +297,42 @@ class MiApp(QMainWindow):
     # ============GESTION DE MONEDAS============
     def accion_incluir_monedas(self):
         self.set_form_enabled(self.ui.frm_currencies, True)
-        self.ui.lineEdit_mda_codigo.setFocus()
+        self.ui.lineEdit_mda_code.setFocus()
+        logging.info("Formulario de monedas habilitado.")
+        
     def accion_cancelar_monedas(self):
         if self.confirmar_accion_cancelar():
+            self.limpiar_formulario_currencies()
             self.set_form_enabled(self.ui.frm_currencies, False)
+        logging.info("Acción cancelar confirmada: Formulario limpiado y deshabilitado.")
     # ============GESTION DE TIPOS DE DISPOSITIVOS============
     def accion_incluir_tipos(self):
         self.set_form_enabled(self.ui.frm_device_types, True)
-        self.ui.lineEdit_dty_vodigo.setFocus()
+        self.ui.lineEdit_dty_code.setFocus()
+        logging.info("Formulario de tipos de dispositivos habilitado.")
+
     def accion_cancelar_tipos(self):
         if self.confirmar_accion_cancelar():
             self.set_form_enabled(self.ui.frm_device_types, False)
+        logging.info("Acción cancelar confirmada: Formulario limpiado y deshabilitado.")
     # ============GESTION DE EMPLEADOS============
     def accion_incluir_empleados(self):
         self.set_form_enabled(self.ui.frm_employees, True)
-        self.ui.lineEdit_emy_codigo.setFocus()
+        self.ui.lineEdit_emy_code.setFocus()
     def accion_cancelar_empleados(self):
         if self.confirmar_accion_cancelar():
             self.set_form_enabled(self.ui.frm_employees, False)
     # ============GESTION DE UNIDADES FUNCIONALES============
     def accion_incluir_unidades(self):
         self.set_form_enabled(self.ui.frm_functional_units, True)
-        self.ui.lineEdit_fun_codigo.setFocus()
+        self.ui.lineEdit_fun_code.setFocus()
+        logging.info("Formulario de unidades funcionales habilitado.")
+        
     def accion_cancelar_unidades(self):
         if self.confirmar_accion_cancelar():
+            self.limpiar_formulario_functional_units()
             self.set_form_enabled(self.ui.frm_functional_units, False)
+        logging.info("Acción cancelar confirmada: Formulario limpiado y deshabilitado.")
     # ============GESTION DE RECURSOS============
     def accion_incluir_recursos(self):
         self.set_form_enabled(self.ui.frm_it_assets, True)
@@ -309,7 +350,7 @@ class MiApp(QMainWindow):
     # ============GESTION DE REQUERIMIENTOS============
     def accion_incluir_requerimientos(self):
         self.set_form_enabled(self.ui.frm_requests, True)
-        self.ui.lineEdit_req_codigo.setFocus()
+        self.ui.lineEdit_req_code.setFocus()
     def accion_cancelar_requerimientos(self):
         if self.confirmar_accion_cancelar():
             self.set_form_enabled(self.ui.frm_requests, False)
@@ -321,10 +362,10 @@ class MiApp(QMainWindow):
         if self.confirmar_accion_cancelar():
             self.set_form_enabled(self.ui.frm_sessions, False)
     # ============GESTION DE USUARIOS============
-    def accion_incluir_usuarios(self):
+    def accion_incluir_users(self):
         self.set_form_enabled(self.ui.frm_users, True)
-        self.ui.lineEdit_usr_codigo.setFocus()
-    def accion_cancelar_usuarios(self):
+        self.ui.lineEdit_usr_code.setFocus()
+    def accion_cancelar_users(self):
         if self.confirmar_accion_cancelar():
             self.set_form_enabled(self.ui.frm_users, False)
     
@@ -340,45 +381,61 @@ class MiApp(QMainWindow):
         try:
             # 1. Recolección de datos desde los widgets de PySide6
             # Nota: Usamos .strip() en textos para evitar espacios accidentales
-            codigo       = self.ui.lineEdit_emp_codigo.text().strip()
-            descripcion  = self.ui.lineEdit_emp_descripcion.text().strip()
-            id_fiscal    = self.ui.lineEdit_emp_idfiscal.text().strip()
-            status       = self.ui.cmb_emp_ststus.currentIndex()             
-            direccion_f  = self.ui.textEdit_emp_direccionf.toPlainText().strip()
-            direccion_l  = self.ui.textEdit_emp_direccionl.toPlainText().strip()
-            tel1         = self.ui.lineEdit_emp_telefono1.text().strip()
-            tel2         = self.ui.lineEdit_emp_telefono2.text().strip()
-            rep          = self.ui.lineEdit_emp_representante.text().strip()
-            id_rep       = self.ui.lineEdit_emp_idrepresentante.text().strip()
-            tel_rep     = self.ui.lineEdit_emp_TelefonoContacto.text().strip()
-            email_rep   = self.ui.lineEdit_emp_EmailContacto.text().strip()
-            email_emp    = self.ui.lineEdit_emp_EmailEmpresa.text().strip()
-            tipo_cont    = self.ui.cmb_emp_tipo_contribuyente.currentIndex()
-            fecha_crea   = self.ui.dateEdit_creation_company.date().toString("yyyy-MM-dd")
+            code            = self.ui.lineEdit_emp_code.text().strip()
+            description     = self.ui.lineEdit_emp_description.text().strip()
+            tax_id          = self.ui.lineEdit_emp_tax_id.text().strip()
+            status          = self.ui.cmb_emp_ststus.currentIndex()             
+            tax_address     = self.ui.textEdit_emp_tax_address.toPlainText().strip()
+            local_address   = self.ui.textEdit_emp_local_address.toPlainText().strip()
+            phone           = self.ui.lineEdit_emp_phone.text().strip()
+            mobile          = self.ui.lineEdit_emp_mobile.text().strip()
+            rep             = self.ui.lineEdit_emp_legal_representative.text().strip()
+            id_rep          = self.ui.lineEdit_emp_legal_representative_id.text().strip()
+            tel_rep         = self.ui.lineEdit_emp_contact_phone.text().strip()
+            email_rep       = self.ui.lineEdit_emp_contact_email.text().strip()
+            email_emp       = self.ui.lineEdit_emp_company_email.text().strip()
+            tipo_taxpayer   = self.ui.cmb_emp_tipo_taxpayer.currentIndex()
+            creation_date   = self.ui.dateEdit_creation_date.date().toString("yyyy-MM-dd")
+
+            # Seccion de auditoría del sistema
+            f_system  = system_info.get_date_audit()
+            h_system  = system_info.get_time_audit()
+            computer_name = system_info.get_machine_name()
+            user    = system_info.get_current_user()
+            last_f_systems = system_info.get_date_audit()
+            last_h_systems = system_info.get_time_audit()
+            last_computer_name = system_info.get_machine_name()
+            last_user    = system_info.get_current_user()
 
             # 2. Validación básica de campos obligatorios
-            if not codigo:
+            if not code:
                 QMessageBox.warning(self, "Validación", "El Código de la empresa es obligatorio.")
                 return
 
             # 3. Preparación de la consulta SQL
             sql = """
             INSERT INTO ark_company (
-                emp_Codigo, emp_Descripcion, emp_IDfiscal, emp_Status, emp_DireccionF, emp_DireccionL, emp_Telefono1, emp_Telefono2, emp_Representante, emp_IDRepresentante, emp_TelefonoContacto, emp_EmailContacto, emp_EmailEmpresa, emp_TipoContribuyente, emp_FechaCreacion
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                emp_Codigo, emp_Descripcion, emp_IDfiscal, emp_Status, emp_DireccionF, 
+                emp_DireccionL, emp_Telefono1, emp_Telefono2, emp_Representante, emp_IDRepresentante, 
+                emp_TelefonoContacto, emp_EmailContacto, emp_EmailEmpresa, emp_TipoContribuyente, emp_FechaCreacion,
+                emp_SystemDate, emp_SystemTime, emp_NameMachine, emp_UserCreator,
+                emp_LastUpdateDate, emp_LastUpdateTime, emp_LastMachine, emp_UserLastUpdate
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """
 
             # 4. Tupla de parámetros (DEBE seguir el mismo orden que el INSERT)
             params = (
-                codigo, descripcion, id_fiscal, status, direccion_f, direccion_l, tel1, tel2, rep, id_rep, tel_rep, email_rep, email_emp, tipo_cont, fecha_crea
+                code, description, tax_id, status, tax_address, local_address, phone, mobile, rep, id_rep, tel_rep, 
+                email_rep, email_emp, tipo_taxpayer, creation_date, f_system, h_system, computer_name, user,
+                last_f_systems, last_h_systems, last_computer_name, last_user
             )
 
             # 5. Ejecución mediante el DatabaseManager
             exito = self.db_manager.execute_query(sql, params)
 
             if exito:
-                logging.info(f"Empresa guardada exitosamente: {codigo}")
-                QMessageBox.information(self, "Éxito", f"La Empresa '{codigo}' ha sido registrada correctamente.")
+                logging.info(f"Empresa guardada exitosamente: {code}")
+                QMessageBox.information(self, "Éxito", f"La Empresa '{code}' ha sido registrada correctamente.")
                 self.limpiar_formulario_clientes() # Función que haremos a continuación
             else:
                 QMessageBox.critical(self, "Error", "No se pudo guardar el registro en la base de datos.")
@@ -391,25 +448,24 @@ class MiApp(QMainWindow):
         """
         Limpia todos los campos del formulario de clientes.
         """
-        self.ui.lineEdit_emp_codigo.clear()
-        self.ui.lineEdit_emp_descripcion.clear()
-        self.ui.lineEdit_emp_idfiscal.clear()
+        self.ui.lineEdit_emp_code.clear()
+        self.ui.lineEdit_emp_description.clear()
+        self.ui.lineEdit_emp_tax_id.clear()
         self.ui.cmb_emp_ststus.setCurrentIndex(0)
-        self.ui.textEdit_emp_direccionf.clear()
-        self.ui.textEdit_emp_direccionl.clear()
-        self.ui.lineEdit_emp_telefono1.clear()
-        self.ui.lineEdit_emp_telefono2.clear()
-        self.ui.lineEdit_emp_representante.clear()
-        self.ui.lineEdit_emp_idrepresentante.clear()
-        self.ui.lineEdit_emp_TelefonoContacto.clear()
-        self.ui.lineEdit_emp_EmailContacto.clear()
-        self.ui.lineEdit_emp_EmailEmpresa.clear()
-        self.ui.cmb_emp_tipo_contribuyente.setCurrentIndex(0)
-        self.ui.dateEdit_creation_company.setDate(QDate.currentDate())
-        self.ui.lineEdit_emp_codigo.setFocus()
+        self.ui.textEdit_emp_tax_address.clear()
+        self.ui.textEdit_emp_local_address.clear()
+        self.ui.lineEdit_emp_phone.clear()
+        self.ui.lineEdit_emp_mobile.clear()
+        self.ui.lineEdit_emp_legal_representative.clear()
+        self.ui.lineEdit_emp_legal_representative_id.clear()
+        self.ui.lineEdit_emp_contact_phone.clear()
+        self.ui.lineEdit_emp_contact_email.clear()
+        self.ui.lineEdit_emp_company_email.clear()
+        self.ui.cmb_emp_tipo_taxpayer.setCurrentIndex(0)
+        self.ui.dateEdit_creation_date.setDate(QDate.currentDate())
+        self.ui.lineEdit_emp_code.setFocus()
         logging.info("Formulario de empresa limpiado.")
         
-
     # ============INSERT  DE DATOS CLIENTES============
     
     def guardar_cliente(self):
@@ -420,9 +476,9 @@ class MiApp(QMainWindow):
         try:
             # 1. Recolección de datos desde los widgets de PySide6
             # Nota: Usamos .strip() en textos para evitar espacios accidentales
-            codigo       = self.ui.lineEdit_clt_codigo.text().strip()
-            descripcion  = self.ui.lineEdit_clt_descripcion.text().strip()
-            id_fiscal    = self.ui.lineEdit_clt_idfiscaliscal.text().strip() # Según tu nombre con typo 'iscal'
+            code       = self.ui.lineEdit_clt_code.text().strip()
+            description  = self.ui.textEdit_act_descriptiontec.text().strip()
+            tax_id    = self.ui.lineEdit_clt_idfiscaliscal.text().strip() # Según tu nombre con typo 'iscal'
             status       = self.ui.cmb_clt_status.currentIndex()             # INTEGER
             direccion_f  = self.ui.textEdit_clt_direccionF.toPlainText().strip()
             direccion_l  = self.ui.textEdit_clt_direccionL.toPlainText().strip()
@@ -435,40 +491,52 @@ class MiApp(QMainWindow):
             email_emp    = self.ui.lineEdit_clt_emailempresa.text().strip()
             tipo_cont    = self.ui.cmb_clt_tipocontribuyente.currentIndex()  # INTEGER
             origen       = self.ui.cmb_clt_origen.currentText()              # TEXT
-            codigo_orig  = "" # Puedes vincularlo a un widget si lo creas luego
+            code_orig  = "" # Puedes vincularlo a un widget si lo creas luego
             fecha_crea   = self.ui.dateEdit_clt_fechacreacion.date().toString("yyyy-MM-dd")
-
+            
+            # Seccion de auditoría del sistema
+            f_system  = system_info.get_date_audit()
+            h_system  = system_info.get_time_audit()
+            computer_name = system_info.get_machine_name()
+            user    = system_info.get_current_user()
+            last_f_systems = system_info.get_date_audit()
+            last_h_systems = system_info.get_time_audit()
+            last_computer_name = system_info.get_machine_name()
+            last_user    = system_info.get_current_user()
+            
             # 2. Validación básica de campos obligatorios
-            if not codigo:
+            if not code:
                 QMessageBox.warning(self, "Validación", "El Código del cliente es obligatorio.")
                 return
 
             # 3. Preparación de la consulta SQL
             sql = """
             INSERT INTO ark_clients (
-                clt_Codigo, clt_Descripcion, clt_IDfiscal, clt_Status,
-                clt_DireccionF, clt_DireccionL, clt_Telefono1, clt_Telefono2,
-                clt_Representante, clt_IDRepresentante, clt_TelefonoContacto,
-                clt_EmailContacto, clt_EmailEmpresa, clt_TipoContribuyente,
-                clt_Origen, clt_CodigoOrigen, clt_FechaCreacion
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                clt_Codigo, clt_Descripcion, clt_IDfiscal, clt_Status, clt_DireccionF, 
+                clt_DireccionL, clt_Telefono1, clt_Telefono2, clt_Representante, clt_IDRepresentante, 
+                clt_TelefonoContacto, clt_EmailContacto, clt_EmailEmpresa, clt_TipoContribuyente, clt_Origen, 
+                clt_CodigoOrigen, clt_FechaCreacion,
+                clt_SystemDate, clt_SystemTime, clt_NameMachine, clt_UserCreator,
+                clt_LastUpdateDate, clt_LastUpdateTime, clt_LastMachine, clt_UserLastUpdate
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """
 
             # 4. Tupla de parámetros (DEBE seguir el mismo orden que el INSERT)
             params = (
-                codigo, descripcion, id_fiscal, status,
-                direccion_f, direccion_l, tel1, tel2,
-                rep, id_rep, tel_cont,
-                email_cont, email_emp, tipo_cont,
-                origen, codigo_orig, fecha_crea
-            )
+                    code, description, tax_id, status, direccion_f, 
+                    direccion_l, tel1, tel2, rep, id_rep, 
+                    tel_cont, email_cont, email_emp, tipo_cont, origen, 
+                    code_orig, fecha_crea,
+                    f_system, h_system, computer_name, user, # Creación
+                    last_f_systems, last_h_systems, last_computer_name, last_user  # Última actualización
+                )
 
             # 5. Ejecución mediante el DatabaseManager
             exito = self.db_manager.execute_query(sql, params)
 
             if exito:
-                logging.info(f"Cliente guardado exitosamente: {codigo}")
-                QMessageBox.information(self, "Éxito", f"El cliente '{codigo}' ha sido registrado correctamente.")
+                logging.info(f"Cliente guardado exitosamente: {code}")
+                QMessageBox.information(self, "Éxito", f"El cliente '{code}' ha sido registrado correctamente.")
                 self.limpiar_formulario_clientes() # Función que haremos a continuación
             else:
                 QMessageBox.critical(self, "Error", "No se pudo guardar el registro en la base de datos.")
@@ -484,8 +552,8 @@ class MiApp(QMainWindow):
         Resetea todos los campos del formulario de clientes a sus valores iniciales.
         """
         # 1. Limpiar QLineEdits y QTextEdits
-        self.ui.lineEdit_clt_codigo.clear()
-        self.ui.lineEdit_clt_descripcion.clear()
+        self.ui.lineEdit_clt_code.clear()
+        self.ui.lineEdit_clt_description.clear()
         self.ui.lineEdit_clt_idfiscaliscal.clear()
         self.ui.lineEdit_clt_telefono1.clear()
         self.ui.lineEdit_clt_telefono2.clear()
@@ -507,7 +575,7 @@ class MiApp(QMainWindow):
         self.ui.dateEdit_clt_fechacreacion.setDate(QDate.currentDate())
 
         # 4. (Opcional) Poner el foco de nuevo en el primer campo
-        self.ui.lineEdit_clt_codigo.setFocus()
+        self.ui.lineEdit_clt_code.setFocus()
         
         logging.info("Formulario de clientes limpiado.")
     
@@ -520,29 +588,41 @@ class MiApp(QMainWindow):
         """
         try:
             # 1. Recolección de datos desde frm_actions_categories
-            codigo       = self.ui.lineEdit_cat_codigo.text().strip()
-            descripcion  = self.ui.lineEdit_cat_descripcion.text().strip()
-            status       = self.ui.cmb_cat_status.currentIndex()
-            descripciontec  = self.ui.textEdit_cat_descripciontec.toPlainText().strip()
-            fecha_crea   = self.ui.dateEdit_cat_fechacreacion.date().toString("yyyy-MM-dd")
+            code            = self.ui.lineEdit_cat_code.text().strip()
+            description     = self.ui.lineEdit_act_description.text().strip()
+            status          = self.ui.cmb_cat_status.currentIndex()
+            descriptiontec  = self.ui.textEdit_act_descriptiontec.toPlainText().strip()
+            create_date     = self.ui.dateEdit_act_create_date.date().toString("yyyy-MM-dd")
+            
+            # Seccion de auditoría del sistema
+            f_system        = system_info.get_date_audit()
+            h_system        = system_info.get_time_audit()
+            computer_name   = system_info.get_machine_name()
+            user            = system_info.get_current_user()
+            last_f_systems  = system_info.get_date_audit()
+            last_h_systems  = system_info.get_time_audit()
+            last_computer_name  = system_info.get_machine_name()
+            last_user           = system_info.get_current_user()
 
             # 2. Validación básica de campos obligatorios
-            if not codigo:
+            if not code:
                 QMessageBox.warning(self, "Validación", "El Código de la categoría es obligatorio.")
                 return
 
             # 3. Preparación de la consulta SQL
             sql = """
             INSERT INTO ark_action_categories (
-                cat_Codigo, cat_Descripcion, cat_Status,
-                cat_DescripcionTec, cat_FechaCreacion
-            ) VALUES (?, ?, ?, ?, ?)
+                cat_Codigo, cat_Descripcion, cat_Status, cat_DescripcionTec, cat_FechaCreacion,
+                cat_SystemDate, cat_SystemTime, cat_NameMachine, cat_UserCreator,
+                cat_LastUpdateDate, cat_LastUpdateTime, cat_LastMachine, cat_UserLastUpdate
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """
 
             # 4. Tupla de parámetros (DEBE seguir el mismo orden que el INSERT)
             params = (
-                codigo, descripcion, status,
-                descripciontec, fecha_crea
+                code, description, status,
+                descriptiontec, create_date, f_system, h_system, computer_name, user,
+                last_f_systems, last_h_systems, last_computer_name, last_user   
             )
 
             # 5. Ejecución mediante el DatabaseManager
@@ -550,8 +630,8 @@ class MiApp(QMainWindow):
             exito = self.db_manager.execute_query(sql, params)
 
             if exito:
-                logging.info(f"Categoría guardada exitosamente: {codigo}")
-                QMessageBox.information(self, "Éxito", f"La Categoría '{codigo}' ha sido registrada correctamente.")
+                logging.info(f"Categoría guardada exitosamente: {code}")
+                QMessageBox.information(self, "Éxito", f"La Categoría '{code}' ha sido registrada correctamente.")
                 self.limpiar_formulario_categories() # Función que haremos a continuación
             else:
                 QMessageBox.critical(self, "Error", "No se pudo guardar el registro en la base de datos.")
@@ -567,19 +647,97 @@ class MiApp(QMainWindow):
         Resetea todos los campos del formulario de categorías a sus valores iniciales.
         """
         # 1. Limpiar QLineEdits y QTextEdits
-        self.ui.lineEdit_cat_codigo.clear()
+        self.ui.lineEdit_cat_code.clear()
         self.ui.lineEdit_cat_descripcion.clear()
-        self.ui.textEdit_cat_descripciontec.clear()
+        self.ui.Edit_cat_descripciontec.clear()
         # 2. Resetear QComboBoxes al primer elemento (índice 0)
         self.ui.cmb_cat_status.setCurrentIndex(0)
         # 3. Resetear QDateEdit a la fecha actual
         self.ui.dateEdit_cat_fechacreacion.setDate(QDate.currentDate())
 
         # 4. (Opcional) Poner el foco de nuevo en el primer campo
-        self.ui.lineEdit_cat_codigo.setFocus()
+        self.ui.lineEdit_cat_code.setFocus()
         
         logging.info("Formulario de categorías  limpiado.")  
 
+    # ============INSERT  DE DATOS UNIDADES FUNCIONALES============
+    def guardar_functional_units(self):
+        """
+        Recopila los datos del formulario frm_functional_units e inserta
+        un nuevo registro en la tabla ark_functional_units.
+        """
+        try:
+            # 1. Recolección de datos desde frm_actions_categories
+            code          = self.ui.lineEdit_fun_code.text().strip()
+            description     = self.ui.lineEdit_fun_description.text().strip()
+            status          = self.ui.cmb_fun_status.currentIndex()
+            descriptiontec  = self.ui.textEdit_fun_descriptiontec.toPlainText().strip()
+            create_date      = self.ui.dateEdit_fun_create_date.date().toString("yyyy-MM-dd")
+            
+            
+            # Seccion de auditoría del sistema
+            f_system  = system_info.get_date_audit()
+            h_system  = system_info.get_time_audit()
+            computer_name = system_info.get_machine_name()
+            user    = system_info.get_current_user()
+            last_f_systems = system_info.get_date_audit()
+            last_h_systems = system_info.get_time_audit()
+            last_computer_name = system_info.get_machine_name()
+            last_user    = system_info.get_current_user()
+
+            # 2. Validación básica de campos obligatorios
+            if not code:
+                QMessageBox.warning(self, "Validación", "El Código de la acción es obligatorio.")
+                return
+
+            # 3. Preparación de la consulta SQL
+            sql = """
+            INSERT INTO ark_functional_units (
+                fun_Codigo, fun_Descripcion, fun_Status, fun_DescripcionTec, fun_FechaCreacion,
+                fun_SystemDate, fun_SystemTime, fun_NameMachine, fun_UserCreator,
+                fun_LastUpdateDate, fun_LastUpdateTime, fun_LastMachine, fun_UserLastUpdate
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """
+
+            # 4. Tupla de parámetros (DEBE seguir el mismo orden que el INSERT)
+            params = (
+                code, description, status, descriptiontec, create_date,
+                f_system, h_system, computer_name, user,
+                last_f_systems, last_h_systems, last_computer_name, last_user
+            )
+
+            # 5. Ejecución mediante el DatabaseManager
+            # execute_query retorna el cursor si fue exitoso, o None si falló
+            exito = self.db_manager.execute_query(sql, params)
+
+            if exito:
+                logging.info(f"Unidad guardada exitosamente: {code}")
+                QMessageBox.information(self, "Éxito", f"La Unidad '{code}' ha sido registrada correctamente.")
+                self.limpiar_formulario_functional_units() # Función que haremos a continuación
+            else:
+                QMessageBox.critical(self, "Error", "No se pudo guardar el registro en la base de datos.")
+
+        except Exception as e:
+            logging.error(f"Error crítico en guardar_currencies: {str(e)}")
+            QMessageBox.critical(self, "Error de Sistema", f"Ocurrió un error inesperado:\n{e}")
+    
+    # ============LIMPEZA DE FORMULARIO UNIDADES FUNCIONALES============
+    def limpiar_formulario_functional_units(self):
+        """
+        Resetea todos los campos del formulario de monedas a sus valores iniciales.
+        """
+        # 1. Limpiar QLineEdits y QTextEdits
+        self.ui.lineEdit_fun_code.clear()
+        self.ui.lineEdit_fun_description.clear()
+        self.ui.textEdit_fun_descriptiontec.clear()
+        self.ui.cmb_fun_status.setCurrentIndex(0)
+        self.ui.dateEdit_fun_create_date.setDate(QDate.currentDate())
+
+        # 5. (Opcional) Poner el foco de nuevo en el primer campo
+        self.ui.lineEdit_fun_code.setFocus()
+        
+        logging.info("Formulario de unidades limpiado.")
+    
     # ============INSERT DE DATOS ACCIONES============
     
     def guardar_acciones(self):
@@ -589,30 +747,44 @@ class MiApp(QMainWindow):
         """
         try:
             # 1. Recolección de datos desde frm_actions_categories
-            codigo       = self.ui.lineEdit_act_codigo.text().strip()
-            descripcion  = self.ui.lineEdit_act_descripcion.text().strip()
-            status       = self.ui.cmb_act_status.currentIndex()
-            descripciontec  = self.ui.textEdit_act_descripciontec.toPlainText().strip()
-            categoria    = self.id_categoria_actual  # ID de la categoría vinculada            
-            fecha_crea   = self.ui.dateEdit_act_fechacreacion.date().toString("yyyy-MM-dd")
+            code            = self.ui.lineEdit_act_code.text().strip()
+            description     = self.ui.lineEdit_act_description.text().strip()
+            status          = self.ui.cmb_act_status.currentIndex()
+            descriptiontec  = self.ui.textEdit_act_descriptiontec.toPlainText().strip()
+            categoria       = self.id_categoria_seleccionada  # ID de la categoría vinculada            
+            create_date     = self.ui.dateEdit_act_create_date.date().toString("yyyy-MM-dd")
+            
+            # Seccion de auditoría del sistema
+            f_system  = system_info.get_date_audit()
+            h_system  = system_info.get_time_audit()
+            computer_name = system_info.get_machine_name()
+            user    = system_info.get_current_user()
+            last_f_systems = system_info.get_date_audit()
+            last_h_systems = system_info.get_time_audit()
+            last_computer_name = system_info.get_machine_name()
+            last_user    = system_info.get_current_user()
 
             # 2. Validación básica de campos obligatorios
-            if not codigo:
+            if not code:
                 QMessageBox.warning(self, "Validación", "El Código de la acción es obligatorio.")
                 return
 
             # 3. Preparación de la consulta SQL
             sql = """
             INSERT INTO ark_actions (
-                act_Codigo, act_Descripcion, act_Status,
-                act_DescripcionTec, id_category, act_FechaCreacion
-            ) VALUES (?, ?, ?, ?, ?, ?)
+                act_Codigo, act_Descripcion, act_Status, act_DescripcionTec,
+                id_category, act_FechaCreacion,
+                act_SystemDate, act_SystemTime, act_NameMachine, act_UserCreator,
+                act_LastUpdateDate, act_LastUpdateTime, act_LastMachine, act_UserLastUpdate
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """
 
             # 4. Tupla de parámetros (DEBE seguir el mismo orden que el INSERT)
             params = (
-                codigo, descripcion, status,
-                descripciontec, categoria, fecha_crea
+                code, description, status,
+                descriptiontec, categoria, fecha_crea,
+                f_system, h_system, computer_name, user,
+                last_f_systems, last_h_systems, last_computer_name, last_user
             )
 
             # 5. Ejecución mediante el DatabaseManager
@@ -620,8 +792,8 @@ class MiApp(QMainWindow):
             exito = self.db_manager.execute_query(sql, params)
 
             if exito:
-                logging.info(f"Acción guardada exitosamente: {codigo}")
-                QMessageBox.information(self, "Éxito", f"La Acción '{codigo}' ha sido registrada correctamente.")
+                logging.info(f"Acción guardada exitosamente: {code}")
+                QMessageBox.information(self, "Éxito", f"La Acción '{code}' ha sido registrada correctamente.")
                 self.limpiar_formulario_accion() # Función que haremos a continuación
             else:
                 QMessageBox.critical(self, "Error", "No se pudo guardar el registro en la base de datos.")
@@ -637,9 +809,9 @@ class MiApp(QMainWindow):
         Resetea todos los campos del formulario de acciones a sus valores iniciales.
         """
         # 1. Limpiar QLineEdits y QTextEdits
-        self.ui.lineEdit_act_codigo.clear()
-        self.ui.lineEdit_act_descripcion.clear()
-        self.ui.textEdit_act_descripciontec.clear()
+        self.ui.lineEdit_act_code.clear()
+        self.ui.lineEdit_act_description.clear()
+        self.ui.textEdit_act_descriptiontec.clear()
         self.ui.lineEdit_id_category.clear()
         # 2. Resetear QComboBoxes al primer elemento (índice 0)
         self.ui.cmb_act_status.setCurrentIndex(0)
@@ -647,10 +819,261 @@ class MiApp(QMainWindow):
         self.ui.dateEdit_act_fechacreacion.setDate(QDate.currentDate())
 
         # 4. (Opcional) Poner el foco de nuevo en el primer campo
-        self.ui.lineEdit_act_codigo.setFocus()
+        self.ui.lineEdit_act_code.setFocus()
         
         logging.info("Formulario de acciones limpiado.")  
                   
+    # ============INSERT  DE DATOS CURRENCIES============
+    def guardar_currencies(self):
+        """
+        Recopila los datos del formulario frm_currencies e inserta
+        un nuevo registro en la tabla ark_currencies.
+        """
+        try:
+            # 1. Recolección de datos desde frm_actions_categories
+            code          = self.ui.lineEdit_mda_code.text().strip()
+            description     = self.ui.lineEdit_mda_description.text().strip()
+            status          = self.ui.cmb_mda_status.currentIndex()
+            iso4217         = self.ui.cmb_mda_iso4217.currentIndex()
+            simbolo         = self.ui.cmb_mda_simbolo.currentText()
+            operador        = self.ui.cmb_mda_operator.currentIndex()
+            fecha_crea      = self.ui.dateEdit_mda_fechacreacion.date().toString("yyyy-MM-dd")
+            fecha_update    = self.ui.dateEdit_mda_fechaactualizacion.date().toString("yyyy-MM-dd")
+            fecha_lastup    = self.ui.dateEdit_mda_fechaactualizacion.date().toString("yyyy-MM-dd")
+            factor_activo   = self.ui.dsb_mda_factoractivo.value()
+            factor_pasivo   = self.ui.dsb_mda_factorpasivo.value()
+            
+            # Seccion de auditoría del sistema
+            f_system  = system_info.get_date_audit()
+            h_system  = system_info.get_time_audit()
+            computer_name = system_info.get_machine_name()
+            user    = system_info.get_current_user()
+            last_f_systems = system_info.get_date_audit()
+            last_h_systems = system_info.get_time_audit()
+            last_computer_name = system_info.get_machine_name()
+            last_user    = system_info.get_current_user()
+            
+
+            # 2. Validación básica de campos obligatorios
+            if not code:
+                QMessageBox.warning(self, "Validación", "El Código de la acción es obligatorio.")
+                return
+
+            # 3. Preparación de la consulta SQL
+            sql = """
+            INSERT INTO ark_currencies (
+                mda_Codigo, mda_Descripcion, mda_Status, mda_ISO4217, mda_Simbolo, 
+                mda_OperadorCalculo, mda_FechaCreacion, mda_FechaActualizacion, mda_FechaUltima, mda_FactorActivo, 
+                mda_FactorPasivo,
+                mda_SystemDate, mda_SystemTime, mda_NameMachine, mda_UserCreator,
+                mda_LastUpdateDate, mda_LastUpdateTime, mda_LastMachine, mda_UserLastUpdate
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """
+
+            # 4. Tupla de parámetros (DEBE seguir el mismo orden que el INSERT)
+            params = (
+                code, description, status, iso4217, simbolo, operador,
+                fecha_crea, fecha_update, fecha_lastup, factor_activo, factor_pasivo,
+                f_system, h_system, computer_name, user,
+                last_f_systems, last_h_systems, last_computer_name, last_user
+            )
+
+            # 5. Ejecución mediante el DatabaseManager
+            # execute_query retorna el cursor si fue exitoso, o None si falló
+            exito = self.db_manager.execute_query(sql, params)
+
+            if exito:
+                logging.info(f"Moneda guardada exitosamente: {code}")
+                QMessageBox.information(self, "Éxito", f"La Moneda '{code}' ha sido registrada correctamente.")
+                self.limpiar_formulario_currencies() # Función que haremos a continuación
+            else:
+                QMessageBox.critical(self, "Error", "No se pudo guardar el registro en la base de datos.")
+
+        except Exception as e:
+            logging.error(f"Error crítico en guardar_currencies: {str(e)}")
+            QMessageBox.critical(self, "Error de Sistema", f"Ocurrió un error inesperado:\n{e}")
+    
+    # ============LIMPEZA DE FORMULARIO MONEDAS============
+    def limpiar_formulario_currencies(self):
+        """
+        Resetea todos los campos del formulario de monedas a sus valores iniciales.
+        """
+        # 1. Limpiar QLineEdits y QTextEdits
+        self.ui.lineEdit_mda_code.clear()
+        self.ui.lineEdit_mda_description.clear()
+        # 2. Resetear QComboBoxes al primer elemento (índice 0)
+        self.ui.cmb_mda_status.setCurrentIndex(0)
+        self.ui.cmb_mda_iso4217.setCurrentIndex(0)
+        self.ui.cmb_mda_simbolo.setCurrentIndex(0)
+        self.ui.cmb_mda_operator.setCurrentIndex(0)
+        # 3. Resetear QDateEdit a la fecha actual
+        self.ui.dateEdit_mda_fechacreacion.setDate(QDate.currentDate())
+        self.ui.dateEdit_mda_fechaactualizacion.setDate(QDate.currentDate())
+
+        # 4. Resetear QDoubleSpinBox a 0.00
+        self.ui.dsb_mda_factoractivo.setValue(0.00)
+        self.ui.dsb_mda_factorpasivo.setValue(0.00)
+
+        # 5. (Opcional) Poner el foco de nuevo en el primer campo
+        self.ui.lineEdit_mda_code.setFocus()
+        
+        logging.info("Formulario de monedas limpiado.")
+         
+    # ============INSERT  DE TIPOS DISPOSITIVOS============
+    def guardar_device_types(self):
+        """
+        Recopila los datos del formulario frm_device_types e inserta
+        un nuevo registro en la tabla ark_device_types.
+        """
+        try:
+            # 1. Recolección de datos desde frm_device_types
+            code          = self.ui.lineEdit_dty_code.text().strip()
+            description     = self.ui.lineEdit_dty_description.text().strip()
+            status          = self.ui.cmb_dty_status.currentIndex()
+            descriptiontec  = self.ui.textEdit_dty_descriptiontec.toPlainText().strip()
+            fecha_crea      = self.ui.dateEdit_dty_fechacreacion.date().toString("yyyy-MM-dd")
+
+            # Seccion de auditoría del sistema
+            f_system  = system_info.get_date_audit()
+            h_system  = system_info.get_time_audit()
+            computer_name = system_info.get_machine_name()
+            user    = system_info.get_current_user()
+            last_f_systems = system_info.get_date_audit()
+            last_h_systems = system_info.get_time_audit()
+            last_computer_name = system_info.get_machine_name()
+            last_user    = system_info.get_current_user()
+
+            # 2. Validación básica de campos obligatorios
+            if not code:
+                QMessageBox.warning(self, "Validación", "El Código del tipo de dispositivo es obligatorio.")
+                return
+
+            # 3. Preparación de la consulta SQL
+            sql = """
+            INSERT INTO ark_device_types (
+                dty_Codigo, dty_Descripcion, dty_Status, dty_DescripcionTec, dty_FechaCreacion, 
+                dty_SystemDate, dty_SystemTime, dty_NameMachine, dty_UserCreator,
+                dty_LastUpdateDate, dty_LastUpdateTime, dty_LastMachine, dty_UserLastUpdate
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """
+            # 4. Tupla de parámetros (DEBE seguir el mismo orden que el INSERT)
+            params = ( code, description, status, descriptiontec, fecha_crea,
+                f_system, h_system, computer_name, user,
+                last_f_systems, last_h_systems, last_computer_name, last_user
+            )
+            # 5. Ejecución mediante el DatabaseManager
+            # execute_query retorna el cursor si fue exitoso, o None si falló
+            exito = self.db_manager.execute_query(sql, params)
+            if exito:
+                logging.info(f"Tipo de dispositivo guardado exitosamente: {code}")
+                QMessageBox.information(self, "Éxito", f"El Tipo de Dispositivo '{code}' ha sido registrado correctamente.")
+                self.limpiar_formulario_device_types() # Función que haremos a continuación
+            else:
+                QMessageBox.critical(self, "Error", "No se pudo guardar el registro en la base de datos.")  
+        except Exception as e:
+            logging.error(f"Error crítico en guardar_device_types: {str(e)}")
+            QMessageBox.critical(self, "Error de Sistema", f"Ocurrió un error inesperado:\n{e}")
+                
+    # ============LIMPEZA DE FORMULARIO TIPOS DISPOSITIVOS============
+    def limpiar_formulario_device_types(self):  
+        """
+        Resetea todos los campos del formulario de tipos de dispositivos a sus valores iniciales.
+        """
+        # 1. Limpiar QLineEdits y QTextEdits
+        self.ui.lineEdit_dty_code.clear()
+        self.ui.lineEdit_dty_description.clear()
+        self.ui.textEdit_dty_descriptiontec.clear()
+        # 2. Resetear QComboBoxes al primer elemento (índice 0)
+        self.ui.cmb_dty_status.setCurrentIndex(0)
+        # 3. Resetear QDateEdit a la fecha actual
+        self.ui.dateEdit_dty_fechacreacion.setDate(QDate.currentDate())
+        # 4. (Opcional) Poner el foco de nuevo en el primer campo
+        self.ui.lineEdit_dty_code.setFocus()
+        logging.info("Formulario de tipos de dispositivos limpiado.")
+    
+    # ============INSERT  DE EMPLEADOS============
+    def guardar_employees(self):
+        """
+        Recopila los datos del formulario frm_employees e inserta
+        un nuevo registro en la tabla ark_employees.
+        """
+        try:
+            # 1. Recolección de datos desde frm_employees
+            code          = self.ui.lineEdit_emy_code.text().strip()
+            description     = self.ui.lineEdit_emy_description.text().strip()
+            status          = self.ui.cmb_emy_status.currentIndex()
+            cedula          = self.ui.lineEdit_emy_idemployees.text().strip()
+            telefono1       = self.ui.lineEdit_emy_telefono1.text().strip()
+            Cargo           = self.ui.lineEdit_emy_cargo.text().strip()
+            Clientes        = self.id_cliente_seleccionado  # ID dek cliente vinculado
+            Rol             = self.ui.lineEdit_emy_rol.text().strip()   
+            email           = self.ui.lineEdit_emy_emailuser.text().strip()
+            Password        = self.ui.lineEdit_emy_password.text().strip()
+            fecha_crea      = self.ui.dateEdit_emy_fechacreacion.date().toString("yyyy-MM-dd")
+
+            # Seccion de auditoría del sistema
+            f_system  = system_info.get_date_audit()
+            h_system  = system_info.get_time_audit()
+            computer_name = system_info.get_machine_name()
+            user    = system_info.get_current_user()
+            last_f_systems = system_info.get_date_audit()
+            last_h_systems = system_info.get_time_audit()
+            last_computer_name = system_info.get_machine_name()
+            last_user    = system_info.get_current_user()
+
+            # 2. Validación básica de campos obligatorios
+            if not code:
+                QMessageBox.warning(self, "Validación", "El Código del empleado es obligatorio.")
+                return
+
+            # 3. Preparación de la consulta SQL
+            sql = """
+            INSERT INTO ark_employees (
+                emp_Codigo, emp_Descripcion, emp_Status, emp_FechaCreacion, 
+                emp_SystemDate, emp_SystemTime, emp_NameMachine, emp_UserCreator,
+                emp_LastUpdateDate, emp_LastUpdateTime, emp_LastMachine, emp_UserLastUpdate
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """
+            # 4. Tupla de parámetros (DEBE seguir el mismo orden que el INSERT)
+            params = ( code, description, status, fecha_crea, 
+                f_system, h_system, computer_name, user,
+                last_f_systems, last_h_systems, last_computer_name, last_user
+            )
+            # 5. Ejecución mediante el DatabaseManager
+            # execute_query retorna el cursor si fue exitoso, o None si falló   
+            cursor = self.db_manager.execute_query(sql, params)
+            if cursor:
+                QMessageBox.information(self, "Éxito", "Empleado guardado correctamente.")
+                logging.info("Empleado guardado exitosamente.")
+            else:
+                QMessageBox.critical(self, "Error", "No se pudo guardar el empleado.")
+                logging.error("Error al guardar el empleado.")
+        except Exception as e:
+            logging.error(f"Error crítico en guardar_employees: {str(e)}")
+            QMessageBox.critical(self, "Error de Sistema", f"Ocurrió un error inesperado:\n{e}")    
+    # ============LIMPEZA DE FORMULARIO EMPLEADOS============
+    def limpiar_formulario_employees(self): 
+        """
+        Resetea todos los campos del formulario de empleados a sus valores iniciales.
+        """
+        # 1. Limpiar QLineEdits y QTextEdits
+        self.ui.lineEdit_emy_code.clear()
+        self.ui.lineEdit_emy_description.clear()
+        self.ui.lineEdit_emy_idemployees.clear()
+        self.ui.lineEdit_emy_telefono1.clear()
+        self.ui.lineEdit_emy_cargo.clear()
+        self.ui.lineEdit_emy_rol.clear()
+        self.ui.lineEdit_emy_emailuser.clear()
+        self.ui.lineEdit_emy_password.clear()
+        # 2. Resetear QComboBoxes al primer elemento (índice 0)
+        self.ui.cmb_emy_status.setCurrentIndex(0)
+        # 3. Resetear QDateEdit a la fecha actual
+        self.ui.dateEdit_emy_fechacreacion.setDate(QDate.currentDate())
+        # 4. (Opcional) Poner el foco de nuevo en el primer campo
+        self.ui.lineEdit_emy_code.setFocus()
+        logging.info("Formulario de empleados limpiado.")
+    
+
     # ==================================FIN INSERT DE DATOS==================================
     
     # ==============================ACTIVACION DE BUSCADORES=================================
@@ -675,10 +1098,24 @@ class MiApp(QMainWindow):
         # 2. Llamamos al motor genérico
         id_sel, texto_sel = self.ejecutar_buscador_generico("Categorías de Acciones", sql, columnas)
         
-        # 3. Si el usuario eligió algo, actualizamos la App
+        # 3. Si el user eligió algo, actualizamos la App
         if id_sel is not None:
-            self.id_categoria_actual = id_sel
+            self.id_categoria_selecconada = id_sel
             self.ui.lineEdit_id_category.setText(texto_sel)
+            logging.info(f"Buscador: Seleccionado ID {id_sel}")
+    
+    def abrir_buscador_clientes(self):
+        # 1. Definimos la configuración específica
+        sql = "SELECT clt_IDauto, clt_Codigo, clt_Descripcion FROM ark_clients WHERE clt_Status = 0"
+        columnas = ["ID", "Código", "Descripción"]
+        
+        # 2. Llamamos al motor genérico
+        id_sel, texto_sel = self.ejecutar_buscador_generico("Clientes", sql, columnas)
+        
+        # 3. Si el user eligió algo, actualizamos la App
+        if id_sel is not None:
+            self.id_cliente_seleccionado = id_sel
+            self.ui.lineEdit_id_cliente.setText(texto_sel)
             logging.info(f"Buscador: Seleccionado ID {id_sel}")
                 
        
@@ -733,7 +1170,7 @@ class MiApp(QMainWindow):
     # ------------------ MOSTRAR MENSAJE DE CONFIRMACIÓN ------------------
     def show_notification(self, title, message, is_error=False):
         """
-        Muestra un mensaje informativo o de error al usuario.
+        Muestra un mensaje informativo o de error al user.
         """
         msg = QMessageBox(self)
         msg.setWindowTitle(title)
@@ -769,7 +1206,7 @@ class MiApp(QMainWindow):
                 self.show_notification("Error", f"No se pudo aplicar la configuración: {e}", is_error=True)
     
     def confirmar_accion_cancelar(self):
-        """Muestra el cuadro de diálogo y retorna True si el usuario confirma."""
+        """Muestra el cuadro de diálogo y retorna True si el user confirma."""
         respuesta = QMessageBox.question(
             self, 
             "Confirmar Cancelación", 
@@ -962,7 +1399,7 @@ class MiApp(QMainWindow):
 
     def mover_ventana(self, event):
         """
-        Permite mover la ventana cuando el usuario arrastra el mouse sobre el frame superior.
+        Permite mover la ventana cuando el user arrastra el mouse sobre el frame superior.
         """
         if not self.isMaximized():
             if event.buttons() == Qt.MouseButton.LeftButton:
@@ -1153,7 +1590,7 @@ class MiApp(QMainWindow):
         """
         logging.info("Se ha solicitado cambiar la configuración regional.")
         # Define una función anónima (lambda) para la acción.
-        # Esta es la función que confirm_action ejecutará si el usuario dice "Sí".
+        # Esta es la función que confirm_action ejecutará si el user dice "Sí".
         accion_a_ejecutar = lambda: self.ejecutar_cambios_y_notificar()
         
         # Llama a la función de confirmación, pasando el mensaje y la acción
@@ -1166,7 +1603,7 @@ class MiApp(QMainWindow):
     def ejecutar_cambios_y_notificar(self):
         """
         Esta función realiza los cambios y notifica el resultado.
-        Es llamada por confirm_action después de que el usuario confirma.
+        Es llamada por confirm_action después de que el user confirma.
         """
         try:
             logging.info("Iniciando proceso de cambio de configuración regional.")

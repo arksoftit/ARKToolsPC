@@ -397,6 +397,9 @@ def get_os_info():
     info_str += f"Plataforma: {platform.platform()}\n"
     info_str += f"Número de procesadores lógicos: {os.cpu_count()}\n"
     info_str += f"Versión de Python: {platform.python_version()}\n"
+    ahora = datetime.now()
+    info_str += f"Fecha de consulta: {ahora.strftime('%d/%m/%Y')}\n"
+    info_str += f"Hora de consulta: {ahora.strftime('%H:%M:%S')}\n"
     info_str += "-" * 50 + "\n"
 
     # Información adicional en Windows
@@ -562,3 +565,21 @@ def show_regional_and_datetime():
     info_regional = get_regional_settings()
     info_datetime = show_current_datetime()
     return info_regional + info_datetime
+
+# --- FUNCIONES DE AUDITORÍA PARA BASE DE DATOS ---
+
+def get_machine_name():
+    """Retorna el nombre de red del equipo."""
+    return platform.node()
+
+def get_current_user():
+    """Retorna el usuario actual de la sesión de OS."""
+    return os.getlogin()
+
+def get_date_audit():
+    """Retorna la fecha actual en formato YYYY-MM-DD para SQLite."""
+    return datetime.now().strftime("%Y-%m-%d")
+
+def get_time_audit():
+    """Retorna la hora actual en formato HH:MM:SS para SQLite."""
+    return datetime.now().strftime("%H:%M:%S")

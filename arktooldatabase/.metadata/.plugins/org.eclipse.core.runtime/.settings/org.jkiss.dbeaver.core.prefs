@@ -3,4 +3,5 @@ driver.selector.orderBy=score
 eclipse.preferences.version=1
 resultset.presentation.active=spreadsheet
 tipOfTheDayInitializer.notFirstRun=true
-ui.auto.update.check.time=1768671300204
+ui.auto.update.check.time=1775515332180
+ui.show.tip.of.the.day.on.startup=false

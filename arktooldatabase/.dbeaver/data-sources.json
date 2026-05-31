@@ -7,8 +7,8 @@
 			"name": "ArkToolsBD.sqlite",
 			"save-password": true,
 			"configuration": {
-				"database": "S:\\Desarrollos\\MyPython\\PySide6\\ARKToolsPC\\arktooldatabase\\ArkToolsBD.sqlite",
-				"url": "jdbc:sqlite:S:\\Desarrollos\\MyPython\\PySide6\\ARKToolsPC\\arktooldatabase\\ArkToolsBD.sqlite",
+				"database": "H:\\Desarrollos\\MyPython\\PySide6\\ARKToolsPC\\arktooldatabase\\ArkToolsBD.sqlite",
+				"url": "jdbc:sqlite:H:\\Desarrollos\\MyPython\\PySide6\\ARKToolsPC\\arktooldatabase\\ArkToolsBD.sqlite",
 				"configurationType": "MANUAL",
 				"type": "dev",
 				"closeIdleConnection": true,

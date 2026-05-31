@@ -165,6 +165,8 @@ def get_gpu_info():
             info_str += f"Fabricante: {gpu.AdapterCompatibility}\n"
             info_str += f"Tipo de dispositivo: {gpu.VideoProcessor}\n"
             info_str += f"Versión del controlador: {gpu.DriverVersion}\n"
+            pnp_id = getattr(gpu, 'PNPDeviceID', 'No disponible')
+            info_str += f"Identificador Único (PNPDeviceID): {pnp_id}\n"
             ram_gb = round(int(gpu.AdapterRAM) / (1024**3), 2)
             info_str += f"Memoria dedicada: {ram_gb} GB\n"
             info_str += "-" * 40 + "\n"

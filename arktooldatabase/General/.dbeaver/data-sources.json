@@ -7,8 +7,8 @@
 			"name": "ArkToolsBD.sqlite",
 			"save-password": true,
 			"configuration": {
-				"database": "S:\\Desarrollos\\MyPython\\PySide6\\ARKToolsPC\\arktooldatabase\\ArkToolsBD.sqlite",
-				"url": "jdbc:sqlite:S:\\Desarrollos\\MyPython\\PySide6\\ARKToolsPC\\arktooldatabase\\ArkToolsBD.sqlite",
+				"database": "H:\\Desarrollos\\MyPython\\PySide6\\ARKToolsPC\\arktooldatabase\\ArkToolsBD.sqlite",
+				"url": "jdbc:sqlite:H:\\Desarrollos\\MyPython\\PySide6\\ARKToolsPC\\arktooldatabase\\ArkToolsBD.sqlite",
 				"configurationType": "MANUAL",
 				"type": "dev",
 				"closeIdleConnection": true
@@ -31,6 +31,19 @@
 					"@dbeaver-show-all-dbs@": "true"
 				},
 				"auth-model": "native"
+			}
+		},
+		"sqlite_jdbc-19c67f1ef20-58f380403929a8e": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "arkcogenDB.sqlite",
+			"save-password": true,
+			"configuration": {
+				"database": "H:\\Desarrollos\\MyPython\\PySide6\\ArkCodeGenerator\\arkcogendatabase\\arkcogenDB.sqlite",
+				"url": "jdbc:sqlite:H:\\Desarrollos\\MyPython\\PySide6\\ArkCodeGenerator\\arkcogendatabase\\arkcogenDB.sqlite",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true
 			}
 		}
 	},

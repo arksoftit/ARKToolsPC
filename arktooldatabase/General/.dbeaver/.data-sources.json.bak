@@ -7,11 +7,30 @@
 			"name": "ArkToolsBD.sqlite",
 			"save-password": true,
 			"configuration": {
-				"database": "S:\\Desarrollos\\MyPython\\PySide6\\ARKToolsPC\\arktooldatabase\\ArkToolsBD.sqlite",
-				"url": "jdbc:sqlite:S:\\Desarrollos\\MyPython\\PySide6\\ARKToolsPC\\arktooldatabase\\ArkToolsBD.sqlite",
+				"database": "H:\\Desarrollos\\MyPython\\PySide6\\ARKToolsPC\\arktooldatabase\\ArkToolsBD.sqlite",
+				"url": "jdbc:sqlite:H:\\Desarrollos\\MyPython\\PySide6\\ARKToolsPC\\arktooldatabase\\ArkToolsBD.sqlite",
 				"configurationType": "MANUAL",
 				"type": "dev",
 				"closeIdleConnection": true
+			}
+		},
+		"mariaDB-19bca17c439-14bc9eb9e6bd0032": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "NAUTILUS",
+			"save-password": true,
+			"configuration": {
+				"host": "192.168.120.169",
+				"port": "3306",
+				"database": "NAUTILUS",
+				"url": "jdbc:mariadb://192.168.120.169:3306/NAUTILUS",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"provider-properties": {
+					"@dbeaver-show-all-dbs@": "true"
+				},
+				"auth-model": "native"
 			}
 		}
 	},

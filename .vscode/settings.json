@@ -1,5 +1,5 @@
 {
-    "python-envs.pythonProjects": [],
-    "python.defaultInterpreterPath": "S:/Desarrollos/MyPython/PySide6/ARKToolsPC/venv_pyside6/Scripts/python.exe"
+    "python.defaultInterpreterPath": "H:\\Desarrollos\\MyPython\\PySide6\\ARKToolsPC\\venv_pyside6\\Scripts",
+    "editor.codeActionsOnSave": {}
 
 }

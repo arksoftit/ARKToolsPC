@@ -706,3 +706,130 @@ java.net.ConnectException: Connection timed out: getsockopt
 	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:99)
 	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:110)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2026-07-01 08:35:32.616 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.8
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es
+Framework arguments:  -eclipse.keyring C:\Users\juanep\AppData\Roaming\DBeaverData\secure\secure_storage
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -eclipse.keyring C:\Users\juanep\AppData\Roaming\DBeaverData\secure\secure_storage
+
+!ENTRY org.eclipse.ui 2 2 2026-07-01 08:35:40.246
+!MESSAGE Invalid preference category path: org.eclipse.debug.ui.ConsolePreferencePage (bundle: org.eclipse.ui.console, page: org.eclipse.ui.internal.console.ansi.preferences.AnsiConsolePreferencePage)
+!SESSION 2026-07-01 09:30:42.014 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.10
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es
+Framework arguments:  -eclipse.keyring C:\Users\juanep\AppData\Roaming\DBeaverData\secure\secure_storage
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -eclipse.keyring C:\Users\juanep\AppData\Roaming\DBeaverData\secure\secure_storage
+
+!ENTRY org.eclipse.ui 2 2 2026-07-01 09:30:50.457
+!MESSAGE Invalid preference category path: org.eclipse.debug.ui.ConsolePreferencePage (bundle: org.eclipse.ui.console, page: org.eclipse.ui.internal.console.ansi.preferences.AnsiConsolePreferencePage)
+!SESSION 2026-09-11 16:54:32.723 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=25.0.3
+java.vendor=Microsoft
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es
+Framework arguments:  -eclipse.keyring C:\Users\juanep\AppData\Roaming\DBeaverData\secure\secure_storage
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -eclipse.keyring C:\Users\juanep\AppData\Roaming\DBeaverData\secure\secure_storage
+
+!ENTRY org.eclipse.ui 2 2 2026-09-11 16:54:58.365
+!MESSAGE Invalid preference category path: org.eclipse.debug.ui.ConsolePreferencePage (bundle: org.eclipse.ui.console, page: org.eclipse.ui.internal.console.ansi.preferences.AnsiConsolePreferencePage)
+
+!ENTRY org.jkiss.dbeaver.model 2 0 2026-09-11 16:55:49.898
+!MESSAGE org.jkiss.dbeaver.DBDatabaseException: SQL Error [1]: [SQLITE_ERROR] SQL error or missing database (no such table: main.ark_transacciones)
+!SUBENTRY 1 org.jkiss.dbeaver.model 2 0 2026-09-11 16:55:49.898
+!MESSAGE SQL Error [1]: [SQLITE_ERROR] SQL error or missing database (no such table: main.ark_transacciones)
+!SUBENTRY 2 org.jkiss.dbeaver.model 2 0 2026-09-11 16:55:49.898
+!MESSAGE [SQLITE_ERROR] SQL error or missing database (no such table: main.ark_transacciones)
+!STACK 0
+org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: main.ark_transacciones)
+	at org.sqlite.core.DB.newSQLException(DB.java:1182)
+	at org.sqlite.core.DB.newSQLException(DB.java:1193)
+	at org.sqlite.core.DB.throwex(DB.java:1153)
+	at org.sqlite.core.NativeDB.prepare_utf8(Native Method)
+	at org.sqlite.core.NativeDB.prepare(NativeDB.java:135)
+	at org.sqlite.core.DB.prepare(DB.java:265)
+	at org.sqlite.jdbc3.JDBC3Statement.lambda$executeQuery$1(JDBC3Statement.java:87)
+	at org.sqlite.jdbc3.JDBC3Statement.withConnectionTimeout(JDBC3Statement.java:464)
+	at org.sqlite.jdbc3.JDBC3Statement.executeQuery(JDBC3Statement.java:85)
+	at org.sqlite.jdbc3.JDBC3DatabaseMetaData.getColumns(JDBC3DatabaseMetaData.java:982)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCDatabaseMetaDataImpl.lambda$getColumns$0(JDBCDatabaseMetaDataImpl.java:899)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCDatabaseMetaDataImpl.makeResultSet(JDBCDatabaseMetaDataImpl.java:75)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCDatabaseMetaDataImpl.getColumns(JDBCDatabaseMetaDataImpl.java:898)
+	at org.jkiss.dbeaver.ext.generic.model.meta.GenericMetaModel.prepareTableColumnLoadStatement(GenericMetaModel.java:752)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.prepareChildrenStatement(TableCache.java:86)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.prepareChildrenStatement(TableCache.java:36)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:95)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.getChildren(JDBCStructCache.java:212)
+	at org.jkiss.dbeaver.ext.generic.model.GenericTableBase.getAttributes(GenericTableBase.java:209)
+	at org.jkiss.dbeaver.ext.generic.model.GenericTableBase.getConstraints(GenericTableBase.java:252)
+	at org.jkiss.dbeaver.ext.generic.model.GenericTableBase.getConstraints(GenericTableBase.java:59)
+	at org.jkiss.dbeaver.model.virtual.DBVUtils.getAllConstraints(DBVUtils.java:333)
+	at org.jkiss.dbeaver.model.erd.ERDContentProviderDefault.getAllKeys(ERDContentProviderDefault.java:217)
+	at org.jkiss.dbeaver.model.erd.ERDContentProviderDefault.fillEntityFromObject(ERDContentProviderDefault.java:84)
+	at org.jkiss.dbeaver.ui.editors.erd.model.ERDContentProviderDecorated.fillEntityFromObject(ERDContentProviderDecorated.java:62)
+	at org.jkiss.dbeaver.model.erd.ERDUtils.makeEntityFromObject(ERDUtils.java:151)
+	at org.jkiss.dbeaver.model.erd.ERDDiagram.fillEntities(ERDDiagram.java:322)
+	at org.jkiss.dbeaver.ui.editors.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:261)
+	at org.jkiss.dbeaver.ui.editors.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:179)
+	at org.jkiss.dbeaver.ui.editors.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:99)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:110)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2026-09-11 16:57:07.491
+!MESSAGE No export format correspond to file extension 'sqlite'
+
+!ENTRY org.jkiss.dbeaver.model 2 0 2026-09-11 16:58:48.496
+!MESSAGE org.jkiss.dbeaver.DBDatabaseException: SQL Error [1]: [SQLITE_ERROR] SQL error or missing database (no such table: main.ark_transacciones)
+!SUBENTRY 1 org.jkiss.dbeaver.model 2 0 2026-09-11 16:58:48.496
+!MESSAGE SQL Error [1]: [SQLITE_ERROR] SQL error or missing database (no such table: main.ark_transacciones)
+!SUBENTRY 2 org.jkiss.dbeaver.model 2 0 2026-09-11 16:58:48.496
+!MESSAGE [SQLITE_ERROR] SQL error or missing database (no such table: main.ark_transacciones)
+!STACK 0
+org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: main.ark_transacciones)
+	at org.sqlite.core.DB.newSQLException(DB.java:1182)
+	at org.sqlite.core.DB.newSQLException(DB.java:1193)
+	at org.sqlite.core.DB.throwex(DB.java:1153)
+	at org.sqlite.core.NativeDB.prepare_utf8(Native Method)
+	at org.sqlite.core.NativeDB.prepare(NativeDB.java:135)
+	at org.sqlite.core.DB.prepare(DB.java:265)
+	at org.sqlite.jdbc3.JDBC3Statement.lambda$executeQuery$1(JDBC3Statement.java:87)
+	at org.sqlite.jdbc3.JDBC3Statement.withConnectionTimeout(JDBC3Statement.java:464)
+	at org.sqlite.jdbc3.JDBC3Statement.executeQuery(JDBC3Statement.java:85)
+	at org.sqlite.jdbc3.JDBC3DatabaseMetaData.getColumns(JDBC3DatabaseMetaData.java:982)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCDatabaseMetaDataImpl.lambda$getColumns$0(JDBCDatabaseMetaDataImpl.java:899)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCDatabaseMetaDataImpl.makeResultSet(JDBCDatabaseMetaDataImpl.java:75)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCDatabaseMetaDataImpl.getColumns(JDBCDatabaseMetaDataImpl.java:898)
+	at org.jkiss.dbeaver.ext.generic.model.meta.GenericMetaModel.prepareTableColumnLoadStatement(GenericMetaModel.java:752)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.prepareChildrenStatement(TableCache.java:86)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.prepareChildrenStatement(TableCache.java:36)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:95)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.getChildren(JDBCStructCache.java:212)
+	at org.jkiss.dbeaver.ext.generic.model.GenericTableBase.getAttributes(GenericTableBase.java:209)
+	at org.jkiss.dbeaver.ext.generic.model.GenericTableBase.getConstraints(GenericTableBase.java:252)
+	at org.jkiss.dbeaver.ext.generic.model.GenericTableBase.getConstraints(GenericTableBase.java:59)
+	at org.jkiss.dbeaver.model.virtual.DBVUtils.getAllConstraints(DBVUtils.java:333)
+	at org.jkiss.dbeaver.model.erd.ERDContentProviderDefault.getAllKeys(ERDContentProviderDefault.java:217)
+	at org.jkiss.dbeaver.model.erd.ERDContentProviderDefault.fillEntityFromObject(ERDContentProviderDefault.java:84)
+	at org.jkiss.dbeaver.ui.editors.erd.model.ERDContentProviderDecorated.fillEntityFromObject(ERDContentProviderDecorated.java:62)
+	at org.jkiss.dbeaver.model.erd.ERDUtils.makeEntityFromObject(ERDUtils.java:151)
+	at org.jkiss.dbeaver.model.erd.ERDDiagram.fillEntities(ERDDiagram.java:322)
+	at org.jkiss.dbeaver.ui.editors.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:261)
+	at org.jkiss.dbeaver.ui.editors.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:179)
+	at org.jkiss.dbeaver.ui.editors.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:99)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:110)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2026-09-11 17:10:29.973 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=25.0.3
+java.vendor=Microsoft
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es
+Framework arguments:  -eclipse.keyring C:\Users\juanep\AppData\Roaming\DBeaverData\secure\secure_storage
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -eclipse.keyring C:\Users\juanep\AppData\Roaming\DBeaverData\secure\secure_storage
+
+!ENTRY org.eclipse.ui 2 2 2026-09-11 17:10:35.279
+!MESSAGE Invalid preference category path: org.eclipse.debug.ui.ConsolePreferencePage (bundle: org.eclipse.ui.console, page: org.eclipse.ui.internal.console.ansi.preferences.AnsiConsolePreferencePage)

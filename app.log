@@ -2270,3 +2270,191 @@
 2026-05-30 22:31:41,920 - INFO - Barra de estado actualizada correctamente.
 2026-05-30 22:31:49,498 - INFO - Página encontrada: page_frm_a_company
 2026-05-30 22:32:29,162 - INFO - El usuario ha confirmado el cierre de la aplicación.
+2026-05-31 15:16:02,312 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 15:28:34,048 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 15:28:34,077 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 15:28:42,425 - INFO - Página encontrada: page_frm_users
+2026-05-31 15:30:30,501 - ERROR - Error al guardar el usuario.
+2026-05-31 15:30:39,747 - ERROR - Error al guardar el usuario.
+2026-05-31 15:31:05,031 - INFO - Página encontrada: page_frm_job_titles
+2026-05-31 15:31:24,203 - INFO - Profesión guardada exitosamente.
+2026-05-31 15:31:26,303 - INFO - Página encontrada: page_frm_users
+2026-05-31 15:31:30,845 - INFO - Buscador: Seleccionado ID 3
+2026-05-31 15:31:35,795 - ERROR - Error al guardar el usuario.
+2026-05-31 15:35:26,763 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 15:35:26,791 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:12:26,015 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 18:12:26,384 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:12:33,089 - INFO - Consulta a ark_company ejecutada y resultados mostrados.
+2026-05-31 18:12:48,337 - INFO - Página encontrada: page_frm_users
+2026-05-31 18:14:09,541 - INFO - Página encontrada: page_frm_a_company
+2026-05-31 18:14:12,469 - INFO - Página encontrada: page_frm_a_company
+2026-05-31 18:14:12,669 - INFO - Página encontrada: page_frm_a_company
+2026-05-31 18:14:14,341 - INFO - Página encontrada: page_frm_users
+2026-05-31 18:14:30,173 - INFO - Página encontrada: page_frm_job_titles
+2026-05-31 18:15:30,030 - INFO - Página encontrada: page_frm_users
+2026-05-31 18:15:41,958 - INFO - Página encontrada: page_frm_actions
+2026-05-31 18:16:00,385 - INFO - Formulario de categorías  limpiado.
+2026-05-31 18:21:44,574 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 18:21:44,599 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:26:18,842 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 18:26:18,870 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:28:40,240 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 18:28:40,562 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:29:51,488 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 18:29:51,516 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:31:11,175 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 18:31:11,209 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:31:23,395 - INFO - Página encontrada: page_frm_actions
+2026-05-31 18:32:55,706 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 18:32:55,734 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:33:02,248 - INFO - Página encontrada: page_frm_job_titles
+2026-05-31 18:33:40,944 - INFO - Página encontrada: page_frm_job_titles
+2026-05-31 18:35:20,816 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 18:35:20,844 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:37:14,204 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 18:37:14,231 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:46:41,740 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 18:46:41,776 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:47:16,531 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 18:47:16,557 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:47:43,359 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 18:47:43,398 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:48:28,757 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 18:48:28,788 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:48:51,344 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 18:48:51,374 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:50:07,746 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 18:50:07,781 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:50:33,394 - INFO - El usuario ha confirmado el cierre de la aplicación.
+2026-05-31 18:54:36,154 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 18:54:36,180 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:54:41,204 - INFO - Página encontrada: page_frm_job_titles
+2026-05-31 18:54:48,011 - INFO - Página encontrada: page_frm_actions_categories
+2026-05-31 18:54:48,012 - ERROR - Página no encontrada: page_frm_action_categories
+2026-05-31 18:54:50,923 - INFO - Página encontrada: page_frm_actions
+2026-05-31 18:57:20,235 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 18:57:20,261 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:57:33,045 - INFO - Página encontrada: page_frm_currencies
+2026-05-31 18:57:34,885 - INFO - Página encontrada: page_frm_actions_categories
+2026-05-31 18:57:34,885 - ERROR - Página no encontrada: page_frm_action_categories
+2026-05-31 18:57:36,317 - INFO - Página encontrada: page_frm_functional_units
+2026-05-31 18:57:37,741 - INFO - Página encontrada: page_frm_actions
+2026-05-31 18:57:47,048 - INFO - Formulario de categorías  limpiado.
+2026-05-31 18:57:52,001 - INFO - El usuario ha confirmado el cierre de la aplicación.
+2026-05-31 18:58:58,714 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 18:58:58,738 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 18:59:05,614 - INFO - Página encontrada: page_frm_actions
+2026-05-31 18:59:08,133 - INFO - Página encontrada: page_frm_employees
+2026-05-31 19:01:17,209 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 19:01:17,244 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 19:01:30,447 - INFO - Página encontrada: page_frm_device_types
+2026-05-31 19:01:31,879 - INFO - Página encontrada: page_frm_it_assets
+2026-05-31 19:04:30,685 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 19:04:30,711 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 19:04:36,673 - INFO - Página encontrada: page_frm_actions_categories
+2026-05-31 19:04:36,673 - ERROR - Página no encontrada: page_frm_action_categories
+2026-05-31 19:04:44,158 - INFO - Formulario de categorías  limpiado.
+2026-05-31 19:04:47,056 - INFO - Página encontrada: page_frm_actions
+2026-05-31 19:04:56,350 - INFO - Formulario de categorías  limpiado.
+2026-05-31 19:06:22,250 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 19:06:22,279 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 19:06:30,906 - INFO - Página encontrada: page_frm_actions
+2026-05-31 19:06:37,911 - INFO - Formulario de categorías  limpiado.
+2026-05-31 19:06:41,510 - INFO - El usuario ha confirmado el cierre de la aplicación.
+2026-05-31 19:07:52,352 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 19:07:52,383 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 19:08:00,619 - INFO - Página encontrada: page_frm_it_assets
+2026-05-31 19:10:05,178 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 19:10:05,207 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 19:10:14,676 - INFO - Página encontrada: page_frm_requests
+2026-05-31 19:10:16,363 - INFO - Página encontrada: page_frm_sessions
+2026-05-31 19:10:45,649 - INFO - El usuario ha confirmado el cierre de la aplicación.
+2026-05-31 19:12:01,504 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 19:12:01,529 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 19:12:06,725 - INFO - Página encontrada: page_frm_sessions
+2026-05-31 19:12:15,163 - INFO - Buscador: Seleccionado ID 4
+2026-05-31 19:12:22,931 - INFO - Buscador: Seleccionado ID 4
+2026-05-31 19:12:25,938 - INFO - Buscador: Seleccionado ID 6
+2026-05-31 19:13:22,585 - INFO - El usuario ha confirmado el cierre de la aplicación.
+2026-05-31 19:20:40,708 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 19:20:40,740 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 19:20:46,313 - INFO - Página encontrada: page_frm_sessions
+2026-05-31 19:20:55,462 - INFO - Buscador: Seleccionado ID 6
+2026-05-31 19:21:13,801 - INFO - Página encontrada: page_frm_users
+2026-05-31 19:22:22,375 - INFO - Buscador: Seleccionado ID 3
+2026-05-31 19:22:29,160 - INFO - Buscador: Seleccionado ID 3
+2026-05-31 19:22:59,370 - INFO - Página encontrada: page_frm_clients
+2026-05-31 19:23:03,978 - INFO - Página encontrada: page_frm_a_company
+2026-05-31 19:23:06,698 - INFO - Página encontrada: page_frm_actions
+2026-05-31 19:23:14,528 - INFO - Buscador: Seleccionado ID 3
+2026-05-31 19:23:24,591 - INFO - Formulario de categorías  limpiado.
+2026-05-31 19:23:27,695 - INFO - Formulario de categorías  limpiado.
+2026-05-31 19:23:32,863 - INFO - El usuario ha confirmado el cierre de la aplicación.
+2026-05-31 20:42:38,895 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 20:42:39,193 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 20:42:48,602 - INFO - Página encontrada: page_frm_actions
+2026-05-31 20:43:15,075 - INFO - Buscador: Seleccionado ID 3
+2026-05-31 20:43:21,310 - INFO - Formulario de categorías  limpiado.
+2026-05-31 20:43:22,628 - INFO - Página encontrada: page_frm_users
+2026-05-31 20:44:28,628 - INFO - Buscador: Seleccionado ID 3
+2026-05-31 20:44:32,123 - INFO - Buscador: Seleccionado ID 3
+2026-05-31 20:44:39,700 - INFO - Buscador: Seleccionado ID 3
+2026-05-31 20:45:19,141 - INFO - Página encontrada: page_frm_actions
+2026-05-31 20:45:24,765 - INFO - Página encontrada: page_frm_employees
+2026-05-31 20:45:41,101 - INFO - Página encontrada: page_frm_device_types
+2026-05-31 20:45:42,717 - INFO - Página encontrada: page_frm_it_assets
+2026-05-31 20:45:46,733 - INFO - Página encontrada: page_frm_clients
+2026-05-31 20:45:47,685 - INFO - Página encontrada: page_frm_currencies
+2026-05-31 20:45:49,389 - INFO - Página encontrada: page_frm_actions_categories
+2026-05-31 20:45:49,390 - ERROR - Página no encontrada: page_frm_action_categories
+2026-05-31 20:45:51,101 - INFO - Página encontrada: page_frm_currencies
+2026-05-31 20:45:55,469 - INFO - Página encontrada: page_frm_actions_categories
+2026-05-31 20:45:55,470 - ERROR - Página no encontrada: page_frm_action_categories
+2026-05-31 20:45:56,741 - INFO - Página encontrada: page_frm_functional_units
+2026-05-31 20:45:58,173 - INFO - Página encontrada: page_frm_actions
+2026-05-31 20:46:00,974 - INFO - Página encontrada: page_frm_employees
+2026-05-31 20:46:10,381 - INFO - Página encontrada: page_frm_employees
+2026-05-31 20:46:24,549 - INFO - Página encontrada: page_frm_clients
+2026-05-31 20:46:25,510 - INFO - Página encontrada: page_frm_currencies
+2026-05-31 20:46:27,453 - INFO - Página encontrada: page_frm_device_types
+2026-05-31 20:46:28,957 - INFO - Página encontrada: page_frm_it_assets
+2026-05-31 20:46:34,150 - INFO - Página encontrada: page_frm_job_titles
+2026-05-31 20:46:39,029 - INFO - Página encontrada: page_frm_actions
+2026-05-31 20:47:44,909 - INFO - Buscador: Seleccionado ID 5
+2026-05-31 20:47:57,532 - INFO - Acción guardada exitosamente: ACC0006
+2026-05-31 20:48:00,803 - ERROR - Error crítico en save_categories: 'Ui_MainWindow' object has no attribute 'lineEdit_id_category'
+2026-05-31 20:49:06,653 - INFO - Formulario de categorías  limpiado.
+2026-05-31 21:07:58,726 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 21:07:58,756 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 21:08:45,393 - INFO - Página encontrada: page_frm_actions
+2026-05-31 21:10:46,968 - INFO - Buscador: Seleccionado ID 6
+2026-05-31 21:11:27,216 - INFO - Acción guardada exitosamente: ACC0003
+2026-05-31 21:11:34,432 - INFO - Formulario de acciones limpiado.
+2026-05-31 21:11:56,351 - INFO - Formulario de categorías  limpiado.
+2026-05-31 21:12:49,891 - INFO - El usuario ha confirmado el cierre de la aplicación.
+2026-05-31 22:04:32,408 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 22:04:32,494 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 22:04:38,047 - INFO - Página encontrada: page_frm_users
+2026-05-31 22:05:25,660 - INFO - Buscador: Seleccionado ID 3
+2026-05-31 22:05:29,315 - INFO - Buscador: Seleccionado ID 3
+2026-05-31 22:05:33,147 - INFO - Buscador: Seleccionado ID 3
+2026-05-31 22:05:51,794 - INFO - El usuario ha confirmado el cierre de la aplicación.
+2026-05-31 22:27:36,908 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-05-31 22:27:36,944 - INFO - Barra de estado actualizada correctamente.
+2026-05-31 22:28:01,753 - INFO - Página encontrada: page_frm_users
+2026-05-31 22:29:31,415 - INFO - Buscador: Seleccionado ID 3
+2026-05-31 22:29:49,535 - INFO - Buscador: Seleccionado ID 3
+2026-06-01 21:08:37,615 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-06-01 21:08:37,988 - INFO - Barra de estado actualizada correctamente.
+2026-06-01 21:08:59,770 - INFO - El usuario ha confirmado el cierre de la aplicación.
+2026-06-09 13:52:42,537 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-06-09 13:52:42,758 - INFO - Barra de estado actualizada correctamente.
+2026-06-09 13:52:49,577 - INFO - Página encontrada: page_frm_a_company
+2026-09-11 20:17:08,614 - INFO - Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.
+2026-09-11 20:17:08,809 - INFO - Barra de estado actualizada correctamente.
+2026-09-11 20:17:37,961 - INFO - Página encontrada: page_frm_requests
+2026-09-11 20:17:39,688 - INFO - Página encontrada: page_frm_sessions
+2026-09-11 20:18:57,420 - INFO - Página encontrada: page_frm_a_company
+2026-09-11 20:23:01,200 - INFO - Consulta a ark_company ejecutada y resultados mostrados.
+2026-09-11 20:24:27,577 - INFO - El usuario ha confirmado el cierre de la aplicación.

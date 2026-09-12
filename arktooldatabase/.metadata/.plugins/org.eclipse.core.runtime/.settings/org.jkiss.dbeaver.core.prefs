@@ -1,7 +1,8 @@
-dialog.default.folder=S\:\\Desarrollos\\MyPython\\PySide6\\ARKToolsPC\\docs
+dialog.default.folder=H\:\\Desarrollos
 driver.selector.orderBy=score
 eclipse.preferences.version=1
+navigator.settings.default.preset=advanced
 resultset.presentation.active=spreadsheet
 tipOfTheDayInitializer.notFirstRun=true
-ui.auto.update.check.time=1775515332180
+ui.auto.update.check.time=1789160098661
 ui.show.tip.of.the.day.on.startup=false

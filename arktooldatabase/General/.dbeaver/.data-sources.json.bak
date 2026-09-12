@@ -32,6 +32,19 @@
 				},
 				"auth-model": "native"
 			}
+		},
+		"sqlite_jdbc-19c67f1ef20-58f380403929a8e": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "arkcogenDB.sqlite",
+			"save-password": true,
+			"configuration": {
+				"database": "H:\\Desarrollos\\MyPython\\PySide6\\ArkCodeGenerator\\arkcogendatabase\\arkcogenDB.sqlite",
+				"url": "jdbc:sqlite:H:\\Desarrollos\\MyPython\\PySide6\\ArkCodeGenerator\\arkcogendatabase\\arkcogenDB.sqlite",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true
+			}
 		}
 	},
 	"connection-types": {

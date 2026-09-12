@@ -35,7 +35,14 @@ CREATE TABLE IF NOT EXISTS ark_company (
     emp_EmailContacto TEXT,
     emp_EmailEmpresa TEXT,
     emp_TipoContribuyente INTEGER,
-    emp_FechaCreacion TEXT DEFAULT (datetime('now'))
+    emp_FechaCreacion TEXT DEFAULT (datetime('now')),
+    emp_SystemDate TEXT DEFAULT (date('now')),
+    emp_SystemTime TEXT DEFAULT (time('now')),
+    emp_NameMachine TEXT,
+    emp_UserCreator TEXT,
+    emp_LastUpdateDate TEXT,
+    emp_LastUpdateTime TEXT,
+    emp_UserLastUpdate TEXT
 );
 
 -- 2-Clientes
@@ -50,13 +57,21 @@ CREATE TABLE IF NOT EXISTS ark_clients (
     clt_Telefono1 TEXT,
     clt_Telefono2 TEXT,
     clt_Representante TEXT,
+    clt_IDRepresentante TEXT,
     clt_TelefonoContacto TEXT,
     clt_EmailContacto TEXT,
     clt_EmailEmpresa TEXT,
     clt_TipoContribuyente INTEGER,
     clt_Origen TEXT,
     clt_CodigoOrigen TEXT,
-    clt_FechaCreacion TEXT DEFAULT (datetime('now'))
+    clt_FechaCreacion TEXT DEFAULT (datetime('now')),
+    clt_SystemDate TEXT DEFAULT (date('now')),
+    clt_SystemTime TEXT DEFAULT (time('now')),
+    clt_NameMachine TEXT,
+    clt_UserCreator TEXT,
+    clt_LastUpdateDate TEXT,
+    clt_LastUpdateTime TEXT,
+    clt_UserLastUpdate TEXT
 );
 
 -- 3-Cargos
@@ -66,7 +81,14 @@ CREATE TABLE IF NOT EXISTS ark_job_titles (
     job_Descripcion TEXT,
     job_Status INTEGER DEFAULT 1,
     job_DescripcionTec TEXT,
-    job_FechaCreacion TEXT DEFAULT (datetime('now'))
+    job_FechaCreacion TEXT DEFAULT (datetime('now')),
+    job_SystemDate TEXT DEFAULT (date('now')),
+    job_SystemTime TEXT DEFAULT (time('now')),
+    job_NameMachine TEXT,
+    job_UserCreator TEXT,
+    job_LastUpdateDate TEXT,
+    job_LastUpdateTime TEXT,
+    job_UserLastUpdate TEXT
 );
 
 -- 4-Unidades funcionales
@@ -75,7 +97,14 @@ CREATE TABLE IF NOT EXISTS ark_functional_units (
     fun_Codigo TEXT NOT NULL,
     fun_Descripcion TEXT,
     fun_Status INTEGER DEFAULT 1,
-    fun_FechaCreacion TEXT DEFAULT (datetime('now'))
+    fun_FechaCreacion TEXT DEFAULT (datetime('now')),
+    fun_SystemDate TEXT DEFAULT (date('now')),
+    fun_SystemTime TEXT DEFAULT (time('now')),
+    fun_NameMachine TEXT,
+    fun_UserCreator TEXT,
+    fun_LastUpdateDate TEXT,
+    fun_LastUpdateTime TEXT,
+    fun_UserLastUpdate TEXT
 );
 
 -- 5-Empleados
@@ -91,6 +120,13 @@ CREATE TABLE IF NOT EXISTS ark_employees (
     emy_EmailUsuario TEXT,
     emy_Password TEXT,
     emy_FechaCreacion TEXT DEFAULT (datetime('now')),
+    emy_SystemDate TEXT DEFAULT (date('now')),
+    emy_SystemTime TEXT DEFAULT (time('now')),
+    emy_NameMachine TEXT,
+    emy_UserCreator TEXT,
+    emy_LastUpdateDate TEXT,
+    emy_LastUpdateTime TEXT,
+    emy_UserLastUpdate TEXT,
     FOREIGN KEY (emy_Cargo) REFERENCES ark_job_titles(job_IDauto),
     FOREIGN KEY (emy_Cliente) REFERENCES ark_clients(clt_IDauto)
 );
@@ -99,15 +135,24 @@ CREATE TABLE IF NOT EXISTS ark_employees (
 CREATE TABLE IF NOT EXISTS ark_users (
     usr_IDauto INTEGER PRIMARY KEY AUTOINCREMENT,
     usr_Codigo TEXT NOT NULL,
+    usr_login TEXT,
     usr_Descripcion TEXT,
     usr_Status INTEGER DEFAULT 1,
-    usr_Telefono2 TEXT,
+    usr_Telefono TEXT,
     usr_Cargo TEXT,
     usr_Rol TEXT,
     usr_EmailUsuario TEXT,
     usr_Password TEXT,
     usr_FechaCreacion TEXT DEFAULT (datetime('now')),
     id_employee INTEGER,
+    usr_SystemDate TEXT DEFAULT (date('now')),
+    usr_SystemTime TEXT DEFAULT (time('now')),
+    usr_NameMachine TEXT,
+    usr_UserCreator TEXT,
+    usr_LastUpdateDate TEXT,
+    usr_LastUpdateTime TEXT,
+    usr_LastMachine TEXT,
+    usr_UserLastUpdate TEXT,    
     FOREIGN KEY (id_employee) REFERENCES ark_employees(emy_IDauto)
 );
 
@@ -118,7 +163,14 @@ CREATE TABLE IF NOT EXISTS ark_device_types (
     dty_Descripcion TEXT,
     dty_Status INTEGER DEFAULT 1,
     dty_DescripcionTec TEXT,
-    dty_FechaCreacion TEXT DEFAULT (datetime('now'))
+    dty_FechaCreacion TEXT DEFAULT (datetime('now')),
+    dty_SystemDate TEXT DEFAULT (date('now')),
+    dty_SystemTime TEXT DEFAULT (time('now')),
+    dty_NameMachine TEXT,
+    dty_UserCreator TEXT,
+    dty_LastUpdateDate TEXT,
+    dty_LastUpdateTime TEXT,
+    dty_UserLastUpdate TEXT
 );
 
 -- 8-Equipos informáticos
@@ -139,6 +191,13 @@ CREATE TABLE IF NOT EXISTS ark_it_assets (
     ita_iprdp TEXT,
     ita_idemployees INTEGER,
     ita_FechaCreacion TEXT DEFAULT (datetime('now')),
+    ita_SystemDate TEXT DEFAULT (date('now')),
+    ita_SystemTime TEXT DEFAULT (time('now')),
+    ita_NameMachine TEXT,
+    ita_UserCreator TEXT,
+    ita_LastUpdateDate TEXT,
+    ita_LastUpdateTime TEXT,
+    ita_UserLastUpdate TEXT,
     FOREIGN KEY (ita_functional_units) REFERENCES ark_functional_units(fun_IDauto),
     FOREIGN KEY (ita_idemployees) REFERENCES ark_employees(emy_IDauto)
 );
@@ -154,7 +213,14 @@ CREATE TABLE IF NOT EXISTS ark_currencies (
     mda_FactorCambio2 REAL,
     mda_OperadorCalculo INTEGER,
     mda_AplicaImp INTEGER DEFAULT 0,
-    mda_FechaCreacion TEXT DEFAULT (datetime('now'))
+    mda_FechaCreacion TEXT DEFAULT (datetime('now')),
+    mda_SystemDate TEXT DEFAULT (date('now')),
+    mda_SystemTime TEXT DEFAULT (time('now')),
+    mda_NameMachine TEXT,
+    mda_UserCreator TEXT,  
+    mda_LastUpdateDate TEXT,
+    mda_LastUpdateTime TEXT,
+    mda_UserLastUpdate TEXT
 );
 
 -- 10-Categorías de acciones
@@ -164,7 +230,14 @@ CREATE TABLE IF NOT EXISTS ark_action_categories (
     cat_Descripcion TEXT,
     cat_Status INTEGER DEFAULT 1,
     cat_DescripcionTec TEXT,
-    cat_FechaCreacion TEXT DEFAULT (datetime('now'))
+    cat_FechaCreacion TEXT DEFAULT (datetime('now')),
+    cat_SystemDate TEXT DEFAULT (date('now')),
+    cat_SystemTime TEXT DEFAULT (time('now')),
+    cat_NameMachine TEXT,
+    cat_UserCreator TEXT,
+    cat_LastUpdateDate TEXT,
+    cat_LastUpdateTime TEXT,
+    cat_UserLastUpdate TEXT
 );
 
 -- 11-Acciones frecuentes
@@ -176,6 +249,13 @@ CREATE TABLE IF NOT EXISTS ark_actions (
     act_DescripcionTec TEXT,
     act_FechaCreacion TEXT DEFAULT (datetime('now')),
     id_category INTEGER,
+    act_SystemDate TEXT DEFAULT (date('now')),
+    act_SystemTime TEXT DEFAULT (time('now')),
+    act_NameMachine TEXT,
+    act_UserCreator TEXT,
+    act_LastUpdateDate TEXT,
+    act_LastUpdateTime TEXT,
+    act_UserLastUpdate TEXT,    
     FOREIGN KEY (id_category) REFERENCES ark_action_categories(cat_IDauto)
 );
 
@@ -188,6 +268,13 @@ CREATE TABLE IF NOT EXISTS ark_requests (
     req_DescripcionTec TEXT,
     req_FechaCreacion TEXT DEFAULT (datetime('now')),
     req_CodigoCliente INTEGER,
+    req_SystemDate TEXT DEFAULT (date('now')),
+    req_SystemTime TEXT DEFAULT (time('now')),
+    req_NameMachine TEXT,
+    req_UserCreator TEXT,
+    req_LastUpdateDate TEXT,
+    req_LastUpdateTime TEXT,
+    req_UserLastUpdate TEXT,
     FOREIGN KEY (req_CodigoCliente) REFERENCES ark_clients(clt_IDauto)
 );
 
@@ -198,7 +285,14 @@ CREATE TABLE IF NOT EXISTS ark_tasks_completed (
     tsc_Descripcion TEXT,
     tsc_Status INTEGER DEFAULT 1,
     tsc_DescripcionTec TEXT,
-    tsc_FechaCreacion TEXT DEFAULT (datetime('now'))
+    tsc_FechaCreacion TEXT DEFAULT (datetime('now')),
+    tsc_SystemDate TEXT DEFAULT (date('now')),
+    tsc_SystemTime TEXT DEFAULT (time('now')),
+    tsc_NameMachine TEXT,
+    tsc_UserCreator TEXT,
+    tsc_LastUpdateDate TEXT,
+    tsc_LastUpdateTime TEXT,
+    tsc_UserLastUpdate TEXT
 );
 
 -- 14-Sesiones de trabajo
@@ -220,12 +314,19 @@ CREATE TABLE IF NOT EXISTS ark_sessions (
     ses_HoraInicial TEXT,
     ses_HoraFinal TEXT,
     ses_TotalHora INTEGER,
+    ses_SystemDate TEXT DEFAULT (date('now')),
+    ses_SystemTime TEXT DEFAULT (time('now')),
+    ses_NameMachine TEXT,
+    ses_UserCreator TEXT,
+    ses_LastUpdateDate TEXT,
+    ses_LastUpdateTime TEXT,
+    ses_UserLastUpdate TEXT,
     FOREIGN KEY (ses_clt_IDauto) REFERENCES ark_clients(clt_IDauto),
     FOREIGN KEY (ses_usr_IDauto) REFERENCES ark_users(usr_IDauto)
 );
 
 -- 15-Detalle de sesiones
-CREATE TABLE IF NOT EXISTS ark_session_details (
+CREATE TABLE IF NOT EXISTS ark_sessions_details (
     dts_IDauto INTEGER PRIMARY KEY AUTOINCREMENT,
     dts_ses_IDauto INTEGER,
     dts_act_Codigo INTEGER,
@@ -234,6 +335,13 @@ CREATE TABLE IF NOT EXISTS ark_session_details (
     dts_result TEXT,
     dts_time_spent REAL,
     dts_date_logged TEXT DEFAULT (datetime('now')),
+    dts_SystemDate TEXT DEFAULT (date('now')),
+    dts_SystemTime TEXT DEFAULT (time('now')),
+    dts_NameMachine TEXT,
+    dts_UserCreator TEXT,
+    dts_LastUpdateDate TEXT,
+    dts_LastUpdateTime TEXT,
+    dts_UserLastUpdate TEXT,
     FOREIGN KEY (dts_ses_IDauto) REFERENCES ark_sessions(ses_IDauto),
     FOREIGN KEY (dts_act_Codigo) REFERENCES ark_actions(act_IDauto),
     FOREIGN KEY (dts_req_IDauto) REFERENCES ark_requests(req_IDauto)

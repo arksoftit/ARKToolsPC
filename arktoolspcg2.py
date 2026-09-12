@@ -23,7 +23,7 @@ class MiApp(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        # --- NUEVA INTEGRACIÓN DE BASE DE DATOS (Solo Inicialización) ---
+        # --- INTEGRACIÓN DE BASE DE DATOS (Solo Inicialización) ---
         self.db_manager = DatabaseManager()
         self.db_manager.setup_database() # Crea la BD y las tablas si no existen
         logging.info("Base de datos ArkToolsBD.sqlite inicializada y tablas verificadas.")
@@ -32,6 +32,9 @@ class MiApp(QMainWindow):
         # ------------INICIALIZACION DE VARIABLES PARA GESTION DE BASE DE DATOS------------
         self.id_categoria_seleccionada = None
         self.selected_customer_id = None
+        self.selected_employee_id = None
+        self.selected_job_title_id = None
+        # -----------------------------------------------------------------
 
         # Eliminar barra de título y aplicar opacidad
         self.setWindowFlag(Qt.WindowType.FramelessWindowHint)
@@ -206,18 +209,22 @@ class MiApp(QMainWindow):
 
         # Conectar botón Incluir y Cancelar de job_titles (Profesiones)
         self.ui.btn_add_job_titles.clicked.connect(self.action_include_job_titles)
+        self.ui.btn_save_job_titles.clicked.connect(self.save_job_titles)
         self.ui.btn_cancel_job_titles.clicked.connect(self.action_cancel_job_titles)
 
         # Conectar botón Incluir y Cancelar de requests (Requerimientos)
         self.ui.btn_add_requests.clicked.connect(self.action_include_requests)
+        self.ui.btn_save_requests.clicked.connect(self.save_requests)
         self.ui.btn_cancel_requests.clicked.connect(self.action_cancel_requests)
 
         # Conectar botón Incluir y Cancelar de sessions (Sesiones)
         self.ui.btn_add_sessions.clicked.connect(self.action_include_sessions)
+        self.ui.btn_save_sessions.clicked.connect(self.save_sessions)
         self.ui.btn_cancel_sessions.clicked.connect(self.action_cancel_sessions)
 
         # Conectar botón Incluir y Cancelar de users (Usuarios)
         self.ui.btn_add_users.clicked.connect(self.action_include_users)
+        self.ui.btn_save_users.clicked.connect(self.save_users)
         self.ui.btn_cancel_users.clicked.connect(self.action_cancel_users)
         
         # Conectar botón para activar buscadores
@@ -257,9 +264,10 @@ class MiApp(QMainWindow):
             fecha   = system_info.get_date_audit()
             user = system_info.get_current_user()
             equipo  = system_info.get_machine_name()
+            version = system_info.get_app_version()
             
             # Formateamos la cadena
-            info_sesion = f" SESIÓN ACTIVA | Usuario: {user} | Equipo: {equipo} | Fecha: {fecha}"
+            info_sesion = f" SESIÓN ACTIVA | Usuario: {user} | Equipo: {equipo} | Fecha: {fecha} | Versión: {version}"
             
             # Aplicamos al QLabel que mencionaste
             self.ui.pie_arkinfo.setText(info_sesion)
@@ -820,11 +828,12 @@ class MiApp(QMainWindow):
         self.ui.lineEdit_act_code.clear()
         self.ui.lineEdit_act_description.clear()
         self.ui.textEdit_act_descriptiontec.clear()
-        self.ui.lineEdit_id_category.clear()
+        self.ui.lineEdit_act_id_category.clear()
         # 2. Resetear QComboBoxes al primer elemento (índice 0)
         self.ui.cmb_act_status.setCurrentIndex(0)
         # 3. Resetear QDateEdit a la fecha actual
-        self.ui.label_act_create_date.setDate(QDate.currentDate())
+        # self.ui.label_act_create_date.setDate(QDate.currentDate())
+        self.ui.dateEdit_act_create_date.setDate(QDate.currentDate())
 
         # 4. (Opcional) Poner el foco de nuevo en el primer campo
         self.ui.lineEdit_act_code.setFocus()
@@ -1398,9 +1407,75 @@ class MiApp(QMainWindow):
         self.ui.dateEdit_ses_creationdate.setDate(QDate.currentDate())
         self.ui.lineEdit_ses_code.setFocus()
         logging.info("Formulario de sesiones limpiado.")
-        
+    # ============INSERT DE USERS
+    def save_users(self):
+        """
+        Recopila los datos del formulario frm_users e inserta
+        un nuevo registro en la tabla ark_users.
+        """
+        try:
+            # 1. Recolección de datos
+            code        = self.ui.lineEdit_usr_code.text().strip()
+            login       = self.ui.lineEdit_usr_Login.text().strip()
+            description = self.ui.lineEdit_usr_description.text().strip()
+            status      = self.ui.cmb_usr_status.currentIndex()
+            phone       = self.ui.lineEdit_usr_phone.text().strip()          # usr_Telefono
+            cargo       = self.selected_job_title_id  # Id del cargo (job title)
+            role        = self.ui.lineEdit_usr_role.text().strip()
+            email       = self.ui.lineEdit_usr_email.text().strip()
+            password    = self.ui.lineEdit_usr_password_in.text().strip()
+            rpassword   = self.ui.lineEdit_usr_password_rin.text().strip()
+            creation_date = self.ui.dateEdit_usr_fechacreacion.date().toString("yyyy-MM-dd")
+            
+            # 2. Validaciones
+            if not code:
+                QMessageBox.warning(self, "Validación", "El Código del usuario es obligatorio.")
+                return
+            if password != rpassword:
+                QMessageBox.warning(self, "Validación", "Las contraseñas no coinciden.")
+                return
 
-    
+            # 3. Auditoría (reutilizamos variables para simplificar)
+            now_date = system_info.get_date_audit()
+            now_time = system_info.get_time_audit()
+            machine  = system_info.get_machine_name()
+            user     = system_info.get_current_user()
+
+            # 4. SQL con todos los campos (incluyendo los opcionales con NULL)
+            sql = """
+            INSERT INTO ark_users (
+                usr_Codigo, usr_login, usr_Descripcion, usr_Status, usr_Telefono, usr_Cargo, usr_Rol,
+                usr_EmailUsuario, usr_Password, usr_FechaCreacion, id_employee,
+                usr_SystemDate, usr_SystemTime, usr_NameMachine, usr_UserCreator,
+                usr_LastUpdateDate, usr_LastUpdateTime, usr_LastMachine, usr_UserLastUpdate
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """
+            # Son 19 placeholders (cuéntalos: desde usr_Codigo hasta usr_UserLastUpdate)
+
+            # id_employee lo dejamos NULL por ahora (podrías añadir un buscador después)
+            id_employee = None
+
+            # 5. Parámetros en el MISMO orden que las columnas del INSERT
+            params = (
+                code, login, description, status, phone, cargo, role,
+                email, password, creation_date, id_employee,
+                now_date, now_time, machine, user,   # SystemDate, SystemTime, NameMachine, UserCreator
+                now_date, now_time, machine, user    # LastUpdateDate, LastUpdateTime, LastMachine, UserLastUpdate
+            )
+
+            cursor = self.db_manager.execute_query(sql, params)
+            if cursor:
+                QMessageBox.information(self, "Éxito", "Usuario guardado correctamente.")
+                logging.info("Usuario guardado exitosamente.")
+                self.clear_form_users()  # Asegúrate de tener este método
+            else:
+                QMessageBox.critical(self, "Error", "No se pudo guardar el usuario.")
+                logging.error("Error al guardar el usuario.")
+
+        except Exception as e:
+            logging.error(f"Error crítico en save_users: {str(e)}")
+            QMessageBox.critical(self, "Error de Sistema", f"Ocurrió un error inesperado:\n{e}")
+
 
     # ==================================FIN INSERT DE DATOS==================================
     
@@ -1428,7 +1503,7 @@ class MiApp(QMainWindow):
         
         # 3. Si el user eligió algo, actualizamos la App
         if id_sel is not None:
-            self.id_categoria_selecconada = id_sel
+            self.id_categoria_seleccionada = id_sel
             self.ui.lineEdit_act_id_category.setText(texto_sel)
             logging.info(f"Buscador: Seleccionado ID {id_sel}")
     
@@ -1487,6 +1562,7 @@ class MiApp(QMainWindow):
             self.selected_job_title_id = id_sel
             self.ui.lineEdit_emy_position.setText(texto_sel)
             logging.info(f"Buscador: Seleccionado ID {id_sel}")
+    
     
     # ------------------ CONTROLES DE LA BARRA SUPERIOR ------------------      
     

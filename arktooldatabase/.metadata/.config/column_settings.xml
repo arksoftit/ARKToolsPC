@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
+	<item id="NodeList/DataSourceDescriptor">
+		<column name="Name" visible="true" order="0" width="121"/>
+		<column name="Description" visible="true" order="1" width="100"/>
+		<column name="Origin" visible="true" order="2" width="100"/>
+		<column name="Driver Type" visible="true" order="3" width="100"/>
+	</item>
 	<item id="NodeList/MySQLTable">
 		<column name="Table Name" visible="true" order="0" width="136"/>
 		<column name="Engine" visible="true" order="1" width="100"/>
@@ -15,9 +21,9 @@
 		<column name="Table Description" visible="true" order="3" width="106"/>
 	</item>
 	<item id="scriptSelectorViewer">
-		<column name="Script" visible="true" order="0" width="149"/>
-		<column name="Time" visible="true" order="1" width="181"/>
-		<column name="Info" visible="true" order="2" width="84"/>
-		<column name="Folder" visible="true" order="3" width="96"/>
+		<column name="Script" visible="true" order="0" width="141"/>
+		<column name="Time" visible="true" order="1" width="184"/>
+		<column name="Info" visible="true" order="2" width="87"/>
+		<column name="Folder" visible="true" order="3" width="99"/>
 	</item>
 </items>

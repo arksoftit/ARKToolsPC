@@ -45,6 +45,19 @@
 				"type": "dev",
 				"closeIdleConnection": true
 			}
+		},
+		"sqlite_jdbc-19f1de1d8d2-503c171267bfb102": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "arkconinv.db",
+			"save-password": true,
+			"configuration": {
+				"database": "H:\\Desarrollos\\MyPython\\Tkinter\\ArkConInv\\ArkConInvDB\\database\\arkconinv.db",
+				"url": "jdbc:sqlite:H:\\Desarrollos\\MyPython\\Tkinter\\ArkConInv\\ArkConInvDB\\database\\arkconinv.db",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true
+			}
 		}
 	},
 	"connection-types": {

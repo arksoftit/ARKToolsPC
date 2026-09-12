@@ -17,6 +17,12 @@ except ImportError:
 
 import platform
 
+def get_app_version():
+    """
+    Retorna la versión actual de la aplicación.
+    """
+    return "1.0.6"  
+
 def get_system_info():
     """
     Obtiene la información general del sistema y la retorna como una cadena de texto.

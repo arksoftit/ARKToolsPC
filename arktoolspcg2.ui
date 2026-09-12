@@ -10540,7 +10540,7 @@ QComboBox:disabled {
                             <property name="geometry">
                              <rect>
                               <x>10</x>
-                              <y>60</y>
+                              <y>89</y>
                               <width>90</width>
                               <height>20</height>
                              </rect>
@@ -10558,8 +10558,8 @@ QComboBox:disabled {
                            <widget class="QLineEdit" name="lineEdit_usr_description">
                             <property name="geometry">
                              <rect>
-                              <x>99</x>
-                              <y>60</y>
+                              <x>101</x>
+                              <y>89</y>
                               <width>400</width>
                               <height>20</height>
                              </rect>
@@ -10584,7 +10584,7 @@ QComboBox:disabled {
                             <property name="geometry">
                              <rect>
                               <x>10</x>
-                              <y>90</y>
+                              <y>121</y>
                               <width>70</width>
                               <height>20</height>
                              </rect>
@@ -10628,7 +10628,7 @@ QComboBox:disabled {
                             <property name="geometry">
                              <rect>
                               <x>80</x>
-                              <y>90</y>
+                              <y>121</y>
                               <width>100</width>
                               <height>20</height>
                              </rect>
@@ -10685,7 +10685,7 @@ QComboBox:disabled {
                             <property name="geometry">
                              <rect>
                               <x>9</x>
-                              <y>120</y>
+                              <y>149</y>
                               <width>40</width>
                               <height>20</height>
                              </rect>
@@ -10710,7 +10710,7 @@ QComboBox:disabled {
                             <property name="geometry">
                              <rect>
                               <x>10</x>
-                              <y>210</y>
+                              <y>237</y>
                               <width>130</width>
                               <height>20</height>
                              </rect>
@@ -10729,7 +10729,7 @@ QComboBox:disabled {
                             <property name="geometry">
                              <rect>
                               <x>140</x>
-                              <y>210</y>
+                              <y>237</y>
                               <width>100</width>
                               <height>20</height>
                              </rect>
@@ -10751,7 +10751,7 @@ QComboBox:disabled {
                             <property name="geometry">
                              <rect>
                               <x>10</x>
-                              <y>150</y>
+                              <y>179</y>
                               <width>25</width>
                               <height>20</height>
                              </rect>
@@ -10776,7 +10776,7 @@ QComboBox:disabled {
                             <property name="geometry">
                              <rect>
                               <x>60</x>
-                              <y>150</y>
+                              <y>179</y>
                               <width>400</width>
                               <height>20</height>
                              </rect>
@@ -10792,7 +10792,7 @@ QComboBox:disabled {
                             <property name="geometry">
                              <rect>
                               <x>244</x>
-                              <y>90</y>
+                              <y>121</y>
                               <width>50</width>
                               <height>20</height>
                              </rect>
@@ -10817,7 +10817,7 @@ QComboBox:disabled {
                             <property name="geometry">
                              <rect>
                               <x>297</x>
-                              <y>90</y>
+                              <y>121</y>
                               <width>200</width>
                               <height>20</height>
                              </rect>
@@ -10833,7 +10833,7 @@ QComboBox:disabled {
                             <property name="geometry">
                              <rect>
                               <x>10</x>
-                              <y>180</y>
+                              <y>207</y>
                               <width>70</width>
                               <height>20</height>
                              </rect>
@@ -10858,7 +10858,7 @@ QComboBox:disabled {
                             <property name="geometry">
                              <rect>
                               <x>80</x>
-                              <y>180</y>
+                              <y>207</y>
                               <width>100</width>
                               <height>20</height>
                              </rect>
@@ -10874,7 +10874,7 @@ QComboBox:disabled {
                             <property name="geometry">
                              <rect>
                               <x>272</x>
-                              <y>180</y>
+                              <y>207</y>
                               <width>100</width>
                               <height>20</height>
                              </rect>
@@ -10899,7 +10899,7 @@ QComboBox:disabled {
                             <property name="geometry">
                              <rect>
                               <x>377</x>
-                              <y>180</y>
+                              <y>207</y>
                               <width>100</width>
                               <height>20</height>
                              </rect>
@@ -10915,7 +10915,7 @@ QComboBox:disabled {
                             <property name="geometry">
                              <rect>
                               <x>60</x>
-                              <y>120</y>
+                              <y>149</y>
                               <width>400</width>
                               <height>20</height>
                              </rect>
@@ -10943,7 +10943,7 @@ QComboBox:disabled {
                             <property name="geometry">
                              <rect>
                               <x>465</x>
-                              <y>120</y>
+                              <y>149</y>
                               <width>24</width>
                               <height>24</height>
                              </rect>
@@ -11006,6 +11006,47 @@ QPushButton:pressed {
                              <size>
                               <width>18</width>
                               <height>18</height>
+                             </size>
+                            </property>
+                           </widget>
+                           <widget class="QLabel" name="label_usr_login">
+                            <property name="geometry">
+                             <rect>
+                              <x>10</x>
+                              <y>60</y>
+                              <width>61</width>
+                              <height>20</height>
+                             </rect>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>100</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                            <property name="accessibleDescription">
+                             <string extracomment="Ingrese el Código de la Empresa"/>
+                            </property>
+                            <property name="autoFillBackground">
+                             <bool>false</bool>
+                            </property>
+                            <property name="text">
+                             <string>Usuario</string>
+                            </property>
+                           </widget>
+                           <widget class="QLineEdit" name="lineEdit_usr_Login">
+                            <property name="geometry">
+                             <rect>
+                              <x>80</x>
+                              <y>60</y>
+                              <width>200</width>
+                              <height>20</height>
+                             </rect>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>200</width>
+                              <height>20</height>
                              </size>
                             </property>
                            </widget>
@@ -11830,7 +11871,7 @@ QComboBox:disabled {
                               <second>59</second>
                               <year>2501</year>
                               <month>1</month>
-                              <day>28</day>
+                              <day>30</day>
                              </datetime>
                             </property>
                             <property name="minimumDateTime">
@@ -12459,8 +12500,8 @@ QPushButton:pressed {
                               <minute>59</minute>
                               <second>59</second>
                               <year>2501</year>
-                              <month>1</month>
-                              <day>30</day>
+                              <month>2</month>
+                              <day>1</day>
                              </datetime>
                             </property>
                             <property name="minimumDateTime">
